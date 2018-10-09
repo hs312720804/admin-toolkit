@@ -1,4 +1,4 @@
-function createOperationRender(component, actions, elName) {
+export function createOperationRender(component, actions, elName) {
   return function render(h, params) {
     return Object.keys(actions).map(key => {
       return h(
@@ -19,4 +19,4 @@ function createOperationRender(component, actions, elName) {
   };
 }
 
-export { createOperationRender }
+export default { createOperationRender }
