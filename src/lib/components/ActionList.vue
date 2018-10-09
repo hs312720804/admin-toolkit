@@ -1,6 +1,11 @@
 <template>
    <div class="action-list"> 
-       <Button v-for="(item, key) in actions" :key="key" :type="item.type">
+       <Button 
+            v-for="(item, key) in actions" 
+            :key="key" 
+            :type="item.type"
+            @click="$parent[key]()"
+        >
            {{ item.text }}
        </Button>
    </div>
