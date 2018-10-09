@@ -3,7 +3,7 @@ Admin Toolkit
 
 ## 安装    
 ```
-npm install git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
+npm install git+ssh://git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
 ```
 peer dependencies: [vue]() [element-ui]() [gateschema]() [gateschema-form-vue]()  [@stateform/element]()
 
