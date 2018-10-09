@@ -10,6 +10,11 @@ peer dependencies: [vue]() [element-ui]() [gateschema]() [gateschema-form-vue]()
 ## 使用    
 ### 组件列表      
 
+组件使用的时候，　直接`import`, 例如  
+```
+import { ActionList } from 'admin-tookit'
+```
+
 `ActionList`   
 
 属性    
@@ -53,6 +58,12 @@ peer dependencies: [vue]() [element-ui]() [gateschema]() [gateschema-form-vue]()
     }
   ]"
 />
+```
+`TagNav`  
+
+例子  
+```html
+<TagNav />
 ```
 
 `GateSchemaForm`  
@@ -161,6 +172,24 @@ export default {
 }
 </script>
 ```
+
+### 工具函数  
+```
+import { utils } from 'admin-toolkit'
+```
+
+`component`  
+组件相关的工具函数
+
+```
+const componentUtil = utils.component
+```
+
+`wrapService`  
+用于包装服务, 统一处理服务调用错误  
+
+
+
 
 ## Todos  
 * 组件  
