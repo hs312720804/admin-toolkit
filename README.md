@@ -17,7 +17,8 @@ import { ActionList } from 'admin-tookit'
 
 `ActionList`   
 
-属性    
+属性   
+
 | name | type | description | example |  
 | ---- | ---- | ---- | ---- |
 | actions | object | | |
@@ -36,6 +37,7 @@ import { ActionList } from 'admin-tookit'
 `Breadcrumb`  
 
 属性    
+
 | name | type | description | example |  
 | ---- | ---- | ---- | ---- |
 | items | array | | |
@@ -69,6 +71,7 @@ import { ActionList } from 'admin-tookit'
 `GateSchemaForm`  
 
 属性    
+
 | name | type | description | example |  
 | ---- | ---- | ---- | ---- |
 | schema | object | GateSchema instance | |
@@ -77,6 +80,7 @@ import { ActionList } from 'admin-tookit'
 `Menu`  
 
 属性  
+
 | name | type | description | example |  
 | ---- | ---- | ---- | ---- |
 | is-collapse | boolean | | false | 
@@ -112,7 +116,8 @@ import { ActionList } from 'admin-tookit'
 
 `Table`  
 
-属性    
+属性   
+
 | name | type | description | example |  
 | ---- | ---- | ---- | ---- |
 | props | object | element-ui table props | |
