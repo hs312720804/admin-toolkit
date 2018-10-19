@@ -5,7 +5,7 @@ Admin Toolkit
 ```
 npm install git+ssh://git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
 ```
-peer dependencies: [vue]() [element-ui]() [gateschema]() [gateschema-form-vue]()  [@stateform/element]()
+peer dependencies: [vue](https://github.com/vuejs/vue) [element-ui](https://github.com/ElemeFE/element) [gateschema](https://github.com/gateschema/gateschema-js) [gateschema-form-vue](https://github.com/gateschema/gateschema-form-vue)  [@stateform/element](https://github.com/stateform/stateform-element)
 
 ## 使用    
 ### 组件列表      
@@ -194,11 +194,17 @@ const componentUtil = utils.component
 用于包装服务, 统一处理服务调用错误  
 
 
+## 更多组件  
+请查看 [issues](http://gitlab.skysri.com/liangweiliang/admin-toolkit/issues)  
 
+## 开发  
+开发新的组件需要先添加 issue, 然后讨论和定义接口, 然后再开始开发  
 
-## Todos  
-* 组件  
-  * 富文本编辑器   
-  * 远程数据选择器      
-  * 地址选择器    
-* 添加测试代码    
+```
+// 安装依赖
+npm install
+
+// 安装同级依赖  
+npm install vue element-ui gateschema gateschema-form-vue @stateform/element --save
+
+```
