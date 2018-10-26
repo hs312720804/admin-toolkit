@@ -93,7 +93,7 @@ export default {
       }
     }
   },  
-  created() {
+  mounted() {
     this.addTag(this.$route)
     this.$nextTick(this.scrollIntoView)
   }
