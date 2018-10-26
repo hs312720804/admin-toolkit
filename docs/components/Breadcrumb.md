@@ -1,0 +1,49 @@
+# 面包屑导航  
+`Breadcrumb`      
+
+## 示例  
+### 效果  
+
+<Demo>
+  <Breadcrumb :items="[
+      {
+        name: '首页',
+        to: {name: 'home'}
+      },
+      {
+        name: '文章管理',
+      },
+      {
+        name: '创建文章',
+      }
+    ]"
+  />
+</Demo>
+
+### 代码  
+```vue
+<Breadcrumb :items="[
+      {
+        name: '首页',
+        to: {name: 'home'}
+      },
+      {
+        name: '文章管理',
+      },
+      {
+        name: '创建文章'
+      }
+    ]"
+/>
+```
+
+## 属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| items | array | 导航链接列表 |见上面例子 |
+
+链接属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| name | string | 链接文字 | primary |
+| to | string | vue-router 路由对象| /  |

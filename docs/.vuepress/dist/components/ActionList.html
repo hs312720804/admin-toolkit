@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>操作按钮组 | Admin Toolkit</title>
+    <meta name="description" content="酷开 Vue 组件库">
+    
+    
+    <link rel="preload" href="/assets/css/styles.b356f444.css" as="style"><link rel="preload" href="/assets/js/app.b356f444.js" as="script"><link rel="preload" href="/assets/js/9.7bdcaba9.js" as="script"><link rel="preload" href="/assets/css/6.styles.12922dee.css" as="style"><link rel="preload" href="/assets/js/6.12922dee.js" as="script"><link rel="preload" href="/assets/js/4.fde39e35.js" as="script"><link rel="prefetch" href="/assets/js/5.449b1093.js"><link rel="prefetch" href="/assets/js/0.dfdd9d2b.js"><link rel="prefetch" href="/assets/css/2.styles.03744f26.css"><link rel="prefetch" href="/assets/js/2.03744f26.js"><link rel="prefetch" href="/assets/css/3.styles.4908aaeb.css"><link rel="prefetch" href="/assets/js/3.4908aaeb.js"><link rel="prefetch" href="/assets/js/7.7e78eb6f.js"><link rel="prefetch" href="/assets/js/8.0fbc1a2d.js"><link rel="prefetch" href="/assets/js/10.f4f9f688.js"><link rel="prefetch" href="/assets/js/11.6b11e80d.js"><link rel="prefetch" href="/assets/js/12.30039fd1.js"><link rel="prefetch" href="/assets/js/13.2a050f59.js">
+    <link rel="stylesheet" href="/assets/css/styles.b356f444.css"><link rel="stylesheet" href="/assets/css/2.styles.03744f26.css"><link rel="stylesheet" href="/assets/css/3.styles.4908aaeb.css"><link rel="stylesheet" href="/assets/css/6.styles.12922dee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Admin Toolkit</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>指南</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/" class="sidebar-link">开始</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>组件</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/components/ActionList.html" class="active sidebar-link">操作按钮组</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/components/ActionList.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/components/ActionList.html#属性" class="sidebar-link">属性</a></li></ul></li><li><a href="/components/Breadcrumb.html" class="sidebar-link">面包屑导航</a></li><li><a href="/components/TagNav.html" class="sidebar-link">标签导航</a></li><li><a href="/components/GateSchemaForm.html" class="sidebar-link">GateSchema 表单</a></li><li><a href="/components/ContentList.html" class="sidebar-link">内容列表</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="操作按钮组"><a href="#操作按钮组" aria-hidden="true" class="header-anchor">#</a> 操作按钮组</h1> <p><code>ActionList</code><br>
+用于快速创建一组操作按钮</p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" aria-hidden="true" class="header-anchor">#</a> 效果</h3> <div class="demo" data-v-04ebeb87><div class="action-list" data-v-34121d02><button type="button" class="el-button el-button--primary el-button--small" data-v-34121d02><!----><!----><span>
+        创建
+    </span></button><button type="button" class="el-button el-button--default el-button--small" data-v-34121d02><!----><!----><span>
+        批量编辑
+    </span></button><button type="button" class="el-button el-button--default el-button--small" data-v-34121d02><!----><!----><span>
+        批量删除
+    </span></button></div></div> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ActionList</span> 
+      <span class="token attr-name">:actions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{
+        handleCreate: {
+          type: <span class="token punctuation">'</span>primary<span class="token punctuation">'</span>,
+          text: <span class="token punctuation">'</span>创建<span class="token punctuation">'</span>
+        }, 
+        handleBatchDelete: {
+          text: <span class="token punctuation">'</span>批量编辑<span class="token punctuation">'</span>
+        },
+        handleBatchEdit: {
+          text: <span class="token punctuation">'</span>批量删除<span class="token punctuation">'</span>
+        }
+      }<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'handleCreate'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleBatchDelete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'handleBatchDelete'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleBatchEdit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'handleBatchEdit'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>actions</td> <td>object</td> <td>key 为点击按钮时执行的方法, value 为按钮属性</td> <td>见上面例子</td></tr></tbody></table> <p>按钮属性</p> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>type</td> <td>string</td> <td>primary / success / warning / danger / info / text</td> <td>primary</td></tr> <tr><td>text</td> <td>string</td> <td>按钮文字</td> <td></td></tr></tbody></table></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/" class="prev router-link-active">
+          开始
+        </a></span> <span class="next"><a href="/components/Breadcrumb.html">
+          面包屑导航
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/9.7bdcaba9.js" defer></script><script src="/assets/js/6.12922dee.js" defer></script><script src="/assets/js/4.fde39e35.js" defer></script><script src="/assets/js/app.b356f444.js" defer></script>
+  </body>
+</html>

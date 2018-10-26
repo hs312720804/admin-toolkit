@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面包屑导航 | Admin Toolkit</title>
+    <meta name="description" content="酷开 Vue 组件库">
+    
+    
+    <link rel="preload" href="/assets/css/styles.b356f444.css" as="style"><link rel="preload" href="/assets/js/app.b356f444.js" as="script"><link rel="preload" href="/assets/js/10.f4f9f688.js" as="script"><link rel="preload" href="/assets/css/6.styles.12922dee.css" as="style"><link rel="preload" href="/assets/js/6.12922dee.js" as="script"><link rel="prefetch" href="/assets/js/5.449b1093.js"><link rel="prefetch" href="/assets/js/0.dfdd9d2b.js"><link rel="prefetch" href="/assets/css/2.styles.03744f26.css"><link rel="prefetch" href="/assets/js/2.03744f26.js"><link rel="prefetch" href="/assets/css/3.styles.4908aaeb.css"><link rel="prefetch" href="/assets/js/3.4908aaeb.js"><link rel="prefetch" href="/assets/js/4.fde39e35.js"><link rel="prefetch" href="/assets/js/7.7e78eb6f.js"><link rel="prefetch" href="/assets/js/8.0fbc1a2d.js"><link rel="prefetch" href="/assets/js/9.7bdcaba9.js"><link rel="prefetch" href="/assets/js/11.6b11e80d.js"><link rel="prefetch" href="/assets/js/12.30039fd1.js"><link rel="prefetch" href="/assets/js/13.2a050f59.js">
+    <link rel="stylesheet" href="/assets/css/styles.b356f444.css"><link rel="stylesheet" href="/assets/css/2.styles.03744f26.css"><link rel="stylesheet" href="/assets/css/3.styles.4908aaeb.css"><link rel="stylesheet" href="/assets/css/6.styles.12922dee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Admin Toolkit</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>指南</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/" class="sidebar-link">开始</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>组件</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/components/ActionList.html" class="sidebar-link">操作按钮组</a></li><li><a href="/components/Breadcrumb.html" class="active sidebar-link">面包屑导航</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/components/Breadcrumb.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/components/Breadcrumb.html#属性" class="sidebar-link">属性</a></li></ul></li><li><a href="/components/TagNav.html" class="sidebar-link">标签导航</a></li><li><a href="/components/GateSchemaForm.html" class="sidebar-link">GateSchema 表单</a></li><li><a href="/components/ContentList.html" class="sidebar-link">内容列表</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="面包屑导航"><a href="#面包屑导航" aria-hidden="true" class="header-anchor">#</a> 面包屑导航</h1> <p><code>Breadcrumb</code></p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" aria-hidden="true" class="header-anchor">#</a> 效果</h3> <div class="demo" data-v-04ebeb87><div aria-label="Breadcrumb" role="navigation" class="el-breadcrumb"><span class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner is-link">
+    首页
+  </span><span role="presentation" class="el-breadcrumb__separator"></span></span><span class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner">
+    文章管理
+  </span><span role="presentation" class="el-breadcrumb__separator"></span></span><span class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner">
+    创建文章
+  </span><span role="presentation" class="el-breadcrumb__separator"></span></span></div></div> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Breadcrumb</span> <span class="token attr-name">:items</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>[
+      {
+        name: <span class="token punctuation">'</span>首页<span class="token punctuation">'</span>,
+        to: {name: <span class="token punctuation">'</span>home<span class="token punctuation">'</span>}
+      },
+      {
+        name: <span class="token punctuation">'</span>文章管理<span class="token punctuation">'</span>,
+      },
+      {
+        name: <span class="token punctuation">'</span>创建文章<span class="token punctuation">'</span>
+      }
+    ]<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>items</td> <td>array</td> <td>导航链接列表</td> <td>见上面例子</td></tr></tbody></table> <p>链接属性</p> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>name</td> <td>string</td> <td>链接文字</td> <td>primary</td></tr> <tr><td>to</td> <td>string</td> <td>vue-router 路由对象</td> <td>/</td></tr></tbody></table></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/components/ActionList.html" class="prev">
+          操作按钮组
+        </a></span> <span class="next"><a href="/components/TagNav.html">
+          标签导航
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/10.f4f9f688.js" defer></script><script src="/assets/js/6.12922dee.js" defer></script><script src="/assets/js/app.b356f444.js" defer></script>
+  </body>
+</html>
