@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/admin-toolkit/',
   title: 'Admin Toolkit',
   description: '酷开 Vue 组件库',
   themeConfig: {
