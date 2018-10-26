@@ -1,20 +1,20 @@
 <template>
-  <Breadcrumb>
-    <BreadcrumbItem 
+  <el-breadcrumb>
+    <el-breadcrumb-item 
       v-for="(item, index) in items" 
       :key="index"
       :to="item.to"
     >
       {{ item.name }}
-    </BreadcrumbItem>
-  </Breadcrumb>
+    </el-breadcrumb-item>
+  </el-breadcrumb>
 </template>
 <script>
 import { Breadcrumb, BreadcrumbItem } from 'element-ui'
 export default {
   components: {
-    Breadcrumb,
-    BreadcrumbItem
+    'el-breadcrumb': Breadcrumb,
+    'el-breadcrumb-item': BreadcrumbItem
   },
   props: ['items']
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="tag-nav">
-    <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-cc-left" @click="handleScroll('left')"></el-button>
-    <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-cc-right" @click="handleScroll('right')"></el-button>
+    <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
+    <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
     <div 
       ref="viewPort"
       class="tag-nav__view-port">
