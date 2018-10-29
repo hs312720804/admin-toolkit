@@ -1,7 +1,17 @@
 <template>
   <div class="tag-nav">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
+    <el-dropdown class="tag-nav__btn tag-nav__close">
+      <el-button>
+        <i class="el-icon-close"></i>
+      </el-button>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item @click="handleCloseOther">关闭其它</el-dropdown-item>
+        <el-dropdown-item @click="handleCloseAll">关闭所有</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
     <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
+
     <div 
       ref="viewPort"
       class="tag-nav__view-port">
@@ -65,6 +75,13 @@ export default {
         this.$router.push(path)
       }
     },
+    handleCloseOther() {
+      this.tags = []
+      this.addTag(this.$route)
+    },
+    handleCloseAll() {
+      this.tags = []
+    },
     handleScroll(side) {
       const { viewPort, tagList } = this.$refs
       const listWidth = tagList.scrollWidth
@@ -94,7 +111,9 @@ export default {
     }
   },  
   mounted() {
-    this.addTag(this.$route)
+    if (this.$route) {
+      this.addTag(this.$route)
+    }
     this.$nextTick(this.scrollIntoView)
   }
 }
@@ -165,5 +184,9 @@ export default {
 .tag-nav__left
   left 0
 .tag-nav__right
+  right 45px
+.tag-nav__close  
   right 0
+  >>> button
+    height 100%
 </style>

@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h2>TagNav</h2>
+    <TagNav />
+
+
     <h2>Breadcrumb</h2>
     <Breadcrumb :items="breadcrumb">
     </Breadcrumb>
@@ -40,6 +44,7 @@ import ActionList from "@/lib/components/ActionList.vue";
 import Table from "@/lib/components/Table.vue"
 import ContentList from "@/lib/components/ContentList.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
+import TagNav from "@/lib/components/TagNav.vue"
 
 export default {
   name: "app",
@@ -48,7 +53,8 @@ export default {
     Table,
     ActionList,
     ContentList,
-    GateSchemaForm
+    GateSchemaForm,
+    TagNav
   },
   data() {
     return {
