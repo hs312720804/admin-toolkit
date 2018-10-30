@@ -186,6 +186,10 @@ export default {
   position absolute
   height 100%
   z-index 1
+  >>> .el-button-group
+  >>> .el-button
+    height 100%
+
 .tag-nav__left
   left 0
 .tag-nav__right
