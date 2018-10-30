@@ -69,7 +69,7 @@ export default {
       } else if (currentRoute.name === route.name) {
         // 把后面一个激活
         // 如果后面一个不存在，
-        //   如果当前不是第一个，　则激活前一个
+        // 如果当前不是第一个，则激活前一个
         const activeRoute = index < length
           ? tags[index]
           : index > 0
