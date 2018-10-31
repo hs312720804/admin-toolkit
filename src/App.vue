@@ -27,12 +27,24 @@
     <ActionList :actions="actions" />
     <ContentList 
       :filter="contentList.filter"
-      :filterSchema="contentList.filterSchema"
+      :filter-schema="contentList.filterSchema"
       :table="contentList.table"
       :pagination="contentList.pagination"
       @filter-change="fetchData"
     >
     </ContentList>
+
+
+    <h2>RemoteSelect</h2>
+    <RemoteSelect
+      :filter="remoteSelect.filter"
+      :filter-schema="remoteSelect.filterSchema"
+      :table="remoteSelect.table"
+      :pagination="remoteSelect.pagination"
+      @filter-change="fetchData"
+      @row-selection-change="handleTableRowSelectionChange"
+      @all-row-selection-change="handleTableAllRowSelectionChange"
+    />
   </div>
 </template>
 
@@ -45,6 +57,7 @@ import Table from "@/lib/components/Table.vue"
 import ContentList from "@/lib/components/ContentList.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
+import RemoteSelect from "@/lib/components/RemoteSelect.vue"
 
 export default {
   name: "app",
@@ -54,7 +67,8 @@ export default {
     ActionList,
     ContentList,
     GateSchemaForm,
-    TagNav
+    TagNav,
+    RemoteSelect,
   },
   data() {
     return {
@@ -115,17 +129,11 @@ export default {
             submitText: "查询"
           }
         }),
-        tableHeader: [
-        ],
         table: {
           props: {
             border: true,
           },
           header: [
-            {
-              type: "selection",
-              width: "55"
-            },
             {
               label: "ID",
               prop: "id",
@@ -154,7 +162,7 @@ export default {
               id: "2",
               name: "名称2"
             }
-          ]
+          ],
         },
         pagination: {
           currentPage: 3,
@@ -165,7 +173,78 @@ export default {
         avatar: _.o.string.other("form", {
           component: "Upload"
         })
-      })
+      }),
+      remoteSelect: {
+        filter: {},
+        filterSchema: _.map({
+          id: _.o.string.other("form", {
+            placeholder: "请输入 id",
+            cols: {
+              item: 5,
+              label: 6,
+              wrapper: 16,
+              xsLabel: 0,
+              xsWrapper: 24
+            }
+          }),
+          name: _.o.string.other("form", {
+            placeholder: "请输入 name",
+            cols: {
+              item: 5,
+              label: 8,
+              wrapper: 16,
+              xsLabel: 0,
+              xsWrapper: {
+                offset: 2,
+                span: 22
+              }
+            }
+          })
+        }).other("form", {
+          layout: "inline",
+          footer: {
+            cols: {
+              label: 0,
+              wrapper: 24
+            },
+            showSubmit: true,
+            submitText: "查询"
+          }
+        }),
+        table: {
+          props: {
+            border: true,
+          },
+          header: [
+            {
+              label: "ID",
+              prop: "id",
+              sortable: false
+            },
+            {
+              label: "名称",
+              prop: "name",
+              sortable: true
+            }
+          ],
+          data: [
+            {
+              id: "1",
+              name: "名称1"
+            },
+            {
+              id: "2",
+              name: "名称2"
+            }
+          ],
+          selected: [],
+          useSelection: true
+        },
+        pagination: {
+          currentPage: 3,
+          total: 200
+        }
+      }
     };
   },
   methods: {
@@ -182,6 +261,21 @@ export default {
     },
     handleDelete(params) {
       console.log('delete', params);
+    },
+    handleTableRowSelectionChange({index, row}, value) {
+      const table = this.remoteSelect.table
+      if (value) {
+        table.selected = table.selected.concat(index)
+      } else {
+        table.selected = table.selected.filter((item) => item !== index)
+      }
+    },
+    handleTableAllRowSelectionChange(value) {
+      if (value) {
+        this.remoteSelect.table.selected = this.remoteSelect.table.data.map((_, index) => index)
+      } else {
+        this.remoteSelect.table.selected = []
+      }
     }
   }
 };
