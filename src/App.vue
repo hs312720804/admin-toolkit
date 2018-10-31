@@ -44,8 +44,8 @@
     <RemoteSelect
       :title="remoteSelect.title" 
       :selected="remoteSelect.selected"
-      @select-remove="handleTableRowSelectionRemove"
-      @select-clear="handleRemoteSelectClear"
+      @selection-remove="handleTableRowSelectionRemove"
+      @selection-clear="handleRemoteSelectClear"
     >
       <ContentWrapper
         :filter="remoteSelect.filter"
@@ -58,7 +58,7 @@
           :props="remoteSelect.table.props"
           :header="remoteSelect.table.header"
           :selected="remoteSelect.table.selected"
-          :selection="remoteSelect.table.selection"
+          :selection-type="remoteSelect.table.selectionType"
           @row-selection-add="handleTableRowSelectionAdd"
           @row-selection-remove="handleTableRowSelectionRemove"
           @all-row-selection-change="handleTableAllRowSelectionChange"
@@ -260,7 +260,7 @@ export default {
             }
           ],
           selected: [],
-          selection: 'multiple'
+          selectionType: 'multiple'
         },
         pagination: {
           currentPage: 3,
@@ -284,12 +284,8 @@ export default {
     handleDelete(params) {
       console.log('delete', params);
     },
-    updateSelected() {
-
-    },
     handleTableRowSelectionAdd(targetItem) {
       const remoteSelect = this.remoteSelect
-      const table = remoteSelect.table
       remoteSelect.selected = remoteSelect.selected.concat({
         id: targetItem.id,
         label: targetItem.name
@@ -298,7 +294,6 @@ export default {
     },
     handleTableRowSelectionRemove(targetItem) {
       const remoteSelect = this.remoteSelect
-      const table = remoteSelect.table
       remoteSelect.selected = remoteSelect.selected.filter((item) => {
         return item.id !== targetItem.id
       })        
@@ -315,7 +310,7 @@ export default {
         return result
       }, [])
     },
-    handleRemoteSelectClear(item) {
+    handleRemoteSelectClear() {
       this.remoteSelect.selected = []
       this.remoteSelect.table.selected = []
     },

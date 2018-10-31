@@ -29,7 +29,7 @@ export default {
       },
       header: {
       },
-      selection: {
+      selectionType: {
         type: String,
         default() {
           return 'none'; // none, multiple, single
@@ -41,7 +41,6 @@ export default {
     methods: {
     },
     render(h) {
-
       const header = this.header.map(item => {
         let scopedSlots;
         if (item.render) {
@@ -54,8 +53,8 @@ export default {
             scopedSlots
         });
       });
-      const selection = this.selection
-      if (selection !== 'none') {
+      const selectionType = this.selectionType
+      if (selectionType !== 'none') {
         const options = {
           props: {
             width: 55,
@@ -63,7 +62,7 @@ export default {
           },
           scopedSlots: {}
         }
-        if (selection === 'multiple') {
+        if (selectionType === 'multiple') {
           options.props.renderHeader = () => {
             return h(Checkbox, {
               props: {
@@ -88,16 +87,16 @@ export default {
               on: {
                 input: (value) => {
                   if (value) {
-                    this.$emit('row-selection-add', row)
+                    this.$emit('row-selection-add', row, index)
                   } else {
-                    this.$emit('row-selection-remove', row)
+                    this.$emit('row-selection-remove', row, index)
                   }
                 }
               }
             })
           }
         }
-        if (selection === 'single') {
+        if (selectionType === 'single') {
           options.scopedSlots.default = ({$index: index, row}) => {
             return h(Radio, {
               class: 'hide-radio-label',
@@ -107,7 +106,7 @@ export default {
               },
               on: {
                 input: () => {
-                  this.$emit('row-selection-change', row)
+                  this.$emit('row-selection-change', row, index)
                 }
               }
             })

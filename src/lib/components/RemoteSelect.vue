@@ -10,7 +10,7 @@
     >
       <slot name="selected">
         <div class="selected">
-          <span class="selected__tip">已选择: </span>
+          <Tag type="info" class="selected__tip">已选择: </Tag>
           <Tag
             v-for="item in selected"
             closable
@@ -71,19 +71,22 @@ export default {
       this.$emit('select-cancel')
     },
     handleRemoveSelected(item) {
-      this.$emit('select-remove', item)
+      this.$emit('selection-remove', item)
     },
     handleClearSelected() {
-      this.$emit('select-clear')
+      this.$emit('selection-clear')
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
-.selected >>> .el-tag 
-  margin-left 10px
-.selected__tip
-  display inline-block
-  height 24px
-  line-height 22px
+.selected 
+  >>> .el-tag 
+    margin-left 10px
+  .selected__tip
+    border-color #fff 
+    background #fff
+    color #000
+    margin-left 0
+    padding 0
 </style>
