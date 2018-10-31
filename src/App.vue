@@ -70,7 +70,7 @@
               :title="pop.title">
 
       </pop>
-      <dropdown>
+      <dropdown :droplist = dropdown>
 
       </dropdown>
   </div>
@@ -281,7 +281,18 @@ export default {
       },
       pop:{
           title:'弹窗',
-      }
+      },
+        dropdown:[
+            {
+                name: '首页'
+            },
+            {
+                name: '文章管理',
+            },
+            {
+                name: '创建文章',
+            }
+        ]
     };
   },
   methods: {
