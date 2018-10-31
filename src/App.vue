@@ -65,6 +65,11 @@
         />
       </ContentWrapper>
     </RemoteSelect>
+      <h2>pop</h2>
+      <pop
+              :title="pop.title">
+
+      </pop>
   </div>
 </template>
 
@@ -268,6 +273,9 @@ export default {
           currentPage: 3,
           total: 200
         }
+      },
+      pop:{
+          title:'弹窗',
       }
     };
   },
