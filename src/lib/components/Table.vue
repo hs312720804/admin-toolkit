@@ -29,16 +29,10 @@ export default {
       },
       header: {
       },
-      useSelection: {
-        type: Boolean,
-        default() {
-          return false
-        }
-      },
-      selectionType: {
+      selection: {
         type: String,
         default() {
-          return 'checkbox' // radio
+          return 'none'; // none, multiple, single
         }
       },
       selected: {
@@ -60,9 +54,8 @@ export default {
             scopedSlots
         });
       });
-      if (this.useSelection) {
-        const selectionType = this.selectionType || 'checkbox'
-        const selectionComponent = selectionType === 'radio' ? Radio : Checkbox
+      const selection = this.selection
+      if (selection !== 'none') {
         const options = {
           props: {
             width: 55,
@@ -70,15 +63,15 @@ export default {
           },
           scopedSlots: {}
         }
-        if (selectionType === 'checkbox') {
+        if (selection === 'multiple') {
           options.props.renderHeader = () => {
-            return h(selectionComponent, {
+            return h(Checkbox, {
               props: {
                 value: this.selectStatus === 'all',
                 indeterminate: this.selectStatus === 'indeterminate',
               },
               on: {
-                input: (value) => {
+                input: () => {
                   const selectStatus = this.selectStatus
                   const status = selectStatus === 'all' || selectStatus === 'indeterminate'
                   this.$emit('all-row-selection-change', !status)
@@ -88,20 +81,25 @@ export default {
           }
 
           options.scopedSlots.default = ({$index: index, row}) => {
-            return h(selectionComponent, {
+            return h(Checkbox, {
               props: {
                 value: this.selected.indexOf(index) > -1
               },
               on: {
                 input: (value) => {
-                  this.$emit('row-selection-change', {index, row}, value)
+                  if (value) {
+                    this.$emit('row-selection-add', row)
+                  } else {
+                    this.$emit('row-selection-remove', row)
+                  }
                 }
               }
             })
           }
-        } else {
+        }
+        if (selection === 'single') {
           options.scopedSlots.default = ({$index: index, row}) => {
-            return h(selectionComponent, {
+            return h(Radio, {
               class: 'hide-radio-label',
               props: {
                 value: this.selected,
@@ -109,14 +107,14 @@ export default {
               },
               on: {
                 input: () => {
-                  this.$emit('row-selection-change', {index, row}, true)
+                  this.$emit('row-selection-change', row)
                 }
               }
             })
           }
         }
-        const selection = h(TableColumn, options)
-        header.unshift(selection)
+        const selectionColumn = h(TableColumn, options)
+        header.unshift(selectionColumn)
       } 
 
       const table = h(
