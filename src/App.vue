@@ -78,6 +78,7 @@ import ContentWrapper from "@/lib/components/ContentWrapper.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
+import pop from  "@/lib/components/pop.vue"
 
 export default {
   name: "app",
@@ -89,6 +90,7 @@ export default {
     GateSchemaForm,
     TagNav,
     RemoteSelect,
+    pop,
   },
   data() {
     return {
