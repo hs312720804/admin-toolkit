@@ -86,8 +86,8 @@ export default {
 | header | Array | 表头 | | 
 | data | Array | 表格数据 | |  
 | useSelection | Boolean | 是否启动选择功能 | |  
-| selectionType | 'radio' 或者 'checkbox' |  如果开启选择功能, 这里设置选择的类型, 默认 checkbox | |
-| selected | Array 或者 Number | 如果 selectionType 是 checkbox, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 radio, 那么 selected 是被选中的 index | |  
+| selectionType | 'multiple' 或者 'single' |  如果开启选择功能, 这里设置选择的类型, 默认 multiple | |
+| selected | Array 或者 Number | 如果 selectionType 是 multiple, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 single, 那么 selected 是被选中的 index | |  
 
 ## 事件  
 | 名称 | 参数 | 描述 |  

@@ -1,7 +1,7 @@
 import Menu from "./components/Menu"
 import Breadcrumb from "./components/Breadcrumb"
 import Table from "./components/Table"
-import ContentList from "./components/ContentList"
+import ContentWrapper from "./components/ContentWrapper"
 import ActionList from "./components/ActionList"
 import TagNav from "./components/TagNav"
 
@@ -13,7 +13,7 @@ export {
   Menu,
   Breadcrumb,
   Table,
-  ContentList,
+  ContentWrapper,
   ActionList,
   TagNav,
   GateSchemaForm,
