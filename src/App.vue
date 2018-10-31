@@ -70,6 +70,9 @@
               :title="pop.title">
 
       </pop>
+      <dropdown>
+
+      </dropdown>
   </div>
 </template>
 
@@ -84,6 +87,7 @@ import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
 import pop from  "@/lib/components/pop.vue"
+import Dropdown from  "@/lib/components/Dropdown.vue"
 
 export default {
   name: "app",
@@ -96,6 +100,7 @@ export default {
     TagNav,
     RemoteSelect,
     pop,
+      Dropdown
   },
   data() {
     return {
