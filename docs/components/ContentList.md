@@ -156,7 +156,7 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| filterSchema | object | 表格内容过滤表单 schema |  |
-| filter | object | 过滤表单绑定的数据对象 |  |
-| table | object | 表格数据和属性 | | 
-| pagination | object | element-ui 分页组件属性 | |
+| filterSchema | Object | 表格内容过滤表单 schema |  |
+| filter | Object | 过滤表单绑定的数据对象 |  |
+| table | Object | 表格数据和属性 | | 
+| pagination | Object | element-ui 分页组件属性 | |

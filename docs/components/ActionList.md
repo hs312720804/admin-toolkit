@@ -51,10 +51,10 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| actions | object | key 为点击按钮时执行的方法, value 为按钮属性| 见上面例子 |
+| actions | Object | key 为点击按钮时执行的方法, value 为按钮属性| 见上面例子 |
 
 按钮属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| type | string | primary / success / warning / danger / info / text | primary |
-| text | string | 按钮文字 |  |
+| type | String | primary / success / warning / danger / info / text | primary |
+| text | String | 按钮文字 |  |

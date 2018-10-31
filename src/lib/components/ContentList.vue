@@ -31,6 +31,7 @@ export default {
   },
   render(h) {
     const filterForm = h(GateSchemaForm, {
+      ref: 'filterForm',
       class: "filter-form",
       props: {
         value: this.filter,
@@ -42,7 +43,16 @@ export default {
     });
 
     const table = h(Table, {
-      props: this.table
+      ref: 'table',
+      props: this.table,
+      on: {
+        'row-selection-change': (params, value) => {
+          this.$emit('row-selection-change', params, value)
+        },
+        'all-row-selection-change': (value) => {
+          this.$emit('all-row-selection-change', value)
+        }
+      }
     })
 
     const {
@@ -50,6 +60,7 @@ export default {
       handlePageChange
     } = this;
     const pagination = h(Pagination, {
+      ref: 'pagination',
       props: {
         ...defaultPaginationProps,
         ...this.pagination
