@@ -4,6 +4,7 @@ import Table from "./components/Table"
 import ContentWrapper from "./components/ContentWrapper"
 import ActionList from "./components/ActionList"
 import TagNav from "./components/TagNav"
+import pop from  "./components/pop"
 
 import GateSchemaForm from "./components/GateSchemaForm"
 
@@ -18,4 +19,5 @@ export {
   TagNav,
   GateSchemaForm,
   utils,
+  pop,
 };

@@ -65,6 +65,11 @@
         />
       </ContentWrapper>
     </RemoteSelect>
+      <h2>pop</h2>
+      <pop
+              :title="pop.title">
+
+      </pop>
   </div>
 </template>
 
@@ -78,6 +83,7 @@ import ContentWrapper from "@/lib/components/ContentWrapper.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
+import pop from  "@/lib/components/pop.vue"
 
 export default {
   name: "app",
@@ -89,6 +95,7 @@ export default {
     GateSchemaForm,
     TagNav,
     RemoteSelect,
+    pop,
   },
   data() {
     return {
@@ -266,6 +273,9 @@ export default {
           currentPage: 3,
           total: 200
         }
+      },
+      pop:{
+          title:'弹窗',
       }
     };
   },
