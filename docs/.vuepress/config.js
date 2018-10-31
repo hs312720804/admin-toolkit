@@ -26,7 +26,7 @@ module.exports = {
               'components/TagNav.md',
               'components/GateSchemaForm.md',
               'components/Table.md',
-              'components/ContentList.md',
+              'components/ContentWrapper.md',
             ]
           }
         ]

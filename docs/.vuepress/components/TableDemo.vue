@@ -4,8 +4,9 @@
     :header="header"
     :data="data"
     :selected="selected"
-    :useSelection="useSelection"
-    @row-selection-change="handleRowSelectionChange"
+    :selection-type="selectionType"
+    @row-selection-add="handleRowSelectionAdd"
+    @row-selection-remove="handleRowSelectionRemove"
     @all-row-selection-change="handleAllRowSelectionChange"
   />
 </template>
@@ -40,16 +41,15 @@ export default {
         }
       ],
       selected: [],
-      useSelection: true
+      selectionType: 'multiple'
     }
   },
   methods: {
-    handleRowSelectionChange({index}, value) {
-      if (value) {
-        this.selected = this.selected.concat(index)
-      } else {
-        this.selected = this.selected.filter(item => item !== index)
-      }
+    handleRowSelectionAdd(item, index) {
+      this.selected = this.selected.concat(index)
+    },
+    handleRowSelectionRemove(item, index) {
+      this.selected = this.selected.filter(item => item !== index)
     },
     handleAllRowSelectionChange(value) {
       if (value) {
