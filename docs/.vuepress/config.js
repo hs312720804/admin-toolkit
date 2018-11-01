@@ -21,12 +21,14 @@ module.exports = {
           {
             title: '组件',
             children: [
+              'components/Menu.md',
               'components/ActionList.md',
               'components/Breadcrumb.md',
               'components/TagNav.md',
               'components/GateSchemaForm.md',
               'components/Table.md',
               'components/ContentWrapper.md',
+              'components/RemoteSelect.md',
             ]
           }
         ]

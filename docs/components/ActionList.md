@@ -14,7 +14,15 @@
 ```vue
 <template>
     <ActionList 
-      :actions="{
+      :actions="actions"
+    />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      actions: {
         handleCreate: {
           type: 'primary',
           text: '创建'
@@ -25,12 +33,9 @@
         handleBatchEdit: {
           text: '批量删除'
         }
-      }"
-    />
-</template>
-
-<script>
-export default {
+      }
+    }
+  },
   methods: {
     handleCreate() {
       this.$message('handleCreate')
@@ -45,6 +50,7 @@ export default {
 }
 
 </script>
+
 ```
 
 

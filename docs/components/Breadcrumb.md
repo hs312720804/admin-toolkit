@@ -5,36 +5,35 @@
 ### 效果  
 
 <Demo>
-  <Breadcrumb :items="[
-      {
-        name: '首页',
-        to: {name: 'home'}
-      },
-      {
-        name: '文章管理',
-      },
-      {
-        name: '创建文章',
-      }
-    ]"
-  />
+  <BreadcrumbDemo />
 </Demo>
 
 ### 代码  
 ```vue
-<Breadcrumb :items="[
-      {
-        name: '首页',
-        to: {name: 'home'}
-      },
-      {
-        name: '文章管理',
-      },
-      {
-        name: '创建文章'
-      }
-    ]"
-/>
+<template>
+  <Breadcrumb :items="items" />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          name: '首页',
+          to: {name: 'home'}
+        },
+        {
+          name: '文章管理',
+        },
+        {
+          name: '创建文章',
+        }
+      ]
+    }
+  } 
+}
+</script>
 ```
 
 ## 属性  
