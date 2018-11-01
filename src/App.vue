@@ -70,6 +70,9 @@
               :title="pop.title">
 
       </pop>
+      <dropdown :droplist = dropdown>
+
+      </dropdown>
   </div>
 </template>
 
@@ -84,6 +87,7 @@ import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
 import pop from  "@/lib/components/pop.vue"
+import Dropdown from  "@/lib/components/Dropdown.vue"
 
 export default {
   name: "app",
@@ -96,6 +100,7 @@ export default {
     TagNav,
     RemoteSelect,
     pop,
+      Dropdown
   },
   data() {
     return {
@@ -276,7 +281,18 @@ export default {
       },
       pop:{
           title:'弹窗',
-      }
+      },
+        dropdown:[
+            {
+                name: '首页'
+            },
+            {
+                name: '文章管理',
+            },
+            {
+                name: '创建文章',
+            }
+        ]
     };
   },
   methods: {
