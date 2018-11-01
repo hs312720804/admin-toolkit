@@ -188,9 +188,6 @@ export default {
       schema,
       formData: {}
     }
-  },
-  created() {
-    window.c = this
   }
 }
 

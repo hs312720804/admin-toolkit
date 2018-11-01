@@ -102,7 +102,7 @@ export default {
       this.$message(`删除第${index + 1}条记录`)
     },
     fetchData() {
-      this.$message('数据过滤条件已改变, 这是会重新拉去数据'
+      this.$message('数据过滤条件已改变, 这时会重新拉去数据'
       )
     }
   }
