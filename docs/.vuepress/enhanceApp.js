@@ -15,5 +15,4 @@ export default ({
   Object.keys(components).forEach((name) => {
     Vue.component(name, components[name])
   })
-
 }

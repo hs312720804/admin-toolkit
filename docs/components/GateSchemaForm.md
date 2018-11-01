@@ -201,8 +201,8 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| schema | object | 表单的 gateschema | |
-| v-model  | object | 与表单绑定的数据对象 |  |
+| schema | Object | 表单的 gateschema | |
+| v-model  | Object | 与表单绑定的数据对象 |  |
 
 
 ## 参考  
