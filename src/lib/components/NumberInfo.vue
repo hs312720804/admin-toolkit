@@ -1,3 +1,4 @@
+<!--add by wanghaihua 2018-11-1-->
 <template>
     <div class="numberInfo">
      <div class="title">{{title}}</div>
@@ -59,7 +60,6 @@ export default {
     vertical-align top
     margin-right 0
 .subTotal i 
-
     font-size 12px
     transform scale(0.82)
     margin-left 4px
