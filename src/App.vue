@@ -2,12 +2,17 @@
   <div id="app">
     <h2>TagNav</h2>
     <TagNav />
-
-
+  <Ellipsis :content='EllipsisContent' width="100" height="100" ></Ellipsis>
+  <NumberInfo :title="NumberInfo.title"
+  :subTitle="NumberInfo.subTitle"
+  :total="NumberInfo.total"
+  :subTotal="NumberInfo.subTotal"
+  :status="NumberInfo.status"
+  :gap="NumberInfo.gap"
+  ></NumberInfo>
     <h2>Breadcrumb</h2>
     <Breadcrumb :items="breadcrumb">
     </Breadcrumb>
-
     <h2>GateSchemaForm</h2>
     <GateSchemaForm 
       :schema="schemaOfCreation" 
@@ -85,10 +90,11 @@ import Table from "@/lib/components/Table.vue"
 import ContentWrapper from "@/lib/components/ContentWrapper.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
+import Ellipsis from './lib/components/Ellipsis'
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
 import pop from  "@/lib/components/pop.vue"
 import Dropdown from  "@/lib/components/Dropdown.vue"
-
+import NumberInfo from "@/lib/components/NumberInfo"
 export default {
   name: "app",
   components: {
@@ -98,12 +104,23 @@ export default {
     ContentWrapper,
     GateSchemaForm,
     TagNav,
+    Ellipsis,
     RemoteSelect,
     pop,
-      Dropdown
+    Dropdown,
+    NumberInfo
   },
   data() {
     return {
+      EllipsisContent:"方中大黄性味苦寒，泻火解毒，又能攻下通便，有釜底抽薪之意，故为主药；黄芩攻善清热燥湿.",
+      NumberInfo:{
+      title:"标题1",
+      subTitle:"标题二",
+       total:12321,
+       subTotal:27.1,
+       status:"up",
+       gap:14
+      },
       breadcrumb: [
         {
           name: '首页',
