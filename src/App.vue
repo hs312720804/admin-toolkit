@@ -2,12 +2,10 @@
   <div id="app">
     <h2>TagNav</h2>
     <TagNav />
-
-
+  <Ellipsis :content='EllipsisContent' width="100" height="200" ></Ellipsis>
     <h2>Breadcrumb</h2>
     <Breadcrumb :items="breadcrumb">
     </Breadcrumb>
-
     <h2>GateSchemaForm</h2>
     <GateSchemaForm 
       :schema="schemaOfCreation" 
@@ -85,10 +83,10 @@ import Table from "@/lib/components/Table.vue"
 import ContentWrapper from "@/lib/components/ContentWrapper.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
+import Ellipsis from './lib/components/Ellipsis'
 import RemoteSelect from "@/lib/components/RemoteSelect.vue"
 import pop from  "@/lib/components/pop.vue"
 import Dropdown from  "@/lib/components/Dropdown.vue"
-
 export default {
   name: "app",
   components: {
@@ -98,12 +96,14 @@ export default {
     ContentWrapper,
     GateSchemaForm,
     TagNav,
+    Ellipsis,
     RemoteSelect,
     pop,
       Dropdown
   },
   data() {
     return {
+      EllipsisContent:"方中大黄性味苦寒，泻火解毒，又能攻下通便，有釜底抽薪之意，故为主药；黄芩攻善清热燥湿，直折火势而泻火解毒，此为辅药；盐酸黄连素是广谱抗菌药，对多种革兰阳性及阴性细菌有抑制作用。诸药合用，共奏泻火解毒，清热燥湿之效方中大黄性味苦寒，泻火解毒，又能攻下通便，有釜底抽薪之意，故为主药；黄芩攻善清热燥湿，直折火势而泻火解毒，此为辅药；盐酸黄连素是广谱抗菌药，对多种革兰阳性及阴性细菌有抑制作用。诸药合用，共奏泻火解毒，清热燥湿之效",
       breadcrumb: [
         {
           name: '首页',
