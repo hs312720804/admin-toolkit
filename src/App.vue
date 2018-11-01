@@ -3,19 +3,9 @@
     <h2>TagNav</h2>
     <TagNav />
   <Ellipsis :content='EllipsisContent' width="100" height="200" ></Ellipsis>
-
     <h2>Breadcrumb</h2>
     <Breadcrumb :items="breadcrumb">
     </Breadcrumb>
-
-    <h2>Table</h2>
-    <Table 
-      :data="contentList.table.data" 
-      :props="contentList.table.props"
-      :header="contentList.table.header"
-    >
-    </Table>
-    
     <h2>GateSchemaForm</h2>
     <GateSchemaForm 
       :schema="schemaOfCreation" 
@@ -23,17 +13,64 @@
     >
     </GateSchemaForm>
 
+    <h2>Table</h2>
+    <Table 
+      :data="table.data" 
+      :props="table.props"
+      :header="table.header"
+    >
+    </Table>
+    
+
     <h2>ContentList</h2>
     <ActionList :actions="actions" />
-    <ContentList 
+    <ContentWrapper 
       :filter="contentList.filter"
-      :filterSchema="contentList.filterSchema"
-      :table="contentList.table"
+      :filter-schema="contentList.filterSchema"
       :pagination="contentList.pagination"
       @filter-change="fetchData"
     >
-    </ContentList>
-  
+      <Table 
+        :data="table.data" 
+        :props="table.props"
+        :header="table.header"
+      />
+    </ContentWrapper>
+
+
+    <h2>RemoteSelect</h2>
+    <RemoteSelect
+      :title="remoteSelect.title" 
+      :selected="remoteSelect.selected"
+      @selection-remove="handleTableRowSelectionRemove"
+      @selection-clear="handleRemoteSelectClear"
+    >
+      <ContentWrapper
+        :filter="remoteSelect.filter"
+        :filter-schema="remoteSelect.filterSchema"
+        :pagination="remoteSelect.pagination"
+        @filter-change="fetchData"
+      >
+        <Table 
+          :data="remoteSelect.table.data" 
+          :props="remoteSelect.table.props"
+          :header="remoteSelect.table.header"
+          :selected="remoteSelect.table.selected"
+          :selection-type="remoteSelect.table.selectionType"
+          @row-selection-add="handleTableRowSelectionAdd"
+          @row-selection-remove="handleTableRowSelectionRemove"
+          @all-row-selection-change="handleTableAllRowSelectionChange"
+        />
+      </ContentWrapper>
+    </RemoteSelect>
+      <h2>pop</h2>
+      <pop
+              :title="pop.title">
+
+      </pop>
+      <dropdown :droplist = dropdown>
+
+      </dropdown>
   </div>
 </template>
 
@@ -43,21 +80,26 @@ import { createOperationRender } from "@/lib/utils/component";
 import Breadcrumb from "@/lib/components/Breadcrumb.vue"
 import ActionList from "@/lib/components/ActionList.vue";
 import Table from "@/lib/components/Table.vue"
-import ContentList from "@/lib/components/ContentList.vue";
+import ContentWrapper from "@/lib/components/ContentWrapper.vue";
 import GateSchemaForm from "@/lib/components/GateSchemaForm.vue";
 import TagNav from "@/lib/components/TagNav.vue"
 import Ellipsis from './lib/components/Ellipsis'
-
+import RemoteSelect from "@/lib/components/RemoteSelect.vue"
+import pop from  "@/lib/components/pop.vue"
+import Dropdown from  "@/lib/components/Dropdown.vue"
 export default {
   name: "app",
   components: {
     Breadcrumb,
     Table,
     ActionList,
-    ContentList,
+    ContentWrapper,
     GateSchemaForm,
     TagNav,
-    Ellipsis
+    Ellipsis,
+    RemoteSelect,
+    pop,
+      Dropdown
   },
   data() {
     return {
@@ -81,6 +123,41 @@ export default {
           type: "primary",
           text: "创建"
         }
+      },
+      table: {
+          props: {
+            border: true,
+          },
+          header: [
+            {
+              label: "ID",
+              prop: "id",
+              sortable: false
+            },
+            {
+              label: "名称",
+              prop: "name",
+              sortable: true
+            },
+            {
+              label: "操作",
+              render: createOperationRender(this, {
+                handleRead: "查看",
+                handleEdit: "编辑",
+                handleDelete: "删除"
+              })
+            }
+          ],
+          data: [
+            {
+              id: "1",
+              name: "名称1"
+            },
+            {
+              id: "2",
+              name: "名称2"
+            }
+          ],
       },
       contentList: {
         filter: {},
@@ -119,17 +196,60 @@ export default {
             submitText: "查询"
           }
         }),
-        tableHeader: [
-        ],
+        pagination: {
+          currentPage: 3,
+          total: 200
+        }
+      },
+      schemaOfCreation: _.map({
+        avatar: _.o.string.other("form", {
+          component: "Upload"
+        })
+      }),
+      remoteSelect: {
+        title: '选择数据',
+        filter: {},
+        filterSchema: _.map({
+          id: _.o.string.other("form", {
+            placeholder: "请输入 id",
+            cols: {
+              item: 5,
+              label: 6,
+              wrapper: 16,
+              xsLabel: 0,
+              xsWrapper: 24
+            }
+          }),
+          name: _.o.string.other("form", {
+            placeholder: "请输入 name",
+            cols: {
+              item: 5,
+              label: 8,
+              wrapper: 16,
+              xsLabel: 0,
+              xsWrapper: {
+                offset: 2,
+                span: 22
+              }
+            }
+          })
+        }).other("form", {
+          layout: "inline",
+          footer: {
+            cols: {
+              label: 0,
+              wrapper: 24
+            },
+            showSubmit: true,
+            submitText: "查询"
+          }
+        }),
+        selected: [],
         table: {
           props: {
             border: true,
           },
           header: [
-            {
-              type: "selection",
-              width: "55"
-            },
             {
               label: "ID",
               prop: "id",
@@ -139,14 +259,6 @@ export default {
               label: "名称",
               prop: "name",
               sortable: true
-            },
-            {
-              label: "操作",
-              render: createOperationRender(this, {
-                handleRead: "查看",
-                handleEdit: "编辑",
-                handleDelete: "删除"
-              })
             }
           ],
           data: [
@@ -158,18 +270,29 @@ export default {
               id: "2",
               name: "名称2"
             }
-          ]
+          ],
+          selected: [],
+          selectionType: 'multiple'
         },
         pagination: {
           currentPage: 3,
           total: 200
         }
       },
-      schemaOfCreation: _.map({
-        avatar: _.o.string.other("form", {
-          component: "Upload"
-        })
-      })
+      pop:{
+          title:'弹窗',
+      },
+        dropdown:[
+            {
+                name: '首页'
+            },
+            {
+                name: '文章管理',
+            },
+            {
+                name: '创建文章',
+            }
+        ]
     };
   },
   methods: {
@@ -186,7 +309,44 @@ export default {
     },
     handleDelete(params) {
       console.log('delete', params);
-    }
+    },
+    handleTableRowSelectionAdd(targetItem) {
+      const remoteSelect = this.remoteSelect
+      remoteSelect.selected = remoteSelect.selected.concat({
+        id: targetItem.id,
+        label: targetItem.name
+      })
+      this.updateTableSelected()
+    },
+    handleTableRowSelectionRemove(targetItem) {
+      const remoteSelect = this.remoteSelect
+      remoteSelect.selected = remoteSelect.selected.filter((item) => {
+        return item.id !== targetItem.id
+      })        
+      this.updateTableSelected()
+    },
+    updateTableSelected() {
+      const remoteSelect = this.remoteSelect
+      const table = remoteSelect.table
+      const newSelectedIndex = remoteSelect.selected.map(item => item.id)
+      table.selected = table.data.reduce((result, item, index)=> {
+        if (newSelectedIndex.indexOf(item.id) > -1) {
+          result.push(index)
+        }
+        return result
+      }, [])
+    },
+    handleRemoteSelectClear() {
+      this.remoteSelect.selected = []
+      this.remoteSelect.table.selected = []
+    },
+    handleTableAllRowSelectionChange(value) {
+      if (value) {
+        this.remoteSelect.table.data.forEach(this.handleTableRowSelectionAdd)
+      } else {
+        this.handleRemoteSelectClear()
+      }
+    },
   }
 };
 </script>

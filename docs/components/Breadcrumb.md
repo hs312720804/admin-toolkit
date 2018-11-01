@@ -40,10 +40,10 @@
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| items | array | 导航链接列表 |见上面例子 |
+| items | Array | 导航链接列表 |见上面例子 |
 
 链接属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| name | string | 链接文字 | primary |
-| to | string | vue-router 路由对象| /  |
+| name | String | 链接文字 | primary |
+| to | String | vue-router 路由对象| /  |
