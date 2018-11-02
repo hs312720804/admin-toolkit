@@ -37,6 +37,7 @@
               :title="pop.title">
 
       </pop>
+      <h2>Dropdown</h2>
       <dropdown :droplist = dropdown>
 
       </dropdown>
@@ -73,13 +74,16 @@ export default {
       },
         dropdown:[
             {
-                name: '首页'
+                name: '首页',
+                to:"/"
             },
             {
                 name: '文章管理',
+                to:"/article"
             },
             {
                 name: '创建文章',
+                to:"/create"
             }
         ]
     };
