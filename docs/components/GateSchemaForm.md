@@ -195,6 +195,10 @@ export default {
 
 ```
 
+
+## Play Ground  
+<GateSchemaFormPlayGround />
+
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
