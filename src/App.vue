@@ -41,12 +41,19 @@
       <dropdown :droplist = dropdown>
 
       </dropdown>
+    <h2>
+      Carousel
+    </h2>
+    <carousel :carouselList = carousel>
+
+    </carousel>
   </div>
 </template>
 
 <script>
 import pop from  "@/lib/components/pop.vue"
 import Dropdown from  "@/lib/components/Dropdown.vue"
+import Carousel from  "@/lib/components/Carousel.vue"
 import NumberInfo from "@/lib/components/NumberInfo"
 import Ellipsis from './lib/components/Ellipsis'
 
@@ -55,8 +62,10 @@ export default {
   components: {
     pop,
     Dropdown,
+      Carousel,
     NumberInfo,
     Ellipsis,
+
   },
   data() {
     return {
@@ -84,6 +93,23 @@ export default {
             {
                 name: '创建文章',
                 to:"/create"
+            }
+        ],
+        carousel:[
+            {
+                url:'/to',
+                img:'#',
+                title:'哈哈'
+            },
+            {
+                url:'/to',
+                img:'#',
+                title:'嘻嘻'
+            },
+            {
+                url:'/to',
+                img:'#',
+                title:'呜呜'
             }
         ]
     };
