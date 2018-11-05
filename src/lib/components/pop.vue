@@ -1,5 +1,15 @@
 <template>
+    <div>
     <Button type="primary" @click="showPop">{{ title }}</Button>
+    <Dialog
+            :title="title"
+            :visible.sync="showDialog"
+            width="50vw"
+    >
+        <div>woshitachuang</div>
+
+    </Dialog>
+    </div>
 </template>
 
 <script>
@@ -18,10 +28,14 @@
                 }
             }
         },
+        data(){
+            return {
+                showDialog: false,
+            }
+        },
         methods:{
             showPop() {
-//
-                alert("弹窗");
+                this.showDialog = true;
             },
         }
     }
