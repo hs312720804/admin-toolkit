@@ -7,11 +7,13 @@
             <el-dropdown-item
                     v-for="(item, index) in droplist"
                     :key="index"
-            >{{ item.name }}</el-dropdown-item>
-            <el-dropdown-item>狮子头</el-dropdown-item>
+                    :to = "item.to"
+                    v-on:click.native ="goto"
+            ><a :href="item.to">{{ item.name }}</a></el-dropdown-item>
+            <!-- <el-dropdown-item>狮子头</el-dropdown-item>
             <el-dropdown-item>螺蛳粉</el-dropdown-item>
             <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-            <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+            <el-dropdown-item divided>蚵仔煎</el-dropdown-item> -->
         </el-dropdown-menu>
 
     </el-dropdown>
@@ -22,6 +24,11 @@
         components:{
             'el-dropdown': Dropdown
         },
-        props:['droplist']
+        props:['droplist'],
+        methods:{
+            goto(){
+                console.log("ssssss");
+            }
+        }
     }
 </script>
