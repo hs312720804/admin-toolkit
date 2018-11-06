@@ -92,15 +92,6 @@ export default {
     }
   },
   methods: {
-    handleEdit({$index:index}) {
-      this.$message(`编辑第${index + 1}条记录`)
-    },
-    handleRead({$index:index}) {
-      this.$message(`阅读第${index + 1}条记录`)
-    },
-    handleDelete({$index:index}) {
-      this.$message(`删除第${index + 1}条记录`)
-    },
     fetchData() {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据'
       )
