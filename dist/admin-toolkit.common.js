@@ -3107,46 +3107,48 @@ function _asyncToGenerator(fn) {
 function wrapService(service) {
   var $service = {};
   Object.keys(service).forEach(function (key) {
-    $service[key] =
-    /*#__PURE__*/
-    function () {
-      var _ref = _asyncToGenerator(
+    if (typeof $service[key] === 'function') {
+      $service[key] =
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(args, message) {
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt("return", service[key](args).then(function (result) {
-                  if (message) {
+      function () {
+        var _ref = _asyncToGenerator(
+        /*#__PURE__*/
+        regeneratorRuntime.mark(function _callee(args, message) {
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  return _context.abrupt("return", service[key](args).then(function (result) {
+                    if (message) {
+                      Object(external_element_ui_["Notification"])({
+                        title: '操作成功',
+                        type: 'success',
+                        message: message
+                      });
+                    }
+
+                    return result;
+                  }).catch(function (error) {
                     Object(external_element_ui_["Notification"])({
-                      title: '操作成功',
-                      type: 'success',
-                      message: message
+                      title: '操作失败',
+                      type: 'error',
+                      message: error.message
                     });
-                  }
+                  }));
 
-                  return result;
-                }).catch(function (error) {
-                  Object(external_element_ui_["Notification"])({
-                    title: '操作失败',
-                    type: 'error',
-                    message: error.message
-                  });
-                }));
-
-              case 1:
-              case "end":
-                return _context.stop();
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee, this);
-      }));
+          }, _callee, this);
+        }));
 
-      return function (_x, _x2) {
-        return _ref.apply(this, arguments);
-      };
-    }();
+        return function (_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }();
+    }
   });
   return $service;
 }
