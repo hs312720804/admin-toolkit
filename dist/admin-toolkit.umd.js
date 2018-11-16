@@ -3114,9 +3114,11 @@ function _asyncToGenerator(fn) {
 
 
 function wrapService(service) {
-  var $service = {};
+  var $service = {
+    service: service
+  };
   Object.keys(service).forEach(function (key) {
-    if (typeof $service[key] === 'function') {
+    if (typeof service[key] === 'function') {
       $service[key] =
       /*#__PURE__*/
       function () {
