@@ -3150,6 +3150,8 @@ function wrapService(service) {
           return _ref.apply(this, arguments);
         };
       }();
+    } else {
+      $service[key] = service[key];
     }
   });
   return $service;
