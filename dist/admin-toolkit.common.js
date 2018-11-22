@@ -3238,12 +3238,12 @@ var StateForm = element_default()({
   upload: {
     handleUpload: function handleUpload() {
       if (this.$upload) {
-        return this.$upload.upload.apply(null, arguments);
+        return this.$upload.upload.apply(this, arguments);
       }
     },
     handleRemove: function handleRemove() {
       if (this.$upload && this.$upload.remove) {
-        return this.$upload.remove.apply(null, arguments);
+        return this.$upload.remove.apply(this, arguments);
       }
     }
   }
