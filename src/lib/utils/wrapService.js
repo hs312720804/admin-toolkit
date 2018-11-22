@@ -1,8 +1,10 @@
 import { Notification } from 'element-ui'
 function wrapService(service) {
-    const $service = {}
+    const $service = {
+        service
+    }
     Object.keys(service).forEach((key) => {
-        if (typeof $service[key] === 'function') {
+        if (typeof service[key] === 'function') {
             $service[key] = async (args, message) => {
                 return service[key](args)
                     .then((result) => {
@@ -21,8 +23,11 @@ function wrapService(service) {
                             type: 'error',
                             message: error.message
                         })
+                        return Promise.reject(error)
                     })
             }
+        } else {
+            $service[key] = service[key]
         }
     })
     return $service
