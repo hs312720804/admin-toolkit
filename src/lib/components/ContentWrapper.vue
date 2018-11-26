@@ -3,8 +3,8 @@ import GateSchemaForm from "./GateSchemaForm";
 import { Pagination } from "element-ui";
 const defaultPaginationProps = {
   background: true,
-  pageSizes: [20, 100],
-  pageSize: 20,
+  pageSizes: [10,20,50,100],
+  pageSize: 10,
   layout: "total, prev, pager, next, sizes, jumper"
 };
 export default {
@@ -56,7 +56,6 @@ export default {
         "current-change": handlePageChange
       }
     });
-
     return h("div", { class: "content-list" }, [filterForm, this.$slots.default, pagination]);
   }
 };
