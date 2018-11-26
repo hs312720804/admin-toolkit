@@ -45,6 +45,17 @@ export default {
         }
       ],
     }
+  },
+  methods: {
+    handleEdit({$index:index}) {
+      this.$message(`编辑第${index + 1}条记录`)
+    },
+    handleRead({$index:index}) {
+      this.$message(`阅读第${index + 1}条记录`)
+    },
+    handleDelete({$index:index}) {
+      this.$message(`删除第${index + 1}条记录`)
+    },
   }
 }
 </script>

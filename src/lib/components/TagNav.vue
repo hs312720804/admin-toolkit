@@ -28,7 +28,7 @@
           @click="handleNavigate(item)"
         >
           <span class="tag-nav__dot"></span>
-          <span class="tag-nav__text">{{ item.name }}</span>
+          <span class="tag-nav__text">{{ getTitle(item) }}</span>
           <i class="el-icon-close tag-nav__close-item" @click.stop="handleClose(item)"></i>
         </li>
     </ul>
@@ -54,6 +54,9 @@ export default {
     $route: 'handleRouteChange'
   },
   methods: {
+    getTitle({meta, name}) {
+      return (meta && meta.title) || name
+    },
     handleNavigate(route) {
       this.$router.push(route.fullPath)
     },
