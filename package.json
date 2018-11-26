@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "@stateform/element": "^0.1.3",
-    "gateschema-form-vue": "^0.2.2",
+    "gateschema-form-vue": "^0.2.3",
+    "npm": "^6.4.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -29,6 +30,6 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.17",
-    "vuepress": "^0.14.5"
+    "vuepress": "^0.14.7"
   }
 }
