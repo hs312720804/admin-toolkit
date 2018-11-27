@@ -62,6 +62,7 @@ export default {
               };
           }
           result.push(h(TableColumn, {
+              key: index,
               props: item,
               scopedSlots
           }))
