@@ -1,5 +1,6 @@
 <script>
 import { Table, TableColumn, Checkbox, Radio } from "element-ui";
+import TableWrapper from './TableWrapper'
 const defaultTableProps = {
   border: true,
   "highlight-current-row": true
@@ -7,6 +8,7 @@ const defaultTableProps = {
 export default {
     data() {
       return {
+        hiddenColumns: []
       }
     },
     computed: {
@@ -39,20 +41,33 @@ export default {
       }
     },
     methods: {
+      toggleColumn(index) {
+        const hiddenColumns = this.hiddenColumns
+        const idx = hiddenColumns.indexOf(index)
+        if (idx === -1) {
+          this.hiddenColumns.push(index)
+        } else {
+          this.hiddenColumns.splice(idx, 1)
+        }
+      }
     },
     render(h) {
-      const header = this.header.map(item => {
-        let scopedSlots;
-        if (item.render) {
-            scopedSlots = {
-              default: props => item.render(h, props)
-            };
+      const hiddenColumns = this.hiddenColumns
+      const header = this.header.reduce((result, item, index) => {
+        if (hiddenColumns.indexOf(index) === -1) {
+          let scopedSlots;
+          if (item.render) {
+              scopedSlots = {
+                default: props => item.render(h, props)
+              };
+          }
+          result.push(h(TableColumn, {
+              props: item,
+              scopedSlots
+          }))
         }
-        return h(TableColumn, {
-            props: item,
-            scopedSlots
-        });
-      });
+        return result
+      }, []);
       const selectionType = this.selectionType
       if (selectionType !== 'none') {
         const options = {
@@ -119,6 +134,7 @@ export default {
       const table = h(
         Table,
         {
+          class: 'cc-table',
           props: {
             ...defaultTableProps,
             ...this.props,
@@ -127,12 +143,25 @@ export default {
         },
         header
       );
-      return table
-    }
+      const tableWrapper = h(TableWrapper, {
+        props: {
+          columns: this.header.map(item => item.label),
+          hiddenColumns: this.hiddenColumns
+        },
+        on: {
+          'toggle-column': this.toggleColumn
+        }
+      }, [table])
+      return tableWrapper
+    },
 }
 
 </script>
 <style lang="stylus" scoped>
+.cc-table
+  >>> .hidden
+    display  none
+
 .hide-radio-label >>> .el-radio__label
   display none
 
