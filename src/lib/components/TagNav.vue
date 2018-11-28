@@ -48,6 +48,12 @@ export default {
     defaultPath: {
       type: String,
       default: '/'
+    },
+    initTags: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   watch: {
@@ -125,6 +131,9 @@ export default {
       }
     }
   },  
+  created() {
+    this.tags = this.initTags
+  },
   mounted() {
     if (this.$route) {
       this.addTag(this.$route)
