@@ -22,7 +22,7 @@
           v-for="(item, index) in tags" 
           :class="{
             'tag-nav__item': true,
-            'tag-nav__item--active': item.name === $route.name
+            'tag-nav__item--active': item.meta.tagId === $route.meta.tagId
           }"
           :key="index" 
           @click="handleNavigate(item)"
@@ -40,7 +40,14 @@
 export default {
   data() {
     return {
-      tags: [],
+      tags: [{
+        tagId: 'test',
+        name: 'test',
+        meta: {
+          title: 'test'
+        },
+        fullPath: 'test'
+      }],
       cursor: 0
     }
   },
@@ -104,10 +111,17 @@ export default {
     },
     addTag(route) {
       const meta = route.meta
-      if (!meta || meta.hideInNav !== false) {
-        const item = this.tags.find((item) => item.name === route.name)
+      if (meta && meta.tagId) {
+        const item = this.tags.find((item) => item.meta.tagId === route.meta.tagId)
+        const tagItem = {
+          name: route.name,
+          meta,
+          fullPath: route.fullPath
+        }
         if (!item) {
-          this.tags.push(route)
+          this.tags.push(tagItem)
+        } else {
+          Object.assign(item, tagItem)
         }
       }
     },
