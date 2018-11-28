@@ -40,14 +40,7 @@
 export default {
   data() {
     return {
-      tags: [{
-        tagId: 'test',
-        name: 'test',
-        meta: {
-          title: 'test'
-        },
-        fullPath: 'test'
-      }],
+      tags: [],
       cursor: 0
     }
   },
