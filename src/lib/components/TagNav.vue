@@ -104,7 +104,7 @@ export default {
     },
     addTag(route) {
       const meta = route.meta
-      if (meta && meta.isCache !== false) {
+      if (!meta || meta.hideInNav !== false) {
         const item = this.tags.find((item) => item.name === route.name)
         if (!item) {
           this.tags.push(route)
