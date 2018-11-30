@@ -171,7 +171,9 @@ export default {
   data() {
     return {
       schema,
-      formData: {}
+      formData: {
+        selectLanguages: []
+      }
     }
   }
 }

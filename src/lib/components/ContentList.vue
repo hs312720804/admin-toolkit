@@ -1,14 +1,15 @@
 <script>
 import GateSchemaForm from "./GateSchemaForm";
+import Table from './Table'
 import { Pagination } from "element-ui";
 const defaultPaginationProps = {
   background: true,
-  pageSizes: [10,20,50,100],
-  pageSize: 10,
+  pageSizes: [20, 100],
+  pageSize: 20,
   layout: "total, prev, pager, next, sizes, jumper"
 };
 export default {
-  props: ["filter", "filterSchema", "pagination"],
+  props: ["filter", "filterSchema", "table", "pagination"],
   created() {},
   methods: {
     handleFilter(err) {
@@ -30,7 +31,6 @@ export default {
   },
   render(h) {
     const filterForm = h(GateSchemaForm, {
-      ref: 'filterForm',
       class: "filter-form",
       props: {
         value: this.filter,
@@ -41,12 +41,15 @@ export default {
       }
     });
 
+    const table = h(Table, {
+      props: this.table
+    })
+
     const {
       handlePageSizeChange,
       handlePageChange
     } = this;
     const pagination = h(Pagination, {
-      ref: 'pagination',
       props: {
         ...defaultPaginationProps,
         ...this.pagination
@@ -56,7 +59,7 @@ export default {
         "current-change": handlePageChange
       }
     });
-    return h("div", { class: "content-list" }, [filterForm, this.$slots.default, pagination]);
+    return h("div", { class: "content-list" }, [filterForm, table, pagination]);
   }
 };
 </script>

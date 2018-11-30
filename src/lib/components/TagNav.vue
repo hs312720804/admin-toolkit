@@ -22,7 +22,7 @@
           v-for="(item, index) in tags" 
           :class="{
             'tag-nav__item': true,
-            'tag-nav__item--active': item.name === $route.name
+            'tag-nav__item--active': item.meta.tagId === $route.meta.tagId
           }"
           :key="index" 
           @click="handleNavigate(item)"
@@ -48,6 +48,12 @@ export default {
     defaultPath: {
       type: String,
       default: '/'
+    },
+    initTags: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   watch: {
@@ -104,10 +110,17 @@ export default {
     },
     addTag(route) {
       const meta = route.meta
-      if (meta && meta.isCache !== false) {
-        const item = this.tags.find((item) => item.name === route.name)
+      if (meta && meta.tagId) {
+        const item = this.tags.find((item) => item.meta.tagId === route.meta.tagId)
+        const tagItem = {
+          name: route.name,
+          meta,
+          fullPath: route.fullPath
+        }
         if (!item) {
-          this.tags.push(route)
+          this.tags.push(tagItem)
+        } else {
+          Object.assign(item, tagItem)
         }
       }
     },
@@ -118,6 +131,9 @@ export default {
       }
     }
   },  
+  created() {
+    this.tags = this.initTags
+  },
   mounted() {
     if (this.$route) {
       this.addTag(this.$route)

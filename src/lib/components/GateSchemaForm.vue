@@ -4,14 +4,14 @@ import "@stateform/element/dist/stateform-element.css";
 import { createForm } from "gateschema-form-vue";
 const StateForm = createStateForm({
   upload: {
-    handleUpload(file, cb) {
+    handleUpload() {
       if (this.$upload) {
-        this.$upload.upload(file, cb);
+        return this.$upload.upload.apply(this, arguments)
       }
     },
-    handleRemove(file) {
+    handleRemove() {
       if (this.$upload && this.$upload.remove) {
-        this.$upload.remove(file);
+        return this.$upload.remove.apply(this, arguments);
       }
     }
   }
