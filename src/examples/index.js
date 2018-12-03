@@ -6,7 +6,8 @@ import MenuDemo from './MenuDemo'
 import RemoteSelectDemo from './RemoteSelectDemo'
 import TableDemo from './TableDemo'
 import TagNavDemo from './TagNavDemo'
-
+import CarouselDemo from './CarouselDemo'
+import EllipsisDemo from './EllipsisDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -15,5 +16,7 @@ export {
   MenuDemo,
   RemoteSelectDemo,
   TableDemo,
-  TagNavDemo
+  TagNavDemo,
+  CarouselDemo,
+  EllipsisDemo
 }
