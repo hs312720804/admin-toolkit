@@ -8,7 +8,6 @@ const proConfig = {
     gateschema: "gateschema"
   }
 };
-
 module.exports = {
   configureWebpack: isPro ? proConfig : undefined
 };

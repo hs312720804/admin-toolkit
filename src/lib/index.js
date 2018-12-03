@@ -6,7 +6,8 @@ import RemoteSelect from './components/RemoteSelect'
 import ActionList from "./components/ActionList"
 import TagNav from "./components/TagNav"
 import pop from  "./components/pop"
-
+import carousel from './components/Carousel'
+import ellipsis from './components/Ellipsis'
 import GateSchemaForm from "./components/GateSchemaForm"
 
 import utils from './utils'
@@ -22,4 +23,6 @@ export {
   GateSchemaForm,
   utils,
   pop,
+  carousel,
+  ellipsis
 };

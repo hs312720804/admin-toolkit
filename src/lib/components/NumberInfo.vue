@@ -39,7 +39,7 @@ export default {
     -webkit-transition all 0.3s
     transition all 0.3s
 .subTitle
-     color rgba(0, 0, 0, 0.45)
+    color rgba(0, 0, 0, 0.45)
     font-size 14px
     height 22px
     line-height 22px
