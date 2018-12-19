@@ -17,8 +17,18 @@
 ```
 
 ## 属性  
-需要跟 vue-router 配合使用, 每个 route 需要有一个唯一的 `name` 属性.  
-另外, 可以在 route 对象里添加一个 meta 属性, meta 里可以包含下面属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |  
+| init-tags | Array | 初始 tags | |  
+每个 tag 应包含 
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |  
+| name | String | | |  
+| meta | String | | |  
+| fullPath | String | | |  
+
+需要跟 vue-router 配合使用, 每个 route 需要有一个唯一的 `name` 属性, 同时需要有 meta 属性, meta 里应该包含下面属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |  
+| tagId | String | 标签标识，同一个标识的 route 将在同一个 tag 打开 | |  
 | title | String | 标签导航里该标签显示的内容 | |  
