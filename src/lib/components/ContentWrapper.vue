@@ -24,6 +24,9 @@ export default {
       this.$set(this.pagination, "currentPage", page);
       this.emitFilterChange();
     },
+    handleResetFilterForm() {
+      this.$emit('filter-reset')
+    },
     emitFilterChange() {
       this.$emit("filter-change");
     }
@@ -40,7 +43,8 @@ export default {
           schema: this.filterSchema
         },
         on: {
-          submit: this.handleFilter
+          submit: this.handleFilter,
+          reset: this.handleResetFilterForm
         }
       });
     } else {
