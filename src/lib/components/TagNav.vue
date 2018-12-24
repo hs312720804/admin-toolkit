@@ -2,13 +2,13 @@
   <div class="tag-nav">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
 
-<el-dropdown split-button class="tag-nav__btn tag-nav__right" @click="handleScroll('right')">
-  <i class="el-icon-arrow-right"></i>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
-    <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+    <el-dropdown split-button class="tag-nav__btn tag-nav__right" @click="handleScroll('right')">
+      <i class="el-icon-arrow-right"></i>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
+        <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
 
     <div 
       ref="viewPort"

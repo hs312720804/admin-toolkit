@@ -29,17 +29,23 @@ export default {
     }
   },
   render(h) {
-    const filterForm = h(GateSchemaForm, {
-      ref: 'filterForm',
-      class: "filter-form",
-      props: {
-        value: this.filter,
-        schema: this.filterSchema
-      },
-      on: {
-        submit: this.handleFilter
-      }
-    });
+    const $slots = this.$slots
+    let filterForm
+    if (this.filterSchema) {
+      filterForm = h(GateSchemaForm, {
+        ref: 'filterForm',
+        class: "filter-form",
+        props: {
+          value: this.filter,
+          schema: this.filterSchema
+        },
+        on: {
+          submit: this.handleFilter
+        }
+      });
+    } else {
+      filterForm = $slots.filterForm
+    }
 
     const {
       handlePageSizeChange,
@@ -74,9 +80,7 @@ export default {
             .sf-item--inline
                 margin-left 10px
             .sf-footer
-                width 70px
-            .sf-footer__submit
-                float right
+                width auto
     >>> .el-pagination
         padding 0
         margin-top 30px 

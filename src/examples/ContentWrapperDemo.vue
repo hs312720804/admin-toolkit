@@ -47,11 +47,14 @@ export default {
         layout: "inline",
         footer: {
           cols: {
+            item: 5,
             label: 0,
             wrapper: 24
           },
           showSubmit: true,
-          submitText: "查询"
+          submitText: "查询",
+          showReset: true,
+          resetText: "重置"
         }
       }),
       tableHeader: [
