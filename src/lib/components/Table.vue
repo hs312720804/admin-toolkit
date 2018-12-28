@@ -49,6 +49,9 @@ export default {
         } else {
           this.hiddenColumns.splice(idx, 1)
         }
+      },
+      handleSortChange() {
+        this.$emit.apply(this, ['sort-change', ...arguments])
       }
     },
     render(h) {
@@ -140,6 +143,9 @@ export default {
             ...defaultTableProps,
             ...this.props,
             data: this.data
+          },
+          on: {
+            'sort-change': this.handleSortChange
           }
         },
         header
