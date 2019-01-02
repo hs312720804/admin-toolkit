@@ -82,7 +82,10 @@ export default {
             .sf-item__label
                 text-align right
                 width auto
+            .sf-item--inline
+                margin-right 10px
             .sf-footer
+                margin-right 0
                 width auto
     >>> .el-pagination
         padding 0
