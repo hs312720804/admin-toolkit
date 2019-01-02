@@ -4,7 +4,7 @@
             v-for="(item, key) in actions" 
             :key="key" 
             :type="item.type"
-            @click="$parent[key]()"
+            @click="owner[key]()"
         >
            {{ item.text }}
        </Button>
@@ -18,7 +18,17 @@ export default {
     Row,
     Button
   },
-  props: ["actions"]
+  inject: {
+      actionOwner: {
+          default: null
+      }
+  },
+  props: ["actions"],
+  computed: {
+      owner() {
+          return this.actionOwner || this.$parent
+      }
+  }
 };
 </script>
 <style lang="stylus" scoped>
