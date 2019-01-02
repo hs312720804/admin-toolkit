@@ -66,7 +66,7 @@ export default {
         "current-change": handlePageChange
       }
     });
-    return h("div", { class: "content-list" }, [filterForm, this.$slots.default, pagination]);
+    return h("div", { class: "content-list" }, [filterForm, this.$slots.actionList, this.$slots.default, pagination]);
   }
 };
 </script>
@@ -81,8 +81,7 @@ export default {
     >>> .filter-form
             .sf-item__label
                 text-align right
-            .sf-item--inline
-                margin-left 10px
+                width auto
             .sf-footer
                 width auto
     >>> .el-pagination
