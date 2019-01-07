@@ -1,8 +1,8 @@
 <template>
   <div class="tag-nav">
 
-    <el-dropdown split-button class="tag-nav__btn tag-nav__back" @click="handleBack()" >
-      <i title="返回" class="el-icon-back"></i>
+    <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button>
+    <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
         <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
@@ -96,6 +96,19 @@ export default {
       tags: [],
       cursor: 0,
       tagHistories: {}
+    }
+  },
+  computed: {
+    historyCursor() {
+      const route = this.$route
+      let cursor = 0
+      if (route.meta && route.meta.tagId) {
+        const history = this.tagHistories[route.meta.tagId]
+        if (history) {
+          cursor = history.cursor
+        }
+      }
+      return cursor
     }
   },
   props: {
@@ -310,7 +323,11 @@ export default {
 .tag-nav__right
     padding 12px 5px
 .tag-nav__back
+  right 28px
+.tag-nav__more
   right 0
+  >>> .el-button:first-child
+    display none
   >>> .el-dropdown__caret-button::before
     background #eee
 </style>
