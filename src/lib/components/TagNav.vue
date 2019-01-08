@@ -1,6 +1,6 @@
 <template>
   <div class="tag-nav">
-
+    <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button> <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
     <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button>
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
@@ -218,6 +218,15 @@ export default {
     init() {
         const router = this.$router
         this.tags = this.initTags
+        let tags = [
+          {
+            name: 'test',
+            meta: {
+              tagId: "1"
+            },
+            fullPath: '/'
+          }
+        ]
         this.tagHistories =  this.tags.reduce((result, item) => {
             result[item.meta.tagId] =  new TagHistory({
                 router: router,
@@ -249,25 +258,23 @@ export default {
 <style lang="stylus" scoped>
 .tag-nav
   position relative
-  padding 0 
+  padding 0 100px 0 25px 
   background #f0f0f0
-  overflow-x auto
-  overflow-y hidden
+  overflow hidden
   font-size 12px
   min-height 42px
 
-// .tag-nav__view-port
-//   overflow hidden
+.tag-nav__view-port
+  overflow hidden
 
 .tag-nav__list
-  display flex
-  justify-content flex-start
   position relative
   height 40px
   padding 0
   margin 0
   border-bottom 1px solid #f0f0f0
   border-top 1px solid #f0f0f0
+  white-space nowrap
   user-select none
   transition margin-left .2s ease
 
@@ -318,7 +325,7 @@ export default {
 .tag-nav__left
   left 0
 .tag-nav__right
-  right 90px
+  right 70px
 .tag-nav__left,
 .tag-nav__right
     padding 12px 5px
