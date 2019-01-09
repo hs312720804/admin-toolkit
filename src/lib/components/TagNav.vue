@@ -129,7 +129,7 @@ export default {
       return (meta && meta.title) || name
     },
     handleNavigate(route) {
-        this.tagHistories[route.meta.tagId].active()
+      this.tagHistories[route.meta.tagId].active()
     },
     handleClose(route) {
       const currentRoute = this.$route
