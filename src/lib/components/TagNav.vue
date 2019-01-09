@@ -1,7 +1,8 @@
 <template>
   <div class="tag-nav">
-    <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button> <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
-    <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button>
+    <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
+    <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
+    <!-- <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button> -->
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
@@ -123,9 +124,6 @@ export default {
       }
     }
   },
-  watch: {
-    $route: 'handleRouteChange'
-  },
   methods: {
     getTitle({meta, name}) {
       return (meta && meta.title) || name
@@ -218,23 +216,6 @@ export default {
     init() {
         const router = this.$router
         this.tags = this.initTags
-        let tags = [
-          {
-            name: 'test',
-            meta: {
-              tagId: "1"
-            },
-            fullPath: '/'
-          }
-        ]
-        this.tagHistories =  this.tags.reduce((result, item) => {
-            result[item.meta.tagId] =  new TagHistory({
-                router: router,
-                stack: [item],
-                cursor: 0
-            })
-            return result
-        }, {})
     },
     scrollIntoView() {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
@@ -258,7 +239,7 @@ export default {
 <style lang="stylus" scoped>
 .tag-nav
   position relative
-  padding 0 100px 0 25px 
+  padding 0 55px 0 25px 
   background #f0f0f0
   overflow hidden
   font-size 12px
@@ -325,7 +306,7 @@ export default {
 .tag-nav__left
   left 0
 .tag-nav__right
-  right 70px
+  right 28px
 .tag-nav__left,
 .tag-nav__right
     padding 12px 5px
