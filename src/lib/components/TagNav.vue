@@ -124,6 +124,9 @@ export default {
       }
     }
   },
+  watch: {
+    $route: 'handleRouteChange'
+  },
   methods: {
     getTitle({meta, name}) {
       return (meta && meta.title) || name
@@ -187,7 +190,6 @@ export default {
       }
     },
     addTag(route) {
-        const tagHistories = this.tagHistories
         const meta = route.meta
         if (meta && meta.tagId) {
             const tagId = meta.tagId
@@ -197,15 +199,6 @@ export default {
                 meta,
                 fullPath: route.fullPath
             }
-            let history =  tagHistories[tagId]
-            if (!history) {
-                history = tagHistories[tagId] =  new TagHistory({
-                    router: this.$router,
-                    stack: [route]
-                })
-            }
-            history.push(Object.assign({}, tagItem))
-
             if (!item) {
                 this.tags.push(tagItem)
             } else {
