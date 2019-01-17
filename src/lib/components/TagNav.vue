@@ -1,14 +1,14 @@
 <template>
   <div class="tag-nav">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
-
-<el-dropdown split-button class="tag-nav__btn tag-nav__right" @click="handleScroll('right')">
-  <i class="el-icon-arrow-right"></i>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
-    <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+    <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
+    <!-- <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button> -->
+    <el-dropdown split-button class="tag-nav__btn tag-nav__more">
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
+        <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
 
     <div 
       ref="viewPort"
@@ -25,6 +25,7 @@
             'tag-nav__item--active': item.meta.tagId === $route.meta.tagId
           }"
           :key="index" 
+          :title="getTitle(item)"
           @click="handleNavigate(item)"
         >
           <span class="tag-nav__dot"></span>
@@ -37,11 +38,78 @@
 </template>
 
 <script>
+
+class TagHistory {
+    constructor({router, stack, cursor}) {
+        this.cursor = cursor !== undefined ? cursor : -1 
+        this.stack = stack || []
+        this.router = router
+        this.isGoing = false
+        this.isNavigating = false
+    }
+    clear() {
+        this.cursor = -1
+        this.stack = []
+    }
+    push(route) {
+        if (!this.isGoing && !this.isNavigating) {
+            let { cursor, stack } = this
+            if (cursor !== stack.length - 1) {
+                // 如果不是在末端
+                // 截取前面的
+                stack = stack.slice(0, cursor + 1)
+            }
+            // 压到最新
+            stack.push(route)
+            this.stack = stack
+            this.cursor = ++cursor
+        } else {
+            this.isGoing = false
+            this.isNavigating = false
+        }
+    }
+    active() {
+        const path = this.stack[this.cursor].fullPath
+        this.isNavigating = true
+        this.router.push({ path }, undefined, () => {
+            this.isNavigating = false
+        }) 
+    }
+    go(position) {
+        const { cursor, stack, router } = this
+        const nextCursor = cursor + position
+        const nextRoute = stack[nextCursor]
+        if (nextRoute) {
+            // 前后移动的时候不需要修改栈
+           this.isGoing = true
+           router.push({path: nextRoute.fullPath}, () => {
+               this.cursor = nextCursor
+           }, () => {
+               this.isGoing = false
+           }) 
+        }
+    }
+}
+
 export default {
   data() {
     return {
       tags: [],
-      cursor: 0
+      cursor: 0,
+      tagHistories: {}
+    }
+  },
+  computed: {
+    historyCursor() {
+      const route = this.$route
+      let cursor = 0
+      if (route.meta && route.meta.tagId) {
+        const history = this.tagHistories[route.meta.tagId]
+        if (history) {
+          cursor = history.cursor
+        }
+      }
+      return cursor
     }
   },
   props: {
@@ -64,12 +132,13 @@ export default {
       return (meta && meta.title) || name
     },
     handleNavigate(route) {
-      this.$router.push(route.fullPath)
+      this.$router.push({path: route.fullPath})
     },
     handleClose(route) {
       const currentRoute = this.$route
       const tags = this.tags
       const index = tags.indexOf(route)
+      this.tagHistories[route.meta.tagId] = undefined
       tags.splice(index, 1)
       const length = tags.length
       const defaultPath = this.defaultPath
@@ -108,21 +177,38 @@ export default {
     handleRouteChange(route) {
       this.addTag(route)
     },
-    addTag(route) {
-      const meta = route.meta
-      if (meta && meta.tagId) {
-        const item = this.tags.find((item) => item.meta.tagId === route.meta.tagId)
-        const tagItem = {
-          name: route.name,
-          meta,
-          fullPath: route.fullPath
+    handleForward() {
+        const history = this.tagHistories[this.$route.meta.tagId]
+        if (history) {
+          history.go(-1)
         }
-        if (!item) {
-          this.tags.push(tagItem)
-        } else {
-          Object.assign(item, tagItem)
-        }
+    },
+    handleBack() {
+      const history = this.tagHistories[this.$route.meta.tagId]
+      if (history) {
+        history.go(-1)
       }
+    },
+    addTag(route) {
+        const meta = route.meta
+        if (meta && meta.tagId) {
+            const tagId = meta.tagId
+            const item = this.tags.find((item) => item.meta.tagId === tagId)
+            const tagItem = {
+                name: route.name,
+                meta,
+                fullPath: route.fullPath
+            }
+            if (!item) {
+                this.tags.push(tagItem)
+            } else {
+                Object.assign(item, tagItem)
+            }
+        }
+    },
+    init() {
+        const router = this.$router
+        this.tags = this.initTags
     },
     scrollIntoView() {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
@@ -132,7 +218,7 @@ export default {
     }
   },  
   created() {
-    this.tags = this.initTags
+      this.init()
   },
   mounted() {
     if (this.$route) {
@@ -146,10 +232,11 @@ export default {
 <style lang="stylus" scoped>
 .tag-nav
   position relative
-  padding 0 50px
+  padding 0 55px 0 25px 
   background #f0f0f0
   overflow hidden
   font-size 12px
+  min-height 42px
 
 .tag-nav__view-port
   overflow hidden
@@ -161,8 +248,8 @@ export default {
   margin 0
   border-bottom 1px solid #f0f0f0
   border-top 1px solid #f0f0f0
-  user-select none
   white-space nowrap
+  user-select none
   transition margin-left .2s ease
 
 .tag-nav__item
@@ -212,7 +299,16 @@ export default {
 .tag-nav__left
   left 0
 .tag-nav__right
+  right 28px
+.tag-nav__left,
+.tag-nav__right
+    padding 12px 5px
+.tag-nav__back
+  right 28px
+.tag-nav__more
   right 0
+  >>> .el-button:first-child
+    display none
   >>> .el-dropdown__caret-button::before
     background #eee
 </style>

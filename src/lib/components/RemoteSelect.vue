@@ -6,6 +6,7 @@
     <Dialog
       :title="title"
       :visible.sync="showDialog" 
+      :append-to-body="true"
       width="90vw"
     >
       <slot name="selected">

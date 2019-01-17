@@ -24,22 +24,32 @@ export default {
       this.$set(this.pagination, "currentPage", page);
       this.emitFilterChange();
     },
+    handleResetFilterForm() {
+      this.$emit('filter-reset')
+    },
     emitFilterChange() {
       this.$emit("filter-change");
     }
   },
   render(h) {
-    const filterForm = h(GateSchemaForm, {
-      ref: 'filterForm',
-      class: "filter-form",
-      props: {
-        value: this.filter,
-        schema: this.filterSchema
-      },
-      on: {
-        submit: this.handleFilter
-      }
-    });
+    const $slots = this.$slots
+    let filterForm
+    if (this.filterSchema) {
+      filterForm = h(GateSchemaForm, {
+        ref: 'filterForm',
+        class: "filter-form",
+        props: {
+          value: this.filter,
+          schema: this.filterSchema
+        },
+        on: {
+          submit: this.handleFilter,
+          reset: this.handleResetFilterForm
+        }
+      });
+    } else {
+      filterForm = $slots.filterForm
+    }
 
     const {
       handlePageSizeChange,
@@ -56,7 +66,7 @@ export default {
         "current-change": handlePageChange
       }
     });
-    return h("div", { class: "content-list" }, [filterForm, this.$slots.default, pagination]);
+    return h("div", { class: "content-list" }, [filterForm, this.$slots.actionList, this.$slots.default, pagination]);
   }
 };
 </script>
@@ -71,12 +81,12 @@ export default {
     >>> .filter-form
             .sf-item__label
                 text-align right
+                width auto
             .sf-item--inline
-                margin-left 10px
+                margin-right 10px
             .sf-footer
-                width 70px
-            .sf-footer__submit
-                float right
+                margin-right 0
+                width auto
     >>> .el-pagination
         padding 0
         margin-top 30px 
