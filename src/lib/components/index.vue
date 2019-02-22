@@ -123,8 +123,10 @@ export default {
   display flex
 .aside__menu_collapse
   width 60px
-
-
+.header >>> .el-button--text
+   color white
+.header >>> .el-breadcrumb__inner
+   color  white
 </style>
 
 
