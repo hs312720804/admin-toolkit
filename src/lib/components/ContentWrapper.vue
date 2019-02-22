@@ -13,22 +13,22 @@ export default {
   methods: {
     handleFilter(err) {
       if (!err || err.length === 0) {
-        this.emitFilterChange();
+        this.emitFilterChange('filter');
       }
     },
     handlePageSizeChange(size) {
       this.$set(this.pagination, "pageSize", size);
-      this.emitFilterChange();
+      this.emitFilterChange('pagination');
     },
     handlePageChange(page) {
       this.$set(this.pagination, "currentPage", page);
-      this.emitFilterChange();
+      this.emitFilterChange('pagination');
     },
     handleResetFilterForm() {
       this.$emit('filter-reset')
     },
-    emitFilterChange() {
-      this.$emit("filter-change");
+    emitFilterChange(type) {
+      this.$emit("filter-change", type);
     }
   },
   render(h) {
