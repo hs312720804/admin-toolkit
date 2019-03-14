@@ -21,7 +21,8 @@
       :filter="filter"
       :filterSchema="filterSchema"
       :pagination="pagination"
-      @filter-change="fetchData"
+      @filter-change="handleFilterChange"
+      @filter-reset="handleFilterReset"
     >
       <Table 
         :props="table.props"
@@ -65,11 +66,14 @@ export default {
         layout: "inline",
         footer: {
           cols: {
+            item: 5,
             label: 0,
             wrapper: 24
           },
           showSubmit: true,
-          submitText: "查询"
+          submitText: "查询",
+          showReset: true,
+          resetText: "重置"
         }
       }),
       tableHeader: [
@@ -110,22 +114,23 @@ export default {
     }
   },
   methods: {
-    handleEdit({$index:index}) {
-      this.$message(`编辑第${index + 1}条记录`)
-    },
-    handleRead({$index:index}) {
-      this.$message(`阅读第${index + 1}条记录`)
-    },
-    handleDelete({$index:index}) {
-      this.$message(`删除第${index + 1}条记录`)
-    },
     fetchData() {
-      this.$message('数据过滤条件已改变, 这是会重新拉去数据'
-      )
+      this.$message('数据过滤条件已改变, 这时会重新拉去数据')
+    },
+    handleFilterChange(type) {
+      if (type === 'pagination') {
+        this.$message('分页数据发生改变')
+      } else {
+        this.$message('筛选条件发生变更')
+      }
+    },
+    handleFilterReset() {
+      this.$message('筛选条件需要重置')
     }
   }
 }
 </script>
+
 ```
 
 
@@ -135,3 +140,10 @@ export default {
 | filterSchema | Object | 表格内容过滤表单 schema |  |
 | filter | Object | 过滤表单绑定的数据对象 |  |
 | pagination | Object | element-ui 分页组件属性 | |
+
+
+## 事件  
+| 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- |  
+| filter-change | (type: 'pagination' \| 'query') | 筛选条件发生改变时触发，区分查询条件还是分页条件|  
+| filter-reset |  | 点击 重置 的时候触发，需要手动重置筛选参数 |  

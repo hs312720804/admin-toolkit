@@ -3,7 +3,8 @@
       :filter="filter"
       :filterSchema="filterSchema"
       :pagination="pagination"
-      @filter-change="fetchData"
+      @filter-change="handleFilterChange"
+      @filter-reset="handleFilterReset"
     >
       <Table 
         :props="table.props"
@@ -96,8 +97,17 @@ export default {
   },
   methods: {
     fetchData() {
-      this.$message('数据过滤条件已改变, 这时会重新拉去数据'
-      )
+      this.$message('数据过滤条件已改变, 这时会重新拉去数据')
+    },
+    handleFilterChange(type) {
+      if (type === 'pagination') {
+        this.$message('分页数据发生改变')
+      } else {
+        this.$message('筛选条件发生变更')
+      }
+    },
+    handleFilterReset() {
+      this.$message('筛选条件需要重置')
     }
   }
 }

@@ -13,7 +13,7 @@ export default {
   methods: {
     handleFilter(err) {
       if (!err || err.length === 0) {
-        this.emitFilterChange('filter');
+        this.emitFilterChange('query');
       }
     },
     handlePageSizeChange(size) {
