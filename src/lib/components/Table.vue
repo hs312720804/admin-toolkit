@@ -38,6 +38,12 @@ export default {
         }
       },
       selected: {
+      },
+      fixSelection: {
+        type: Boolean,
+        default() {
+          return true
+        }
       }
     },
     methods: {
@@ -55,6 +61,7 @@ export default {
       }
     },
     render(h) {
+      const fixSelection = this.fixSelection
       const hiddenColumns = this.hiddenColumns
       const header = this.header.reduce((result, item, index) => {
         if (hiddenColumns.indexOf(index) === -1) {
@@ -77,9 +84,12 @@ export default {
         const options = {
           props: {
             width: 55,
-            align: 'center'
+            align: 'center',
           },
           scopedSlots: {}
+        }
+        if (fixSelection) {
+          options.props.fixed = 'left'
         }
         if (selectionType === 'multiple') {
           options.props.renderHeader = () => {

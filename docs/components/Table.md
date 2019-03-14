@@ -13,69 +13,87 @@
 ```vue
 <template>
   <Table 
-    :props="props"
-    :header="header"
-    :data="data"
-    :selected="selected"
-    :selection-type="selectionType"
+    :data="table.data" 
+    :props="table.props"
+    :header="table.header"
+    :selection-type="table.selectionType"
+    :selected="table.selected"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
     @all-row-selection-change="handleAllRowSelectionChange"
-  />
+  >
+  </Table>
 </template>
-
 <script>
+import { createOperationRender } from "admin-toolkit";
 export default {
   data() {
     return {
-      props: {
-        border: true,
-      },
-      header: [
-        {
-          label: "ID",
-          prop: "id",
-          sortable: false
+      table: {
+        props: {
+          border: true,
         },
-        {
-          label: "名称",
-          prop: "name",
-          sortable: true
-        }
-      ],
-      data: [
-        {
-          id: "1",
-          name: "名称1"
-        },
-        {
-          id: "2",
-          name: "名称2"
-        }
-      ],
-      selected: [],
-      selectionType: 'multiple'
+        header: [
+          {
+            label: "ID",
+            prop: "id",
+            sortable: false
+          },
+          {
+            label: "名称",
+            prop: "name",
+            sortable: true
+          },
+          {
+            label: "操作",
+            render: createOperationRender(this, {
+              handleRead: "查看",
+              handleEdit: "编辑",
+              handleDelete: "删除"
+            })
+          }
+        ],
+        data: [
+          {
+            id: "1",
+            name: "名称1"
+          },
+          {
+            id: "2",
+            name: "名称2"
+          }
+        ],
+        selectionType: 'multiple',
+        selected: []
+      }
     }
   },
   methods: {
+    handleEdit({$index:index}) {
+      this.$message(`编辑第${index + 1}条记录`)
+    },
+    handleRead({$index:index}) {
+      this.$message(`阅读第${index + 1}条记录`)
+    },
+    handleDelete({$index:index}) {
+      this.$message(`删除第${index + 1}条记录`)
+    },
     handleRowSelectionAdd(item, index) {
-      this.selected = this.selected.concat(index)
+      this.table.selected = this.table.selected.concat(index)
     },
     handleRowSelectionRemove(item, index) {
-      this.selected = this.selected.filter(item => item !== index)
+      this.table.selected = this.table.selected.filter(item => item !== index)
     },
     handleAllRowSelectionChange(value) {
       if (value) {
-        this.selected = this.data.map((_, index) => index)
+        this.table.selected = this.table.data.map((_, index) => index)
       } else {
-        this.selected = []
+        this.table.selected = []
       }
     }
   }
 }
 </script>
-
-
 
 ```
 
