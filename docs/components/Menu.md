@@ -60,3 +60,5 @@ export default {
 | route | String | 菜单对应的路由名 | |  
 | children | Array | 子菜单项列表 | |
 
+
+<Vssue />

@@ -13,25 +13,27 @@
     "src/lib"
   ],
   "dependencies": {
+    "@stateform/element": "^0.1.9",
     "@william17/vue-app-state": "^0.1.1",
-    "@stateform/element": "^0.1.7",
     "gateschema-form-vue": "^0.2.4",
-    "npm": "^6.5.0",
-    "vue": "^2.5.22"
+    "npm": "^6.9.0",
+    "vue": "^2.6.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-plugin-eslint": "^3.1.5",
-    "@vue/cli-plugin-unit-jest": "^3.1.1",
-    "@vue/cli-service": "^3.1.4",
-    "@vue/test-utils": "^1.0.0-beta.26",
+    "@vue/cli-plugin-babel": "^3.5.1",
+    "@vue/cli-plugin-eslint": "^3.5.1",
+    "@vue/cli-plugin-unit-jest": "^3.5.1",
+    "@vue/cli-service": "^3.5.1",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "gateschema": "^0.2.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vssue": "^0.5.2",
-    "vue-template-compiler": "^2.5.17",
-    "vuepress": "^0.14.8"
+    "vssue": "^0.5.3",
+    "vssue-api-gitlab-v3": "git+ssh://git@gitlab.skysri.com:liangweiliang/vssue-api-gitlab-v3.git",
+    "vue-template-compiler": "^2.6.9",
+    "vuepress": "^0.14.10",
+    "webpack-dev-middleware": "^3.6.0"
   }
 }

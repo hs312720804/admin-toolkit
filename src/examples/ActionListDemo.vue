@@ -1,6 +1,7 @@
 <template>
     <ActionList 
       :actions="actions"
+      :target="this"
     />
 </template>
 

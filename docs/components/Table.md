@@ -114,3 +114,5 @@ export default {
 | row-selection-remove | (row: Object, index: Number) | 只在 selectoinType 为 multiple 时触发 |  
 | row-selection-change | (row: Object, index: Number) | 只在 selectoinType 为 single 时触发 |  
 | all-row-selection-change | (value: Boolean) | 当所有行的选中状态改变时触发, value 为选中状态 |  
+
+<Vssue />
