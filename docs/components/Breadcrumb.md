@@ -47,4 +47,4 @@ export default {
 | name | String | 链接文字 | primary |
 | to | String | vue-router 路由对象| /  |
 
-<Vssue />
+<Comment />

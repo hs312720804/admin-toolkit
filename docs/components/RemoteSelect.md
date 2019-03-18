@@ -184,5 +184,4 @@ export default {
 | selection-remove | 某个所选数据被移除 | (item: Object) | |  
 | selection-clear |  清除所有已选数据 | | | 
 
-
-<Vssue />
+<Comment />

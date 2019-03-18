@@ -148,4 +148,4 @@ export default {
 | filter-change | (type: 'pagination' \| 'query') | 筛选条件发生改变时触发，区分查询条件还是分页条件|  
 | filter-reset |  | 点击 重置 的时候触发，需要手动重置筛选参数 |  
 
-<Vssue />
+<Comment />

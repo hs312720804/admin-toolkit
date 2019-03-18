@@ -33,4 +33,4 @@
 | tagId | String | 标签标识，同一个标识的 route 将在同一个 tag 打开 | |  
 | title | String | 标签导航里该标签显示的内容 | |  
 
-<Vssue />
+<Comment />

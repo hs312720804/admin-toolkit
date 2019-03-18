@@ -66,4 +66,4 @@ export default {
 | type | String | primary / success / warning / danger / info / text | primary |
 | text | String | 按钮文字 |  |
 
-<Vssue />
+<Comment />
