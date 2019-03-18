@@ -21,4 +21,4 @@ npm install --save vue element-ui gateschema gateschema-form-vue @stateform/elem
 import { TagNav } from 'admin-toolkit'  
 ```
 
-<Vssue />
+<Comment />
