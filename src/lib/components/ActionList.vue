@@ -23,10 +23,10 @@ export default {
           default: null
       }
   },
-  props: ["actions"],
+  props: ["actions", "target"],
   computed: {
       owner() {
-          return this.actionOwner || this.$parent
+          return this.actionOwner || this.target || this.$parent
       }
   }
 };
