@@ -23,5 +23,6 @@ export default ({
     clientSecret: '1728d05d7ede313e7741a145f6d4c3903b17863691557989e8a8aa62ae354da6',
     baseURL: 'http://gitlab.skysri.com'
   })
-  Vue.prototype.$ELEMENT = { size: "small", zIndex: 3000 };
+  Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+ // Vue.prototype.$ELEMENT = { size: "small", zIndex: 3000 };
 }

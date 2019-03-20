@@ -79,7 +79,50 @@ const routes = [
           icon: "iconfont el-icon-cc-file-add",
           route: "ellipsis"
         }
-      }
+      },
+      {
+        path: "theIcon",
+        name: "theIcon",
+        component: demos.TheIconDemo,
+        meta: {
+          title: "图标",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "theIcon"
+        }
+      },
+      {
+        path: "contentCard",
+        name: "contentCard",
+        component: demos.ContentCardDemo,
+        meta: {
+          title: "标题返回",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "contentCard"
+        }
+      },
+    ]
+  },
+  {
+    path: "/file",
+    name: "file",
+    component: main,
+    redirect: "/file/downloadFile",
+    meta: {
+      title: "文件下载",
+      icon: "iconfont el-icon-cc-file-add",
+      route: "dashboard"
+    },
+    children: [
+      {
+        path: "downloadFile",
+        name: "downloadFile",
+        component: demos.DownloadFileDemo,
+        meta: {
+          title: "文件下载",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "downloadFile"
+        }
+      },
     ]
   },
   {

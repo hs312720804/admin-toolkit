@@ -8,6 +8,9 @@ import TableDemo from './TableDemo'
 import TagNavDemo from './TagNavDemo'
 import CarouselDemo from './CarouselDemo'
 import EllipsisDemo from './EllipsisDemo.vue'
+import TheIconDemo from './TheIconDemo.vue'
+import ContentCardDemo from './ContentCardDemo.vue'
+import DownloadFileDemo from './DownloadFileDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -18,5 +21,8 @@ export {
   TableDemo,
   TagNavDemo,
   CarouselDemo,
-  EllipsisDemo
+  EllipsisDemo,
+  TheIconDemo,
+  ContentCardDemo,
+  DownloadFileDemo
 }

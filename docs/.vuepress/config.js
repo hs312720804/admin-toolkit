@@ -29,6 +29,8 @@ module.exports = {
               'components/Table.md',
               'components/ContentWrapper.md',
               'components/RemoteSelect.md',
+              'components/ContentCard.md',
+              'components/TheIcon.md',
             ]
           }
         ]

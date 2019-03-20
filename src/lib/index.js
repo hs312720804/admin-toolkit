@@ -9,6 +9,9 @@ import pop from  "./components/pop"
 import carousel from './components/Carousel'
 import ellipsis from './components/Ellipsis'
 import GateSchemaForm from "./components/GateSchemaForm"
+import TheIcon from './components/TheIcon.vue'
+import ContentCard from './components/ContentCard'
+import DownloadFile from './components/DownloadFile'
 import utils from './utils'
 
 export {
@@ -23,5 +26,8 @@ export {
   utils,
   pop,
   carousel,
-  ellipsis
+  ellipsis,
+  TheIcon,
+  ContentCard,
+  DownloadFile
 };
