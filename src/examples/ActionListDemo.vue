@@ -1,5 +1,5 @@
 <template>
-    <ActionList 
+    <ActionList
       :actions="actions"
       :target="this"
     />
@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       actions: {
         handleCreate: {
           type: 'primary',
           text: '创建'
-        }, 
+        },
         handleBatchDelete: {
           text: '批量编辑'
         },
@@ -24,13 +24,13 @@ export default {
     }
   },
   methods: {
-    handleCreate() {
+    handleCreate () {
       this.$message('handleCreate')
     },
-    handleBatchDelete() {
+    handleBatchDelete () {
       this.$message('handleBatchDelete')
     },
-    handleBatchEdit() {
+    handleBatchEdit () {
       this.$message('handleBatchEdit')
     }
   }

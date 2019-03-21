@@ -1,8 +1,8 @@
 <template>
-   <div class="action-list"> 
-       <Button 
-            v-for="(item, key) in actions" 
-            :key="key" 
+   <div class="action-list">
+       <Button
+            v-for="(item, key) in actions"
+            :key="key"
             :type="item.type"
             @click="owner[key]()"
         >
@@ -12,24 +12,24 @@
 </template>
 
 <script>
-import { Row, Button } from "element-ui";
+import { Row, Button } from 'element-ui'
 export default {
   components: {
     Row,
     Button
   },
   inject: {
-      actionOwner: {
-          default: null
-      }
+    actionOwner: {
+      default: null
+    }
   },
-  props: ["actions", "target"],
+  props: ['actions', 'target'],
   computed: {
-      owner() {
-          return this.actionOwner || this.target || this.$parent
-      }
+    owner () {
+      return this.actionOwner || this.target || this.$parent
+    }
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
 .action-list

@@ -19,16 +19,16 @@
     </el-dropdown>
 </template>
 <script>
-    import {Dropdown} from 'element-ui';
-    export default{
-        components:{
-            'el-dropdown': Dropdown
-        },
-        props:['droplist'],
-        methods:{
-            goto(){
-                console.log("ssssss");
-            }
-        }
+import { Dropdown } from 'element-ui'
+export default{
+  components: {
+    'el-dropdown': Dropdown
+  },
+  props: ['droplist'],
+  methods: {
+    goto () {
+      console.log('ssssss')
     }
+  }
+}
 </script>

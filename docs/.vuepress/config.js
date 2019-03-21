@@ -29,6 +29,7 @@ module.exports = {
               'components/Table.md',
               'components/ContentWrapper.md',
               'components/RemoteSelect.md',
+              'components/Upload.md'
             ]
           }
         ]

@@ -12,29 +12,29 @@
 </template>
 
 <script>
-    import {Button, Dialog} from 'element-ui'
-    export default{
-        components: {
-            Button,
-            Dialog
-        },
-        props: {
-            title: {
-                type: String,
-                default() {
-                    return '弹窗'
-                }
-            }
-        },
-        data(){
-            return {
-                showDialog: false,
-            }
-        },
-        methods:{
-            showPop() {
-                this.showDialog = true;
-            },
-        }
+import { Button, Dialog } from 'element-ui'
+export default{
+  components: {
+    Button,
+    Dialog
+  },
+  props: {
+    title: {
+      type: String,
+      default () {
+        return '弹窗'
+      }
     }
+  },
+  data () {
+    return {
+      showDialog: false
+    }
+  },
+  methods: {
+    showPop () {
+      this.showDialog = true
+    }
+  }
+}
 </script>

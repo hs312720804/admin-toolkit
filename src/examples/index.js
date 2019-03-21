@@ -1,5 +1,5 @@
-import ActionListDemo  from "./ActionListDemo"
-import BreadcrumbDemo  from "./BreadcrumbDemo"
+import ActionListDemo from './ActionListDemo'
+import BreadcrumbDemo from './BreadcrumbDemo'
 import ContentWrapperDemo from './ContentWrapperDemo'
 import GateSchemaFormDemo from './GateSchemaFormDemo'
 import MenuDemo from './MenuDemo'
@@ -8,6 +8,7 @@ import TableDemo from './TableDemo'
 import TagNavDemo from './TagNavDemo'
 import CarouselDemo from './CarouselDemo'
 import EllipsisDemo from './EllipsisDemo.vue'
+import UploadDemo from './UploadDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -18,5 +19,6 @@ export {
   TableDemo,
   TagNavDemo,
   CarouselDemo,
-  EllipsisDemo
+  EllipsisDemo,
+  UploadDemo
 }

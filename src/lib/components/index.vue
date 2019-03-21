@@ -7,7 +7,7 @@
       <Menu :isCollapse="isCollapseMenu"
         :items="items"
         class="main_menu"
-        :default-active="$route.name" 
+        :default-active="$route.name"
         >
       </Menu>
   </div>
@@ -20,8 +20,8 @@
               @click="toggleMenu"
           >
         </el-button>
-        <Breadcrumb 
-          class="breadcrumb" 
+        <Breadcrumb
+          class="breadcrumb"
           :items="breadcrumb"
          />
    </el-header>
@@ -31,50 +31,50 @@
 </template>
 <script>
 export default {
-    data(){
-      return{
-        isCollapseMenu:false,
-        items:[],
-        breadcrumb:[]
-      }
-    },
-    methods: {
-      getMenu(){
-        let item={};
-        this.$router.options.routes.forEach(element => {
-          item=element.meta;
-          item.children=[];
-          element.children.forEach(e=>{
-            item.children.push(e.meta)
-          })
-          this.items.push(item)
-       });
-      },
-      toggleMenu(){
-        this.isCollapseMenu=!this.isCollapseMenu;
-        this.$appState.$set("isCollapseMenu",this.isCollapseMenu);
-      }
-    },
-    created () {
-      this.getMenu()
-      this.isCollapseMenu=!!this.$appState.$get("isCollapseMenu");
-      this.breadcrumb=this.$route.matched.map((v,i)=>{
-              return {
-                to:v.path,
-                name:v.meta.title
-              }
+  data () {
+    return {
+      isCollapseMenu: false,
+      items: [],
+      breadcrumb: []
+    }
+  },
+  methods: {
+    getMenu () {
+      let item = {}
+      this.$router.options.routes.forEach(element => {
+        item = element.meta
+        item.children = []
+        element.children.forEach(e => {
+          item.children.push(e.meta)
+        })
+        this.items.push(item)
       })
     },
-    watch: {
-      "$route":function(newV){
-            this.breadcrumb=newV.matched.map((v,i)=>{
-              return {
-                to:v.path,
-                name:v.meta.title
-              }
-            })
-      }
+    toggleMenu () {
+      this.isCollapseMenu = !this.isCollapseMenu
+      this.$appState.$set('isCollapseMenu', this.isCollapseMenu)
     }
+  },
+  created () {
+    this.getMenu()
+    this.isCollapseMenu = !!this.$appState.$get('isCollapseMenu')
+    this.breadcrumb = this.$route.matched.map((v, i) => {
+      return {
+        to: v.path,
+        name: v.meta.title
+      }
+    })
+  },
+  watch: {
+    '$route': function (newV) {
+      this.breadcrumb = newV.matched.map((v, i) => {
+        return {
+          to: v.path,
+          name: v.meta.title
+        }
+      })
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -102,9 +102,9 @@ export default {
         background transparent
         color hsla(0,0%,100%,.9)
   >>> .el-menu
-        background black 
+        background black
         color hsla(0,0%,100%,.7)
-        
+
         .el-menu-item
           color hsla(0,0%,100%,.7)
         .el-menu-item:hover
@@ -128,5 +128,3 @@ export default {
 .header >>> .el-breadcrumb__inner
    color  white
 </style>
-
-

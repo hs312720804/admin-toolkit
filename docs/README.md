@@ -8,7 +8,7 @@
 npm install --save git+ssh://git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
 ```
 
-另外, 需要安全下面这些同级依赖  
+另外, 需要安装下面这些同级依赖  
 [vue](https://github.com/vuejs/vue) [element-ui](https://github.com/ElemeFE/element) [gateschema](https://github.com/gateschema/gateschema-js) [gateschema-form-vue](https://github.com/gateschema/gateschema-form-vue)  [@stateform/element](https://github.com/stateform/stateform-element)
 
 ```bash  

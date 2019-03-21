@@ -14,7 +14,7 @@
           <i v-if="item.icon" :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </template>
-        
+
         <template v-for="(child, idx) in item.children">
           <el-menu-item
             v-if="typeof(child.children)=== 'undefined'"
@@ -49,17 +49,17 @@
 <script>
 export default {
   props: [
-    "isCollapse",
-    "items",
-    "defaultActive",
-    "textColor",
-    "activeTextColor",
-    "backgroundColor"
+    'isCollapse',
+    'items',
+    'defaultActive',
+    'textColor',
+    'activeTextColor',
+    'backgroundColor'
   ],
   methods: {
-    handleSelect(name) {
-      this.$router.push({ name });
+    handleSelect (name) {
+      this.$router.push({ name })
     }
   }
-};
+}
 </script>

@@ -1,7 +1,7 @@
 <template>
   <el-breadcrumb>
-    <el-breadcrumb-item 
-      v-for="(item, index) in items" 
+    <el-breadcrumb-item
+      v-for="(item, index) in items"
       :key="index"
       :to="item.to"
     >

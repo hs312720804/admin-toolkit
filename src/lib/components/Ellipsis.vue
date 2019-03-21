@@ -14,11 +14,11 @@
 </template>
 <script>
 export default {
-    props:["content","width","height","tooltip"],
-    mounted () {
-        document.querySelector(".txt").style.width=this.width+"px";
-        document.querySelector(".txt").style.height=this.height+"px";
-    }
+  props: ['content', 'width', 'height', 'tooltip'],
+  mounted () {
+    document.querySelector('.txt').style.width = this.width + 'px'
+    document.querySelector('.txt').style.height = this.height + 'px'
+  }
 }
 </script>
 <style  scoped>
@@ -32,10 +32,8 @@ export default {
   display: inline;
   content: "...";
   font-size: 16px;
-} 
+}
 .ellipsis{
  display: inline-block;
 }
 </style>
-
-
