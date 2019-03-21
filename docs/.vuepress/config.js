@@ -31,6 +31,7 @@ module.exports = {
               'components/RemoteSelect.md',
               'components/ContentCard.md',
               'components/TheIcon.md',
+              'components/DownloadFile.md',
             ]
           }
         ]

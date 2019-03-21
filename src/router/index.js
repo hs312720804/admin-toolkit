@@ -83,7 +83,7 @@ const routes = [
       {
         path: "theIcon",
         name: "theIcon",
-        component: demos.TheIconDemo,
+        component: demos.TheIconDemoIndex,
         meta: {
           title: "图标",
           icon: "iconfont el-icon-cc-file-add",

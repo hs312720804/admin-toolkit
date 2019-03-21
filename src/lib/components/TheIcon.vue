@@ -4,7 +4,7 @@
   @go-back="goBack"
   >
     <div class="content font-class" style="display: block;">
-      <ul class="icon_lists dib-box" @click="getIconClassName">
+      <ul class="icon_lists dib-box" @click="getIconClassName" v-if="isUseInitialIcon">
         <li class="dib">
           <span class="icon iconfont el-icon-cc-denglu"></span>
           <div class="name">登录</div>
@@ -3349,6 +3349,9 @@
           <div class="code-name">.el-icon-cc-hangzhengguanli</div>
         </li>
       </ul>
+      <div v-if="!isUseInitialIcon" @click="getIconClassName" >
+        <slot></slot>
+      </div>
     </div>
   </content-card>
 </template>
@@ -3358,6 +3361,10 @@ export default {
   props: {
     title: {
       type: String
+    },
+    isUseInitialIcon: {
+       type: Boolean,
+       default: true
     }
   },
   data() {
@@ -3366,9 +3373,10 @@ export default {
   methods: {
     getIconClassName(event) {
       let classNames = event.toElement.getAttribute("class")
+      let name = event.toElement.nextElementSibling.textContent
       if (classNames.indexOf("icon") >= 0) {
         let iconName = classNames.split(" ")[2];
-        this.$emit("get-icon", iconName);
+        this.$emit("get-icon", iconName, name);
       }
     },
     goBack() {
@@ -3385,7 +3393,7 @@ export default {
 }
 
 .icon_lists li {
-  width: 100px;
+  min-width: 100px;
   margin-bottom: 10px;
   margin-right: 20px;
   text-align: center;
@@ -3399,10 +3407,9 @@ export default {
 
 .icon_lists .icon {
   display: block;
-  height: 100px;
   cursor: pointer;
-  line-height: 100px;
-  font-size: 42px;
+  line-height: 50px;
+  font-size: 40px;
   margin: 10px auto;
   color: #333;
   -webkit-transition: font-size 0.25s linear, width 0.25s linear;
@@ -3411,7 +3418,7 @@ export default {
 }
 
 .icon_lists .icon:hover {
-  font-size: 100px;
+  font-size: 50px;
 }
 
 .icon_lists .svg-icon {
@@ -3429,13 +3436,17 @@ export default {
 .icon_lists li .name,
 .icon_lists li .code-name {
   color: #666;
+  font-size: 12px;
 }
 li {
   cursor: pointer;
 }
 .dib {
   display: inline-block;
-  height: 200px;
+  height: 100px;
+}
+.code-name {
+  display: none;
 }
 </style>
 <style scoped src="../../assets/icon/iconfont.css">
