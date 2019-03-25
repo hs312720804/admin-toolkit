@@ -57,7 +57,7 @@ export default {
       }
     },
     handleSortChange () {
-      this.$emit.apply(this, ['sort-change', ...arguments])
+      this.$emit('sort-change', ...arguments)
     }
   },
   render (h) {

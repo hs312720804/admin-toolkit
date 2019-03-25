@@ -18,13 +18,14 @@ const routes = [
       {
         path: 'actionList',
         name: 'actionList',
-        component: demos.ActionListDemo,
+        component: demos.AppParamsReadDemo,
         meta: {
           title: '按钮组',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'actionList'
         }
-      },
+      },
+
       {
         path: 'Breadcrumb',
         name: 'Breadcrumb',
@@ -34,7 +35,8 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'Breadcrumb'
         }
-      },
+      },
+
       {
         path: 'menu',
         name: 'menu',
@@ -44,7 +46,8 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'menu'
         }
-      },
+      },
+
       {
         path: 'tagNav',
         name: 'tagNav',
@@ -54,7 +57,8 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'tagNav'
         }
-      },
+      },
+
       {
         path: 'carouse',
         name: 'carouse',
@@ -64,7 +68,8 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'carouse'
         }
-      },
+      },
+
       {
         path: 'ellipsis',
         name: 'ellipsis',

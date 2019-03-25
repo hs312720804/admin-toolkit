@@ -12,9 +12,118 @@
 </Demo>
 
 ### 代码  
-```
+``` vue
+<template>
+  <div>
+    <h2>简单上传</h2>
+    <Upload
+      ref="upload"
+      :multiple="true"
+      :min-height="100"
+      :max-height="200"
+      @upload="handleUpload"
+    >
+      <div class="upload-pic-list" slot="preview" slot-scope="{fileList}">
+        <div class="upload-pic-list__add" @click="$refs.upload.handleSelectFile()">
+          <i class="el-icon el-icon-plus"/>
+        </div>
+        <div class="upload-pic-list__item" v-for="file in fileList" :key="file.id">
+          <div
+            class="upload-pic-list__error"
+            v-if="file.status === 'error'"
+          >上传失败: {{ file.message }}</div>
+          <div v-if="file.status === 'uploading'" class="upload-pic-list__progress">
+            <el-progress :width="100" type="circle" :percentage="file.percentage"></el-progress>
+          </div>
+          <img v-else :src="file.dataUrl">
+          <i
+            v-if="file.status !== 'uploading'"
+            class="upload-pic-list__remove el-icon el-icon-close"
+            title="移除"
+            @click="$refs.upload.handleRemove(file)"
+          />
+        </div>
+      </div>
+    </Upload>
+  </div>
+</template>
 
+<script>
+export default {
+  methods: {
+    handleUpload (file, fileListItem) {
+      function update () {
+        if (fileListItem.percentage < 100) {
+          fileListItem.percentage += 10
+        } else {
+          fileListItem.status = 'successs'
+          clearInterval(fileListItem.interval)
+        }
+      }
+      fileListItem.interval = setInterval(update, 200)
+    }
+  }
+}
+</script>
+<style lang="stylus" scoped>
+$height = 100px;
+$width = 100px;
 
+.upload-pic-list__progress {
+  position: absolute;
+}
+
+.upload-pic-list__add, .upload-pic-list__item {
+  height: $height;
+  width: $width;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #ccc;
+}
+
+.upload-pic-list__add {
+  cursor: pointer;
+
+  i {
+    position: relative;
+    top: 50%;
+    margin: -10px auto;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.upload-pic-list__item {
+  position: relative;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.upload-pic-list__error {
+  position: absolute;
+  background: #000;
+  opacity: 0.7;
+  color: #fff;
+  width: 100%;
+  font-size: 12px;
+  padding: 5px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.upload-pic-list__remove {
+  position: absolute;
+  color: red;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+</style>
 ```
 
 ## 属性  
@@ -37,4 +146,19 @@
 ## 方法  
 | 名称 | 参数  | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |  
-| handleSelectFile | | | |  
+| handleSelectFile | 无 | 用于自定义选择文件按钮，点击的时候执行该方法可弹出选择文件窗口 | |  
+
+## Scoped Slot  
+| 名称 | scope |  描述 |  
+| ---- | ---- | ---- | 
+| preview | { fileList } | 用于自定义显示已上传列表 |   
+
+fileList 为一个数组，每个元素包含下面属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |  
+| id | String | 临时的文件标识 | |  
+| size | Number | 文件字节数 |  
+| dataUrl | String | |  
+| status | String | success \| uploading \| error | 上传状态 | 
+| value | Any | | 
+| percentage | Number | 上传进度 | 0.12 |   

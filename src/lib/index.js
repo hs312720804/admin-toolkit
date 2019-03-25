@@ -10,6 +10,10 @@ import carousel from './components/Carousel'
 import ellipsis from './components/Ellipsis'
 import GateSchemaForm from './components/GateSchemaForm'
 import Upload from './components/Upload'
+
+import AppParams from './bizComponents/AppParams'
+import AppParamsRead from './bizComponents/AppParamsRead'
+
 import utils from './utils'
 
 export {
@@ -25,5 +29,7 @@ export {
   pop,
   carousel,
   ellipsis,
-  Upload
+  Upload,
+  AppParams,
+  AppParamsRead
 }

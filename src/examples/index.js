@@ -9,6 +9,8 @@ import TagNavDemo from './TagNavDemo'
 import CarouselDemo from './CarouselDemo'
 import EllipsisDemo from './EllipsisDemo.vue'
 import UploadDemo from './UploadDemo.vue'
+import AppParamsDemo from './AppParamsDemo.vue'
+import AppParamsReadDemo from './AppParamsReadDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -20,5 +22,7 @@ export {
   TagNavDemo,
   CarouselDemo,
   EllipsisDemo,
-  UploadDemo
+  UploadDemo,
+  AppParamsDemo,
+  AppParamsReadDemo
 }
