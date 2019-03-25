@@ -1,3 +1,16 @@
+# 文件下载
+`DownloadFile`   
+通过接口请求数据，然后触发下载
+
+## 示例  
+### 效果  
+
+<Demo>
+  <DownloadFileDemo/>
+</Demo>
+
+### 代码  
+```vue
 <template>
   <div>
     <DownloadFile @download-data="downloadData" :downloadUrl="downloadUrl">下载真实数据</DownloadFile>
@@ -25,3 +38,15 @@ export default {
 };
 </script>
 
+
+```
+
+## 属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| downloadUrl | String | 下载地址 |见上面例子 |
+## 事件
+| 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- |
+| download-data | 无 |当用户点击按钮触发 |
+<Comment />
