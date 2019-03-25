@@ -1,5 +1,5 @@
-import ActionListDemo  from "./ActionListDemo"
-import BreadcrumbDemo  from "./BreadcrumbDemo"
+import ActionListDemo from './ActionListDemo'
+import BreadcrumbDemo from './BreadcrumbDemo'
 import ContentWrapperDemo from './ContentWrapperDemo'
 import GateSchemaFormDemo from './GateSchemaFormDemo'
 import MenuDemo from './MenuDemo'
@@ -11,6 +11,9 @@ import EllipsisDemo from './EllipsisDemo.vue'
 import TheIconDemo from './TheIconDemo.vue'
 import ContentCardDemo from './ContentCardDemo.vue'
 import DownloadFileDemo from './DownloadFileDemo.vue'
+import UploadDemo from './UploadDemo.vue'
+import AppParamsDemo from './AppParamsDemo.vue'
+import AppParamsReadDemo from './AppParamsReadDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -24,5 +27,8 @@ export {
   EllipsisDemo,
   TheIconDemo,
   ContentCardDemo,
-  DownloadFileDemo
+  DownloadFileDemo,
+  UploadDemo,
+  AppParamsDemo,
+  AppParamsReadDemo
 }

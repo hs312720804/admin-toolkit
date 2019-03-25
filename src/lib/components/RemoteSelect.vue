@@ -5,7 +5,7 @@
     </Button>
     <Dialog
       :title="title"
-      :visible.sync="showDialog" 
+      :visible.sync="showDialog"
       :append-to-body="true"
       width="90vw"
     >
@@ -32,60 +32,60 @@
   </div>
 </template>
 <script>
-import {Button, Tag, Dialog} from 'element-ui'
+import { Button, Tag, Dialog } from 'element-ui'
 export default {
   components: {
     Button,
     Dialog,
-    Tag,
+    Tag
   },
   props: {
     title: {
       type: String,
-      default() {
+      default () {
         return '选择'
       }
     },
     selected: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     }
   },
-  data() {
+  data () {
     return {
-      showDialog: false,
+      showDialog: false
     }
   },
   methods: {
-    handleSelectStart() {
+    handleSelectStart () {
       this.showDialog = true
       this.$emit('select-start')
     },
-    handleSelectEnd() {
+    handleSelectEnd () {
       this.showDialog = false
       this.$emit('select-end')
     },
-    handleSelectCancel() {
+    handleSelectCancel () {
       this.showDialog = false
       this.$emit('select-cancel')
     },
-    handleRemoveSelected(item) {
+    handleRemoveSelected (item) {
       this.$emit('selection-remove', item)
     },
-    handleClearSelected() {
+    handleClearSelected () {
       this.$emit('selection-clear')
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
-.selected 
-  >>> .el-tag 
+.selected
+  >>> .el-tag
     margin-left 10px
   .selected__tip
-    border-color #fff 
+    border-color #fff
     background #fff
     color #000
     margin-left 0

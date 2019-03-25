@@ -31,6 +31,14 @@ module.exports = {
               'components/RemoteSelect.md',
               'components/ContentCard.md',
               'components/TheIcon.md',
+              'components/Upload.md'
+            ]
+          },
+          {
+            title: '业务组件',
+            children: [
+              'bizComponents/AppParams.md',
+              'bizComponents/AppParamsRead.md'
             ]
           }
         ]

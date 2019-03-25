@@ -17,20 +17,20 @@
     </el-row>
 </template>
 <script>
-    import { Carousel,CarouselItem,Layout } from 'element-ui';
-    export default{
-        components: {
-            'el-carousel': Carousel,
-            'el-carousel-item': CarouselItem,
-            'el-layout':Layout
-        },
-        props:['carouselList'],
-        methods:{
-            xxxx(){
-                console.log(this.carouselList);
-            }
-        }
+import { Carousel, CarouselItem, Layout } from 'element-ui'
+export default{
+  components: {
+    'el-carousel': Carousel,
+    'el-carousel-item': CarouselItem,
+    'el-layout': Layout
+  },
+  props: ['carouselList'],
+  methods: {
+    xxxx () {
+      console.log(this.carouselList)
     }
+  }
+}
 </script>
 <style>
     .el-carousel__item h3 {

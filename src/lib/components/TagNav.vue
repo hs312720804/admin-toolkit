@@ -10,21 +10,21 @@
       </el-dropdown-menu>
     </el-dropdown>
 
-    <div 
+    <div
       ref="viewPort"
       class="tag-nav__view-port">
-      <ul 
+      <ul
         class="tag-nav__list"
         ref="tagList"
         :style="{'margin-left': -cursor + 'px'}"
       >
-        <li 
-          v-for="(item, index) in tags" 
+        <li
+          v-for="(item, index) in tags"
           :class="{
             'tag-nav__item': true,
             'tag-nav__item--active': item.meta.tagId === $route.meta.tagId
           }"
-          :key="index" 
+          :key="index"
           :title="getTitle(item)"
           @click="handleNavigate(item)"
         >
@@ -40,59 +40,59 @@
 <script>
 
 class TagHistory {
-    constructor({router, stack, cursor}) {
-        this.cursor = cursor !== undefined ? cursor : -1 
-        this.stack = stack || []
-        this.router = router
+  constructor ({ router, stack, cursor }) {
+    this.cursor = cursor !== undefined ? cursor : -1
+    this.stack = stack || []
+    this.router = router
+    this.isGoing = false
+    this.isNavigating = false
+  }
+  clear () {
+    this.cursor = -1
+    this.stack = []
+  }
+  push (route) {
+    if (!this.isGoing && !this.isNavigating) {
+      let { cursor, stack } = this
+      if (cursor !== stack.length - 1) {
+        // 如果不是在末端
+        // 截取前面的
+        stack = stack.slice(0, cursor + 1)
+      }
+      // 压到最新
+      stack.push(route)
+      this.stack = stack
+      this.cursor = ++cursor
+    } else {
+      this.isGoing = false
+      this.isNavigating = false
+    }
+  }
+  active () {
+    const path = this.stack[this.cursor].fullPath
+    this.isNavigating = true
+    this.router.push({ path }, undefined, () => {
+      this.isNavigating = false
+    })
+  }
+  go (position) {
+    const { cursor, stack, router } = this
+    const nextCursor = cursor + position
+    const nextRoute = stack[nextCursor]
+    if (nextRoute) {
+      // 前后移动的时候不需要修改栈
+      this.isGoing = true
+      router.push({ path: nextRoute.fullPath }, () => {
+        this.cursor = nextCursor
+      }, () => {
         this.isGoing = false
-        this.isNavigating = false
+      })
     }
-    clear() {
-        this.cursor = -1
-        this.stack = []
-    }
-    push(route) {
-        if (!this.isGoing && !this.isNavigating) {
-            let { cursor, stack } = this
-            if (cursor !== stack.length - 1) {
-                // 如果不是在末端
-                // 截取前面的
-                stack = stack.slice(0, cursor + 1)
-            }
-            // 压到最新
-            stack.push(route)
-            this.stack = stack
-            this.cursor = ++cursor
-        } else {
-            this.isGoing = false
-            this.isNavigating = false
-        }
-    }
-    active() {
-        const path = this.stack[this.cursor].fullPath
-        this.isNavigating = true
-        this.router.push({ path }, undefined, () => {
-            this.isNavigating = false
-        }) 
-    }
-    go(position) {
-        const { cursor, stack, router } = this
-        const nextCursor = cursor + position
-        const nextRoute = stack[nextCursor]
-        if (nextRoute) {
-            // 前后移动的时候不需要修改栈
-           this.isGoing = true
-           router.push({path: nextRoute.fullPath}, () => {
-               this.cursor = nextCursor
-           }, () => {
-               this.isGoing = false
-           }) 
-        }
-    }
+  }
 }
 
 export default {
-  data() {
+  data () {
     return {
       tags: [],
       cursor: 0,
@@ -100,7 +100,7 @@ export default {
     }
   },
   computed: {
-    historyCursor() {
+    historyCursor () {
       const route = this.$route
       let cursor = 0
       if (route.meta && route.meta.tagId) {
@@ -119,7 +119,7 @@ export default {
     },
     initTags: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     }
@@ -128,13 +128,13 @@ export default {
     $route: 'handleRouteChange'
   },
   methods: {
-    getTitle({meta, name}) {
+    getTitle ({ meta, name }) {
       return (meta && meta.title) || name
     },
-    handleNavigate(route) {
-      this.$router.push({path: route.fullPath})
+    handleNavigate (route) {
+      this.$router.push({ path: route.fullPath })
     },
-    handleClose(route) {
+    handleClose (route) {
       const currentRoute = this.$route
       const tags = this.tags
       const index = tags.indexOf(route)
@@ -151,76 +151,76 @@ export default {
         const activeRoute = index < length
           ? tags[index]
           : index > 0
-            ? tags[index-1] 
+            ? tags[index - 1]
             : undefined
         const path = activeRoute ? activeRoute.fullPath : defaultPath
         this.$router.push(path)
       }
     },
-    handleCloseOther() {
+    handleCloseOther () {
       this.tags = []
       this.addTag(this.$route)
     },
-    handleCloseAll() {
+    handleCloseAll () {
       this.tags = []
       this.$router.push(this.defaultPath)
     },
-    handleScroll(side) {
+    handleScroll (side) {
       const { viewPort, tagList } = this.$refs
       const listWidth = tagList.scrollWidth
-      const value = (side === 'left' ? (-1) : 1) * Math.max(200, (listWidth/4))
+      const value = (side === 'left' ? (-1) : 1) * Math.max(200, (listWidth / 4))
       const navViewPortWidth = viewPort.clientWidth
-      const maxValue= listWidth - navViewPortWidth
+      const maxValue = listWidth - navViewPortWidth
       const minValue = 0
       this.cursor = Math.max(minValue, Math.min(this.cursor + value, maxValue))
     },
-    handleRouteChange(route) {
+    handleRouteChange (route) {
       this.addTag(route)
     },
-    handleForward() {
-        const history = this.tagHistories[this.$route.meta.tagId]
-        if (history) {
-          history.go(-1)
-        }
-    },
-    handleBack() {
+    handleForward () {
       const history = this.tagHistories[this.$route.meta.tagId]
       if (history) {
         history.go(-1)
       }
     },
-    addTag(route) {
-        const meta = route.meta
-        if (meta && meta.tagId) {
-            const tagId = meta.tagId
-            const item = this.tags.find((item) => item.meta.tagId === tagId)
-            const tagItem = {
-                name: route.name,
-                meta,
-                fullPath: route.fullPath
-            }
-            if (!item) {
-                this.tags.push(tagItem)
-            } else {
-                Object.assign(item, tagItem)
-            }
+    handleBack () {
+      const history = this.tagHistories[this.$route.meta.tagId]
+      if (history) {
+        history.go(-1)
+      }
+    },
+    addTag (route) {
+      const meta = route.meta
+      if (meta && meta.tagId) {
+        const tagId = meta.tagId
+        const item = this.tags.find((item) => item.meta.tagId === tagId)
+        const tagItem = {
+          name: route.name,
+          meta,
+          fullPath: route.fullPath
         }
+        if (!item) {
+          this.tags.push(tagItem)
+        } else {
+          Object.assign(item, tagItem)
+        }
+      }
     },
-    init() {
-        const router = this.$router
-        this.tags = this.initTags
+    init () {
+      const router = this.$router
+      this.tags = this.initTags
     },
-    scrollIntoView() {
+    scrollIntoView () {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
       if (activeItem) {
         activeItem.scrollIntoViewIfNeeded()
       }
     }
-  },  
-  created() {
-      this.init()
   },
-  mounted() {
+  created () {
+    this.init()
+  },
+  mounted () {
     if (this.$route) {
       this.addTag(this.$route)
     }
@@ -232,7 +232,7 @@ export default {
 <style lang="stylus" scoped>
 .tag-nav
   position relative
-  padding 0 55px 0 25px 
+  padding 0 55px 0 25px
   background #f0f0f0
   overflow hidden
   font-size 12px
@@ -256,10 +256,10 @@ export default {
   position relative
   display inline-block
   height 32px
-  padding 0 30px 
+  padding 0 30px
   margin 4px 0 0 5px
   background #fff
-  cursor pointer 
+  cursor pointer
 
 .tag-nav__dot
   position absolute
@@ -267,7 +267,7 @@ export default {
   left 10px
   height 12px
   width 12px
-  margin-top -6px 
+  margin-top -6px
   border-radius 6px
   background #f0f0f0
   transition background .2s ease
@@ -276,7 +276,7 @@ export default {
   position absolute
   top 50%
   right 10px
-  margin-top -6px 
+  margin-top -6px
   opacity 0.5
   &:hover
     opacity 1

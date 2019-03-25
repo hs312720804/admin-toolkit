@@ -1,12 +1,12 @@
 <template>
-    <ContentWrapper 
+    <ContentWrapper
       :filter="filter"
       :filterSchema="filterSchema"
       :pagination="pagination"
       @filter-change="handleFilterChange"
       @filter-reset="handleFilterReset"
     >
-      <Table 
+      <Table
         :props="table.props"
         :header="table.header"
         :data="table.data"
@@ -17,12 +17,12 @@
 <script>
 import _ from 'gateschema'
 export default {
-  data() {
+  data () {
     return {
       filter: {},
       filterSchema: _.map({
-        id: _.o.string.other("form", {
-          placeholder: "请输入 id",
+        id: _.o.string.other('form', {
+          placeholder: '请输入 id',
           cols: {
             item: 5,
             label: 6,
@@ -31,8 +31,8 @@ export default {
             xsWrapper: 24
           }
         }),
-        name: _.o.string.other("form", {
-          placeholder: "请输入 name",
+        name: _.o.string.other('form', {
+          placeholder: '请输入 name',
           cols: {
             item: 7,
             label: 8,
@@ -44,8 +44,8 @@ export default {
             }
           }
         })
-      }).other("form", {
-        layout: "inline",
+      }).other('form', {
+        layout: 'inline',
         footer: {
           cols: {
             item: 5,
@@ -53,9 +53,9 @@ export default {
             wrapper: 24
           },
           showSubmit: true,
-          submitText: "查询",
+          submitText: '查询',
           showReset: true,
-          resetText: "重置"
+          resetText: '重置'
         }
       }),
       tableHeader: [
@@ -66,47 +66,47 @@ export default {
       },
       table: {
         props: {
-          border: true,
+          border: true
         },
         header: [
           {
-            label: "ID",
-            prop: "id",
+            label: 'ID',
+            prop: 'id',
             sortable: false
           },
           {
-            label: "名称",
-            prop: "name",
+            label: '名称',
+            prop: 'name',
             sortable: true
           }
         ],
         data: [
           {
-            id: "1",
-            name: "名称1"
+            id: '1',
+            name: '名称1'
           },
           {
-            id: "2",
-            name: "名称2"
+            id: '2',
+            name: '名称2'
           }
         ],
         selection: 'multiple',
-        selected: [],
-    }
+        selected: []
+      }
     }
   },
   methods: {
-    fetchData() {
+    fetchData () {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据')
     },
-    handleFilterChange(type) {
+    handleFilterChange (type) {
       if (type === 'pagination') {
         this.$message('分页数据发生改变')
       } else {
         this.$message('筛选条件发生变更')
       }
     },
-    handleFilterReset() {
+    handleFilterReset () {
       this.$message('筛选条件需要重置')
     }
   }

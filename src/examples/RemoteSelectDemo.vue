@@ -1,6 +1,6 @@
 <template>
   <RemoteSelect
-    :title="remoteSelect.title" 
+    :title="remoteSelect.title"
     :selected="remoteSelect.selected"
     @selection-remove="handleTableRowSelectionRemove"
     @selection-clear="handleRemoteSelectClear"
@@ -11,8 +11,8 @@
       :pagination="remoteSelect.pagination"
       @filter-change="fetchData"
     >
-      <Table 
-        :data="remoteSelect.table.data" 
+      <Table
+        :data="remoteSelect.table.data"
         :props="remoteSelect.table.props"
         :header="remoteSelect.table.header"
         :selected="remoteSelect.table.selected"
@@ -27,14 +27,14 @@
 <script>
 import _ from 'gateschema'
 export default {
-  data() {
+  data () {
     return {
       remoteSelect: {
         title: '选择数据',
         filter: {},
         filterSchema: _.map({
-          id: _.o.string.other("form", {
-            placeholder: "请输入 id",
+          id: _.o.string.other('form', {
+            placeholder: '请输入 id',
             cols: {
               item: 5,
               label: 6,
@@ -43,8 +43,8 @@ export default {
               xsWrapper: 24
             }
           }),
-          name: _.o.string.other("form", {
-            placeholder: "请输入 name",
+          name: _.o.string.other('form', {
+            placeholder: '请输入 name',
             cols: {
               item: 5,
               label: 8,
@@ -56,42 +56,42 @@ export default {
               }
             }
           })
-        }).other("form", {
-          layout: "inline",
+        }).other('form', {
+          layout: 'inline',
           footer: {
             cols: {
               label: 0,
               wrapper: 24
             },
             showSubmit: true,
-            submitText: "查询"
+            submitText: '查询'
           }
         }),
         selected: [],
         table: {
           props: {
-            border: true,
+            border: true
           },
           header: [
             {
-              label: "ID",
-              prop: "id",
+              label: 'ID',
+              prop: 'id',
               sortable: false
             },
             {
-              label: "名称",
-              prop: "name",
+              label: '名称',
+              prop: 'name',
               sortable: true
             }
           ],
           data: [
             {
-              id: "1",
-              name: "名称1"
+              id: '1',
+              name: '名称1'
             },
             {
-              id: "2",
-              name: "名称2"
+              id: '2',
+              name: '名称2'
             }
           ],
           selected: [],
@@ -105,11 +105,11 @@ export default {
     }
   },
   methods: {
-    fetchData() {
+    fetchData () {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据'
       )
     },
-    handleTableRowSelectionAdd(targetItem) {
+    handleTableRowSelectionAdd (targetItem) {
       const remoteSelect = this.remoteSelect
       remoteSelect.selected = remoteSelect.selected.concat({
         id: targetItem.id,
@@ -117,35 +117,35 @@ export default {
       })
       this.updateTableSelected()
     },
-    handleTableRowSelectionRemove(targetItem) {
+    handleTableRowSelectionRemove (targetItem) {
       const remoteSelect = this.remoteSelect
       remoteSelect.selected = remoteSelect.selected.filter((item) => {
         return item.id !== targetItem.id
-      })        
+      })
       this.updateTableSelected()
     },
-    updateTableSelected() {
+    updateTableSelected () {
       const remoteSelect = this.remoteSelect
       const table = remoteSelect.table
       const newSelectedIndex = remoteSelect.selected.map(item => item.id)
-      table.selected = table.data.reduce((result, item, index)=> {
+      table.selected = table.data.reduce((result, item, index) => {
         if (newSelectedIndex.indexOf(item.id) > -1) {
           result.push(index)
         }
         return result
       }, [])
     },
-    handleRemoteSelectClear() {
+    handleRemoteSelectClear () {
       this.remoteSelect.selected = []
       this.remoteSelect.table.selected = []
     },
-    handleTableAllRowSelectionChange(value) {
+    handleTableAllRowSelectionChange (value) {
       if (value) {
         this.remoteSelect.table.data.forEach(this.handleTableRowSelectionAdd)
       } else {
         this.handleRemoteSelectClear()
       }
     }
-  }  
+  }
 }
 </script>

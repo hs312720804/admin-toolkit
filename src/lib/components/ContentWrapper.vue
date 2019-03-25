@@ -1,43 +1,43 @@
 <script>
-import GateSchemaForm from "./GateSchemaForm";
-import { Pagination } from "element-ui";
+import GateSchemaForm from './GateSchemaForm'
+import { Pagination } from 'element-ui'
 const defaultPaginationProps = {
   background: true,
-  pageSizes: [10,20,50,100],
+  pageSizes: [10, 20, 50, 100],
   pageSize: 10,
-  layout: "total, prev, pager, next, sizes, jumper"
-};
+  layout: 'total, prev, pager, next, sizes, jumper'
+}
 export default {
-  props: ["filter", "filterSchema", "pagination"],
-  created() {},
+  props: ['filter', 'filterSchema', 'pagination'],
+  created () {},
   methods: {
-    handleFilter(err) {
+    handleFilter (err) {
       if (!err || err.length === 0) {
-        this.emitFilterChange('query');
+        this.emitFilterChange('query')
       }
     },
-    handlePageSizeChange(size) {
-      this.$set(this.pagination, "pageSize", size);
-      this.emitFilterChange('pagination');
+    handlePageSizeChange (size) {
+      this.$set(this.pagination, 'pageSize', size)
+      this.emitFilterChange('pagination')
     },
-    handlePageChange(page) {
-      this.$set(this.pagination, "currentPage", page);
-      this.emitFilterChange('pagination');
+    handlePageChange (page) {
+      this.$set(this.pagination, 'currentPage', page)
+      this.emitFilterChange('pagination')
     },
-    handleResetFilterForm() {
+    handleResetFilterForm () {
       this.$emit('filter-reset')
     },
-    emitFilterChange(type) {
-      this.$emit("filter-change", type);
+    emitFilterChange (type) {
+      this.$emit('filter-change', type)
     }
   },
-  render(h) {
+  render (h) {
     const $slots = this.$slots
     let filterForm
     if (this.filterSchema) {
       filterForm = h(GateSchemaForm, {
         ref: 'filterForm',
-        class: "filter-form",
+        class: 'filter-form',
         props: {
           value: this.filter,
           schema: this.filterSchema
@@ -46,7 +46,7 @@ export default {
           submit: this.handleFilter,
           reset: this.handleResetFilterForm
         }
-      });
+      })
     } else {
       filterForm = $slots.filterForm
     }
@@ -54,7 +54,7 @@ export default {
     const {
       handlePageSizeChange,
       handlePageChange
-    } = this;
+    } = this
     const pagination = h(Pagination, {
       ref: 'pagination',
       props: {
@@ -62,16 +62,16 @@ export default {
         ...this.pagination
       },
       on: {
-        "size-change": handlePageSizeChange,
-        "current-change": handlePageChange
+        'size-change': handlePageSizeChange,
+        'current-change': handlePageChange
       }
-    });
-    return h("div", { class: "content-list" }, [filterForm, this.$slots.actionList, this.$slots.default, pagination]);
+    })
+    return h('div', { class: 'content-list' }, [filterForm, this.$slots.actionList, this.$slots.default, pagination])
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
-.content-list 
+.content-list
     margin-top 20px
     .filter-form >>> .el-form
     >>> .el-pagination
@@ -89,7 +89,7 @@ export default {
                 width auto
     >>> .el-pagination
         padding 0
-        margin-top 30px 
+        margin-top 30px
         button:last-child
             margin-right 0
     >>> .el-pagination__total

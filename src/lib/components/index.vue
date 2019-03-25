@@ -125,5 +125,3 @@ export default {
 .header >>> .el-breadcrumb__inner
   color: white
 </style>
-
-

@@ -1,6 +1,6 @@
 <template>
-    <GateSchemaForm 
-      :schema="schema" 
+    <GateSchemaForm
+      :schema="schema"
       v-model="formData"
     >
     </GateSchemaForm>
@@ -13,18 +13,18 @@ const schema = _
     name: _
       .map({
         firstName: _.required
-          .$msg("First Name is required")
-          .string.notEmpty.other("form", {
-            layout: "inline",
+          .$msg('First Name is required')
+          .string.notEmpty.other('form', {
+            layout: 'inline',
             cols: {
               item: 6,
               label: 0,
               wrapper: 24
             },
-            placeholder: "First Name"
+            placeholder: 'First Name'
           }),
-        lastName: _.required.string.notEmpty.other("form", {
-          layout: "inline",
+        lastName: _.required.string.notEmpty.other('form', {
+          layout: 'inline',
           cols: {
             item: {
               span: 8,
@@ -33,52 +33,52 @@ const schema = _
             label: 0,
             wrapper: 24
           },
-          placeholder: "Last Name"
+          placeholder: 'Last Name'
         })
       })
-      .other("form", {
+      .other('form', {
         class: {
-          "user-name": true
+          'user-name': true
         }
       })
   })
   .map({
     email: _
-      .switch("/phone", [
+      .switch('/phone', [
         {
           case: _.required,
           schema: _.optional
         },
         {
           case: _.any,
-          schema: _.required.$msg("email or phone is required")
+          schema: _.required.$msg('email or phone is required')
         }
       ])
-      .string.notEmpty.format("email"),
-    phone: _.switch("/email", [
+      .string.notEmpty.format('email'),
+    phone: _.switch('/email', [
       {
         case: _.required,
         schema: _.optional
       },
       {
         case: _.any,
-        schema: _.required.$msg("email or phone is required")
+        schema: _.required.$msg('email or phone is required')
       }
     ]).string.notEmpty,
-    captcha: _.string.switch("/phone", [
+    captcha: _.string.switch('/phone', [
       {
         case: _.required,
         schema: _.required
       },
       {
         case: _.any,
-        schema: _.optional.other("form", {
+        schema: _.optional.other('form', {
           hidden: true
         })
       }
     ]),
-    password: _.required.string.notEmpty.other("form", {
-      type: "password"
+    password: _.required.string.notEmpty.other('form', {
+      type: 'password'
     }),
     gender: _.enum({
       male: 0,
@@ -89,9 +89,9 @@ const schema = _
         male: 0,
         female: 1
       })
-      .other("form", {
-        component: "Select",
-        placeholder: "Please Select"
+      .other('form', {
+        component: 'Select',
+        placeholder: 'Please Select'
       }),
     languages: _
       .enumList({
@@ -101,8 +101,8 @@ const schema = _
         haskell: 7,
         javascript: 8
       })
-      .other("form", {
-        placeholder: "Please Select",
+      .other('form', {
+        placeholder: 'Please Select',
         disabledItems: {
           javascript: true
         }
@@ -111,33 +111,33 @@ const schema = _
       .enumList({
         c: 1,
         go: 2,
-        "c++": 3,
+        'c++': 3,
         java: 4,
         scala: 5,
         python: 6,
         haskell: 7,
         javascript: 8
       })
-      .other("form", {
-        component: "Select",
-        placeholder: "Please Select",
+      .other('form', {
+        component: 'Select',
+        placeholder: 'Please Select',
         disabledItems: {
           java: true
         }
       }),
     rememberMe: _.required.boolean,
-    date: _.required.string.other("form", {
-      component: "DatePicker"
+    date: _.required.string.other('form', {
+      component: 'DatePicker'
     }),
-    dateTime: _.optional.string.other("form", {
-      component: "DateTimePicker"
+    dateTime: _.optional.string.other('form', {
+      component: 'DateTimePicker'
     }),
-    timestamp: _.required.number.other("form", {
-      component: "DateTimePicker",
-      valueType: "millisecond"
+    timestamp: _.required.number.other('form', {
+      component: 'DateTimePicker',
+      valueType: 'millisecond'
     }),
     address: _.list(
-      _.required.string.other("form", {
+      _.required.string.other('form', {
         cols: {
           label: 0,
           wrapper: 24
@@ -151,7 +151,7 @@ const schema = _
       })
     )
   })
-  .other("form", {
+  .other('form', {
     cols: {
       label: 6,
       wrapper: 18
@@ -162,13 +162,13 @@ const schema = _
         wrapper: 24
       },
       showSubmit: true,
-      submitText: "Submit Text"
+      submitText: 'Submit Text'
     },
-    layout: "vertical"
-  });
+    layout: 'vertical'
+  })
 
 export default {
-  data() {
+  data () {
     return {
       schema,
       formData: {
