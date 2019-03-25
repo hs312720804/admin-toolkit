@@ -8,6 +8,7 @@ import TagNav from './components/TagNav'
 import pop from './components/pop'
 import carousel from './components/Carousel'
 import ellipsis from './components/Ellipsis'
+import TypeList from './components/TypeList'
 import GateSchemaForm from "./components/GateSchemaForm"
 import TheIcon from './components/TheIcon.vue'
 import ContentCard from './components/ContentCard'
@@ -38,4 +39,5 @@ export {
   Upload,
   AppParams,
   AppParamsRead
-}
+  TypeList
+};

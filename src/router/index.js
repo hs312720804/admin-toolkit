@@ -100,6 +100,16 @@ const routes = [
           route: "contentCard"
         }
       },
+      {
+        path: "typeList",
+        name: "typeList",
+        component: demos.TypeListDemo,
+        meta: {
+          title: "分类列表",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "typeList"
+        }
+      }
     ]
   },
   {
