@@ -5,6 +5,7 @@
     </Button>
     <Dialog
       :title="title"
+      :class="dialogClass"
       :visible.sync="showDialog"
       :append-to-body="true"
       width="90vw"
@@ -51,6 +52,9 @@ export default {
       default () {
         return []
       }
+    },
+    dialogClass: {
+
     }
   },
   data () {
