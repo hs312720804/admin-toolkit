@@ -38,6 +38,6 @@ export {
   DownloadFile,
   Upload,
   AppParams,
-  AppParamsRead
+  AppParamsRead,
   TypeList
 };
