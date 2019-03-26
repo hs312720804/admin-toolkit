@@ -66,7 +66,7 @@ export default {
         'current-change': handlePageChange
       }
     })
-    return h('div', { class: 'content-list' }, [filterForm, this.$slots.actionList, this.$slots.default, pagination])
+    return h('div', { class: ['content-list', ...(this.class || [])] }, [filterForm, this.$slots.actionList, this.$slots.default, pagination])
   }
 }
 </script>
