@@ -32,16 +32,10 @@
     "gateschema": "^0.2.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-<<<<<<< Updated upstream
     "vssue": "^0.5.3",
     "vssue-api-gitlab-v3": "git+ssh://git@gitlab.skysri.com:liangweiliang/vssue-api-gitlab-v3.git",
     "vue-template-compiler": "^2.6.9",
     "vuepress": "^0.14.10",
     "webpack-dev-middleware": "^3.6.0"
-=======
-    "vssue": "^0.5.2",
-    "vue-template-compiler": "^2.6.8",
-    "vuepress": "^0.14.8"
->>>>>>> Stashed changes
   }
 }
