@@ -39,6 +39,12 @@ export default {
     },
     selected: {
     },
+    selectOnRowClick: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
     fixSelection: {
       type: Boolean,
       default () {
@@ -58,6 +64,19 @@ export default {
     },
     handleSortChange () {
       this.$emit('sort-change', ...arguments)
+    },
+    handleRowClick(row) {
+      if (this.selectOnRowClick) {
+        const index = this.data.indexOf(row)
+        const selected = this.selected.indexOf(index) > -1
+        this.$emit(selected ? 'row-selection-remove' : 'row-selection-add', row, index)
+      }
+      this.$emit('row-click', ...arguments)
+    },
+    createEmitter(eventName) {
+      return function proxy() {
+        this.$emit(eventName, ...arguments)
+      }.bind(this)
     }
   },
   render (h) {
@@ -145,6 +164,24 @@ export default {
       header.unshift(selectionColumn)
     }
 
+    const elementUITableEvents = [
+      'cell-mouse-enter',	
+      'cell-mouse-leave',
+      'cell-click', 
+      'cell-dblclick',
+      'row-click',
+      'row-contextmenu',
+      'row-dblclick',
+      'header-click',
+      'header-contextmenu',
+      'sort-change',
+      'current-change',
+      'header-dragend',	
+      'expand-change'
+    ].reduce((result, item) => {
+      result[item] = this.createEmitter(item)
+      return result
+    }, {})
     const table = h(
       Table,
       {
@@ -155,7 +192,9 @@ export default {
           data: this.data
         },
         on: {
-          'sort-change': this.handleSortChange
+          ...elementUITableEvents,
+          'sort-change': this.handleSortChange,
+          'row-click': this.handleRowClick
         }
       },
       header

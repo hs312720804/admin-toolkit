@@ -18,6 +18,7 @@
     :header="table.header"
     :selection-type="table.selectionType"
     :selected="table.selected"
+    :select-on-row-click="true"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
     @all-row-selection-change="handleAllRowSelectionChange"
