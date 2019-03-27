@@ -11,14 +11,16 @@
                 <el-checkbox 
                     v-if="selectionType === 'multiple'"
                     :value="selected.indexOf(index) > -1"
-                    @input="handleToggleSelect($event, index, row)"
+                    @input="handleToggleSelect(index, row)"
                     @click.native="stopPropagation"
                 >
                 </el-checkbox>
                 <el-radio 
                     v-if="selectionType === 'single'"
-                    :value="selected === index"
-                    @input="handleToggleSelect($event, index, row)"
+                    class='hide-radio-label'
+                    :value="selected"
+                    :label="index"
+                    @input="handleToggleSelect(index, row)"
                     @click.native="stopPropagation"
                 >
                 </el-radio>
@@ -53,14 +55,19 @@ export default {
         },
         handleClickRow(index, row) {
             if (this.selectOnRowClick) {
-                this.handleToggleSelect(this.selected.indexOf(index) === -1, index, row)
+                this.handleToggleSelect(index, row)
             }
         },
-        handleToggleSelect(value, index, row) {
-            if (value) {
-                this.$emit('row-selection-add', row, index)
-            } else {
-                this.$emit('row-selection-remove', row, index)
+        handleToggleSelect(index, row) {
+            const selectionType = this.selectionType
+            if (selectionType === 'multiple') {
+                if (this.selected.indexOf(index) === -1) {
+                    this.$emit('row-selection-add', row, index)
+                } else {
+                    this.$emit('row-selection-remove', row, index)
+                }
+            } else if (selectionType === 'single') {
+                this.$emit('row-selection-change', row, index)
             }
         }
     }
@@ -79,5 +86,7 @@ export default {
     line-height 1
     >>> .el-checkbox
         vertical-align top
+.hide-radio-label >>> .el-radio__label
+  display none
 </style>
 

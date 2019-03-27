@@ -5,6 +5,7 @@
     :selected="table.selected"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
+    @row-selection-change="handleRowSelectionChange"
     :select-on-row-click="true"
   >
     <div class="card-content" slot="row" slot-scope="{row}">
@@ -27,7 +28,7 @@ export default {
             name: '名称2'
           }
         ],
-        selectionType: 'multiple',
+        selectionType: 'single',
         selected: []
       }
     }
@@ -39,12 +40,8 @@ export default {
     handleRowSelectionRemove (item, index) {
       this.table.selected = this.table.selected.filter(item => item !== index)
     },
-    handleAllRowSelectionChange (value) {
-      if (value) {
-        this.table.selected = this.table.data.map((_, index) => index)
-      } else {
-        this.table.selected = []
-      }
+    handleRowSelectionChange(item, index) {
+      this.table.selected = index
     }
   }
 }
