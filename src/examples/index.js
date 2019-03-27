@@ -17,6 +17,7 @@ import UploadDemo from './UploadDemo.vue'
 import AppParamsDemo from './AppParamsDemo.vue'
 import AppParamsReadDemo from './AppParamsReadDemo.vue'
 import TypeListDemo from './TypeListDemo'
+import CardListDemo from './CardListDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -28,7 +29,6 @@ export {
   TagNavDemo,
   CarouselDemo,
   EllipsisDemo,
-<<<<<<< Updated upstream
   TheIconDemoIndex,
   TheCustomIconDemo,
   TheInitIconDemo,
@@ -36,8 +36,7 @@ export {
   DownloadFileDemo,
   UploadDemo,
   AppParamsDemo,
-  AppParamsReadDemo
-=======
-  TypeListDemo
->>>>>>> Stashed changes
+  AppParamsReadDemo,
+  TypeListDemo,
+  CardListDemo
 }
