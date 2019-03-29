@@ -93,6 +93,7 @@ export default {
      */
     getChildrenList(id) {
       this.form.strategyName = id
+      this.form.crowdName = null
       this.crowdList = this.crowdList_data.filter(e => {
         return id.includes(e.id + '') === true
       })

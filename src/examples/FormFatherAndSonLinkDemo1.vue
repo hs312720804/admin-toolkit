@@ -88,6 +88,7 @@ export default {
   methods: {
     getChildrenList(id) {
       this.form.strategyName = id
+      this.form.crowdName = null
       this.crowdList =this.crowdList_data.reduce(function(result,current){
          if (id.includes(current.id + '') === true) {
            result = result.concat(current.data)
