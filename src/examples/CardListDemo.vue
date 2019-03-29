@@ -28,7 +28,7 @@ export default {
             name: '名称2'
           }
         ],
-        selectionType: 'single',
+        selectionType: 'multiple',
         selected: []
       }
     }
