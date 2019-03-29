@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  props: ['content', 'width', 'height', 'tooltip'],
+  props: ['content', 'width', 'height'],
   mounted () {
     document.querySelector('.txt').style.width = this.width + 'px'
     document.querySelector('.txt').style.height = this.height + 'px'

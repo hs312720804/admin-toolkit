@@ -1,5 +1,5 @@
 <template>
-       <ellipsis :content='EllipsisContent' width="100" height="100" ></ellipsis>
+       <ContentEllipsis :content='EllipsisContent' width="100" height="100" ></ContentEllipsis>
 </template>
 <script>
 export default {

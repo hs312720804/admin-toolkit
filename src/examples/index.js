@@ -7,7 +7,7 @@ import RemoteSelectDemo from './RemoteSelectDemo'
 import TableDemo from './TableDemo'
 import TagNavDemo from './TagNavDemo'
 import CarouselDemo from './CarouselDemo'
-import EllipsisDemo from './EllipsisDemo.vue'
+import ContentEllipsisDemo from './ContentEllipsisDemo.vue'
 import TheIconDemoIndex from './TheIconDemoIndex.vue'
 import TheCustomIconDemo from './TheCustomIconDemo.vue'
 import TheInitIconDemo from './TheInitIconDemo.vue'
@@ -30,7 +30,7 @@ export {
   TableDemo,
   TagNavDemo,
   CarouselDemo,
-  EllipsisDemo,
+  ContentEllipsisDemo,
   TheIconDemoIndex,
   TheCustomIconDemo,
   TheInitIconDemo,

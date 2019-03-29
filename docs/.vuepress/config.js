@@ -34,7 +34,8 @@ module.exports = {
               'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
-              'components/FormFatherAndSonLink.md'
+              'components/FormFatherAndSonLink.md',
+              'components/ContentEllipsis.md'
             ]
           },
           {

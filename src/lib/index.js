@@ -7,12 +7,12 @@ import ActionList from "./components/ActionList";
 import TagNav from "./components/TagNav";
 import pop from "./components/pop";
 import carousel from "./components/Carousel";
-import ellipsis from "./components/Ellipsis";
+import ContentEllipsis from "./components/ContentEllipsis";
 import TypeList from "./components/TypeList";
 import GateSchemaForm from "./components/GateSchemaForm";
-import IconSelect from "./components/IconSelect";
+import IconSelect from './components/IconSelect';
 import ContentCard from "./components/ContentCard";
-import DownloadFile from "./components/DownloadFile";
+import DownloadFile from './components/DownloadFile';
 import Upload from "./components/Upload";
 import AppParams from "./bizComponents/AppParams";
 import AppParamsRead from "./bizComponents/AppParamsRead";
@@ -31,7 +31,7 @@ export {
   utils,
   pop,
   carousel,
-  ellipsis,
+  ContentEllipsis,
   IconSelect,
   ContentCard,
   DownloadFile,

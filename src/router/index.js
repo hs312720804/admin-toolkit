@@ -68,7 +68,7 @@ const routes = [
       {
         path: 'ellipsis',
         name: 'ellipsis',
-        component: demos.EllipsisDemo,
+        component: demos.ContentEllipsisDemo,
         meta: {
           title: '省略号',
           icon: 'iconfont el-icon-cc-file-add',
