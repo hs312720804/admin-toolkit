@@ -1,5 +1,5 @@
 # 图标组件
-`TheIcon`   
+`IconSelect`   
 图标组件依赖于阿里图标库，所以需要引入iconfont.css样式
 
 ## 示例1

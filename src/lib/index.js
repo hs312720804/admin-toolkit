@@ -10,18 +10,15 @@ import carousel from "./components/Carousel";
 import ellipsis from "./components/Ellipsis";
 import TypeList from "./components/TypeList";
 import GateSchemaForm from "./components/GateSchemaForm";
-import TheIcon from "./components/TheIcon.vue";
+import IconSelect from "./components/IconSelect";
 import ContentCard from "./components/ContentCard";
 import DownloadFile from "./components/DownloadFile";
 import Upload from "./components/Upload";
-
 import AppParams from "./bizComponents/AppParams";
 import AppParamsRead from "./bizComponents/AppParamsRead";
-
 import CardList from "./components/CardList";
-
-import utils from "./utils";
-
+import utils from "./utils"
+import FormFatherAndSonLink from './components/FormFatherAndSonLink'
 export {
   Menu,
   Breadcrumb,
@@ -35,12 +32,13 @@ export {
   pop,
   carousel,
   ellipsis,
-  TheIcon,
+  IconSelect,
   ContentCard,
   DownloadFile,
   Upload,
   AppParams,
   AppParamsRead,
   TypeList,
-  CardList
+  CardList,
+  FormFatherAndSonLink
 }

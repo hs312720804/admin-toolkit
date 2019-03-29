@@ -11,8 +11,8 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <TheIcon @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
-      </TheIcon>
+      <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
+      </IconSelect>
     </div>
   </div>
 </template>

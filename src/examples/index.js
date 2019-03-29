@@ -18,6 +18,8 @@ import AppParamsDemo from './AppParamsDemo.vue'
 import AppParamsReadDemo from './AppParamsReadDemo.vue'
 import TypeListDemo from './TypeListDemo'
 import CardListDemo from './CardListDemo'
+import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
+import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -38,5 +40,7 @@ export {
   AppParamsDemo,
   AppParamsReadDemo,
   TypeListDemo,
-  CardListDemo
+  CardListDemo,
+  FormFatherAndSonLinkDemo,
+  FormFatherAndSonLinkDemo1
 }

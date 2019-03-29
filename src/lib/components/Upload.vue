@@ -166,6 +166,7 @@ export default {
       })
     },
     handleUpload (event) {
+      console.log("文件上传。。。。。。。")
       const target = event.target
       const files = [].slice.call(target.files)
       const STATUS = this.STATUS

@@ -25,7 +25,6 @@ const routes = [
           route: 'actionList'
         }
       },
-
       {
         path: 'Breadcrumb',
         name: 'Breadcrumb',
@@ -36,7 +35,6 @@ const routes = [
           route: 'Breadcrumb'
         }
       },
-
       {
         path: 'menu',
         name: 'menu',
@@ -47,7 +45,6 @@ const routes = [
           route: 'menu'
         }
       },
-
       {
         path: 'tagNav',
         name: 'tagNav',
@@ -58,7 +55,6 @@ const routes = [
           route: 'tagNav'
         }
       },
-
       {
         path: 'carouse',
         name: 'carouse',
@@ -69,7 +65,6 @@ const routes = [
           route: 'carouse'
         }
       },
-
       {
         path: 'ellipsis',
         name: 'ellipsis',
@@ -109,6 +104,16 @@ const routes = [
           icon: "iconfont el-icon-cc-file-add",
           route: "typeList"
         }
+      },
+      {
+        path: "FormFatherAndSonLink",
+        name: "FormFatherAndSonLink",
+        component: demos.FormFatherAndSonLinkDemo,
+        meta: {
+          title: "表单父子关联",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "FormFatherAndSonLink"
+        }
       }
     ]
   },
@@ -118,7 +123,7 @@ const routes = [
     component: main,
     redirect: "/file/downloadFile",
     meta: {
-      title: "文件下载",
+      title: "文件",
       icon: "iconfont el-icon-cc-file-add",
       route: "dashboard"
     },
@@ -133,6 +138,16 @@ const routes = [
           route: "downloadFile"
         }
       },
+      {
+        path: "uploadFile",
+        name: "uploadFile",
+        component: demos.UploadDemo,
+        meta: {
+          title: "文件上传",
+          icon: "iconfont el-icon-cc-file-add",
+          route: "uploadFile"
+        }
+      }
     ]
   },
   {

@@ -30,9 +30,10 @@ module.exports = {
               'components/ContentWrapper.md',
               'components/RemoteSelect.md',
               'components/ContentCard.md',
-              'components/TheIcon.md',
+              'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
+              'components/FormFatherAndSonLink.md'
             ]
           },
           {
