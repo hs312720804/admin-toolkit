@@ -16,7 +16,6 @@
     "@stateform/element": "^0.1.9",
     "@william17/vue-app-state": "^0.1.1",
     "gateschema-form-vue": "^0.2.4",
-    "vue": "^2.6.9",
     "element-ui": "^2.6.1"
   },
   "devDependencies": {
@@ -34,6 +33,7 @@
     "stylus-loader": "^3.0.2",
     "vssue": "^0.5.3",
     "vssue-api-gitlab-v3": "git+ssh://git@gitlab.skysri.com:liangweiliang/vssue-api-gitlab-v3.git",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.9",
     "vuepress": "^0.14.10",
     "webpack-dev-middleware": "^3.6.0"
