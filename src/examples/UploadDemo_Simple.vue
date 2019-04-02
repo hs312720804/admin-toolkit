@@ -4,8 +4,6 @@
     <Upload
       ref="upload"
       :multiple="true"
-      :min-height="100"
-      :max-height="200"
       @upload="handleUpload"
     >
       <div class="upload-pic-list" slot="preview" slot-scope="{fileList}">
@@ -36,8 +34,8 @@
 <script>
 export default {
   methods: {
-    handleUpload (file, fileListItem) {
-      function update () {
+    handleUpload(file, fileListItem) {
+      function update() {
         if (fileListItem.percentage < 100) {
           fileListItem.percentage += 10
         } else {
@@ -51,61 +49,45 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-$height = 100px;
-$width = 100px;
-
-.upload-pic-list__progress {
-  position: absolute;
-}
-
-.upload-pic-list__add, .upload-pic-list__item {
-  height: $height;
-  width: $width;
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: top;
-  border: 1px solid #ccc;
-}
-
-.upload-pic-list__add {
-  cursor: pointer;
-
-  i {
-    position: relative;
-    top: 50%;
-    margin: -10px auto;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-  }
-}
-
-.upload-pic-list__item {
-  position: relative;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-.upload-pic-list__error {
-  position: absolute;
-  background: #000;
-  opacity: 0.7;
-  color: #fff;
-  width: 100%;
-  font-size: 12px;
-  padding: 5px;
-  display: block;
-  box-sizing: border-box;
-}
-
-.upload-pic-list__remove {
-  position: absolute;
-  color: red;
-  cursor: pointer;
-  top: 0;
-  right: 0;
-}
+$height = 100px
+$width = 100px
+.upload-pic-list__progress
+  position: absolute
+.upload-pic-list__add, .upload-pic-list__item
+  height: $height
+  width: $width
+  margin-right: 10px
+  display: inline-block
+  vertical-align: top
+  border: 1px solid #ccc
+.upload-pic-list__add
+  cursor: pointer
+  i
+    position: relative
+    top: 50%
+    margin: -10px auto
+    display: block
+    font-size: 20px
+    text-align: center
+.upload-pic-list__item
+  position: relative
+  img
+    max-width: 100%
+    max-height: 100%
+.upload-pic-list__error
+  position: absolute
+  background: #000
+  opacity: 0.7
+  color: #fff
+  width: 100%
+  font-size: 12px
+  padding: 5px
+  display: block
+  box-sizing: border-box
+.upload-pic-list__remove
+  position: absolute
+  color: red
+  cursor: pointer
+  top: 0
+  right: 0
 </style>

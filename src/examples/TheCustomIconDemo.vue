@@ -11,7 +11,7 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <TheIcon @get-icon="getIcon" :title="title" :isUseInitialIcon="false" @go-back="goBack">
+      <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="false" @go-back="goBack">
         <ul>
           <li>
             <span class="icon iconfont el-icon-cc-denglu"></span>
@@ -22,7 +22,7 @@
             <div class="name">投放方案</div>
           </li>
         </ul>
-      </TheIcon>
+      </IconSelect>
     </div>
   </div>
 </template>
@@ -31,29 +31,29 @@ export default {
   data() {
     return {
       isShowMainPage: true,
-      iconName: "",
-      title: "选择图标"
-    };
+      iconName: '',
+      title: '选择图标'
+    }
   },
   methods: {
     selectIcon() {
-      this.isShowMainPage = false;
+      this.isShowMainPage = false
     },
     /**
      * 得到icon
      */
     getIcon(iconName, name) {
-      this.iconName = iconName;
-      this.isShowMainPage = true;
+      this.iconName = iconName
+      this.isShowMainPage = true
     },
     /**
      * 返回
      */
     goBack() {
-      this.isShowMainPage = true;
+      this.isShowMainPage = true
     }
   }
-};
+}
 </script>
 <style scoped>
 ul {
@@ -114,7 +114,6 @@ li {
 }
 </style>
 <style scoped src="../assets/icon/iconfont.css">
-
 </style>
 
 

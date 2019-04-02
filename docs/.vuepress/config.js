@@ -27,13 +27,19 @@ module.exports = {
               'components/TagNav.md',
               'components/GateSchemaForm.md',
               'components/Table.md',
+              'components/CardList.md',
               'components/ContentWrapper.md',
               'components/RemoteSelect.md',
               'components/ContentCard.md',
-              'components/TheIcon.md',
+              'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
+<<<<<<< HEAD
               'components/TypeList.md',
+=======
+              'components/FormFatherAndSonLink.md',
+              'components/ContentEllipsis.md'
+>>>>>>> d172beac511eaace0b3b660543acb3f8b43dd0b1
             ]
           },
           {
