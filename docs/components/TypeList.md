@@ -1,3 +1,16 @@
+# 分类列表    
+`TypeList`  
+
+## 示例  
+
+### 效果
+
+<Demo>
+  <TypeListDemo />
+</Demo>
+
+### 代码  
+```vue
 <template>
   <div>
     <div><el-button type="primary" icon="el-icon-edit" @click="clickEdit">{{eidtText}}</el-button></div>
@@ -27,54 +40,6 @@ export default {
             }, {
               id: 10,
               label: '三级 1-1-2',
-          		status: 1,
-          		categoryFlag: 0
-            }]
-          }]
-        }, {
-          id: 2,
-          label: '一级 2',
-          status: 1,
-          categoryFlag: 0,
-          children: [{
-            id: 5,
-            label: '二级 2-1',
-          	status: 1,
-          	categoryFlag: 0
-          }, {
-            id: 6,
-            label: '二级 2-2',
-          	status: 1,
-          	categoryFlag: 0
-          }]
-        }, {
-          id: 3,
-          label: '一级 3',
-          status: 1,
-          categoryFlag: 0,
-          children: [{
-            id: 7,
-            label: '二级 3-1',
-          	status: 1,
-          	categoryFlag: 0
-          }, {
-            id: 8,
-            label: '二级 3-2',
-          	status: 1,
-          	categoryFlag: 0,
-            children: [{
-              id: 11,
-              label: '三级 3-2-1',
-          		status: 1,
-          		categoryFlag: 0
-            }, {
-              id: 12,
-              label: '三级 3-2-2',
-          		status: 1,
-          		categoryFlag: 0
-            }, {
-              id: 13,
-              label: '三级 3-2-3',
           		status: 1,
           		categoryFlag: 0
             }]
@@ -125,3 +90,32 @@ export default {
     background-image url(../assets/imgs/folder-closed-green.png)
 
 </style>
+```
+
+
+## 属性  
+支持N级菜单  
+
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| default-active | String | 默认激活的菜单对应的路由名 | |  
+| lists | Array | 分类列表 | |
+| defaultProps | Object | 分类列表特定属性 | |
+
+分类项属性  
+| 名称 | 类型 | 描述  | 例子 |  
+| ---- | ---- | ---- | ---- |  
+| id | int | 分类id | |  
+| label | String | 分类名称 | | 
+| status | int | 分类状态 | |  
+| categoryFlag | int | 分类是否客户端显示 | |
+| children | Array | 子分类项列表 | |
+
+## 事件
+| 名称 | 参数 | 描述 |  
+| clickEdit | | 点击是否编辑分类 |
+| currData | data | 选中分类项数据
+| clickTypeHandler | data | 分类点击后触发事件
+
+
+<Comment />

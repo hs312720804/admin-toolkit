@@ -28,7 +28,6 @@ export {
   TagNavDemo,
   CarouselDemo,
   EllipsisDemo,
-<<<<<<< Updated upstream
   TheIconDemoIndex,
   TheCustomIconDemo,
   TheInitIconDemo,
@@ -36,8 +35,6 @@ export {
   DownloadFileDemo,
   UploadDemo,
   AppParamsDemo,
-  AppParamsReadDemo
-=======
+  AppParamsReadDemo,
   TypeListDemo
->>>>>>> Stashed changes
 }

@@ -33,6 +33,7 @@ module.exports = {
               'components/TheIcon.md',
               'components/Upload.md',
               'components/DownloadFile.md',
+              'components/TypeList.md',
             ]
           },
           {
