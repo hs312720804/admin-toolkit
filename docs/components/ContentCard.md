@@ -1,4 +1,4 @@
-# 标题返回组件
+# 标题返回
 `ContentCard`   
 在模版中是 content-card 组件
 

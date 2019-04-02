@@ -6,6 +6,34 @@
   <AppParamsDemo />
 </Demo>
 
+## 代码  
+```vue
+<template>
+    <el-form label-width="140px">
+        <AppParams v-model="appParams" />
+    </el-form>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            appParams: {
+                packagename: undefined,
+                versioncode: undefined,
+                dowhat: undefined,
+                bywhat: undefined,
+                byvalue: undefined,
+                params: [],
+                exception: {}
+            }
+        }
+    }
+}
+</script>
+
+```
+
 ## 参数  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |   
@@ -27,3 +55,6 @@ value 包含下面属性
 | ---- | ---- | ---- | ---- |  
 | key | String | | |  
 | value | String | | | 
+
+
+<Comment />

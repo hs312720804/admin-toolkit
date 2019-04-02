@@ -1,6 +1,6 @@
 {
   "name": "admin-toolkit",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "main": "./dist/admin-toolkit.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -17,8 +17,12 @@
     "@william17/vue-app-state": "^0.1.1",
     "element-ui": "^2.6.1",
     "gateschema-form-vue": "^0.2.4",
+<<<<<<< HEAD
     "vue": "^2.6.9",
     "vuepress": "^0.14.10"
+=======
+    "element-ui": "^2.6.1"
+>>>>>>> d172beac511eaace0b3b660543acb3f8b43dd0b1
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.1",
@@ -35,6 +39,7 @@
     "stylus-loader": "^3.0.2",
     "vssue": "^0.5.3",
     "vssue-api-gitlab-v3": "git+ssh://git@gitlab.skysri.com:liangweiliang/vssue-api-gitlab-v3.git",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.9",
     "webpack-dev-middleware": "^3.6.0"
   }

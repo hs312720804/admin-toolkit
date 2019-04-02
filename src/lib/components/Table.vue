@@ -77,6 +77,10 @@ export default {
       return function proxy() {
         this.$emit(eventName, ...arguments)
       }.bind(this)
+    },
+    stopPropagation(event) {
+      // element 估计有bug，会触发两次
+      event.stopPropagation()
     }
   },
   render (h) {
@@ -131,6 +135,9 @@ export default {
           return h(Checkbox, {
             props: {
               value: this.selected.indexOf(index) > -1
+            },
+            nativeOn: {
+              'click': this.stopPropagation
             },
             on: {
               input: (value) => {

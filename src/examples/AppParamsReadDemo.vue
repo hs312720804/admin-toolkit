@@ -16,8 +16,8 @@ export default {
                 byvalue: 'byvalue',
                 params: [
                     {
-                        key: 'key1value1value1value1value1value1',
-                        value: 'value1value1value1value1value1value1value1value1value1'
+                        key: 'key1',
+                        value: 'value1'
                     },
                     {
                         key: 'key2',
