@@ -30,11 +30,7 @@ export {
   TableDemo,
   TagNavDemo,
   CarouselDemo,
-<<<<<<< HEAD
-  EllipsisDemo,
-=======
   ContentEllipsisDemo,
->>>>>>> d172beac511eaace0b3b660543acb3f8b43dd0b1
   TheIconDemoIndex,
   TheCustomIconDemo,
   TheInitIconDemo,
@@ -43,12 +39,8 @@ export {
   UploadDemo,
   AppParamsDemo,
   AppParamsReadDemo,
-<<<<<<< HEAD
-  TypeListDemo
-=======
   TypeListDemo,
   CardListDemo,
   FormFatherAndSonLinkDemo,
   FormFatherAndSonLinkDemo1
->>>>>>> d172beac511eaace0b3b660543acb3f8b43dd0b1
 }
