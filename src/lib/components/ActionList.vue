@@ -28,12 +28,6 @@ export default {
     owner () {
       return this.actionOwner || this.target || this.$parent
     }
-  },
-  watch: {
-    actions: function (newV,oldV) {
-      debugger;
-      this.actions = newV
-    }
   }
 }
 </script>
