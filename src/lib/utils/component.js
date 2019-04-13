@@ -8,7 +8,7 @@ export function createOperationRender (component, actions, elName) {
             type: 'text'
           },
           on: {
-            click: () => {
+            'click.stop': () => {
               component[key](params)
             }
           }
