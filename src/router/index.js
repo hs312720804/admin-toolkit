@@ -76,76 +76,86 @@ const routes = [
         }
       },
       {
-        path: "theIcon",
-        name: "theIcon",
+        path: 'theIcon',
+        name: 'theIcon',
         component: demos.TheIconDemoIndex,
         meta: {
-          title: "图标",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "theIcon"
+          title: '图标',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'theIcon'
         }
       },
       {
-        path: "contentCard",
-        name: "contentCard",
+        path: 'contentCard',
+        name: 'contentCard',
         component: demos.ContentCardDemo,
         meta: {
-          title: "标题返回",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "contentCard"
+          title: '标题返回',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'contentCard'
         }
       },
       {
-        path: "typeList",
-        name: "typeList",
+        path: 'typeList',
+        name: 'typeList',
         component: demos.TypeListDemo,
         meta: {
-          title: "分类列表",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "typeList"
+          title: '分类列表',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'typeList'
         }
       },
       {
-        path: "FormFatherAndSonLink",
-        name: "FormFatherAndSonLink",
+        path: 'FormFatherAndSonLink',
+        name: 'FormFatherAndSonLink',
         component: demos.FormFatherAndSonLinkDemo,
         meta: {
-          title: "表单父子关联",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "FormFatherAndSonLink"
+          title: '表单父子关联',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'FormFatherAndSonLink'
+        }
+      },
+      {
+        path: 'probability',
+        name: 'probability',
+        component: demos.probabilityDemo,
+        meta: {
+          title: '概率输入',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'probability'
         }
       }
     ]
   },
   {
-    path: "/file",
-    name: "file",
+    path: '/file',
+    name: 'file',
     component: main,
-    redirect: "/file/downloadFile",
+    redirect: '/file/downloadFile',
     meta: {
-      title: "文件",
-      icon: "iconfont el-icon-cc-file-add",
-      route: "dashboard"
+      title: '文件',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'dashboard'
     },
     children: [
       {
-        path: "downloadFile",
-        name: "downloadFile",
+        path: 'downloadFile',
+        name: 'downloadFile',
         component: demos.DownloadFileDemo,
         meta: {
-          title: "文件下载",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "downloadFile"
+          title: '文件下载',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'downloadFile'
         }
       },
       {
-        path: "uploadFile",
-        name: "uploadFile",
+        path: 'uploadFile',
+        name: 'uploadFile',
         component: demos.UploadDemo,
         meta: {
-          title: "文件上传",
-          icon: "iconfont el-icon-cc-file-add",
-          route: "uploadFile"
+          title: '文件上传',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'uploadFile'
         }
       }
     ]

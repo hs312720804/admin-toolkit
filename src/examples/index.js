@@ -20,6 +20,7 @@ import TypeListDemo from './TypeListDemo'
 import CardListDemo from './CardListDemo'
 import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
 import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
+import probabilityDemo from './probabilityDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -42,5 +43,6 @@ export {
   TypeListDemo,
   CardListDemo,
   FormFatherAndSonLinkDemo,
-  FormFatherAndSonLinkDemo1
+  FormFatherAndSonLinkDemo1,
+  probabilityDemo
 }
