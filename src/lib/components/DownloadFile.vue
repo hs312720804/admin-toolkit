@@ -13,22 +13,21 @@ export default {
       type: String
     }
   },
-  data() {
+  data () {
     return {
     }
   },
   methods: {
-    downloadData() {
+    downloadData () {
       this.$emit('download-data')
     }
   },
   watch: {
-    downloadUrl: function(newValue,oldValue){
-       this.$nextTick(() => {
-          this.$refs.download_Url.click();
-        });
+    downloadUrl: function (newValue, oldValue) {
+      this.$nextTick(() => {
+        this.$refs.download_Url.click()
+      })
     }
   }
 }
 </script>
-
