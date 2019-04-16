@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>文件下载</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.f45491b8.css" as="style"><link rel="preload" href="/assets/js/app.dc7bcc5b.js" as="script"><link rel="preload" href="/assets/js/13.e89e8d18.js" as="script"><link rel="prefetch" href="/assets/js/10.b1aafa54.js"><link rel="prefetch" href="/assets/js/11.0723f437.js"><link rel="prefetch" href="/assets/js/12.e553be7c.js"><link rel="prefetch" href="/assets/js/14.5e050a6c.js"><link rel="prefetch" href="/assets/js/15.a748ad6a.js"><link rel="prefetch" href="/assets/js/16.22001a0e.js"><link rel="prefetch" href="/assets/js/17.fe6ff2c0.js"><link rel="prefetch" href="/assets/js/18.8c2cf2f5.js"><link rel="prefetch" href="/assets/js/19.d74e312c.js"><link rel="prefetch" href="/assets/js/2.22753f8e.js"><link rel="prefetch" href="/assets/js/20.e653535e.js"><link rel="prefetch" href="/assets/js/21.eb67f82a.js"><link rel="prefetch" href="/assets/js/22.ddb86a1a.js"><link rel="prefetch" href="/assets/js/23.75d4cc72.js"><link rel="prefetch" href="/assets/js/24.c5447725.js"><link rel="prefetch" href="/assets/js/25.48783269.js"><link rel="prefetch" href="/assets/js/3.b05fce1d.js"><link rel="prefetch" href="/assets/js/4.6ce3ff77.js"><link rel="prefetch" href="/assets/js/5.fb786111.js"><link rel="prefetch" href="/assets/js/6.d0befb5b.js"><link rel="prefetch" href="/assets/js/7.c8f4b949.js"><link rel="prefetch" href="/assets/js/8.d555d843.js"><link rel="prefetch" href="/assets/js/9.0751a339.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f45491b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="文件下载"><a href="#文件下载" aria-hidden="true" class="header-anchor">#</a> 文件下载</h1> <p><code>DownloadFile</code>
+通过接口请求数据，然后触发下载</p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" aria-hidden="true" class="header-anchor">#</a> 效果</h3> <Demo><DownloadFileDemo></DownloadFileDemo></Demo> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DownloadFile</span> <span class="token attr-name">@download-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>downloadData<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:downloadUrl</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>downloadUrl<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>下载远程文件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DownloadFile</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token comment">// import axios from 'axios'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      downloadUrl<span class="token punctuation">:</span> <span class="token keyword">null</span>
+      <span class="token comment">// publicPath: process.env.BASE_URL</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">downloadData</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
+        * 下载地址为远程的地址时
+      */</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>downloadUrl <span class="token operator">=</span> <span class="token string">'http://172.20.155.102/fakeData.xlsx?_r='</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment">/**
+        * 下载地址为本地的某个文件时，把该文件放到该项目public目录下，然后加上文件名
+      */</span>
+      <span class="token comment">// this.downloadUrl = this.publicPath + 'notdataCollect.xls'</span>
+      <span class="token comment">/**
+        * 注释的代码是接口请求的例子
+       */</span>
+      <span class="token comment">// this.$service.downloadRareData(this.filterForRare).then(data =&gt; {</span>
+      <span class="token comment">//   this.downloadUrl = &quot;admin-api/remember/export?sign=&quot; + data.sign;</span>
+      <span class="token comment">// });</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>downloadUrl</td> <td>String</td> <td>下载地址</td> <td>见上面例子</td></tr></tbody></table> <h2 id="事件"><a href="#事件" aria-hidden="true" class="header-anchor">#</a> 事件</h2> <table><thead><tr><th>名称</th> <th>参数</th> <th>描述</th></tr></thead> <tbody><tr><td>download-data</td> <td>无</td> <td>当用户点击按钮触发</td></tr></tbody></table> <Comment></Comment></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.dc7bcc5b.js" defer></script><script src="/assets/js/13.e89e8d18.js" defer></script>
+  </body>
+</html>

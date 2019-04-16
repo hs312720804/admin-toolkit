@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>分类列表</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.f45491b8.css" as="style"><link rel="preload" href="/assets/js/app.dc7bcc5b.js" as="script"><link rel="preload" href="/assets/js/21.eb67f82a.js" as="script"><link rel="prefetch" href="/assets/js/10.b1aafa54.js"><link rel="prefetch" href="/assets/js/11.0723f437.js"><link rel="prefetch" href="/assets/js/12.e553be7c.js"><link rel="prefetch" href="/assets/js/13.e89e8d18.js"><link rel="prefetch" href="/assets/js/14.5e050a6c.js"><link rel="prefetch" href="/assets/js/15.a748ad6a.js"><link rel="prefetch" href="/assets/js/16.22001a0e.js"><link rel="prefetch" href="/assets/js/17.fe6ff2c0.js"><link rel="prefetch" href="/assets/js/18.8c2cf2f5.js"><link rel="prefetch" href="/assets/js/19.d74e312c.js"><link rel="prefetch" href="/assets/js/2.22753f8e.js"><link rel="prefetch" href="/assets/js/20.e653535e.js"><link rel="prefetch" href="/assets/js/22.ddb86a1a.js"><link rel="prefetch" href="/assets/js/23.75d4cc72.js"><link rel="prefetch" href="/assets/js/24.c5447725.js"><link rel="prefetch" href="/assets/js/25.48783269.js"><link rel="prefetch" href="/assets/js/3.b05fce1d.js"><link rel="prefetch" href="/assets/js/4.6ce3ff77.js"><link rel="prefetch" href="/assets/js/5.fb786111.js"><link rel="prefetch" href="/assets/js/6.d0befb5b.js"><link rel="prefetch" href="/assets/js/7.c8f4b949.js"><link rel="prefetch" href="/assets/js/8.d555d843.js"><link rel="prefetch" href="/assets/js/9.0751a339.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f45491b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="分类列表"><a href="#分类列表" aria-hidden="true" class="header-anchor">#</a> 分类列表</h1> <p><code>TypeList</code></p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" aria-hidden="true" class="header-anchor">#</a> 效果</h3> <Demo><TypeListDemo></TypeListDemo></Demo> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>el-icon-edit<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>clickEdit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{eidtText}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TypeList</span> <span class="token attr-name">:lists</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>datas<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:defaultProps</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>defaultProps<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@currData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getNodeData<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@clickTypeHandler</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>clickTypeHandler<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      eidtText<span class="token punctuation">:</span> <span class="token string">'编辑'</span><span class="token punctuation">,</span>
+      datas<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          label<span class="token punctuation">:</span> <span class="token string">'一级 1'</span><span class="token punctuation">,</span>
+          status<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          categoryFlag<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            label<span class="token punctuation">:</span> <span class="token string">'二级 1-1'</span><span class="token punctuation">,</span>
+          	status<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          	categoryFlag<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+              id<span class="token punctuation">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+              label<span class="token punctuation">:</span> <span class="token string">'三级 1-1-1'</span><span class="token punctuation">,</span>
+          		status<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          		categoryFlag<span class="token punctuation">:</span> <span class="token number">0</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+              id<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+              label<span class="token punctuation">:</span> <span class="token string">'三级 1-1-2'</span><span class="token punctuation">,</span>
+          		status<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          		categoryFlag<span class="token punctuation">:</span> <span class="token number">0</span>
+            <span class="token punctuation">}</span><span class="token punctuation">]</span>
+          <span class="token punctuation">}</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      defaultProps<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        children<span class="token punctuation">:</span> <span class="token string">'children'</span><span class="token punctuation">,</span>
+        label<span class="token punctuation">:</span> <span class="token string">'label'</span><span class="token punctuation">,</span>
+        id<span class="token punctuation">:</span> <span class="token string">'id'</span><span class="token punctuation">,</span>
+        isShowCheckBox<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">clickEdit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>defaultProps<span class="token punctuation">.</span>isShowCheckBox <span class="token operator">=</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>defaultProps<span class="token punctuation">.</span>isShowCheckBox
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>defaultProps<span class="token punctuation">.</span>isShowCheckBox<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>eidtText <span class="token operator">=</span> <span class="token string">'退出'</span>
+      <span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span>eidtText <span class="token operator">=</span> <span class="token string">'编辑'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getNodeData</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">clickTypeHandler</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylus<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+.tree-type div.is-current &gt; .el-tree-node__content
+  color #fff
+  background #57b0f7
+
+.tree-type .is-out-icon<span class="token punctuation">,</span> .tree-type .is-down-icon<span class="token punctuation">,</span> .tree-type .is-show-icon
+    display  inline-block
+    text-indent 24px
+    width  20px
+    height  20px
+    line-height  20px
+    vertical-align  middle
+    background-image  <span class="token url">url(../assets/imgs/folder-closed-grey.png)</span>
+    background-size  cover
+
+.tree-type .is-down-icon 
+    background-image <span class="token url">url(../assets/imgs/folder-closed-blue.png)</span>
+.tree-type .is-show-icon 
+    background-image <span class="token url">url(../assets/imgs/folder-closed-green.png)</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <p>支持N级菜单</p> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>default-active</td> <td>String</td> <td>默认激活的菜单对应的路由名</td> <td></td></tr> <tr><td>lists</td> <td>Array</td> <td>分类列表</td> <td></td></tr> <tr><td>defaultProps</td> <td>Object</td> <td>分类列表特定属性</td> <td></td></tr></tbody></table> <p>分类项属性</p> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>id</td> <td>int</td> <td>分类id</td> <td></td></tr> <tr><td>label</td> <td>String</td> <td>分类名称</td> <td></td></tr> <tr><td>status</td> <td>int</td> <td>分类状态</td> <td></td></tr> <tr><td>categoryFlag</td> <td>int</td> <td>分类是否客户端显示</td> <td></td></tr> <tr><td>children</td> <td>Array</td> <td>子分类项列表</td> <td></td></tr></tbody></table> <h2 id="事件"><a href="#事件" aria-hidden="true" class="header-anchor">#</a> 事件</h2> <p>| 名称 | 参数 | 描述 |<br>
+| clickEdit | | 点击是否编辑分类 |
+| currData | data | 选中分类项数据
+| clickTypeHandler | data | 分类点击后触发事件</p> <Comment></Comment></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.dc7bcc5b.js" defer></script><script src="/assets/js/21.eb67f82a.js" defer></script>
+  </body>
+</html>
