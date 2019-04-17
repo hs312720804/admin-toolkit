@@ -68,8 +68,14 @@ export default {
     handleRowClick(row) {
       if (this.selectOnRowClick) {
         const index = this.data.indexOf(row)
-        const selected = this.selected.indexOf(index) > -1
-        this.$emit(selected ? 'row-selection-remove' : 'row-selection-add', row, index)
+        const selectionType = this.selectionType
+        let isSelected
+        if (selectionType === 'multiple') {
+          isSelected = this.selected.indexOf(index) > -1
+          this.$emit(isSelected ? 'row-selection-remove' : 'row-selection-add', row, index)
+        } else {
+          this.$emit('row-selection-change', row, index)
+        }
       }
       this.$emit('row-click', ...arguments)
     },
@@ -78,9 +84,10 @@ export default {
         this.$emit(eventName, ...arguments)
       }.bind(this)
     },
-    stopPropagation(event) {
-      // element 估计有bug，会触发两次
+    stopAndPrevent(event) {
+      // label 会导致触发两次
       event.stopPropagation()
+      event.preventDefault()
     }
   },
   render (h) {
@@ -137,7 +144,7 @@ export default {
               value: this.selected.indexOf(index) > -1
             },
             nativeOn: {
-              'click': this.stopPropagation
+              'click': this.stopAndPrevent
             },
             on: {
               input: (value) => {
@@ -159,9 +166,10 @@ export default {
               value: this.selected,
               label: index
             },
-            on: {
-              input: () => {
+            nativeOn: {
+              click: (event) => {
                 this.$emit('row-selection-change', row, index)
+                this.stopAndPrevent(event)
               }
             }
           })

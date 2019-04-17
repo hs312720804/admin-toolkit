@@ -12,8 +12,8 @@
 ### 代码  
 ```vue
 <template>
-  <Table 
-    :data="table.data" 
+  <Table
+    :data="table.data"
     :props="table.props"
     :header="table.header"
     :selection-type="table.selectionType"
@@ -21,76 +21,85 @@
     :select-on-row-click="true"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
+    @row-selection-change="handleRowSelectionChange"
     @all-row-selection-change="handleAllRowSelectionChange"
+    @row-click="handleRowClick"
   >
   </Table>
 </template>
 <script>
-import { createOperationRender } from "admin-toolkit";
+import { createOperationRender } from '../lib/utils/component'
 export default {
-  data() {
+  data () {
     return {
       table: {
         props: {
-          border: true,
+          border: true
         },
         header: [
           {
-            label: "ID",
-            prop: "id",
+            label: 'ID',
+            prop: 'id',
             sortable: false
           },
           {
-            label: "名称",
-            prop: "name",
+            label: '名称',
+            prop: 'name',
             sortable: true
           },
           {
-            label: "操作",
+            label: '操作',
             render: createOperationRender(this, {
-              handleRead: "查看",
-              handleEdit: "编辑",
-              handleDelete: "删除"
+              handleRead: '查看',
+              handleEdit: '编辑',
+              handleDelete: '删除'
             })
           }
         ],
         data: [
           {
-            id: "1",
-            name: "名称1"
+            id: '1',
+            name: '名称1'
           },
           {
-            id: "2",
-            name: "名称2"
+            id: '2',
+            name: '名称2'
           }
         ],
-        selectionType: 'multiple',
+        selectionType: 'single',
         selected: []
       }
     }
   },
   methods: {
-    handleEdit({$index:index}) {
+    handleEdit ({ $index: index }) {
       this.$message(`编辑第${index + 1}条记录`)
     },
-    handleRead({$index:index}) {
+    handleRead ({ $index: index }) {
       this.$message(`阅读第${index + 1}条记录`)
     },
-    handleDelete({$index:index}) {
+    handleDelete ({ $index: index }) {
       this.$message(`删除第${index + 1}条记录`)
     },
-    handleRowSelectionAdd(item, index) {
+    handleRowSelectionChange(row, index) {
+      this.table.selected = index
+    },
+    handleRowSelectionAdd (item, index) {
       this.table.selected = this.table.selected.concat(index)
     },
-    handleRowSelectionRemove(item, index) {
+    handleRowSelectionRemove (item, index) {
       this.table.selected = this.table.selected.filter(item => item !== index)
     },
-    handleAllRowSelectionChange(value) {
+    handleAllRowSelectionChange (value) {
       if (value) {
         this.table.selected = this.table.data.map((_, index) => index)
       } else {
         this.table.selected = []
       }
+    },
+    handleRowClick(row, index) {
+      console.log(arguments)
+      this.$message(`row-click`)
     }
   }
 }
