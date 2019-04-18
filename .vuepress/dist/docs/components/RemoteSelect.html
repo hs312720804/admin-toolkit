@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>远程数据选择</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.f45491b8.css" as="style"><link rel="preload" href="/assets/js/app.dc7bcc5b.js" as="script"><link rel="preload" href="/assets/js/18.8c2cf2f5.js" as="script"><link rel="prefetch" href="/assets/js/10.b1aafa54.js"><link rel="prefetch" href="/assets/js/11.0723f437.js"><link rel="prefetch" href="/assets/js/12.e553be7c.js"><link rel="prefetch" href="/assets/js/13.e89e8d18.js"><link rel="prefetch" href="/assets/js/14.5e050a6c.js"><link rel="prefetch" href="/assets/js/15.a748ad6a.js"><link rel="prefetch" href="/assets/js/16.22001a0e.js"><link rel="prefetch" href="/assets/js/17.fe6ff2c0.js"><link rel="prefetch" href="/assets/js/19.d74e312c.js"><link rel="prefetch" href="/assets/js/2.22753f8e.js"><link rel="prefetch" href="/assets/js/20.e653535e.js"><link rel="prefetch" href="/assets/js/21.eb67f82a.js"><link rel="prefetch" href="/assets/js/22.ddb86a1a.js"><link rel="prefetch" href="/assets/js/23.75d4cc72.js"><link rel="prefetch" href="/assets/js/24.c5447725.js"><link rel="prefetch" href="/assets/js/25.48783269.js"><link rel="prefetch" href="/assets/js/3.b05fce1d.js"><link rel="prefetch" href="/assets/js/4.6ce3ff77.js"><link rel="prefetch" href="/assets/js/5.fb786111.js"><link rel="prefetch" href="/assets/js/6.d0befb5b.js"><link rel="prefetch" href="/assets/js/7.c8f4b949.js"><link rel="prefetch" href="/assets/js/8.d555d843.js"><link rel="prefetch" href="/assets/js/9.0751a339.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f45491b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="远程数据选择"><a href="#远程数据选择" aria-hidden="true" class="header-anchor">#</a> 远程数据选择</h1> <p><code>RemoteSelect</code><br>
+用于在表单中选择远程数据记录</p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" aria-hidden="true" class="header-anchor">#</a> 效果</h3> <Demo><RemoteSelectDemo></RemoteSelectDemo></Demo> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RemoteSelect</span>
+    <span class="token attr-name">:title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.title<span class="token punctuation">&quot;</span></span> 
+    <span class="token attr-name">:selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.selected<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@selection-remove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleTableRowSelectionRemove<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@selection-clear</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleRemoteSelectClear<span class="token punctuation">&quot;</span></span>
+  <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentWrapper</span>
+      <span class="token attr-name">:filter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.filter<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:filter-schema</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.filterSchema<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:pagination</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.pagination<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">@filter-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fetchData<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Table</span> 
+        <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.table.data<span class="token punctuation">&quot;</span></span> 
+        <span class="token attr-name">:props</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.table.props<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:header</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.table.header<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.table.selected<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:selection-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>remoteSelect.table.selectionType<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@row-selection-add</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleTableRowSelectionAdd<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@row-selection-remove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleTableRowSelectionRemove<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@all-row-selection-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleTableAllRowSelectionChange<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentWrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RemoteSelect</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">'gateschema'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      remoteSelect<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        title<span class="token punctuation">:</span> <span class="token string">'选择数据'</span><span class="token punctuation">,</span>
+        filter<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        filterSchema<span class="token punctuation">:</span> _<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> _<span class="token punctuation">.</span>o<span class="token punctuation">.</span>string<span class="token punctuation">.</span><span class="token function">other</span><span class="token punctuation">(</span><span class="token string">&quot;form&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            placeholder<span class="token punctuation">:</span> <span class="token string">&quot;请输入 id&quot;</span><span class="token punctuation">,</span>
+            cols<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              item<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+              label<span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+              wrapper<span class="token punctuation">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+              xsLabel<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+              xsWrapper<span class="token punctuation">:</span> <span class="token number">24</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> _<span class="token punctuation">.</span>o<span class="token punctuation">.</span>string<span class="token punctuation">.</span><span class="token function">other</span><span class="token punctuation">(</span><span class="token string">&quot;form&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            placeholder<span class="token punctuation">:</span> <span class="token string">&quot;请输入 name&quot;</span><span class="token punctuation">,</span>
+            cols<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              item<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+              label<span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+              wrapper<span class="token punctuation">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+              xsLabel<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+              xsWrapper<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                offset<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                span<span class="token punctuation">:</span> <span class="token number">22</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">other</span><span class="token punctuation">(</span><span class="token string">&quot;form&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          layout<span class="token punctuation">:</span> <span class="token string">&quot;inline&quot;</span><span class="token punctuation">,</span>
+          footer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            cols<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              label<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+              wrapper<span class="token punctuation">:</span> <span class="token number">24</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            showSubmit<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            submitText<span class="token punctuation">:</span> <span class="token string">&quot;查询&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        selected<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        table<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            border<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          header<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              label<span class="token punctuation">:</span> <span class="token string">&quot;ID&quot;</span><span class="token punctuation">,</span>
+              prop<span class="token punctuation">:</span> <span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span>
+              sortable<span class="token punctuation">:</span> <span class="token boolean">false</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              label<span class="token punctuation">:</span> <span class="token string">&quot;名称&quot;</span><span class="token punctuation">,</span>
+              prop<span class="token punctuation">:</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+              sortable<span class="token punctuation">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              id<span class="token punctuation">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+              name<span class="token punctuation">:</span> <span class="token string">&quot;名称1&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              id<span class="token punctuation">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+              name<span class="token punctuation">:</span> <span class="token string">&quot;名称2&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          selected<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          selectionType<span class="token punctuation">:</span> <span class="token string">'multiple'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        pagination<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          currentPage<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          total<span class="token punctuation">:</span> <span class="token number">200</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'数据过滤条件已改变, 这时会重新拉去数据'</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleTableRowSelectionAdd</span><span class="token punctuation">(</span><span class="token parameter">targetItem</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> remoteSelect <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect
+      remoteSelect<span class="token punctuation">.</span>selected <span class="token operator">=</span> remoteSelect<span class="token punctuation">.</span>selected<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> targetItem<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+        label<span class="token punctuation">:</span> targetItem<span class="token punctuation">.</span>name
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateTableSelected</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleTableRowSelectionRemove</span><span class="token punctuation">(</span><span class="token parameter">targetItem</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> remoteSelect <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect
+      remoteSelect<span class="token punctuation">.</span>selected <span class="token operator">=</span> remoteSelect<span class="token punctuation">.</span>selected<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> item<span class="token punctuation">.</span>id <span class="token operator">!==</span> targetItem<span class="token punctuation">.</span>id
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>        
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateTableSelected</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">updateTableSelected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> remoteSelect <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect
+      <span class="token keyword">const</span> table <span class="token operator">=</span> remoteSelect<span class="token punctuation">.</span>table
+      <span class="token keyword">const</span> newSelectedIndex <span class="token operator">=</span> remoteSelect<span class="token punctuation">.</span>selected<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+      table<span class="token punctuation">.</span>selected <span class="token operator">=</span> table<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result<span class="token punctuation">,</span> item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>newSelectedIndex<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> result
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleRemoteSelectClear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect<span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect<span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleTableAllRowSelectionChange</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>remoteSelect<span class="token punctuation">.</span>table<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleTableRowSelectionAdd<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleRemoteSelectClear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>title</td> <td>String</td> <td>按钮和弹窗标题</td> <td></td></tr> <tr><td>selected</td> <td>Array</td> <td>已选择的数据</td> <td></td></tr></tbody></table> <p>已选择的数据结构</p> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>id</td> <td>String/Number</td> <td>数据唯一标识</td> <td></td></tr> <tr><td>label</td> <td>String</td> <td>显示标签</td> <td></td></tr></tbody></table> <h2 id="事件"><a href="#事件" aria-hidden="true" class="header-anchor">#</a> 事件</h2> <table><thead><tr><th>名称</th> <th>描述</th> <th>参数</th> <th>例子</th></tr></thead> <tbody><tr><td>selection-remove</td> <td>某个所选数据被移除</td> <td>(item: Object)</td> <td></td></tr> <tr><td>selection-clear</td> <td>清除所有已选数据</td> <td></td> <td></td></tr></tbody></table> <Comment></Comment></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.dc7bcc5b.js" defer></script><script src="/assets/js/18.8c2cf2f5.js" defer></script>
+  </body>
+</html>

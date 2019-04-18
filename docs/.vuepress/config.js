@@ -34,12 +34,10 @@ module.exports = {
               'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
-<<<<<<< HEAD
               'components/TypeList.md',
-=======
               'components/FormFatherAndSonLink.md',
-              'components/ContentEllipsis.md'
->>>>>>> d172beac511eaace0b3b660543acb3f8b43dd0b1
+              'components/ContentEllipsis.md',
+              'components/probability.md'
             ]
           },
           {
