@@ -208,3 +208,5 @@ npm install
 npm install vue element-ui gateschema gateschema-form-vue @stateform/element --save
 
 ```
+//运行docs 
+npx vuepress dev docs
