@@ -83,11 +83,6 @@ export default {
       return function proxy() {
         this.$emit(eventName, ...arguments)
       }.bind(this)
-    },
-    stopAndPrevent(event) {
-      // label 会导致触发两次
-      event.stopPropagation()
-      event.preventDefault()
     }
   },
   render (h) {
@@ -144,7 +139,7 @@ export default {
               value: this.selected.indexOf(index) > -1
             },
             nativeOn: {
-              'click': this.stopAndPrevent
+              'click': event => event.stopPropagation() 
             },
             on: {
               input: (value) => {
@@ -169,7 +164,8 @@ export default {
             nativeOn: {
               click: (event) => {
                 this.$emit('row-selection-change', row, index)
-                this.stopAndPrevent(event)
+                event.stopPropagation()
+                event.preventDefault()
               }
             }
           })
