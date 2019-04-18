@@ -8,7 +8,7 @@ export function createOperationRender (component, actions, elName) {
             type: 'text'
           },
           on: {
-            'click': () => {
+            click: () => {
               component[key](params)
             }
           }
