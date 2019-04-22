@@ -44,7 +44,8 @@ module.exports = {
             title: '业务组件',
             children: [
               'bizComponents/AppParams.md',
-              'bizComponents/AppParamsRead.md'
+              'bizComponents/AppParamsRead.md',
+              'bizComponents/ClickEventSelector.md'
             ]
           }
         ]

@@ -21,6 +21,7 @@ import CardListDemo from './CardListDemo'
 import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
 import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
 import probabilityDemo from './probabilityDemo.vue'
+import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -44,5 +45,6 @@ export {
   CardListDemo,
   FormFatherAndSonLinkDemo,
   FormFatherAndSonLinkDemo1,
-  probabilityDemo
+  probabilityDemo,
+  ClickEventSelectorDemo
 }

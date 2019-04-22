@@ -77,6 +77,7 @@ export default {
 <style lang="stylus" scoped>
 .card-list
     display flex
+    flex-wrap wrap
 .card-item-wrapper 
     position relative
 .card-item__selection

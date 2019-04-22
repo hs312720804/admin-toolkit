@@ -20,6 +20,7 @@ import CardList from './components/CardList'
 import utils from './utils'
 import FormFatherAndSonLink from './components/FormFatherAndSonLink'
 import probability from './components/probability'
+import ClickEventSelector from './bizComponents/ClickEventSelector'
 export {
   Menu,
   Breadcrumb,
@@ -42,5 +43,6 @@ export {
   TypeList,
   CardList,
   FormFatherAndSonLink,
-  probability
+  probability,
+  ClickEventSelector
 }
