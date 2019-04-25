@@ -73,19 +73,23 @@ export default {
 <style lang="stylus" scoped>
 .content-list
     margin-top 20px
+    .filter-form >>> .el-form
     >>> .el-pagination
         display flex
         flex-direction row
-        justify-content flex-end
+        flex-wrap wrap
     >>> .filter-form
             .sf-item__label
                 text-align right
                 width auto
             .sf-item--inline
-                margin-right 10px
+                margin-right 0px
             .sf-footer
                 margin-right 0
                 width auto
+            .sf-item
+               margin-bottom 10px
+                
     >>> .el-pagination
         padding 0
         margin-top 30px
@@ -93,9 +97,8 @@ export default {
             margin-right 0
     >>> .el-pagination__total
         margin-right auto
-    .filter-form >>> .el-form
-       display inline
+    .filter-form 
        >>> .el-select
-              width 100%
+               width 100%
 
 </style>
