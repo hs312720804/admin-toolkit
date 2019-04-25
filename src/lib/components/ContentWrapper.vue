@@ -73,7 +73,6 @@ export default {
 <style lang="stylus" scoped>
 .content-list
     margin-top 20px
-    .filter-form >>> .el-form
     >>> .el-pagination
         display flex
         flex-direction row
@@ -94,4 +93,9 @@ export default {
             margin-right 0
     >>> .el-pagination__total
         margin-right auto
+    .filter-form >>> .el-form
+       display inline
+       >>> .el-select
+              width 100%
+
 </style>
