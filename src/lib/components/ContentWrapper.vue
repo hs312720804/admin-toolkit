@@ -78,6 +78,7 @@ export default {
         display flex
         flex-direction row
         flex-wrap wrap
+        margin 0
     >>> .filter-form
             .sf-item__label
                 text-align right

@@ -36,6 +36,16 @@ const routes = [
         }
       },
       {
+        path: 'AppParams',
+        name: 'AppParams',
+        component: demos.AppParamsDemo,
+        meta: {
+          title: 'AppParams',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'AppParams'
+        }
+      },
+      {
         path: 'menu',
         name: 'menu',
         component: demos.MenuDemo,

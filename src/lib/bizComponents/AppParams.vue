@@ -53,7 +53,7 @@
           <i class="el-icon-minus"></i>
         </a>
       </div>
-      <el-button type="primary" @click="handleAddParam">
+      <el-button type="primary" plain @click="handleAddParam">
         <i class="el-icon-plus"></i>&nbsp;添加
       </el-button>
     </el-form-item>
@@ -211,6 +211,7 @@ export default {
 }
 .app-extend-params .el-form-item {
   margin-bottom: 24px;
+  margin-right: 15px;
 }
 .app-params__remove-param {
   cursor: pointer;
