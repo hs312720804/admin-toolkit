@@ -89,8 +89,5 @@ export default {
         vertical-align top
 .hide-radio-label >>> .el-radio__label
   display none
-.card-item__selection >>> .el-radio__inner,.card-item__selection >>> .el-checkbox__inner
-   width 30px
-   height 30px
 </style>
 
