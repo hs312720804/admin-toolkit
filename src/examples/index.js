@@ -22,6 +22,9 @@ import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
 import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
 import probabilityDemo from './probabilityDemo.vue'
 import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
+import ClickAndSelectWrapperDemo from './ClickAndSelectWrapperDemo.vue'
+import InputOrderDemo from './InputOrderDemo.vue'
+import BaseSelectorDemo from './BaseSelectorDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -46,5 +49,8 @@ export {
   FormFatherAndSonLinkDemo,
   FormFatherAndSonLinkDemo1,
   probabilityDemo,
-  ClickEventSelectorDemo
+  ClickEventSelectorDemo,
+  ClickAndSelectWrapperDemo,
+  InputOrderDemo,
+  BaseSelectorDemo
 }

@@ -21,6 +21,10 @@ import utils from './utils'
 import FormFatherAndSonLink from './components/FormFatherAndSonLink'
 import probability from './components/probability'
 import ClickEventSelector from './bizComponents/ClickEventSelector'
+import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
+import InputOrder from './components/InputOrder'
+import OrderableTable from './components/OrderableTable'
+import BaseSelector from './components/BaseSelector'
 export {
   Menu,
   Breadcrumb,
@@ -44,5 +48,9 @@ export {
   CardList,
   FormFatherAndSonLink,
   probability,
-  ClickEventSelector
+  ClickEventSelector,
+  ClickAndSelectWrapper,
+  InputOrder,
+  OrderableTable,
+  BaseSelector
 }
