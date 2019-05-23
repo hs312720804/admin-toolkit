@@ -37,7 +37,11 @@ module.exports = {
               'components/TypeList.md',
               'components/FormFatherAndSonLink.md',
               'components/ContentEllipsis.md',
-              'components/probability.md'
+              'components/probability.md',
+              'components/ClickAndSelectWrapper.md',
+              'components/BaseSelector.md',
+              'components/InputOrder.md',
+              'components/OrderableTable.md'
             ]
           },
           {
