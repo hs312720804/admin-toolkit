@@ -30,7 +30,7 @@
         >
           <span class="tag-nav__dot"></span>
           <span class="tag-nav__text">{{ getTitle(item) }}</span>
-          <i class="el-icon-close tag-nav__close-item" @click.stop="handleClose(item)"></i>
+          <i v-if="item.isCloseable!==false" class="el-icon-close tag-nav__close-item" @click.stop="handleClose(item)"></i>
         </li>
     </ul>
     </div>
