@@ -245,6 +245,7 @@ export default {
           ...this.props,
           data: this.data
         },
+        directives: this.$directives,
         on: {
           ...elementUITableEvents,
           'sort-change': this.handleSortChange,
