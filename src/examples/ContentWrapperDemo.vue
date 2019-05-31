@@ -105,14 +105,16 @@ export default {
     fetchData() {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据')
     },
-    handleFilterChange(type) {
+    handleFilterChange(type, filter) {
       if (type === 'pagination') {
         this.$message('分页数据发生改变')
       } else {
+        this.filter = filter
         this.$message('筛选条件发生变更')
       }
     },
     handleFilterReset() {
+      this.filter = {}
       this.$message('筛选条件需要重置')
     }
   }

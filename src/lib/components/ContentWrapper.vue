@@ -8,12 +8,33 @@ const defaultPaginationProps = {
   layout: 'total, prev, pager, next, sizes, jumper'
 }
 export default {
+  data() {
+    return {
+      // 与表单绑定的 filter对象
+      viewFilter: {},
+      // 外面传进来的 filter 对象
+      inputFilter: {}
+    }
+  },
   props: ['filter', 'filterSchema', 'pagination'],
-  created () {},
+  created () {
+    this.inputFilter = this.filter
+    this.$watch('filter', this.setFilterData, {
+      immediate: true
+    })
+  },
   methods: {
+    setFilterData(filter) {
+      // 如果外面传进来的 filter 与 inputFilter 不一样
+      if (this.inputFilter !== filter) {
+        this.inputFilter = filter
+        this.viewFilter = filter ? JSON.parse(JSON.stringify(this.filter)) : {}
+      }
+    },
     handleFilter (err) {
       if (!err || err.length === 0) {
-        this.emitFilterChange('query')
+        this.inputFilter = JSON.parse(JSON.stringify(this.viewFilter))
+        this.emitFilterChange('query', this.inputFilter)
       }
     },
     handlePageSizeChange (size) {
@@ -27,8 +48,8 @@ export default {
     handleResetFilterForm () {
       this.$emit('filter-reset')
     },
-    emitFilterChange (type) {
-      this.$emit('filter-change', type)
+    emitFilterChange (type, filter) {
+      this.$emit('filter-change', type, filter)
     }
   },
   render (h) {
@@ -39,7 +60,7 @@ export default {
         ref: 'filterForm',
         class: 'filter-form',
         props: {
-          value: this.filter,
+          value: this.viewFilter,
           schema: this.filterSchema
         },
         on: {
