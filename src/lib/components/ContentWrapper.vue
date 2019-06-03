@@ -18,7 +18,6 @@ export default {
   },
   props: ['filter', 'filterSchema', 'pagination'],
   created () {
-    this.inputFilter = this.filter
     this.$watch('filter', this.setFilterData, {
       immediate: true
     })
