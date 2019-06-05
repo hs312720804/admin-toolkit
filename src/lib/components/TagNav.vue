@@ -122,6 +122,12 @@ export default {
       default () {
         return []
       }
+    },
+    titles: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   watch: {
@@ -129,7 +135,7 @@ export default {
   },
   methods: {
     getTitle ({ meta, name }) {
-      return (meta && meta.title) || name
+      return this.titles[name] || (meta && meta.title) || name
     },
     handleNavigate (route) {
       this.$router.push({ path: route.fullPath })
