@@ -1,6 +1,6 @@
 {
   "name": "admin-toolkit",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "main": "./dist/admin-toolkit.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,11 +12,13 @@
     "dist",
     "src/lib"
   ],
+  "peerDependencies": {
+    "element-ui": "2.4.11"
+  },
   "dependencies": {
     "@stateform/element": "^0.1.9",
     "@william17/vue-app-state": "^0.1.1",
     "big.js": "^5.2.2",
-    "element-ui": "^2.9.1",
     "gateschema-form-vue": "^0.2.4",
     "vue": "^2.6.9",
     "vuepress": "^0.14.11"
@@ -31,6 +33,7 @@
     "axios": "^0.18.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "element-ui": "2.4.11",
     "gateschema": "^0.2.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
