@@ -16,7 +16,7 @@
     "element-ui": "2.4.11"
   },
   "dependencies": {
-    "@stateform/element": "^0.1.9",
+    "@stateform/element": "^0.1.10",
     "@william17/vue-app-state": "^0.1.1",
     "big.js": "^5.2.2",
     "gateschema-form-vue": "^0.2.4",
