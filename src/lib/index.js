@@ -25,6 +25,7 @@ import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
 import InputOrder from './components/InputOrder'
 import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
+import ContextMenu from './components/ContextMenu'
 export {
   Menu,
   Breadcrumb,
@@ -52,5 +53,6 @@ export {
   ClickAndSelectWrapper,
   InputOrder,
   OrderableTable,
-  BaseSelector
+  BaseSelector,
+  ContextMenu
 }

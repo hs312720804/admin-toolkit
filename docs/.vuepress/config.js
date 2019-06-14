@@ -41,7 +41,8 @@ module.exports = {
               'components/ClickAndSelectWrapper.md',
               'components/BaseSelector.md',
               'components/InputOrder.md',
-              'components/OrderableTable.md'
+              'components/OrderableTable.md',
+              'components/ContextMenu.md'
             ]
           },
           {

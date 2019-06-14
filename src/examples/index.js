@@ -25,6 +25,7 @@ import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
 import ClickAndSelectWrapperDemo from './ClickAndSelectWrapperDemo.vue'
 import InputOrderDemo from './InputOrderDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
+import ContextMenuDemo from './ContextMenuDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -52,5 +53,6 @@ export {
   ClickEventSelectorDemo,
   ClickAndSelectWrapperDemo,
   InputOrderDemo,
-  BaseSelectorDemo
+  BaseSelectorDemo,
+  ContextMenuDemo
 }
