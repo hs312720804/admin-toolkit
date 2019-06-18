@@ -37,6 +37,7 @@ export default {
       }
     },
     handlePageSizeChange (size) {
+      this.$set(this.pagination, 'currentPage', 1)
       this.$set(this.pagination, 'pageSize', size)
       this.emitFilterChange('pagination')
     },
