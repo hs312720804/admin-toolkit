@@ -164,11 +164,15 @@ export default {
       }
     },
     handleCloseOther () {
-      this.tags = []
-      this.addTag(this.$route)
+      const currentRoute = this.$route
+      this.tags = this.tags.filter((item) => {
+        return item.name === currentRoute.name || item.isCloseable === false
+      })
     },
     handleCloseAll () {
-      this.tags = []
+      this.tags = this.tags.filter((item) => {
+        return item.isCloseable === false
+      })
       this.$router.push(this.defaultPath)
     },
     handleScroll (side) {
