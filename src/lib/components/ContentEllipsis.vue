@@ -5,9 +5,8 @@
     title=""
     trigger="hover"
     :content="content">
-    <div class="ellipsis" slot="reference">
-     <span class="txt" >{{content}}</span>
-     <span class="t"></span>
+    <div class="ellipsis" slot="reference" :style="style">
+      {{ content }}
     </div>
   </el-popover>
 
@@ -15,25 +14,24 @@
 <script>
 export default {
   props: ['content', 'width', 'height'],
-  mounted () {
-    document.querySelector('.txt').style.width = this.width + 'px'
-    document.querySelector('.txt').style.height = this.height + 'px'
+  computed: {
+    style() {
+      const style = {}
+      const { width, height } = this
+      if (width !== undefined) {
+        style.width = width + 'px'
+      }
+      if (height !== undefined) {
+        style.height = height + 'px'
+      }
+      return style
+    }
   }
 }
 </script>
-<style  scoped>
- .txt{
-  display: inline-block;
-  line-height: 20px;
-  overflow: hidden;
-  font-size: 16px;
-}
-.t:after{
-  display: inline;
-  content: "...";
-  font-size: 16px;
-}
-.ellipsis{
- display: inline-block;
-}
+<style lang="stylus"  scoped>
+.ellipsis
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
 </style>
