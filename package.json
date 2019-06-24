@@ -14,7 +14,7 @@
   ],
   "peerDependencies": {
     "vue": "^2.6.9",
-    "element-ui": "^2.9.11"
+    "element-ui": "^2.9.1"
   },
   "dependencies": {
     "@stateform/element": "^0.1.10",
@@ -32,7 +32,7 @@
     "axios": "^0.18.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
-    "element-ui": "2.4.11",
+    "element-ui": "^2.9.1",
     "gateschema": "^0.2.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
