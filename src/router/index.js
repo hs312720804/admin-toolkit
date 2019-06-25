@@ -134,6 +134,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'probability'
         }
+      },
+      {
+        path: 'VideoTags',
+        name: 'VideoTags',
+        component: demos.VideoTagsDemo,
+        meta: {
+          title: '标签列表',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'VideoTags'
+        }
       }
     ]
   },

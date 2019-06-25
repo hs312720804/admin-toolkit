@@ -28,6 +28,7 @@ import InputPosibility from './components/InputPosibility'
 import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
+import VideoTags from './components/VideoTags'
 export {
   Menu,
   Breadcrumb,
@@ -58,5 +59,6 @@ export {
   InputPosibility,
   OrderableTable,
   BaseSelector,
-  ContextMenu
+  ContextMenu,
+  VideoTags
 }

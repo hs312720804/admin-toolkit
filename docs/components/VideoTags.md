@@ -1,3 +1,16 @@
+# 标签列表    
+`VideoTags`  
+
+## 示例  
+
+### 效果
+
+<Demo>
+  <VideoTagsDemo />
+</Demo>
+
+### 代码  
+```vue
 <template>
   <div class="cc-video-tag">
     已选标签：
@@ -474,3 +487,41 @@ export default {
     margin: 3px;
 }
 </style>
+```
+
+
+## 属性  
+支持N级层级展示 
+
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| ref | Array | 标签组件名称 | |  
+| tagData | Array | 标签数据列表 | |  
+| tagDataBakInit | Array | 备份标签列表 | |  
+| pageSize | Array | 标签分页数 | |
+
+标签列表属性  
+| 名称 | 类型 | 描述  | 例子 |  
+| ---- | ---- | ---- | ---- |  
+| tagId | int | 标签id | |  
+| tagCnName | String | 标签名称 | | 
+| tagCode | string | 标签Code | |  
+| parentCode | string | 标签父级Code | |
+| nodeType | int | 标签分类类型 | | 
+| level | int | 层级 | |  
+| path | string | 标签路径 | |  
+| tagStatus | int | 状态 | |  
+| videoCount | int | 次数 | |  
+| creater | int | 创建人 | |  
+| modifier | int | 最后修改人 | |  
+| createdDate | date | 创建时间 | |  
+| lastUpdateDate | date | 最后更改时间 | |  
+
+## 事件
+| 名称 | 参数 | 描述 |  
+| currTagData | | 点击标签返回值 |
+| getTagNodes | data | 获取已选标签列表
+| updateTagData | data | 更新标签列表
+
+
+<Comment />
