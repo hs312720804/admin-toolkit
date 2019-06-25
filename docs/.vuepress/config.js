@@ -49,7 +49,8 @@ module.exports = {
               'components/InputPositiveInt.md',
               'components/InputPosibility.md',
               'components/OrderableTable.md',
-              'components/ContextMenu.md'
+              'components/ContextMenu.md',
+              'components/VideoTags.md'
             ]
           },
           {
