@@ -5,7 +5,7 @@
 export default {
   data () {
     return {
-      EllipsisContent: '方中大黄性味苦寒，泻火解毒，又能攻下通便，有釜底抽薪之意，故为主药；黄芩攻善清热燥湿.'
+      EllipsisContent: `Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces.`
     }
   }
 }

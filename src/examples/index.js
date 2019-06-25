@@ -24,8 +24,11 @@ import probabilityDemo from './probabilityDemo.vue'
 import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
 import ClickAndSelectWrapperDemo from './ClickAndSelectWrapperDemo.vue'
 import InputOrderDemo from './InputOrderDemo.vue'
+import InputPositiveIntDemo from './InputPositiveIntDemo.vue'
+import InputPosibilityDemo from './InputPosibilityDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
 import ContextMenuDemo from './ContextMenuDemo.vue'
+
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -53,6 +56,8 @@ export {
   ClickEventSelectorDemo,
   ClickAndSelectWrapperDemo,
   InputOrderDemo,
+  InputPositiveIntDemo,
+  InputPosibilityDemo,
   BaseSelectorDemo,
   ContextMenuDemo
 }

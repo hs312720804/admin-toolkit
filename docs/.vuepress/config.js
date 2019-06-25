@@ -3,6 +3,11 @@ module.exports = {
   title: 'Admin Toolkit',
   description: '酷开 Vue 组件库',
   themeConfig: {
+    nav: [
+      {text: '文档', link: '/'},
+      {text: 'Changelog', link: 'http://gitlab.skysri.com/FrontEnd/admin-toolkit/blob/master/CHANGELOG.md'},
+      {text: 'GitLab', link: 'http://gitlab.skysri.com/FrontEnd/admin-toolkit'}
+    ],
     locales: {
       // 键名是该语言所属的子路径
       // 作为特例，默认语言可以使用 '/' 作为其路径。
@@ -37,10 +42,12 @@ module.exports = {
               'components/TypeList.md',
               'components/FormFatherAndSonLink.md',
               'components/ContentEllipsis.md',
-              'components/probability.md',
+              // 'components/probability.md',
               'components/ClickAndSelectWrapper.md',
               'components/BaseSelector.md',
               'components/InputOrder.md',
+              'components/InputPositiveInt.md',
+              'components/InputPosibility.md',
               'components/OrderableTable.md',
               'components/ContextMenu.md'
             ]
@@ -52,7 +59,8 @@ module.exports = {
               'bizComponents/AppParamsRead.md',
               'bizComponents/ClickEventSelector.md'
             ]
-          }
+          },
+
         ]
       }
     }

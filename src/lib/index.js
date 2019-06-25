@@ -23,6 +23,8 @@ import probability from './components/probability'
 import ClickEventSelector from './bizComponents/ClickEventSelector'
 import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
 import InputOrder from './components/InputOrder'
+import InputPositiveInt from './components/InputPositiveInt'
+import InputPosibility from './components/InputPosibility'
 import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
@@ -52,6 +54,8 @@ export {
   ClickEventSelector,
   ClickAndSelectWrapper,
   InputOrder,
+  InputPositiveInt,
+  InputPosibility,
   OrderableTable,
   BaseSelector,
   ContextMenu
