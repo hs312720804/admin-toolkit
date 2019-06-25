@@ -1,7 +1,7 @@
 <template>
   <div>
     <div><el-button type="primary" icon="el-icon-edit" @click="clickEdit">{{eidtText}}</el-button></div>
-    <TypeList :lists="datas" :defaultProps="defaultProps" @currData="getNodeData" @clickTypeHandler="clickTypeHandler" />
+    <TypeList :tagData="datas" :defaultProps="defaultProps" @currData="getNodeData" @clickTypeHandler="clickTypeHandler" />
   </div>
 </template>
 <script>
@@ -10,76 +10,46 @@ export default {
     return {
       eidtText: '编辑',
       datas: [{
-          id: 1,
-          label: '一级 1',
-          status: 1,
-          categoryFlag: 0,
-          children: [{
-            id: 4,
-            label: '二级 1-1',
-          	status: 1,
-          	categoryFlag: 0,
-            children: [{
-              id: 9,
-              label: '三级 1-1-1',
-          		status: 1,
-          		categoryFlag: 0
-            }, {
-              id: 10,
-              label: '三级 1-1-2',
-          		status: 1,
-          		categoryFlag: 0
-            }]
-          }]
-        }, {
-          id: 2,
-          label: '一级 2',
-          status: 1,
-          categoryFlag: 0,
-          children: [{
-            id: 5,
-            label: '二级 2-1',
-          	status: 1,
-          	categoryFlag: 0
-          }, {
-            id: 6,
-            label: '二级 2-2',
-          	status: 1,
-          	categoryFlag: 0
-          }]
-        }, {
-          id: 3,
-          label: '一级 3',
-          status: 1,
-          categoryFlag: 0,
-          children: [{
-            id: 7,
-            label: '二级 3-1',
-          	status: 1,
-          	categoryFlag: 0
-          }, {
-            id: 8,
-            label: '二级 3-2',
-          	status: 1,
-          	categoryFlag: 0,
-            children: [{
-              id: 11,
-              label: '三级 3-2-1',
-          		status: 1,
-          		categoryFlag: 0
-            }, {
-              id: 12,
-              label: '三级 3-2-2',
-          		status: 1,
-          		categoryFlag: 0
-            }, {
-              id: 13,
-              label: '三级 3-2-3',
-          		status: 1,
-          		categoryFlag: 0
-            }]
-          }]
-        }],
+          createdDate: "2019-05-17 13:09:20",
+          lastUpdateDate: "2019-05-17 13:08:08",
+          level: 1,
+          modifier: 96,
+          nodeType: 0,
+          parentCode: "-1",
+          path: "1",
+          tagCnName: "媒资",
+          tagCode: "1",
+          tagId: 1,
+          tagStatus: 1,
+          videoCount: 0
+      },
+      {
+          createdDate: "2019-05-27 17:12:34",
+          lastUpdateDate: "2019-05-17 13:04:49",
+          level: 1,
+          modifier: 96,
+          nodeType: 0,
+          parentCode: "-1",
+          path: "4",
+          tagCnName: "应用",
+          tagCode: "4",
+          tagId: 4,
+          tagStatus: 1,
+          videoCount: 0
+      },
+      {
+          createdDate: "2019-05-27 17:12:32",
+          lastUpdateDate: "2019-05-06 10:53:49",
+          level: 1,
+          nodeType: 0,
+          parentCode: "-1",
+          path: "9",
+          tagCnName: "购物",
+          tagCode: "9",
+          tagId: 9,
+          tagStatus: 1,
+          videoCount: 0
+      }],
       defaultProps: {
         children: 'children',
         label: 'label',
