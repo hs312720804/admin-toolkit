@@ -31,6 +31,7 @@
     <el-form-item label="启动参数" :prop="formProp('byvalue')" :rules="rules.byvalue">
       <el-input type="textarea" v-model.trim="inputValue.byvalue"></el-input>
     </el-form-item>
+    <slot></slot>
     <el-form-item label="扩展参数">
       <div class="app-extend-params" v-for="(param, index) in inputValue.params" :key="index">
         <el-form-item

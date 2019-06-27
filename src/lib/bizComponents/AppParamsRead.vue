@@ -5,6 +5,7 @@
     <el-form-item label="启动动作">{{ value.dowhat }}</el-form-item>
     <el-form-item label="启动方式">{{ value.bywhat }}</el-form-item>
     <el-form-item label="启动参数">{{ value.byvalue }}</el-form-item>
+    <slot></slot>
     <el-form-item label="扩展参数">
       <div class="app-extend-params" v-for="(param, index) in value.params" :key="index">
         <el-form-item label label-width="0px">
