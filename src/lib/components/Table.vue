@@ -239,6 +239,7 @@ export default {
     const table = h(
       Table,
       {
+        ref: 'table',
         class: 'cc-table',
         props: {
           ...defaultTableProps,
