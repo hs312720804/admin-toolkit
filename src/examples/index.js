@@ -28,7 +28,7 @@ import InputPositiveIntDemo from './InputPositiveIntDemo.vue'
 import InputPosibilityDemo from './InputPosibilityDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
 import ContextMenuDemo from './ContextMenuDemo.vue'
-
+import VideoTagsDemo from './VideoTagsDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -59,5 +59,6 @@ export {
   InputPositiveIntDemo,
   InputPosibilityDemo,
   BaseSelectorDemo,
-  ContextMenuDemo
+  ContextMenuDemo,
+  VideoTagsDemo
 }
