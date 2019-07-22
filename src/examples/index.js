@@ -29,6 +29,15 @@ import InputPosibilityDemo from './InputPosibilityDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
 import ContextMenuDemo from './ContextMenuDemo.vue'
 import VideoTagsDemo from './VideoTagsDemo.vue'
+
+import DataFormDemo from './form/DataFormDemo.vue'
+import BooleanDemo from './form/BooleanDemo.vue'
+import NumberDemo from './form/NumberDemo.vue'
+import StringDemo from './form/StringDemo.vue'
+import EnumDemo from './form/EnumDemo.vue'
+import EnumListDemo from './form/EnumListDemo.vue'
+import AnyDemo from './form/AnyDemo.vue'
+
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -60,5 +69,13 @@ export {
   InputPosibilityDemo,
   BaseSelectorDemo,
   ContextMenuDemo,
-  VideoTagsDemo
+  VideoTagsDemo,
+
+  DataFormDemo,
+  BooleanDemo,
+  NumberDemo,
+  StringDemo,
+  EnumDemo,
+  EnumListDemo,
+  AnyDemo
 }

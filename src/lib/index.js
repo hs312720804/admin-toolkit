@@ -29,6 +29,16 @@ import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
 import VideoTags from './components/VideoTags'
+
+// DataForm
+import DataForm from './form/DataForm'
+import Boolean from './form/Boolean'
+import String from './form/String'
+import Number from './form/Number'
+import Enum from './form/Enum'
+import EnumList from './form/EnumList'
+import Any from './form/Any'
+
 export {
   Menu,
   Breadcrumb,
@@ -60,5 +70,13 @@ export {
   OrderableTable,
   BaseSelector,
   ContextMenu,
-  VideoTags
+  VideoTags,
+
+  DataForm,
+  Boolean,
+  String,
+  Number,
+  Enum,
+  EnumList,
+  Any
 }
