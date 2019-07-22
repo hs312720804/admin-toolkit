@@ -25,6 +25,7 @@ module.exports = {
           },
           {
             title: '组件',
+            collapsable: false,
             children: [
               'components/Menu.md',
               'components/ActionList.md',
@@ -61,6 +62,18 @@ module.exports = {
               'bizComponents/ClickEventSelector.md'
             ]
           },
+          {
+            title: '数据表单',
+            children: [
+              'form/DataForm.md',
+              'form/Boolean.md',
+              'form/Number.md',
+              'form/String.md',
+              'form/Enum.md',
+              'form/EnumList.md',
+              'form/Any.md',
+            ]
+          }
 
         ]
       }
