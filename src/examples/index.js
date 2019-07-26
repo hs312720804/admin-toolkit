@@ -29,7 +29,6 @@ import InputPosibilityDemo from './InputPosibilityDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
 import ContextMenuDemo from './ContextMenuDemo.vue'
 import VideoTagsDemo from './VideoTagsDemo.vue'
-
 import DataFormDemo from './form/DataFormDemo.vue'
 import BooleanDemo from './form/BooleanDemo.vue'
 import NumberDemo from './form/NumberDemo.vue'
@@ -70,7 +69,6 @@ export {
   BaseSelectorDemo,
   ContextMenuDemo,
   VideoTagsDemo,
-
   DataFormDemo,
   BooleanDemo,
   NumberDemo,

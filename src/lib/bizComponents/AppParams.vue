@@ -89,10 +89,10 @@ export default {
           { required: true, message: '请输入应用版本号', trigger: 'blur' }
         ],
         dowhat: [
-          { required: true, message: '请选择启动动作', trigger: 'blur' }
+          { required: true, message: '请选择启动动作', trigger: 'change' }
         ],
         bywhat: [
-          { required: true, message: '请选择启动方式', trigger: 'blur' }
+          { required: true, message: '请选择启动方式', trigger: 'change' }
         ],
         byvalue: [
           { required: true, message: '请输入启动参数', trigger: 'blur' }
