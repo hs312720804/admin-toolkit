@@ -73,7 +73,6 @@ export default {
   font-size 14px
 .cc-table-wrapper
   position relative
-  padding 1px 0
 .column-status
   margin 0
   padding 10px
