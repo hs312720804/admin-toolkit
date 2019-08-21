@@ -21,6 +21,7 @@
         :value="value"
         @input="handleInputVal"
         @change="$emit('change', $event)"
+        :clearable="clearable"
         :disabled="disabled"
         :placeholder="placeholder || '请选择'"
         :filterable="filterable"
@@ -50,7 +51,7 @@ export default {
 
     }
   },
-  props: ['type', 'options', 'filterable', 'allowCreate', 'confirm'],
+  props: ['type', 'options', 'filterable', 'allowCreate', 'confirm', 'clearable'],
   methods: {
     getLabel(val) {
       const options = this.options || []
