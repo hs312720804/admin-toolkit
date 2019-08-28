@@ -49,8 +49,12 @@ export default {
 
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| default-active | String | 默认激活的菜单对应的路由名 | |  
 | items | Array | 菜单项列表 | |
+| defaultActive | String | 默认激活的菜单对应的路由名，内容参见<a href="https://element.eleme.cn/#/zh-CN/component/menu">文档</a> | |  
+| isCollapse | Boolean | | 是否水平折叠收起菜单，参见文档 |
+| textColor | String | 菜单的文字颜色（仅支持 hex 格式）,参见文档 | |
+| activeTextColor | String | 当前激活菜单的 index，参见文档 | |
+| backgroundColor | String | 菜单的背景色，参见文档 | |
 
 菜单项属性  
 | 名称 | 类型 | 描述  | 例子 |  
