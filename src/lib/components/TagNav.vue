@@ -139,6 +139,7 @@ export default {
     },
     handleNavigate (route) {
       this.$router.push({ path: route.fullPath })
+      this.$emit('navigate', route)
     },
     handleClose (route) {
       const currentRoute = this.$route
@@ -186,6 +187,7 @@ export default {
     },
     handleRouteChange (route) {
       this.addTag(route)
+      this.$nextTick(this.scrollIntoView)
     },
     handleForward () {
       const history = this.tagHistories[this.$route.meta.tagId]
@@ -223,7 +225,18 @@ export default {
     scrollIntoView () {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
       if (activeItem) {
-        activeItem.scrollIntoViewIfNeeded()
+        const viewPort = this.$refs.viewPort
+        const tagList= this.$refs.tagList
+        const viewPortWidth = viewPort.clientWidth
+        const tagListScrollWidth = tagList.scrollWidth
+        const activeItemWidth = activeItem.clientWidth
+        const cursor = this.cursor
+        const position = activeItem.offsetLeft
+        if (position < cursor) {
+          this.cursor = position
+        } else if (position + activeItemWidth - cursor > viewPortWidth) {
+          this.cursor = Math.min(tagListScrollWidth - viewPortWidth, position - viewPortWidth/2)
+        }
       }
     }
   },
