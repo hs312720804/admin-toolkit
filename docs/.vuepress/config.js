@@ -51,7 +51,8 @@ module.exports = {
               'components/InputPosibility.md',
               'components/OrderableTable.md',
               'components/ContextMenu.md',
-              'components/VideoTags.md'
+              'components/VideoTags.md',
+              'components/CnRegionPicker.md'
             ]
           },
           {

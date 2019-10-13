@@ -36,6 +36,7 @@ import StringDemo from './form/StringDemo.vue'
 import EnumDemo from './form/EnumDemo.vue'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
+import CnRegionPickerDemo from './CnRegionPicker.vue'
 
 export {
   ActionListDemo,
@@ -75,5 +76,6 @@ export {
   StringDemo,
   EnumDemo,
   EnumListDemo,
-  AnyDemo
+  AnyDemo,
+  CnRegionPickerDemo
 }

@@ -29,6 +29,7 @@ import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
 import VideoTags from './components/VideoTags'
+import CnRegionPicker from './components/CnRegionPicker'
 
 // DataForm
 import DataForm from './form/DataForm'
@@ -78,5 +79,6 @@ export {
   Number,
   Enum,
   EnumList,
-  Any
+  Any,
+  CnRegionPicker
 }
