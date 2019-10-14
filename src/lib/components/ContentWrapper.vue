@@ -5,7 +5,7 @@ const defaultPaginationProps = {
   background: true,
   pageSizes: [5, 10, 20, 50, 100],
   pageSize: 10,
-  pagerCount: window.screen.width > 768 ? 8 : 5,
+  'pager-count': window.screen.width > 768 ? 8 : 5,
   layout: 'total, prev, pager, next, sizes, jumper'
 }
 export default {
