@@ -7,10 +7,10 @@ import TableWrapper from './TableWrapper'
 const TableBody = {
   extends: ElTable.components.TableBody,
   methods: {
-    getRowClass(row) {
-      const classes = ['el-table__row'];
+    getRowClass (row) {
+      const classes = ['el-table__row']
       if (this.table.highlightCurrentRow && row === this.store.states.currentRow) {
-        classes.push('current-row');
+        classes.push('current-row')
       }
 
       // if (rowIndex === this.store.states.hoverRow) {
@@ -18,23 +18,23 @@ const TableBody = {
       // }
 
       if (this.stripe && rowIndex % 2 === 1) {
-        classes.push('el-table__row--striped');
+        classes.push('el-table__row--striped')
       }
-      const rowClassName = this.table.rowClassName;
+      const rowClassName = this.table.rowClassName
       if (typeof rowClassName === 'string') {
-        classes.push(rowClassName);
+        classes.push(rowClassName)
       } else if (typeof rowClassName === 'function') {
         classes.push(rowClassName.call(null, {
           row,
           rowIndex
-        }));
+        }))
       }
 
       if (this.store.states.expandRows.indexOf(row) > -1) {
-        classes.push('expanded');
+        classes.push('expanded')
       }
 
-      return classes;
+      return classes
     }
   }
 }
@@ -84,7 +84,7 @@ export default {
     },
     selectOnRowClick: {
       type: Boolean,
-      default() {
+      default () {
         return false
       }
     },
@@ -108,7 +108,7 @@ export default {
     handleSortChange () {
       this.$emit('sort-change', ...arguments)
     },
-    handleRowClick(row) {
+    handleRowClick (row) {
       if (this.selectOnRowClick) {
         const index = this.data.indexOf(row)
         const selectionType = this.selectionType
@@ -122,8 +122,8 @@ export default {
       }
       this.$emit('row-click', ...arguments)
     },
-    createEmitter(eventName) {
-      return function proxy() {
+    createEmitter (eventName) {
+      return function proxy () {
         this.$emit(eventName, ...arguments)
       }.bind(this)
     }
@@ -182,7 +182,7 @@ export default {
               value: this.selected.indexOf(index) > -1
             },
             nativeOn: {
-              'click': event => event.stopPropagation() 
+              'click': event => event.stopPropagation()
             },
             on: {
               input: (value) => {
@@ -219,9 +219,9 @@ export default {
     }
 
     const elementUITableEvents = [
-      'cell-mouse-enter',	
+      'cell-mouse-enter',
       'cell-mouse-leave',
-      'cell-click', 
+      'cell-click',
       'cell-dblclick',
       'row-click',
       'row-contextmenu',
@@ -230,7 +230,7 @@ export default {
       'header-contextmenu',
       'sort-change',
       'current-change',
-      'header-dragend',	
+      'header-dragend',
       'expand-change'
     ].reduce((result, item) => {
       result[item] = this.createEmitter(item)
@@ -272,9 +272,7 @@ export default {
 <style lang="stylus" scoped>
 .cc-table
   >>> .hidden
-    display  none
-
+    display none
 .hide-radio-label >>> .el-radio__label
   display none
-
 </style>

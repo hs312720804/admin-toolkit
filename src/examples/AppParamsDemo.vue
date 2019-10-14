@@ -1,6 +1,6 @@
 <template>
   <el-form :model="form" ref="form" label-width="140px">
-    <AppParams prop-prefix="appParams" v-model="form.appParams"/>
+    <AppParams prop-prefix="appParams" v-model="form.appParams" />
     <el-form-item>
       <el-button @click="submitBtn">保存</el-button>
     </el-form-item>
@@ -8,29 +8,30 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            form: {
-                appParams: {
-                    packagename: undefined,
-                    versioncode: undefined,
-                    dowhat: undefined,
-                    bywhat: undefined,
-                    byvalue: undefined,
-                    params: [],
-                    exception: {}
-                }
-            }
+  data () {
+    return {
+      form: {
+        appParams: {
+          packagename: undefined,
+          versioncode: undefined,
+          dowhat: undefined,
+          bywhat: undefined,
+          byvalue: undefined,
+          params: [],
+          exception: {}
         }
-    },
-    methods: {
-        submitBtn(){
-        this.$refs.form.validate(valid => {
-            if (valid) {
-                alert('提交')
-           }
-           })
+      }
     }
-}
+  },
+  methods: {
+    submitBtn () {
+      debugger
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          alert('提交')
+        }
+      })
+    }
+  }
 }
 </script>

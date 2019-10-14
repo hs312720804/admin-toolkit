@@ -5,10 +5,11 @@ const defaultPaginationProps = {
   background: true,
   pageSizes: [5, 10, 20, 50, 100],
   pageSize: 10,
+  pagerCount: window.screen.width > 768 ? 8 : 5,
   layout: 'total, prev, pager, next, sizes, jumper'
 }
 export default {
-  data() {
+  data () {
     return {
       // 与表单绑定的 filter对象
       viewFilter: {},
@@ -23,7 +24,7 @@ export default {
     })
   },
   methods: {
-    setFilterData(filter) {
+    setFilterData (filter) {
       // 如果外面传进来的 filter 与 inputFilter 不一样
       if (this.inputFilter !== filter) {
         this.inputFilter = filter
@@ -93,34 +94,31 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .content-list
-    margin-top 20px
-    .filter-form >>> .el-form
-    >>> .el-pagination
-        display flex
-        flex-direction row
-        flex-wrap wrap
-        margin 0
-    >>> .filter-form
-            .sf-item__label
-                text-align right
-                width auto
-            .sf-item--inline
-                margin-right 0px
-            .sf-footer
-                margin-right 0
-                width auto
-            .sf-item
-               margin-bottom 10px
-                
-    >>> .el-pagination
-        padding 0
-        margin-top 30px
-        button:last-child
-            margin-right 0
-    >>> .el-pagination__total
-        margin-right auto
-    .filter-form 
-       >>> .el-select
-               width 100%
-
+  margin-top 20px
+  .filter-form >>> .el-form, >>> .el-pagination
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    margin 0
+  >>> .filter-form
+    .sf-item__label
+      text-align right
+      width auto
+    .sf-item--inline
+      margin-right 0px
+    .sf-footer
+      margin-right 0
+      width auto
+    .sf-item
+      margin-bottom 10px
+  >>> .el-pagination
+    padding 0
+    margin-top 30px
+    button:last-child
+      margin-right 0
+  >>> .el-pagination__total
+    margin-right auto
+  .filter-form
+    >>> .el-select
+      width 100%
 </style>

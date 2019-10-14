@@ -1,28 +1,38 @@
 <template>
   <div>
-    <div class="switch-readonly">读写模式切换 <el-switch v-model="isReadonly" /></div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <String label="姓名" v-model="form.name" />
+    <div class="switch-readonly">
+      读写模式切换
+      <el-switch v-model="isReadonly" />
+    </div>
+    <DataForm label-width="120px" ref="form" :readonly="isReadonly" :model="form" :rules="rules">
+      <String label="姓名" prop="name" v-model="form.name" />
       <Number label="年龄" v-model="form.age" />
-      <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
+      <Enum
+        label="性别"
+        type="radio"
+        confirm="是否更改性别"
+        v-model="form.gender"
+        :options="genderOptions"
+      />
       <Enum label="岗位" v-model="form.job" :options="jobOptions" />
       <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
       <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
       <Boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
-      <Boolean label="" v-model="form.isIn">
-        参加活动
-      </Boolean>
+      <Boolean label v-model="form.isIn">参加活动</Boolean>
       <Any label="是否已婚">
         <el-switch slot="edit" :value="!!form.isMarried" @input="form.isMarried = $event ? 1 : 0"></el-switch>
-        <span slot="read">{{ form.isMarried ? '是' : '否' }} </span>
+        <span slot="read">{{ form.isMarried ? '是' : '否' }}</span>
       </Any>
+      <el-form-item>
+        <el-button type="primary" @click="saveForm">保存</el-button>
+      </el-form-item>
     </DataForm>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isReadonly: false,
       genderOptions: [
@@ -89,13 +99,23 @@ export default {
         isRegular: 1,
         isIn: 0,
         isMarried: 0
+      },
+      rules: {
+        name: [{ required: true, message: '不能为空', trigger: 'blur' }]
       }
     }
+  },
+  methods: {
+    saveForm () {
+      this.$refs.form.$refs.form.validate(valid => {
+        if (valid) {
+          alert('验证通过')
+        }
+      })
+    }
   }
-
 }
 </script>
-
 <style lang="stylus" scoped>
 .switch-readonly
   margin 10px auto 30px auto
