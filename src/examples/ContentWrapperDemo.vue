@@ -6,14 +6,14 @@
     @filter-change="handleFilterChange"
     @filter-reset="handleFilterReset"
   >
-    <Table :props="table.props" :header="table.header" :data="table.data"/>
+    <Table :props="table.props" :header="table.header" :data="table.data" />
   </ContentWrapper>
 </template>
 
 <script>
 import _ from 'gateschema'
 export default {
-  data() {
+  data () {
     return {
       filter: {},
       filterSchema: _.map({
@@ -68,7 +68,7 @@ export default {
       tableHeader: [],
       pagination: {
         currentPage: 3,
-        total: 25
+        total: 250
       },
       table: {
         props: {
@@ -102,10 +102,10 @@ export default {
     }
   },
   methods: {
-    fetchData() {
+    fetchData () {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据')
     },
-    handleFilterChange(type, filter) {
+    handleFilterChange (type, filter) {
       if (type === 'pagination') {
         this.$message('分页数据发生改变')
       } else {
@@ -113,7 +113,7 @@ export default {
         this.$message('筛选条件发生变更')
       }
     },
-    handleFilterReset() {
+    handleFilterReset () {
       this.filter = {}
       this.$message('筛选条件需要重置')
     }
