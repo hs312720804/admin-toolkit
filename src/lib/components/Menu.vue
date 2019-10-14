@@ -20,7 +20,7 @@
             :key="idx"
             :index="child.route"
           >
-            <a :href="'#/' + child.route" @click="`return false`">
+            <a :href="'#/' + child.route" onclick="return false">
               <i v-if="child.icon" :class="child.icon"></i>
               <span slot="title">{{ child.title }}</span>
             </a>
