@@ -14,14 +14,13 @@
           <i v-if="item.icon" :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </template>
-
         <template v-for="(child, idx) in item.children">
           <el-menu-item
             v-if="typeof(child.children) === 'undefined'"
             :key="idx"
             :index="child.route"
           >
-            <a :href="'#/' + child.route">
+            <a :href="'#/' + child.route" @click="`return false`">
               <i v-if="child.icon" :class="child.icon"></i>
               <span slot="title">{{ child.title }}</span>
             </a>
