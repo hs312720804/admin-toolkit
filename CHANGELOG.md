@@ -1,3 +1,6 @@
+## 20191019 xyc
+* TagNav添加可选主题‘gray-tab’，‘white-tab’
+
 ## 20190921 xyc
 * 中国地区选择
 

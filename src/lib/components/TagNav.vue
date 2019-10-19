@@ -1,8 +1,8 @@
 <template>
-  <div class="tag-nav">
+  <div :class="theme">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
     <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
-    <!-- <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button> -->
+    <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button>
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
@@ -127,6 +127,12 @@ export default {
       type: Object,
       default() {
         return {}
+      }
+    },
+    theme: {
+      type: String,
+      default() {
+        return 'tag-nav'
       }
     }
   },
@@ -260,78 +266,222 @@ export default {
   overflow hidden
   font-size 12px
   min-height 42px
+  .tag-nav__view-port
+    overflow hidden
 
-.tag-nav__view-port
-  overflow hidden
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    border-bottom 1px solid #f0f0f0
+    border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
 
-.tag-nav__list
-  position relative
-  height 40px
-  padding 0
-  margin 0
-  border-bottom 1px solid #f0f0f0
-  border-top 1px solid #f0f0f0
-  white-space nowrap
-  user-select none
-  transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 32px
+    padding 0 30px
+    margin 4px 0 0 5px
+    background #fff
+    cursor pointer
 
-.tag-nav__item
-  position relative
-  display inline-block
-  height 32px
-  padding 0 30px
-  margin 4px 0 0 5px
-  background #fff
-  cursor pointer
-
-.tag-nav__dot
-  position absolute
-  top 50%
-  left 10px
-  height 12px
-  width 12px
-  margin-top -6px
-  border-radius 6px
-  background #f0f0f0
-  transition background .2s ease
-
-.tag-nav__close-item
-  position absolute
-  top 50%
-  right 10px
-  margin-top -6px
-  opacity 0.5
-  &:hover
-    opacity 1
-
-.tag-nav__text
-  line-height 32px
-
-.tag-nav__item--active
   .tag-nav__dot
-    background #2d8cf0
+    position absolute
+    top 50%
+    left 10px
+    height 12px
+    width 12px
+    margin-top -6px
+    border-radius 6px
+    background #f0f0f0
+    transition background .2s ease
 
-.tag-nav__btn
-  position absolute
-  height 100%
-  z-index 1
-  >>> .el-button-group
-  >>> .el-button
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+
+  .tag-nav__text
+    line-height 32px
+
+  .tag-nav__item--active
+    .tag-nav__dot
+      background #2d8cf0
+
+  .tag-nav__btn
+    position absolute
     height 100%
+    z-index 1
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
 
-.tag-nav__left
-  left 0
-.tag-nav__right
-  right 28px
-.tag-nav__left,
-.tag-nav__right
-    padding 12px 5px
-.tag-nav__back
-  right 28px
-.tag-nav__more
-  right 0
-  >>> .el-button:first-child
+  .tag-nav__left
+    left 0
+  .tag-nav__right
+    right 28px
+  .tag-nav__left,
+  .tag-nav__right
+      padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button::before
+      background #eee
+.gray-tab
+  position relative
+  background #e6e6e6
+  font-size 12px
+  min-height 42px
+  padding 0 24px
+  .tag-nav__view-port
+    overflow hidden
+    height 42px
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    // border-bottom 1px solid #f0f0f0
+    // border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 38px
+    padding 0 30px 0 18px
+    margin 2px 0 0 2px
+    background #fff
+    cursor pointer
+    transition background .2s ease
+    &:hover
+      background #f2f2f2
+  .tag-nav__dot
     display none
-  >>> .el-dropdown__caret-button::before
-    background #eee
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+  .tag-nav__text
+    line-height 38px
+  .tag-nav__item--active
+    background #f2f2f2
+    height 40px
+    .tag-nav__dot
+      background #2d8cf0
+
+  .tag-nav__btn
+    position absolute
+    height 100%
+    z-index 1
+    border-radius 0
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
+
+  .tag-nav__left
+    left 0
+    border 2px solid #e6e6e6
+  .tag-nav__right
+    right 28px
+  .tag-nav__left,
+  .tag-nav__right
+      padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    border-radius 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button::before
+      background #eee
+.white-tab
+  position relative
+  background #e6e6e6
+  font-size 12px
+  min-height 42px
+  padding 0 24px
+  .tag-nav__view-port
+    overflow hidden
+    height 42px
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    // border-bottom 1px solid #f0f0f0
+    // border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 38px
+    padding 0 30px 0 18px
+    margin 2px 0 0 2px
+    background #f2f2f2
+    cursor pointer
+    transition background .2s ease
+    &:hover
+      background #ffffff
+  .tag-nav__dot
+    display none
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+  .tag-nav__text
+    line-height 38px
+  .tag-nav__item--active
+    background #ffffff
+    height 40px
+  .tag-nav__btn
+    position absolute
+    height 100%
+    z-index 1
+    border-radius 0
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
+
+  .tag-nav__left
+    left 0
+    border 2px solid #e6e6e6
+  .tag-nav__right
+    right 28px
+  .tag-nav__left,
+  .tag-nav__right
+      padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    border-radius 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button::before
+      background #eee
 </style>
