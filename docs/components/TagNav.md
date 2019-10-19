@@ -20,7 +20,7 @@
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |  
 | init-tags | Array | 初始 tags | |  
-| theme | String | 可选值'tag-nav','gray-tab','white-tab', 默认为‘tag-nav’ | theme='gray-tab' |
+| theme | String | 可选值'tag-nav','gray-tab','white-tab', 默认为‘tag-nav’，可以自定义 | theme='gray-tab' |
 每个 tag 应包含 
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |  
