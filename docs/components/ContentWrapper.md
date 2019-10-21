@@ -10,9 +10,11 @@
 
 ### 效果
 
-<Demo>
-  <ContentWrapperDemo />
-</Demo>
+<ClientOnly>
+  <Demo>
+    <ContentWrapperDemo />
+  </Demo>
+</ClientOnly>
 
 ### 代码  
 ```vue
