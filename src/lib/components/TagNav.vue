@@ -394,7 +394,7 @@ export default {
     >>> .el-button-group
     >>> .el-button
       height 100%
-
+      border-radius 0
   .tag-nav__left
     left 0
     border 2px solid #e6e6e6
@@ -403,7 +403,7 @@ export default {
     border 2px solid #e6e6e6
   .tag-nav__left,
   .tag-nav__right
-      padding 12px 5px
+    padding 12px 5px
   .tag-nav__back
     right 28px
   .tag-nav__more
