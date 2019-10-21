@@ -343,7 +343,7 @@ export default {
   background #e6e6e6
   font-size 12px
   min-height 42px
-  padding 0 24px
+  padding 0 55px 0 24px
   .tag-nav__view-port
     overflow hidden
     height 42px
@@ -400,6 +400,7 @@ export default {
     border 2px solid #e6e6e6
   .tag-nav__right
     right 28px
+    border 2px solid #e6e6e6
   .tag-nav__left,
   .tag-nav__right
       padding 12px 5px
@@ -410,14 +411,17 @@ export default {
     border-radius 0
     >>> .el-button:first-child
       display none
+    >>> .el-dropdown__caret-button
+      border 2px solid #e6e6e6
     >>> .el-dropdown__caret-button::before
       background #eee
+      visibility hidden
 .white-tab
   position relative
   background #e6e6e6
   font-size 12px
   min-height 42px
-  padding 0 24px
+  padding 0 55px 0 24px
   .tag-nav__view-port
     overflow hidden
     height 42px
@@ -465,12 +469,13 @@ export default {
     >>> .el-button-group
     >>> .el-button
       height 100%
-
+      border-radius 0
   .tag-nav__left
     left 0
     border 2px solid #e6e6e6
   .tag-nav__right
     right 28px
+    border 2px solid #e6e6e6
   .tag-nav__left,
   .tag-nav__right
       padding 12px 5px
@@ -481,6 +486,9 @@ export default {
     border-radius 0
     >>> .el-button:first-child
       display none
+    >>> .el-dropdown__caret-button
+      border 2px solid #e6e6e6
     >>> .el-dropdown__caret-button::before
       background #eee
+      visibility hidden
 </style>
