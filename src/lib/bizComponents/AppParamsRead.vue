@@ -5,15 +5,16 @@
     <el-form-item label="启动动作">{{ value.dowhat }}</el-form-item>
     <el-form-item label="启动方式">{{ value.bywhat }}</el-form-item>
     <el-form-item label="启动参数">{{ value.byvalue }}</el-form-item>
+    <slot></slot>
     <el-form-item label="扩展参数">
       <div class="app-extend-params" v-for="(param, index) in value.params" :key="index">
-        <el-form-item label label-width="100px">
+        <el-form-item label label-width="0px">
           <el-tag>key</el-tag>&nbsp;
           <el-tooltip class="item" effect="dark" :content="param.key" placement="top">
             <span>{{ param.key }}</span>
           </el-tooltip>
         </el-form-item>
-        <el-form-item label label-width="100px">
+        <el-form-item label label-width="0px">
           <el-tag>value</el-tag>&nbsp;
           <el-tooltip class="item" effect="dark" :content="param.value" placement="top">
             <span>{{ param.value }}</span>
@@ -44,6 +45,9 @@ export default {
 .app-extend-params .el-form-item {
   min-width: 150px;
   margin-bottom: 24px;
+}
+.app-extend-params .el-form-item + .el-form-item {
+    margin-left: 10px;
 }
 .app-extend-params .el-form-item .el-form-item__content {
   overflow: hidden;

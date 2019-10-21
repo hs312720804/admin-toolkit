@@ -1,8 +1,7 @@
 <template>
-  <div class="tag-nav">
+  <div :class="theme">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
     <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
-    <!-- <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button> -->
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
@@ -30,7 +29,7 @@
         >
           <span class="tag-nav__dot"></span>
           <span class="tag-nav__text">{{ getTitle(item) }}</span>
-          <i class="el-icon-close tag-nav__close-item" @click.stop="handleClose(item)"></i>
+          <i v-if="item.isCloseable!==false" class="el-icon-close tag-nav__close-item" @click.stop="handleClose(item)"></i>
         </li>
     </ul>
     </div>
@@ -122,6 +121,18 @@ export default {
       default () {
         return []
       }
+    },
+    titles: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    theme: {
+      type: String,
+      default() {
+        return 'tag-nav'
+      }
     }
   },
   watch: {
@@ -129,10 +140,11 @@ export default {
   },
   methods: {
     getTitle ({ meta, name }) {
-      return (meta && meta.title) || name
+      return this.titles[name] || (meta && meta.title) || name
     },
     handleNavigate (route) {
       this.$router.push({ path: route.fullPath })
+      this.$emit('navigate', route)
     },
     handleClose (route) {
       const currentRoute = this.$route
@@ -158,11 +170,15 @@ export default {
       }
     },
     handleCloseOther () {
-      this.tags = []
-      this.addTag(this.$route)
+      const currentRoute = this.$route
+      this.tags = this.tags.filter((item) => {
+        return item.name === currentRoute.name || item.isCloseable === false
+      })
     },
     handleCloseAll () {
-      this.tags = []
+      this.tags = this.tags.filter((item) => {
+        return item.isCloseable === false
+      })
       this.$router.push(this.defaultPath)
     },
     handleScroll (side) {
@@ -176,6 +192,7 @@ export default {
     },
     handleRouteChange (route) {
       this.addTag(route)
+      this.$nextTick(this.scrollIntoView)
     },
     handleForward () {
       const history = this.tagHistories[this.$route.meta.tagId]
@@ -213,7 +230,18 @@ export default {
     scrollIntoView () {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
       if (activeItem) {
-        activeItem.scrollIntoViewIfNeeded()
+        const viewPort = this.$refs.viewPort
+        const tagList= this.$refs.tagList
+        const viewPortWidth = viewPort.clientWidth
+        const tagListScrollWidth = tagList.scrollWidth
+        const activeItemWidth = activeItem.clientWidth
+        const cursor = this.cursor
+        const position = activeItem.offsetLeft
+        if (position < cursor) {
+          this.cursor = position
+        } else if (position + activeItemWidth - cursor > viewPortWidth) {
+          this.cursor = Math.min(tagListScrollWidth - viewPortWidth, position - viewPortWidth/2)
+        }
       }
     }
   },
@@ -237,78 +265,230 @@ export default {
   overflow hidden
   font-size 12px
   min-height 42px
+  .tag-nav__view-port
+    overflow hidden
 
-.tag-nav__view-port
-  overflow hidden
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    border-bottom 1px solid #f0f0f0
+    border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
 
-.tag-nav__list
-  position relative
-  height 40px
-  padding 0
-  margin 0
-  border-bottom 1px solid #f0f0f0
-  border-top 1px solid #f0f0f0
-  white-space nowrap
-  user-select none
-  transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 32px
+    padding 0 30px
+    margin 4px 0 0 5px
+    background #fff
+    cursor pointer
 
-.tag-nav__item
-  position relative
-  display inline-block
-  height 32px
-  padding 0 30px
-  margin 4px 0 0 5px
-  background #fff
-  cursor pointer
-
-.tag-nav__dot
-  position absolute
-  top 50%
-  left 10px
-  height 12px
-  width 12px
-  margin-top -6px
-  border-radius 6px
-  background #f0f0f0
-  transition background .2s ease
-
-.tag-nav__close-item
-  position absolute
-  top 50%
-  right 10px
-  margin-top -6px
-  opacity 0.5
-  &:hover
-    opacity 1
-
-.tag-nav__text
-  line-height 32px
-
-.tag-nav__item--active
   .tag-nav__dot
-    background #2d8cf0
+    position absolute
+    top 50%
+    left 10px
+    height 12px
+    width 12px
+    margin-top -6px
+    border-radius 6px
+    background #f0f0f0
+    transition background .2s ease
 
-.tag-nav__btn
-  position absolute
-  height 100%
-  z-index 1
-  >>> .el-button-group
-  >>> .el-button
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+
+  .tag-nav__text
+    line-height 32px
+
+  .tag-nav__item--active
+    .tag-nav__dot
+      background #2d8cf0
+
+  .tag-nav__btn
+    position absolute
     height 100%
+    z-index 1
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
 
-.tag-nav__left
-  left 0
-.tag-nav__right
-  right 28px
-.tag-nav__left,
-.tag-nav__right
-    padding 12px 5px
-.tag-nav__back
-  right 28px
-.tag-nav__more
-  right 0
-  >>> .el-button:first-child
+  .tag-nav__left
+    left 0
+  .tag-nav__right
+    right 28px
+  .tag-nav__left,
+  .tag-nav__right
+      padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button::before
+      background #eee
+.gray-tab
+  position relative
+  background #e6e6e6
+  font-size 12px
+  min-height 42px
+  padding 0 55px 0 24px
+  .tag-nav__view-port
+    overflow hidden
+    height 42px
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    // border-bottom 1px solid #f0f0f0
+    // border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 38px
+    padding 0 30px 0 18px
+    margin 2px 0 0 2px
+    background #fff
+    cursor pointer
+    transition background .2s ease
+    &:hover
+      background #f2f2f2
+  .tag-nav__dot
     display none
-  >>> .el-dropdown__caret-button::before
-    background #eee
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+  .tag-nav__text
+    line-height 38px
+  .tag-nav__item--active
+    background #f2f2f2
+    height 40px
+    .tag-nav__dot
+      background #2d8cf0
+
+  .tag-nav__btn
+    position absolute
+    height 100%
+    z-index 1
+    border-radius 0
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
+      border-radius 0
+  .tag-nav__left
+    left 0
+    border 2px solid #e6e6e6
+  .tag-nav__right
+    right 28px
+    border 2px solid #e6e6e6
+  .tag-nav__left,
+  .tag-nav__right
+    padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    border-radius 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button
+      border 2px solid #e6e6e6
+    >>> .el-dropdown__caret-button::before
+      background #eee
+      visibility hidden
+.white-tab
+  position relative
+  background #e6e6e6
+  font-size 12px
+  min-height 42px
+  padding 0 55px 0 24px
+  .tag-nav__view-port
+    overflow hidden
+    height 42px
+  .tag-nav__list
+    position relative
+    height 40px
+    padding 0
+    margin 0
+    // border-bottom 1px solid #f0f0f0
+    // border-top 1px solid #f0f0f0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 38px
+    padding 0 30px 0 18px
+    margin 2px 0 0 2px
+    background #f2f2f2
+    cursor pointer
+    transition background .2s ease
+    &:hover
+      background #ffffff
+  .tag-nav__dot
+    display none
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+  .tag-nav__text
+    line-height 38px
+  .tag-nav__item--active
+    background #ffffff
+    height 40px
+  .tag-nav__btn
+    position absolute
+    height 100%
+    z-index 1
+    border-radius 0
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
+      border-radius 0
+  .tag-nav__left
+    left 0
+    border 2px solid #e6e6e6
+  .tag-nav__right
+    right 28px
+    border 2px solid #e6e6e6
+  .tag-nav__left,
+  .tag-nav__right
+      padding 12px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    border-radius 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button
+      border 2px solid #e6e6e6
+    >>> .el-dropdown__caret-button::before
+      background #eee
+      visibility hidden
 </style>

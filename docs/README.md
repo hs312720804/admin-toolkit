@@ -5,7 +5,7 @@
 
 ## 安装  
 ```bash
-npm install --save git+ssh://git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
+npm install --save git+ssh://git@gitlab.skysri.com:FrontEnd/admin-toolkit.git
 ```
 
 另外, 需要安装下面这些同级依赖  

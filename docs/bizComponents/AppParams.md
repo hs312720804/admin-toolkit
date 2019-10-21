@@ -6,10 +6,41 @@
   <AppParamsDemo />
 </Demo>
 
+## 代码  
+```vue
+<template>
+    <el-form :model="form" label-width="140px">
+        <AppParams prop-prefix="appParams" v-model="form.appParams" />
+    </el-form>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                appParams: {
+                    packagename: undefined,
+                    versioncode: undefined,
+                    dowhat: undefined,
+                    bywhat: undefined,
+                    byvalue: undefined,
+                    params: [],
+                    exception: {}
+                }
+            }
+        }
+    }
+}
+</script>
+
+```
+
 ## 参数  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |   
 | value | Object | 与组件绑定的值，包含的属性见下方 | |  
+| prop-prefix | String | 用于 element-ui 表单验证 | |  
 
 value 包含下面属性  
 | 名称 | 类型 | 描述 | 例子 |  
@@ -27,3 +58,6 @@ value 包含下面属性
 | ---- | ---- | ---- | ---- |  
 | key | String | | |  
 | value | String | | | 
+
+
+<Comment />

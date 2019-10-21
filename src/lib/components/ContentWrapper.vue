@@ -1,22 +1,49 @@
 <script>
 import GateSchemaForm from './GateSchemaForm'
 import { Pagination } from 'element-ui'
-const defaultPaginationProps = {
-  background: true,
-  pageSizes: [10, 20, 50, 100],
-  pageSize: 10,
-  layout: 'total, prev, pager, next, sizes, jumper'
-}
 export default {
+  data () {
+    return {
+      // 与表单绑定的 filter对象
+      viewFilter: {},
+      // 外面传进来的 filter 对象
+      inputFilter: {}
+    }
+  },
   props: ['filter', 'filterSchema', 'pagination'],
-  created () {},
+  computed: {
+    defaultPaginationProps () {
+      return {
+        background: true,
+        pageSizes: [5, 10, 20, 50, 100],
+        pageSize: 10,
+        small: !(window.screen.width > 768),
+        pagerCount: window.screen.width > 768 ? 7 : 5,
+        layout: win.screen.width > 768 ? 'total, prev, pager, next, sizes, jumper' : 'total,sizes,pager'
+      }
+    }
+  },
+  created () {
+    this.$watch('filter', this.setFilterData, {
+      immediate: true
+    })
+  },
   methods: {
+    setFilterData (filter) {
+      // 如果外面传进来的 filter 与 inputFilter 不一样
+      if (this.inputFilter !== filter) {
+        this.inputFilter = filter
+        this.viewFilter = filter ? JSON.parse(JSON.stringify(this.filter)) : {}
+      }
+    },
     handleFilter (err) {
       if (!err || err.length === 0) {
-        this.emitFilterChange('query')
+        this.inputFilter = JSON.parse(JSON.stringify(this.viewFilter))
+        this.emitFilterChange('query', this.inputFilter)
       }
     },
     handlePageSizeChange (size) {
+      this.$set(this.pagination, 'currentPage', 1)
       this.$set(this.pagination, 'pageSize', size)
       this.emitFilterChange('pagination')
     },
@@ -27,8 +54,8 @@ export default {
     handleResetFilterForm () {
       this.$emit('filter-reset')
     },
-    emitFilterChange (type) {
-      this.$emit('filter-change', type)
+    emitFilterChange (type, filter) {
+      this.$emit('filter-change', type, filter)
     }
   },
   render (h) {
@@ -39,7 +66,7 @@ export default {
         ref: 'filterForm',
         class: 'filter-form',
         props: {
-          value: this.filter,
+          value: this.viewFilter,
           schema: this.filterSchema
         },
         on: {
@@ -58,7 +85,7 @@ export default {
     const pagination = h(Pagination, {
       ref: 'pagination',
       props: {
-        ...defaultPaginationProps,
+        ...this.defaultPaginationProps,
         ...this.pagination
       },
       on: {
@@ -66,32 +93,37 @@ export default {
         'current-change': handlePageChange
       }
     })
-    return h('div', { class: 'content-list' }, [filterForm, this.$slots.actionList, this.$slots.default, pagination])
+    return h('div', { class: ['content-list', ...(this.class || [])] }, [filterForm, this.$slots.actionList, this.$slots.default, pagination])
   }
 }
 </script>
 <style lang="stylus" scoped>
 .content-list
-    margin-top 20px
-    .filter-form >>> .el-form
-    >>> .el-pagination
-        display flex
-        flex-direction row
-        justify-content flex-end
-    >>> .filter-form
-            .sf-item__label
-                text-align right
-                width auto
-            .sf-item--inline
-                margin-right 10px
-            .sf-footer
-                margin-right 0
-                width auto
-    >>> .el-pagination
-        padding 0
-        margin-top 30px
-        button:last-child
-            margin-right 0
-    >>> .el-pagination__total
-        margin-right auto
+  margin-top 20px
+  .filter-form >>> .el-form, >>> .el-pagination
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    margin 0
+  >>> .filter-form
+    .sf-item__label
+      text-align right
+      width auto
+    .sf-item--inline
+      margin-right 0px
+    .sf-footer
+      margin-right 0
+      width auto
+    .sf-item
+      margin-bottom 10px
+  >>> .el-pagination
+    padding 0
+    margin-top 30px
+    button:last-child
+      margin-right 0
+  >>> .el-pagination__total
+    margin-right auto
+  .filter-form
+    >>> .el-select
+      width 100%
 </style>

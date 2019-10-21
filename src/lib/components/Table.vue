@@ -1,9 +1,52 @@
 <script>
-import { Table, TableColumn, Checkbox, Radio } from 'element-ui'
+import { Table as ElTable, TableColumn, Checkbox, Radio } from 'element-ui'
 import TableWrapper from './TableWrapper'
+
+// elementui 的 hover-row 功能导致在数据量大的时候很卡,
+// 下面通过特殊的手段禁用
+const TableBody = {
+  extends: ElTable.components.TableBody,
+  methods: {
+    getRowClass (row) {
+      const classes = ['el-table__row']
+      if (this.table.highlightCurrentRow && row === this.store.states.currentRow) {
+        classes.push('current-row')
+      }
+
+      // if (rowIndex === this.store.states.hoverRow) {
+      //   classes.push('hover-row');
+      // }
+
+      if (this.stripe && rowIndex % 2 === 1) {
+        classes.push('el-table__row--striped')
+      }
+      const rowClassName = this.table.rowClassName
+      if (typeof rowClassName === 'string') {
+        classes.push(rowClassName)
+      } else if (typeof rowClassName === 'function') {
+        classes.push(rowClassName.call(null, {
+          row,
+          rowIndex
+        }))
+      }
+
+      if (this.store.states.expandRows.indexOf(row) > -1) {
+        classes.push('expanded')
+      }
+
+      return classes
+    }
+  }
+}
+const Table = {
+  extends: ElTable,
+  components: {
+    TableBody
+  }
+}
 const defaultTableProps = {
   border: true,
-  'highlight-current-row': true
+  'highlight-current-row': false
 }
 export default {
   data () {
@@ -39,6 +82,12 @@ export default {
     },
     selected: {
     },
+    selectOnRowClick: {
+      type: Boolean,
+      default () {
+        return false
+      }
+    },
     fixSelection: {
       type: Boolean,
       default () {
@@ -58,6 +107,25 @@ export default {
     },
     handleSortChange () {
       this.$emit('sort-change', ...arguments)
+    },
+    handleRowClick (row) {
+      if (this.selectOnRowClick) {
+        const index = this.data.indexOf(row)
+        const selectionType = this.selectionType
+        let isSelected
+        if (selectionType === 'multiple') {
+          isSelected = this.selected.indexOf(index) > -1
+          this.$emit(isSelected ? 'row-selection-remove' : 'row-selection-add', row, index)
+        } else {
+          this.$emit('row-selection-change', row, index)
+        }
+      }
+      this.$emit('row-click', ...arguments)
+    },
+    createEmitter (eventName) {
+      return function proxy () {
+        this.$emit(eventName, ...arguments)
+      }.bind(this)
     }
   },
   render (h) {
@@ -113,6 +181,9 @@ export default {
             props: {
               value: this.selected.indexOf(index) > -1
             },
+            nativeOn: {
+              'click': event => event.stopPropagation()
+            },
             on: {
               input: (value) => {
                 if (value) {
@@ -133,9 +204,11 @@ export default {
               value: this.selected,
               label: index
             },
-            on: {
-              input: () => {
+            nativeOn: {
+              click: (event) => {
                 this.$emit('row-selection-change', row, index)
+                event.stopPropagation()
+                event.preventDefault()
               }
             }
           })
@@ -145,17 +218,39 @@ export default {
       header.unshift(selectionColumn)
     }
 
+    const elementUITableEvents = [
+      'cell-mouse-enter',
+      'cell-mouse-leave',
+      'cell-click',
+      'cell-dblclick',
+      'row-click',
+      'row-contextmenu',
+      'row-dblclick',
+      'header-click',
+      'header-contextmenu',
+      'sort-change',
+      'current-change',
+      'header-dragend',
+      'expand-change'
+    ].reduce((result, item) => {
+      result[item] = this.createEmitter(item)
+      return result
+    }, {})
     const table = h(
       Table,
       {
+        ref: 'table',
         class: 'cc-table',
         props: {
           ...defaultTableProps,
           ...this.props,
           data: this.data
         },
+        directives: this.$directives,
         on: {
-          'sort-change': this.handleSortChange
+          ...elementUITableEvents,
+          'sort-change': this.handleSortChange,
+          'row-click': this.handleRowClick
         }
       },
       header
@@ -177,9 +272,7 @@ export default {
 <style lang="stylus" scoped>
 .cc-table
   >>> .hidden
-    display  none
-
+    display none
 .hide-radio-label >>> .el-radio__label
   display none
-
 </style>

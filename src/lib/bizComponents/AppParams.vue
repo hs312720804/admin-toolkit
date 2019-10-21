@@ -31,6 +31,7 @@
     <el-form-item label="启动参数" :prop="formProp('byvalue')" :rules="rules.byvalue">
       <el-input type="textarea" v-model.trim="inputValue.byvalue"></el-input>
     </el-form-item>
+    <slot></slot>
     <el-form-item label="扩展参数">
       <div class="app-extend-params" v-for="(param, index) in inputValue.params" :key="index">
         <el-form-item
@@ -53,7 +54,7 @@
           <i class="el-icon-minus"></i>
         </a>
       </div>
-      <el-button type="primary" @click="handleAddParam">
+      <el-button type="primary" plain @click="handleAddParam">
         <i class="el-icon-plus"></i>&nbsp;添加
       </el-button>
     </el-form-item>
@@ -88,10 +89,10 @@ export default {
           { required: true, message: '请输入应用版本号', trigger: 'blur' }
         ],
         dowhat: [
-          { required: true, message: '请选择启动动作', trigger: 'blur' }
+          { required: true, message: '请选择启动动作', trigger: 'change' }
         ],
         bywhat: [
-          { required: true, message: '请选择启动方式', trigger: 'blur' }
+          { required: true, message: '请选择启动方式', trigger: 'change' }
         ],
         byvalue: [
           { required: true, message: '请输入启动参数', trigger: 'blur' }
@@ -211,6 +212,7 @@ export default {
 }
 .app-extend-params .el-form-item {
   margin-bottom: 24px;
+  margin-right: 15px;
 }
 .app-params__remove-param {
   cursor: pointer;

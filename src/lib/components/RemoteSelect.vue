@@ -5,12 +5,13 @@
     </Button>
     <Dialog
       :title="title"
+      :custom-class="customClass"
       :visible.sync="showDialog"
       :append-to-body="true"
       width="90vw"
     >
       <slot name="selected">
-        <div class="selected">
+        <div v-if="showSelection" class="selected">
           <Tag type="info" class="selected__tip">已选择: </Tag>
           <Tag
             v-for="item in selected"
@@ -24,7 +25,7 @@
       </slot>
       <slot></slot>
       <div slot="footer" class="dialog-footer">
-        <Button style="float:left" type="danger" @click="handleClearSelected">清除已选</Button>
+        <Button v-if="showClearSelectionBtn" style="float:left" type="danger" @click="handleClearSelected">清除已选</Button>
         <Button @click="handleSelectCancel">取 消</Button>
         <Button type="primary" @click="handleSelectEnd">确 定</Button>
       </div>
@@ -50,6 +51,21 @@ export default {
       type: Array,
       default () {
         return []
+      }
+    },
+    customClass: {
+
+    },
+    showSelection: {
+      type: Boolean,
+      default() {
+        return true
+      }
+    },
+    showClearSelectionBtn: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

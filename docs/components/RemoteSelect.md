@@ -6,9 +6,11 @@
 
 ### 效果
 
-<Demo>
-  <RemoteSelectDemo />
-</Demo>
+<ClientOnly>
+  <Demo>
+    <RemoteSelectDemo />
+  </Demo>
+</ClientOnly>
 
 ### 代码  
 ```vue

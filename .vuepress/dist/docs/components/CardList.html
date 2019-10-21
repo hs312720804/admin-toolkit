@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>卡片列表</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.dc91ac20.css" as="style"><link rel="preload" href="/assets/js/app.52efd97d.js" as="script"><link rel="preload" href="/assets/js/12.83615d65.js" as="script"><link rel="prefetch" href="/assets/js/10.33e41104.js"><link rel="prefetch" href="/assets/js/11.fd3aa849.js"><link rel="prefetch" href="/assets/js/13.2a09c7f3.js"><link rel="prefetch" href="/assets/js/14.c0975f6e.js"><link rel="prefetch" href="/assets/js/15.8aae5abf.js"><link rel="prefetch" href="/assets/js/16.296c2333.js"><link rel="prefetch" href="/assets/js/17.85f47c53.js"><link rel="prefetch" href="/assets/js/18.4544479c.js"><link rel="prefetch" href="/assets/js/19.a821630c.js"><link rel="prefetch" href="/assets/js/2.05026963.js"><link rel="prefetch" href="/assets/js/20.4b533fe3.js"><link rel="prefetch" href="/assets/js/21.33719a9b.js"><link rel="prefetch" href="/assets/js/22.73c54c7e.js"><link rel="prefetch" href="/assets/js/23.9b7d35e4.js"><link rel="prefetch" href="/assets/js/24.cf336c0a.js"><link rel="prefetch" href="/assets/js/25.d2cc5cd0.js"><link rel="prefetch" href="/assets/js/26.7c237628.js"><link rel="prefetch" href="/assets/js/27.1968dbee.js"><link rel="prefetch" href="/assets/js/28.74f453df.js"><link rel="prefetch" href="/assets/js/29.eb17f8f9.js"><link rel="prefetch" href="/assets/js/3.047f66fd.js"><link rel="prefetch" href="/assets/js/30.176156f3.js"><link rel="prefetch" href="/assets/js/31.ca286b8f.js"><link rel="prefetch" href="/assets/js/32.0b581499.js"><link rel="prefetch" href="/assets/js/33.a71bd2a5.js"><link rel="prefetch" href="/assets/js/34.8d857e4c.js"><link rel="prefetch" href="/assets/js/35.49d5fb5f.js"><link rel="prefetch" href="/assets/js/36.75e97607.js"><link rel="prefetch" href="/assets/js/37.b956a720.js"><link rel="prefetch" href="/assets/js/38.e42ea246.js"><link rel="prefetch" href="/assets/js/39.fb68a6e4.js"><link rel="prefetch" href="/assets/js/4.f11d9cd0.js"><link rel="prefetch" href="/assets/js/40.7ac7aa73.js"><link rel="prefetch" href="/assets/js/41.d6ae0257.js"><link rel="prefetch" href="/assets/js/42.7240f0d6.js"><link rel="prefetch" href="/assets/js/43.1ed644a0.js"><link rel="prefetch" href="/assets/js/5.6a99182a.js"><link rel="prefetch" href="/assets/js/6.170f1c8c.js"><link rel="prefetch" href="/assets/js/7.ee4faaa9.js"><link rel="prefetch" href="/assets/js/8.980388d2.js"><link rel="prefetch" href="/assets/js/9.da65cd9b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dc91ac20.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="卡片列表"><a href="#卡片列表" class="header-anchor">#</a> 卡片列表</h1> <p><code>CardList</code><br>
+卡片列表，可用于展示图片或图文列表，带有选择功能，与 <code>Table</code> 组件的事件基本一致，可无缝切换</p> <h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <h3 id="效果"><a href="#效果" class="header-anchor">#</a> 效果</h3> <Demo><CardListDemo></CardListDemo></Demo> <h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CardList</span>
+    <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>table.data<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">:selection-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>table.selectionType<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">:selected</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>table.selected<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@row-selection-add</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleRowSelectionAdd<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@row-selection-remove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleRowSelectionRemove<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@row-selection-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleRowSelectionChange<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">:select-on-row-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span>
+  <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>card-content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>row<span class="token punctuation">&quot;</span></span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{row}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        id: {{ row.id }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>CardList</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      table<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+            name<span class="token punctuation">:</span> <span class="token string">'名称1'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token punctuation">:</span> <span class="token string">'2'</span><span class="token punctuation">,</span>
+            name<span class="token punctuation">:</span> <span class="token string">'名称2'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        selectionType<span class="token punctuation">:</span> <span class="token string">'multiple'</span><span class="token punctuation">,</span>
+        selected<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleRowSelectionAdd</span> <span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleRowSelectionRemove</span> <span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item <span class="token operator">!==</span> index<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">handleRowSelectionChange</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>selected <span class="token operator">=</span> index
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylus<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+.card-content
+  min-width 200px
+  border 1px solid #ccc
+  padding 10px
+  margin-right 10px
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+
+</code></pre></div><h2 id="属性"><a href="#属性" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>props</td> <td>Object</td> <td>element-ui 表格属性</td> <td></td></tr> <tr><td>header</td> <td>Array</td> <td>表头</td> <td></td></tr> <tr><td>data</td> <td>Array</td> <td>表格数据</td> <td></td></tr> <tr><td>selectionType</td> <td>'none' / 'multiple' / 'single'</td> <td>none 为不使用选择功能, multiple 为多选, single 为单选</td> <td></td></tr> <tr><td>selected</td> <td>Array 或者 Number</td> <td>如果 selectionType 是 multiple, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 single, 那么 selected 是被选中的 index</td> <td></td></tr></tbody></table> <h2 id="事件"><a href="#事件" class="header-anchor">#</a> 事件</h2> <table><thead><tr><th>名称</th> <th>参数</th> <th>描述</th></tr></thead> <tbody><tr><td>row-selection-add</td> <td>(row: Object, index: Number)</td> <td>只在 selectoinType 为 multiple 时触发</td></tr> <tr><td>row-selection-remove</td> <td>(row: Object, index: Number)</td> <td>只在 selectoinType 为 multiple 时触发</td></tr> <tr><td>row-selection-change</td> <td>(row: Object, index: Number)</td> <td>只在 selectoinType 为 single 时触发</td></tr> <tr><td>all-row-selection-change</td> <td>(value: Boolean)</td> <td>当所有行的选中状态改变时触发, value 为选中状态</td></tr></tbody></table> <Comment></Comment></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.52efd97d.js" defer></script><script src="/assets/js/12.83615d65.js" defer></script>
+  </body>
+</html>

@@ -14,15 +14,16 @@
           <i v-if="item.icon" :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </template>
-
         <template v-for="(child, idx) in item.children">
           <el-menu-item
-            v-if="typeof(child.children)=== 'undefined'"
+            v-if="typeof(child.children) === 'undefined'"
             :key="idx"
             :index="child.route"
           >
-            <i v-if="child.icon" :class="child.icon"></i>
-            <span slot="title">{{ child.title }}</span>
+            <a :href="'#/' + child.route" onclick="return false">
+              <i v-if="child.icon" :class="child.icon"></i>
+              <span slot="title">{{ child.title }}</span>
+            </a>
           </el-menu-item>
           <el-submenu v-else :key="idx" :index="index +'_'+idx">
             <template slot="title">
@@ -63,3 +64,11 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+.el-submenu .el-menu-item
+  padding 0
+.el-submenu .el-menu-item a
+  display block
+  color rgba(255,255,255,0.7)
+  text-decoration none
+</style>

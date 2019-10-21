@@ -1,17 +1,13 @@
 <template>
-    <ContentWrapper
-      :filter="filter"
-      :filterSchema="filterSchema"
-      :pagination="pagination"
-      @filter-change="handleFilterChange"
-      @filter-reset="handleFilterReset"
-    >
-      <Table
-        :props="table.props"
-        :header="table.header"
-        :data="table.data"
-      />
-    </ContentWrapper>
+  <ContentWrapper
+    :filter="filter"
+    :filterSchema="filterSchema"
+    :pagination="pagination"
+    @filter-change="handleFilterChange"
+    @filter-reset="handleFilterReset"
+  >
+    <Table :props="table.props" :header="table.header" :data="table.data" />
+  </ContentWrapper>
 </template>
 
 <script>
@@ -22,33 +18,44 @@ export default {
       filter: {},
       filterSchema: _.map({
         id: _.o.string.other('form', {
-          placeholder: '请输入 id',
-          cols: {
-            item: 5,
-            label: 6,
-            wrapper: 16,
-            xsLabel: 0,
-            xsWrapper: 24
-          }
+          placeholder: '请输入 id'
+          // cols: {
+          //   item: 5,
+          //   label: 0,
+          //   wrapper: 16,
+          //   xsLabel: 0,
+          //   xsWrapper: 24
+          // }
         }),
+        // height: _.o.enum({ a: 1, b: 2 }).other('form', {
+        //   placeholder: '请输入 id',
+        //   component: 'Select'
+        // }),
+        // age: _.o.string.other('form', {
+        //   placeholder: '请输入 id'
+        // }),
         name: _.o.string.other('form', {
-          placeholder: '请输入 name',
-          cols: {
-            item: 7,
-            label: 8,
-            wrapper: 16,
-            xsLabel: 0,
-            xsWrapper: {
-              offset: 2,
-              span: 22
-            }
-          }
+          placeholder: '请输入 name'
+          // cols: {
+          //   item: 7,
+          //   label: 0,
+          //   wrapper: 16,
+          //   xsLabel: 0,
+          //   xsWrapper: {
+          //     offset: 2,
+          //     span: 22
+          //   }
+          // }
         })
       }).other('form', {
+        cols: {
+          item: 4,
+          label: 0,
+          wrapper: 20
+        },
         layout: 'inline',
         footer: {
           cols: {
-            item: 5,
             label: 0,
             wrapper: 24
           },
@@ -58,11 +65,10 @@ export default {
           resetText: '重置'
         }
       }),
-      tableHeader: [
-      ],
+      tableHeader: [],
       pagination: {
         currentPage: 3,
-        total: 25
+        total: 250
       },
       table: {
         props: {
@@ -99,14 +105,16 @@ export default {
     fetchData () {
       this.$message('数据过滤条件已改变, 这时会重新拉去数据')
     },
-    handleFilterChange (type) {
+    handleFilterChange (type, filter) {
       if (type === 'pagination') {
         this.$message('分页数据发生改变')
       } else {
+        this.filter = filter
         this.$message('筛选条件发生变更')
       }
     },
     handleFilterReset () {
+      this.filter = {}
       this.$message('筛选条件需要重置')
     }
   }

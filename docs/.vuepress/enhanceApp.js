@@ -17,11 +17,12 @@ export default ({
   Vue.use(Vssue, {
     api: VssueGitlabAPI,
     // 在这里设置你使用的平台的 OAuth App 配置
-    owner: 'liangweiliang',
+    owner: 'FrontEnd',
     repo: 'admin-toolkit',
     clientId: 'c49c9c180d7689f460fffcc306d4aec140145bad1853887347143c02d656c4d6',
     clientSecret: '1728d05d7ede313e7741a145f6d4c3903b17863691557989e8a8aa62ae354da6',
     baseURL: 'http://gitlab.skysri.com'
   })
-  Vue.prototype.$ELEMENT = { size: "small", zIndex: 3000 };
+  Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+ // Vue.prototype.$ELEMENT = { size: "small", zIndex: 3000 };
 }

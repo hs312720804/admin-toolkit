@@ -5,9 +5,12 @@
     :header="table.header"
     :selection-type="table.selectionType"
     :selected="table.selected"
+    :select-on-row-click="true"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
+    @row-selection-change="handleRowSelectionChange"
     @all-row-selection-change="handleAllRowSelectionChange"
+    @row-click="handleRowClick"
   >
   </Table>
 </template>
@@ -50,7 +53,7 @@ export default {
             name: '名称2'
           }
         ],
-        selectionType: 'multiple',
+        selectionType: 'single',
         selected: []
       }
     }
@@ -65,6 +68,9 @@ export default {
     handleDelete ({ $index: index }) {
       this.$message(`删除第${index + 1}条记录`)
     },
+    handleRowSelectionChange(row, index) {
+      this.table.selected = index
+    },
     handleRowSelectionAdd (item, index) {
       this.table.selected = this.table.selected.concat(index)
     },
@@ -77,6 +83,10 @@ export default {
       } else {
         this.table.selected = []
       }
+    },
+    handleRowClick(row, index) {
+      console.log(arguments)
+      this.$message(`row-click`)
     }
   }
 }
