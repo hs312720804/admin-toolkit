@@ -2,7 +2,6 @@
   <div :class="theme">
     <el-button class="tag-nav__btn tag-nav__left" icon="el-icon-arrow-left" @click="handleScroll('left')"></el-button>
     <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
-    <el-button :disabled="historyCursor === 0" @click="handleBack()"  class="tag-nav__btn tag-nav__back" icon="el-icon-back"></el-button>
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>

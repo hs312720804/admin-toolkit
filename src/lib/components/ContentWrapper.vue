@@ -1,13 +1,19 @@
 <script>
 import GateSchemaForm from './GateSchemaForm'
 import { Pagination } from 'element-ui'
+let win 
+if (typeof window === undefined) {
+  win = {screen:{}}
+} else {
+  win = window
+}
 const defaultPaginationProps = {
   background: true,
   pageSizes: [5, 10, 20, 50, 100],
   pageSize: 10,
-  small: !(window.screen.width > 768),
-  pagerCount: window.screen.width > 768 ? 7 : 5,
-  layout: window.screen.width > 768 ? 'total, prev, pager, next, sizes, jumper' : 'total,sizes,pager'
+  small: !(win.screen.width > 768),
+  pagerCount: win.screen.width > 768 ? 7 : 5,
+  layout: win.screen.width > 768 ? 'total, prev, pager, next, sizes, jumper' : 'total,sizes,pager'
 }
 export default {
   data () {
