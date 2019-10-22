@@ -17584,12 +17584,11 @@ var Booleanvue_type_template_id_e655725a_staticRenderFns = []
 // CONCATENATED MODULE: ./src/lib/form/Boolean.vue?vue&type=template&id=e655725a&
 
 // CONCATENATED MODULE: ./src/lib/form/formItemMixin.js
-
 /* harmony default export */ var formItemMixin = ({
   inject: ['dataForm'],
   props: {
     value: {},
-    labelWidth: Number,
+    labelWidth: String,
     label: String,
     disabled: Boolean,
     readonly: {},
