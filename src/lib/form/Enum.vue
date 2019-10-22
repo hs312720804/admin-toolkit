@@ -1,19 +1,19 @@
 <template>
-  <el-form-item :label="label" :prop="prop" :rules="rules">  
+  <el-form-item :label="label" :label-width="labelWidth" :prop="prop" :rules="rules">
     <template v-if="!isReadonly">
       <el-radio-group
         v-if="type === 'radio'"
         :value="value"
         @input="handleInputVal"
         @change="$emit('change', $event)"
-        :disabled="disabled">
-          <el-radio
-            v-for="(item, key) in options"
-            :disabled="item.disabled"
-            :key="key"
-            :label="item.value">
-            {{ item.label }}
-          </el-radio>
+        :disabled="disabled"
+      >
+        <el-radio
+          v-for="(item, key) in options"
+          :disabled="item.disabled"
+          :key="key"
+          :label="item.value"
+        >{{ item.label }}</el-radio>
       </el-radio-group>
 
       <el-select
@@ -25,19 +25,19 @@
         :disabled="disabled"
         :placeholder="placeholder || '请选择'"
         :filterable="filterable"
-        :allow-create="allowCreate">
+        :allow-create="allowCreate"
+      >
         <el-option
           v-for="(item, key) in options"
           :disabled="item.disabled"
           :key="key"
           :label="item.label"
           :value="item.value"
-        >
-        </el-option>
+        ></el-option>
       </el-select>
     </template>
-    
-    <template v-else> {{ getLabel(value) }}</template>
+
+    <template v-else>{{ getLabel(value) }}</template>
     <slot></slot>
   </el-form-item>
 </template>
@@ -46,21 +46,21 @@
 import formItemMixin from './formItemMixin'
 export default {
   mixins: [formItemMixin],
-  data() {
+  data () {
     return {
 
     }
   },
   props: ['type', 'options', 'filterable', 'allowCreate', 'confirm', 'clearable'],
   methods: {
-    getLabel(val) {
+    getLabel (val) {
       const options = this.options || []
-      const selected = options.find(({value}) => value === val)
+      const selected = options.find(({ value }) => value === val)
       if (selected) {
         return selected.label
       }
     },
-    handleInputVal(val) {
+    handleInputVal (val) {
       const confirm = this.confirm
       if (confirm) {
         let title
@@ -74,7 +74,7 @@ export default {
         }
         this.$confirm(content, title).then(() => {
           this.$emit('input', val)
-        }).catch(() => {})
+        }).catch(() => { })
       } else {
         this.$emit('input', val)
       }
@@ -84,6 +84,4 @@ export default {
 </script>
 
 <style>
-
 </style>
-

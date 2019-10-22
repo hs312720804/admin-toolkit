@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="label" :prop="prop" :rules="rules">
+  <el-form-item :label="label" :prop="prop" :label-width="labelWidth" :rules="rules">
     <el-input-number
       v-if="!isReadonly"
       :value="value"

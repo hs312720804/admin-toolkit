@@ -1,10 +1,10 @@
 <template>
-  <el-form-item :label="label" :prop="prop" :rules="rules">  
+  <el-form-item :label="label" :prop="prop" :label-width="labelWidth" :rules="rules">
     <template v-if="!isReadonly">
-      <slot name="edit"> {{ value }}</slot>
+      <slot name="edit">{{ value }}</slot>
     </template>
     <template v-else>
-      <slot name="read"> {{ value }} </slot>
+      <slot name="read">{{ value }}</slot>
     </template>
   </el-form-item>
 </template>
@@ -13,7 +13,7 @@
 import formItemMixin from './formItemMixin'
 export default {
   mixins: [formItemMixin],
-  data() {
+  data () {
     return {
 
     }
@@ -22,5 +22,4 @@ export default {
 </script>
 
 <style>
-
 </style>

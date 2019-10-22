@@ -2,6 +2,7 @@ export default {
   inject: ['dataForm'],
   props: {
     value: {},
+    labelWidth: Number,
     label: String,
     disabled: Boolean,
     readonly: {},
@@ -11,7 +12,7 @@ export default {
     rules: {}
   },
   computed: {
-    isReadonly() {
+    isReadonly () {
       const readonly = this.readonly
       if (readonly !== undefined) {
         return readonly
