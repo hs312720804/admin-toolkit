@@ -1,6 +1,7 @@
 <template>
   <div>
     <TagNav :init-tags="initTags" style="margin-bottom:10px;"/>
+    <TagNav :init-tags="initTags" theme="tag-nav-two" style="margin-bottom:10px;"/>
     <TagNav :init-tags="initTags" theme="gray-tab" style="margin-bottom:10px;"/>
     <TagNav :init-tags="initTags" theme="white-tab"/>
   </div>

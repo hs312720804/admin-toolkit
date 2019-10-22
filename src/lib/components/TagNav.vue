@@ -338,6 +338,94 @@ export default {
       display none
     >>> .el-dropdown__caret-button::before
       background #eee
+.tag-nav-two
+  position relative
+  padding 0 52px 0 23px
+  background #f0f0f0
+  overflow hidden
+  font-size 12px
+  min-height 42px
+  border:1px solid #e6e6e6
+  .tag-nav__view-port
+    overflow hidden
+
+  .tag-nav__list
+    position relative
+    height 42px
+    padding 0
+    margin 0
+    white-space nowrap
+    user-select none
+    transition margin-left .2s ease
+
+  .tag-nav__item
+    position relative
+    display inline-block
+    height 42px
+    padding 0 30px
+    margin 0
+    background #fff
+    cursor pointer
+
+  .tag-nav__dot
+    position absolute
+    top 50%
+    left 10px
+    height 12px
+    width 12px
+    margin-top -6px
+    border-radius 6px
+    background #f0f0f0
+    transition background .2s ease
+
+  .tag-nav__close-item
+    position absolute
+    top 50%
+    right 10px
+    margin-top -6px
+    opacity 0.5
+    &:hover
+      opacity 1
+
+  .tag-nav__text
+    line-height 42px
+
+  .tag-nav__item--active
+    .tag-nav__dot
+      background #2d8cf0
+  .tag-nav__item:hover .tag-nav__dot
+    background rgb(254, 183, 154)
+  
+  .tag-nav__btn
+    position absolute
+    height 100%
+    z-index 1
+    >>> .el-button-group
+    >>> .el-button
+      height 100%
+      border none
+      border-radius 0
+  .tag-nav__btn,
+  .tag-nav__btn button
+    border-radius 0
+    border none
+  .tag-nav__left
+    left 0
+    border-right 1px solid #f0f0f0
+  .tag-nav__right
+    right 28px
+    border-left 1px solid #f0f0f0
+  .tag-nav__left,
+  .tag-nav__right
+    padding 11px 5px
+  .tag-nav__back
+    right 28px
+  .tag-nav__more
+    right 0
+    >>> .el-button:first-child
+      display none
+    >>> .el-dropdown__caret-button::before
+      background #eee
 .gray-tab
   position relative
   background #e6e6e6
