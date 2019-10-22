@@ -19,7 +19,7 @@ export default {
         pageSize: 10,
         small: !(window.screen.width > 768),
         pagerCount: window.screen.width > 768 ? 7 : 5,
-        layout: win.screen.width > 768 ? 'total, prev, pager, next, sizes, jumper' : 'total,sizes,pager'
+        layout: window.screen.width > 768 ? 'total, prev, pager, next, sizes, jumper' : 'total,sizes,pager'
       }
     }
   },
