@@ -1,31 +1,28 @@
 <template>
-  <el-form-item :label="label" :prop="prop" :rules="rules">  
+  <el-form-item :label="label" :prop="prop" :label-width="labelWidth" :rules="rules">
     <template v-if="!isReadonly">
       <el-switch
         v-if="type === 'switch'"
         :value="getBoolVal(value)"
         @input="handleInputVal"
         @change="handleChange"
-        :disabled="disabled">
-      </el-switch>
+        :disabled="disabled"
+      ></el-switch>
 
       <el-checkbox
         v-else
         :value="getBoolVal(value)"
         @input="handleInputVal"
         @change="handleChange"
-        :disabled="disabled">
+        :disabled="disabled"
+      >
         <slot></slot>
       </el-checkbox>
     </template>
-    
+
     <template v-else>
-      <span v-if="type === 'switch'"> {{ getBoolVal(value) ? '是' : '否' }} </span>
-      <el-checkbox
-        v-else
-        :disabled="true"
-        :value="getBoolVal(value)">
-      </el-checkbox>
+      <span v-if="type === 'switch'">{{ getBoolVal(value) ? '是' : '否' }}</span>
+      <el-checkbox v-else :disabled="true" :value="getBoolVal(value)"></el-checkbox>
       <slot></slot>
     </template>
   </el-form-item>
@@ -35,7 +32,7 @@
 import formItemMixin from './formItemMixin'
 export default {
   mixins: [formItemMixin],
-  data() {
+  data () {
     return {
 
     }
@@ -43,27 +40,27 @@ export default {
   props: {
     type: String,
     trueVal: {
-      default() {
+      default () {
         return true
       }
     },
     faseVal: {
-      default() {
+      default () {
         return false
       }
     }
   },
   methods: {
-    handleInputVal(val) {
+    handleInputVal (val) {
       this.$emit('input', this.parseVal(val))
     },
-    handleChange(val) {
+    handleChange (val) {
       this.$emit('change', this.parseVal(val))
     },
-    parseVal(val) {
-      return !!val ? this.trueVal : this.faseVal
+    parseVal (val) {
+      return val ? this.trueVal : this.faseVal
     },
-    getBoolVal(val) {
+    getBoolVal (val) {
       return !!val
     }
   }
@@ -71,6 +68,4 @@ export default {
 </script>
 
 <style>
-
 </style>
-
