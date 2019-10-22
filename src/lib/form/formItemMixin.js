@@ -2,7 +2,7 @@ export default {
   inject: ['dataForm'],
   props: {
     value: {},
-    labelWidth: Number,
+    labelWidth: String,
     label: String,
     disabled: Boolean,
     readonly: {},
