@@ -348,7 +348,7 @@ export default {
   border:1px solid #e6e6e6
   .tag-nav__view-port
     overflow hidden
-
+    background #fff
   .tag-nav__list
     position relative
     height 42px
