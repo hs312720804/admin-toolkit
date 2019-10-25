@@ -3,6 +3,7 @@
     <el-input
       v-if="!isReadonly"
       :value="value"
+      :type="type"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
     />

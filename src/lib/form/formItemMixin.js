@@ -8,6 +8,7 @@ export default {
     readonly: {},
     prop: String,
     placeholder: String,
+    type: String,
     errors: {},
     rules: {}
   },
