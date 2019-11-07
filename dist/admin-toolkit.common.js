@@ -17575,6 +17575,7 @@ var Booleanvue_type_template_id_e655725a_staticRenderFns = []
 // CONCATENATED MODULE: ./src/lib/form/Boolean.vue?vue&type=template&id=e655725a&
 
 // CONCATENATED MODULE: ./src/lib/form/formItemMixin.js
+
 /* harmony default export */ var formItemMixin = ({
   inject: ['dataForm'],
   props: {
@@ -17587,7 +17588,9 @@ var Booleanvue_type_template_id_e655725a_staticRenderFns = []
     placeholder: String,
     type: String,
     errors: {},
-    rules: {}
+    rules: {},
+    min: Number,
+    max: Number
   },
   computed: {
     isReadonly: function isReadonly() {
@@ -17738,14 +17741,16 @@ var String_component = normalizeComponent(
 )
 
 /* harmony default export */ var form_String = (String_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"c1fa19e2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/Number.vue?vue&type=template&id=7daa4106&
-var Numbervue_type_template_id_7daa4106_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input-number',{attrs:{"value":_vm.value},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))],_vm._t("default")],2)}
-var Numbervue_type_template_id_7daa4106_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"c1fa19e2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/Number.vue?vue&type=template&id=76f87ddd&
+var Numbervue_type_template_id_76f87ddd_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input-number',{attrs:{"value":_vm.value,"min":_vm.min,"max":_vm.max},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))],_vm._t("default")],2)}
+var Numbervue_type_template_id_76f87ddd_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/form/Number.vue?vue&type=template&id=7daa4106&
+// CONCATENATED MODULE: ./src/lib/form/Number.vue?vue&type=template&id=76f87ddd&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/Number.vue?vue&type=script&lang=js&
+//
+//
 //
 //
 //
@@ -17778,8 +17783,8 @@ var Numbervue_type_template_id_7daa4106_staticRenderFns = []
 
 var Number_component = normalizeComponent(
   form_Numbervue_type_script_lang_js_,
-  Numbervue_type_template_id_7daa4106_render,
-  Numbervue_type_template_id_7daa4106_staticRenderFns,
+  Numbervue_type_template_id_76f87ddd_render,
+  Numbervue_type_template_id_76f87ddd_staticRenderFns,
   false,
   null,
   null,

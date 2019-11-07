@@ -10,7 +10,9 @@ export default {
     placeholder: String,
     type: String,
     errors: {},
-    rules: {}
+    rules: {},
+    min: Number,
+    max: Number
   },
   computed: {
     isReadonly () {

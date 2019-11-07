@@ -3,6 +3,8 @@
     <el-input-number
       v-if="!isReadonly"
       :value="value"
+      :min="min"
+      :max="max"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
     />
