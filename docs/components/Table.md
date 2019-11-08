@@ -19,6 +19,7 @@
     :selection-type="table.selectionType"
     :selected="table.selected"
     :select-on-row-click="true"
+    :row-index-disable-selection="[0]"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
     @row-selection-change="handleRowSelectionChange"

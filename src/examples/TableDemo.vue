@@ -6,6 +6,7 @@
     :selection-type="table.selectionType"
     :selected="table.selected"
     :select-on-row-click="true"
+    :row-index-disable-selection="[1]"
     @row-selection-add="handleRowSelectionAdd"
     @row-selection-remove="handleRowSelectionRemove"
     @row-selection-change="handleRowSelectionChange"
@@ -53,7 +54,7 @@ export default {
             name: '名称2'
           }
         ],
-        selectionType: 'single',
+        selectionType: 'multiple',
         selected: []
       }
     }
@@ -68,7 +69,7 @@ export default {
     handleDelete ({ $index: index }) {
       this.$message(`删除第${index + 1}条记录`)
     },
-    handleRowSelectionChange(row, index) {
+    handleRowSelectionChange (row, index) {
       this.table.selected = index
     },
     handleRowSelectionAdd (item, index) {
@@ -84,7 +85,7 @@ export default {
         this.table.selected = []
       }
     },
-    handleRowClick(row, index) {
+    handleRowClick (row, index) {
       console.log(arguments)
       this.$message(`row-click`)
     }

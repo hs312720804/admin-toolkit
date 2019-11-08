@@ -93,6 +93,18 @@ export default {
       default () {
         return true
       }
+    },
+    rowIndexDisableSelection: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    useContextMenu: {
+      type: Boolean,
+      default () {
+        return true
+      }
     }
   },
   methods: {
@@ -109,8 +121,9 @@ export default {
       this.$emit('sort-change', ...arguments)
     },
     handleRowClick (row) {
-      if (this.selectOnRowClick) {
-        const index = this.data.indexOf(row)
+      const index = this.data.indexOf(row)
+      const disabled = this.rowIndexDisableSelection.includes(index)
+      if (this.selectOnRowClick && !disabled) {
         const selectionType = this.selectionType
         let isSelected
         if (selectionType === 'multiple') {
@@ -130,6 +143,8 @@ export default {
   },
   render (h) {
     const fixSelection = this.fixSelection
+    const rowIndexDisableSelection = this.rowIndexDisableSelection
+    const useContextMenu = this.useContextMenu
     const hiddenColumns = this.hiddenColumns
     const header = this.header.reduce((result, item, index) => {
       if (hiddenColumns.indexOf(index) === -1) {
@@ -177,9 +192,11 @@ export default {
         }
 
         options.scopedSlots.default = ({ $index: index, row }) => {
+          const disabled = rowIndexDisableSelection.includes(index)
           return h(Checkbox, {
             props: {
-              value: this.selected.indexOf(index) > -1
+              value: this.selected.indexOf(index) > -1,
+              disabled
             },
             nativeOn: {
               'click': event => event.stopPropagation()
@@ -198,15 +215,19 @@ export default {
       }
       if (selectionType === 'single') {
         options.scopedSlots.default = ({ $index: index, row }) => {
+          const disabled = rowIndexDisableSelection.includes(index)
           return h(Radio, {
             class: 'hide-radio-label',
             props: {
               value: this.selected,
-              label: index
+              label: index,
+              disabled
             },
             nativeOn: {
               click: (event) => {
-                this.$emit('row-selection-change', row, index)
+                if (!disabled) {
+                  this.$emit('row-selection-change', row, index)
+                }
                 event.stopPropagation()
                 event.preventDefault()
               }
@@ -255,6 +276,10 @@ export default {
       },
       header
     )
+    if (!useContextMenu) {
+      return table
+    }
+
     const tableWrapper = h(TableWrapper, {
       props: {
         columns: this.header.map(item => item.label),
