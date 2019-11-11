@@ -17800,14 +17800,15 @@ var Boolean_component = normalizeComponent(
 )
 
 /* harmony default export */ var form_Boolean = (Boolean_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"50bc5ff8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=template&id=15f3b809&
-var Stringvue_type_template_id_15f3b809_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input',{attrs:{"value":_vm.value,"type":_vm.type},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))]],2)}
-var Stringvue_type_template_id_15f3b809_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"50bc5ff8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=template&id=5b394dec&
+var Stringvue_type_template_id_5b394dec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input',{attrs:{"value":_vm.value,"type":_vm.type,"placeholder":_vm.placeholder},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))]],2)}
+var Stringvue_type_template_id_5b394dec_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/form/String.vue?vue&type=template&id=15f3b809&
+// CONCATENATED MODULE: ./src/lib/form/String.vue?vue&type=template&id=5b394dec&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=script&lang=js&
+//
 //
 //
 //
@@ -17840,8 +17841,8 @@ var Stringvue_type_template_id_15f3b809_staticRenderFns = []
 
 var String_component = normalizeComponent(
   form_Stringvue_type_script_lang_js_,
-  Stringvue_type_template_id_15f3b809_render,
-  Stringvue_type_template_id_15f3b809_staticRenderFns,
+  Stringvue_type_template_id_5b394dec_render,
+  Stringvue_type_template_id_5b394dec_staticRenderFns,
   false,
   null,
   null,
