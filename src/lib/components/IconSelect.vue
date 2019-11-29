@@ -5,7 +5,7 @@
   >
     <div class="content font-class" style="display: block;">
       <div  @click="getIconClassName" v-if="isUseInitialIcon">
-       <ul class="icon_lists dib-box">
+  <ul class="icon_lists dib-box">
           
           <li class="dib">
             <span class="icon iconfont el-icon-cc-denglu"></span>
@@ -17,11 +17,38 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-iconfontduigou"></span>
+            <div class="name">
+              启用
+            </div>
+            <div class="code-name">.el-icon-cc-iconfontduigou
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-toufangfangan"></span>
             <div class="name">
               投放方案
             </div>
             <div class="code-name">.el-icon-cc-toufangfangan
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-huidingbu"></span>
+            <div class="name">
+              返回顶部
+            </div>
+            <div class="code-name">.el-icon-cc-huidingbu
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-gongju"></span>
+            <div class="name">
+              工具
+            </div>
+            <div class="code-name">.el-icon-cc-gongju
             </div>
           </li>
           
@@ -58,6 +85,15 @@
               人群
             </div>
             <div class="code-name">.el-icon-cc-renqun
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-tongji"></span>
+            <div class="name">
+              统计
+            </div>
+            <div class="code-name">.el-icon-cc-tongji
             </div>
           </li>
           
@@ -215,6 +251,15 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-huanying"></span>
+            <div class="name">
+              欢迎
+            </div>
+            <div class="code-name">.el-icon-cc-huanying
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-rizhi"></span>
             <div class="name">
               日志
@@ -238,6 +283,15 @@
               日志管理
             </div>
             <div class="code-name">.el-icon-cc-rizhiguanli
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-zhushou"></span>
+            <div class="name">
+              助手
+            </div>
+            <div class="code-name">.el-icon-cc-zhushou
             </div>
           </li>
           
@@ -269,6 +323,15 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-lanjie"></span>
+            <div class="name">
+              拦截
+            </div>
+            <div class="code-name">.el-icon-cc-lanjie
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-celveguanli"></span>
             <div class="name">
               策略管理
@@ -283,6 +346,24 @@
               策略
             </div>
             <div class="code-name">.el-icon-cc-celve
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-kaitongkuai"></span>
+            <div class="name">
+              开通快
+            </div>
+            <div class="code-name">.el-icon-cc-kaitongkuai
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-yincang"></span>
+            <div class="name">
+              隐藏
+            </div>
+            <div class="code-name">.el-icon-cc-yincang
             </div>
           </li>
           
@@ -5048,6 +5129,24 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-shuangsechangyongtubiao-"></span>
+            <div class="name">
+              统计
+            </div>
+            <div class="code-name">.el-icon-cc-shuangsechangyongtubiao-
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-gongju1"></span>
+            <div class="name">
+              工具
+            </div>
+            <div class="code-name">.el-icon-cc-gongju1
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-ziyuanguanli"></span>
             <div class="name">
               资源管理
@@ -5120,6 +5219,24 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-jinyong"></span>
+            <div class="name">
+              禁用
+            </div>
+            <div class="code-name">.el-icon-cc-jinyong
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-tongji1"></span>
+            <div class="name">
+              统计
+            </div>
+            <div class="code-name">.el-icon-cc-tongji1
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-daichuli2"></span>
             <div class="name">
               待处理
@@ -5156,11 +5273,101 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont el-icon-cc-zhuangtai"></span>
+            <div class="name">
+              状态切换
+            </div>
+            <div class="code-name">.el-icon-cc-zhuangtai
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-tuisong"></span>
+            <div class="name">
+              推送
+            </div>
+            <div class="code-name">.el-icon-cc-tuisong
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-hi"></span>
+            <div class="name">
+              欢迎
+            </div>
+            <div class="code-name">.el-icon-cc-hi
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont el-icon-cc-banmianguanli"></span>
             <div class="name">
               版面管理
             </div>
             <div class="code-name">.el-icon-cc-banmianguanli
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-songshen"></span>
+            <div class="name">
+              送审
+            </div>
+            <div class="code-name">.el-icon-cc-songshen
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-zhushou1"></span>
+            <div class="name">
+              助手
+            </div>
+            <div class="code-name">.el-icon-cc-zhushou1
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-fanhui"></span>
+            <div class="name">
+              返 回
+            </div>
+            <div class="code-name">.el-icon-cc-fanhui
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-fuben"></span>
+            <div class="name">
+              副本
+            </div>
+            <div class="code-name">.el-icon-cc-fuben
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-zongshu"></span>
+            <div class="name">
+              总数
+            </div>
+            <div class="code-name">.el-icon-cc-zongshu
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-tuisong1"></span>
+            <div class="name">
+              推送
+            </div>
+            <div class="code-name">.el-icon-cc-tuisong1
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-tuisong2"></span>
+            <div class="name">
+              推送
+            </div>
+            <div class="code-name">.el-icon-cc-tuisong2
             </div>
           </li>
           
