@@ -15,7 +15,7 @@ export default {
     defaultPaginationProps () {
       return {
         background: true,
-        pageSizes: [5, 10, 20, 50, 100],
+        pageSizes: [5, 10, 15, 20, 50, 100],
         pageSize: 10,
         small: !(window.screen.width > 768),
         pagerCount: window.screen.width > 768 ? 7 : 5,
