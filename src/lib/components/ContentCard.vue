@@ -11,6 +11,9 @@
         <div class="content-card__main">
             <slot name="default" />
         </div>
+        <div class="content-card__footer">
+          <slot name ="footer"/>
+        </div>
     </div>
 </template>
 
