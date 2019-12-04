@@ -4,6 +4,14 @@
     <div v-show="!isShowMainPage">
       <content-card :title="title" @go-back="goBack">
         <table-demo></table-demo>
+         <div class="sub-foot" slot="footer">
+          <el-button
+          type="success"
+        >保存草稿</el-button>
+        <el-button
+          type="primary"
+        >提交审核</el-button>
+         </div>
       </content-card>
     </div>
   </div>

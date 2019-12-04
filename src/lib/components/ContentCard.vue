@@ -11,7 +11,7 @@
         <div class="content-card__main">
             <slot name="default" />
         </div>
-        <div class="content-card__footer">
+        <div class="content-card__footer" v-if="$slots.footer">
           <slot name ="footer"/>
         </div>
     </div>
@@ -19,7 +19,15 @@
 
 <script>
 export default {
-    props: ['title']
+    props: ['title'],
+    data () {
+      return {
+
+      }
+    },
+    created () {
+     // debugger
+    }
 }
 </script>
 
