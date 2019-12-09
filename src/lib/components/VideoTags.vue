@@ -1,13 +1,13 @@
 <template>
   <div class="global-media-tag-data">
         <ul class="global-media-tag-ul">
-            <li v-for="(tag, pIndex) in tagData">
+            <li v-for="(tag, pIndex) in tagData" :key="pIndex">
                 <div class="global-media-tag-data-intro">
                     <span>第<b>{{sectionToChinese(pIndex+1)}}</b>层</span>
                 </div>
                 <div class="global-media-tag-data-cont">
                     <el-checkbox-group v-model="tag.tagNode" size="small" @change="changeTag(pIndex, tag.tagNode)">
-                        <el-checkbox-button v-for="(item, cIndex) in tag.child" :key="item.tagCode" :label="item" :class="[item.nodeType === 0 ? 'is-node-type' : 'is-node-tag', isCurrClass(item, tag.tagNode) ? 'is-checked' : '']">{{ item.tagCnName }}<label><!--<i @click.stop="getChildTagNode(pIndex, item)" :class="item.tagCode === tag.tagCodeOn ? 'el-icon-remove' : 'el-icon-circle-plus'"></i>--><input v-if="item.nodeType === 1" @click.stop="clickCheckedTagNode(pIndex, item)" class="global-media-tag-data-cont-input" type="checkbox" :checked="isCurrClass(item, tag.tagNode)"></label></el-checkbox-button>
+                        <el-checkbox-button v-for="item in tag.child" :key="item.tagId" :label="item" :class="[item.nodeType === 0 ? 'is-node-type' : 'is-node-tag', isCurrClass(item, tag.tagNode) ? 'is-checked' : '']">{{ item.tagCnName }}<label><!--<i @click.stop="getChildTagNode(pIndex, item)" :class="item.tagCode === tag.tagCodeOn ? 'el-icon-remove' : 'el-icon-circle-plus'"></i>--><input v-if="item.nodeType === 1" @click.stop="clickCheckedTagNode(pIndex, item)" class="global-media-tag-data-cont-input" type="checkbox" :checked="isCurrClass(item, tag.tagNode)"></label></el-checkbox-button>
                     </el-checkbox-group>
                 </div>
                 <div v-if="tag.nodeTotal > pageSize && tag.currentPage < tag.nodePage" class="global-media-tag-data-more text-center">
@@ -102,13 +102,11 @@ export default {
       },
       isCurrClass: function (item, tags) {
           let flag = false;
-          if (this.tags) {
-            this.tags.forEach(function (tag, i) {
-                if (item.tagCode === tag.tagCode) {
-                    flag = true;
-                    return false
-                }
-            })
+          for (let i=0; i<tags.length; i++) {
+            if (item.tagCode === tags[i].tagCode) {
+              flag = true;
+              break
+            }
           }
           return flag
       },
