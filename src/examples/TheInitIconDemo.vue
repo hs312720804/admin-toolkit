@@ -11,12 +11,8 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
-        <!-- <div slot="goBack">
-          <div slot="actions" class="go-back">
-            <el-button type="text" size="mini" @click="$emit('go-back')">返回222</el-button>
-          </div>
-        </div>-->
+      <IconSelect @get-icon="getIcon" :title="title"  :go-back-icon="'el-icon-cc-arrowleft'" :isUseInitialIcon="true" @go-back="goBack">
+
       </IconSelect>
     </div>
   </div>
