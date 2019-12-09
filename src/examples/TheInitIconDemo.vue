@@ -12,38 +12,41 @@
     </div>
     <div v-show="!isShowMainPage">
       <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
+        <!-- <div slot="goBack">
+          <div slot="actions" class="go-back">
+            <el-button type="text" size="mini" @click="$emit('go-back')">返回222</el-button>
+          </div>
+        </div>-->
       </IconSelect>
     </div>
   </div>
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       isShowMainPage: true,
-      iconName: "",
-      title: "选择图标"
-    };
+      iconName: '',
+      title: '选择图标'
+    }
   },
   methods: {
-    selectIcon() {
-      this.isShowMainPage = false;
+    selectIcon () {
+      this.isShowMainPage = false
     },
     /**
      * 得到icon
      */
-    getIcon(iconName, name) {
-      this.iconName = iconName;
-      this.isShowMainPage = true;
+    getIcon (iconName, name) {
+      this.iconName = iconName
+      this.isShowMainPage = true
     },
     /**
      * 返回
      */
-    goBack() {
-      this.isShowMainPage = true;
+    goBack () {
+      this.isShowMainPage = true
     }
   }
-};
+}
 </script>
-
-

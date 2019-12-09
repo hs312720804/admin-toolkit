@@ -12,7 +12,7 @@
     </div>
     <div v-show="!isShowMainPage">
       <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="false" @go-back="goBack">
-        <ul>
+        <ul slot="addIcon">
           <li>
             <span class="icon iconfont el-icon-cc-denglu"></span>
             <div class="name">登录</div>
