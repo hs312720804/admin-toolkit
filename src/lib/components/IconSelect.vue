@@ -3619,9 +3619,6 @@ export default {
     goBack () {
       this.$emit('go-back')
     }
-  },
-  created () {
-    debugger
   }
 }
 </script>
