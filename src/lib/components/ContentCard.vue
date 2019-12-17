@@ -8,6 +8,16 @@
                 </slot>
             </div>
         </div>
+        <div v-else>
+           <slot name="title">
+
+           </slot>
+           <div class="actions">
+                <slot name="actions">
+                    <el-button type="text" @click="$emit('go-back')">返回</el-button>
+                </slot>
+            </div>
+        </div>
         <div class="content-card__main">
             <slot name="default" />
         </div>
