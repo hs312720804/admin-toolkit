@@ -9,9 +9,11 @@
             </div>
         </div>
         <div v-else class="content-card__header">
+          <div class="title">
            <slot name="title">
 
            </slot>
+          </div>
            <div class="actions">
                 <slot name="actions">
                 </slot>
@@ -57,6 +59,9 @@ export default {
     .actions
         padding 0 20px
         float right
+    .title
+        padding 0 20px
+        float left
 </style>
 
 
