@@ -14,7 +14,6 @@
            </slot>
            <div class="actions">
                 <slot name="actions">
-                    <el-button type="text" @click="$emit('go-back')">返回</el-button>
                 </slot>
             </div>
         </div>
