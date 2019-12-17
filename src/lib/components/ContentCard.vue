@@ -8,7 +8,7 @@
                 </slot>
             </div>
         </div>
-        <div v-else>
+        <div v-else class="content-card__header">
            <slot name="title">
 
            </slot>
