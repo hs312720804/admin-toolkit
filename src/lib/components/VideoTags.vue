@@ -46,6 +46,24 @@ export default {
           }
       }
   },
+  watch: {
+    tagData: {
+      handler () {},
+      deep:true
+    },
+    movieTags: {
+      handler () {},
+      deep:true
+    },
+    tagDataBakInit: {
+      handler () {},
+      deep:true
+    },
+    pageSize: {
+      handler () {},
+      deep:true
+    }
+  },
   data() {
       var _this = this;
       return {
@@ -58,8 +76,6 @@ export default {
           currentPage: 1, // 当前页
           isMoreIndex: 0
       }
-  },
-  computed: {
   },
   methods: {
       clone: function (obj) {
@@ -115,69 +131,65 @@ export default {
           if (tags === undefined) {
               return false
           }
-          let tagNodes = [];
-          if (_this.tagData) {
-            _this.tagData.forEach(function (item, i) {
-                tagNodes = tagNodes.concat(item.tagNode)
-            });
-          }
           _this.tagDataBak = _this.tagDataBakInit;
           let tagDataBakNode = _this.tagDataBak[index].tagNode;
           let tagDataNode = _this.tagData[index].tagNode;
+          let tagIndex = _this.tagData.length
           if (tagDataBakNode.length > tagDataNode.length) {
-              //减
-              if (tagDataBakNode) {
-                tagDataBakNode.forEach(function (tag, t) {
-                    let flag = true;
-                    tagDataNode.forEach(function (item, i) {
-                        if (tag.tagCode === item.tagCode) {
-                            flag = false;
-                            return false
-                        }
-                    });
-                    if (flag && tag.nodeType === 1) {
-                        _this.movieTags.forEach(function (item, i) {
-                            if (tag.tagCode === item.tagCode) {
-                                _this.movieTags.splice(i, 1);
-                                _this.tagData.splice(index+1, _this.tagData.length);
-                                _this.tagDataBak.splice(index+1, _this.tagData.length);
-                                return false
-                            }
-                        });
-                        return false
-                    } else if (flag) {
-                        _this.tagData.splice(index+1, _this.tagData.length);
-                        _this.tagDataBak.splice(index+1, _this.tagData.length);
-                        return false
+            //减
+            if (tagDataBakNode) {
+              for (let t=0; t<tagDataBakNode.length; t++) {
+                let tag = tagDataBakNode[t]
+                let flag = true;
+                for (let i=0; i<tagDataNode.length; i++) {
+                  if (tag.tagCode === tagDataNode[i].tagCode) {
+                    flag = false;
+                    break
+                  }
+                }
+                if (flag && tag.nodeType === 1) {
+                  for (let i=0; i<_this.movieTags.length; i++) {
+                    if (tag.tagCode === _this.movieTags[i].tagCode) {
+                      _this.movieTags.splice(i, 1);
+                      _this.tagData.splice(index+1, tagIndex);
+                      _this.tagDataBak.splice(index+1, tagIndex);
+                      break
                     }
-                });
+                  }
+                  break
+                } else if (flag) {
+                  _this.tagData.splice(index+1, tagIndex);
+                  _this.tagDataBak.splice(index+1, tagIndex);
+                  break
+                }
               }
+            }
           } else {
               //增
               let tagLast = tags[tags.length-1];
               let flag = true;
               if (tagLast.nodeType === 1) {
-                  if (_this.movieTags) {
-                    _this.movieTags.forEach(function (tag, i) {
-                        if (tagLast.tagCode === tag.tagCode) {
-                            flag = false;
-                            return false
-                        }
-                    });
+                if (_this.movieTags) {
+                  for (let i=0; i<_this.movieTags.length; i++) {
+                    if (tagLast.tagCode === _this.movieTags[i].tagCode) {
+                      flag = false;
+                      break
+                    }
                   }
-                  if (flag && tagLast.nodeType === 1) {
-                      _this.movieTags.push(tagLast)
-                  }
+                }
+                if (flag && tagLast.nodeType === 1) {
+                  _this.movieTags.push(tagLast)
+                }
               } else {
-                  let arrList = [];
-                  if (tagDataNode) {
-                    tagDataNode.forEach(function (item, i) {
-                        if (item.nodeType === 1 || i === tagDataNode.length-1) {
-                            arrList.push(item)
-                        }
-                    });
-                  }
-                  _this.tagData[index].tagNode = [].concat(arrList)
+                let arrList = [];
+                if (tagDataNode) {
+                  tagDataNode.forEach(function (item, i) {
+                    if (item.nodeType === 1 || i === tagDataNode.length-1) {
+                      arrList.push(item)
+                    }
+                  });
+                }
+                _this.tagData[index].tagNode = [].concat(arrList)
               }
               _this.getChildTagNode(index, tagLast);
           }
@@ -201,40 +213,42 @@ export default {
           this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
       },
       clickCheckedTagNode: function (index, tag) {
-          let _this = this;
-          if (tag === undefined) {
-              return false
+        let _this = this;
+        if (tag === undefined) {
+            return false
+        }
+        let flag = true;
+        let tagNode = _this.tagData[index].tagNode
+        if (tagNode) {
+          for (let i=0; i<tagNode.length; i++) {
+            if (tag.tagCode === tagNode[i].tagCode) {
+              tagNode.splice(i, 1);
+              flag = false;
+              break
+            }
           }
-          let flag = true;
-          if (_this.tagData[index].tagNode) {
-            _this.tagData[index].tagNode.forEach(function (item, i) {
-                if (tag.tagCode === item.tagCode) {
-                    _this.tagData[index].tagNode.splice(i, 1);
-                    flag = false;
-                    return false
-                }
-            });
-          }
-          if (flag) {
-              this.tagData[index].tagNode.push(tag)
-          }
-          this.changeTag(index, this.tagData[index].tagNode)
+        }
+        if (flag) {
+          tagNode.push(tag)
+        }
+        this.changeTag(index, tagNode)
       },
       getMoreNode: function (index, total, page) {
           if (total < this.pageSize) {
               return
           }
+          let tagData = this.tagData[index-1]
           if (index === 0) {
               this.tagCodeValue = ''
           } else {
-              this.tagCodeValue = this.tagData[index-1].tagNode.tagCode;
-              this.tagParentCode = this.tagData[index-1].tagNode.tagCode;
+              this.tagCodeValue = tagData.tagNode.tagCode;
+              this.tagParentCode = tagData.tagNode.tagCode;
               this.tagNodeIndex = index;
           }
           this.isMoreIndex = index;
-          this.tagData[index-1].currentPage++;
-          if (this.tagData[index-1].currentPage <= page) {
-              this.currentPage = this.tagData[index-1].currentPage;
+          tagData.currentPage++;
+          if (tagData.currentPage <= page) {
+              this.currentPage = tagData.currentPage;
               //this.getTagPageList()
               this.$emit('updateTagData', this.tagData);
               this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
