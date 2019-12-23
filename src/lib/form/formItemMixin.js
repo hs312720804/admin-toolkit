@@ -11,6 +11,7 @@ export default {
     type: String,
     errors: {},
     rules: {},
+    clearable: Boolean,
     min: Number,
     max: Number
   },

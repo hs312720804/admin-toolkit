@@ -13746,12 +13746,12 @@ var ContextMenu_component = normalizeComponent(
 )
 
 /* harmony default export */ var ContextMenu = (ContextMenu_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5543b288-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/VideoTags.vue?vue&type=template&id=313bf700&
-var VideoTagsvue_type_template_id_313bf700_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"global-media-tag-data"},[_c('ul',{staticClass:"global-media-tag-ul"},_vm._l((_vm.tagData),function(tag,pIndex){return _c('li',{key:pIndex},[_c('div',{staticClass:"global-media-tag-data-intro"},[_c('span',[_vm._v("第"),_c('b',[_vm._v(_vm._s(_vm.sectionToChinese(pIndex+1)))]),_vm._v("层")])]),_c('div',{staticClass:"global-media-tag-data-cont"},[_c('el-checkbox-group',{attrs:{"size":"small"},on:{"change":function($event){return _vm.changeTag(pIndex, tag.tagNode)}},model:{value:(tag.tagNode),callback:function ($$v) {_vm.$set(tag, "tagNode", $$v)},expression:"tag.tagNode"}},_vm._l((tag.child),function(item){return _c('el-checkbox-button',{key:item.tagId,class:[item.nodeType === 0 ? 'is-node-type' : 'is-node-tag', _vm.isCurrClass(item, tag.tagNode) ? 'is-checked' : ''],attrs:{"label":item}},[_vm._v(_vm._s(item.tagCnName)),_c('label',[(item.nodeType === 1)?_c('input',{staticClass:"global-media-tag-data-cont-input",attrs:{"type":"checkbox"},domProps:{"checked":_vm.isCurrClass(item, tag.tagNode)},on:{"click":function($event){$event.stopPropagation();return _vm.clickCheckedTagNode(pIndex, item)}}}):_vm._e()])])}),1)],1),(tag.nodeTotal > _vm.pageSize && tag.currentPage < tag.nodePage)?_c('div',{staticClass:"global-media-tag-data-more text-center"},[_c('span',{on:{"click":function($event){return _vm.getMoreNode(pIndex, tag.nodeTotal, tag.nodePage)}}},[_vm._v("加载更多")])]):_vm._e()])}),0)])}
-var VideoTagsvue_type_template_id_313bf700_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5543b288-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/VideoTags.vue?vue&type=template&id=c4adf5ea&
+var VideoTagsvue_type_template_id_c4adf5ea_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"global-media-tag-data"},[_c('ul',{staticClass:"global-media-tag-ul"},_vm._l((_vm.tagData),function(tag,pIndex){return _c('li',{key:pIndex},[_c('div',{staticClass:"global-media-tag-data-intro"},[_c('span',[_vm._v("第"),_c('b',[_vm._v(_vm._s(_vm.sectionToChinese(pIndex+1)))]),_vm._v("层")])]),_c('div',{staticClass:"global-media-tag-data-cont"},[_c('el-checkbox-group',{attrs:{"size":"small"},on:{"change":function($event){return _vm.changeTag(pIndex, tag.tagNode)}},model:{value:(tag.tagNode),callback:function ($$v) {_vm.$set(tag, "tagNode", $$v)},expression:"tag.tagNode"}},_vm._l((tag.child),function(item){return _c('el-checkbox-button',{key:item.tagId,class:[item.nodeType === 0 ? 'is-node-type' : 'is-node-tag', _vm.isCurrClass(item, tag.tagNode) ? 'is-checked' : ''],attrs:{"label":item}},[_vm._v(_vm._s(item.tagCnName)),_c('label',[(item.nodeType === 1)?_c('input',{staticClass:"global-media-tag-data-cont-input",attrs:{"type":"checkbox"},domProps:{"checked":_vm.isCurrClass(item, tag.tagNode)},on:{"click":function($event){$event.stopPropagation();return _vm.clickCheckedTagNode(pIndex, item)}}}):_vm._e()])])}),1)],1),(tag.nodeTotal > _vm.pageSize && tag.currentPage < tag.nodePage)?_c('div',{staticClass:"global-media-tag-data-more text-center"},[_c('span',{on:{"click":function($event){return _vm.getMoreNode(pIndex, tag.nodeTotal, tag.nodePage)}}},[_vm._v("加载更多")])]):_vm._e()])}),0)])}
+var VideoTagsvue_type_template_id_c4adf5ea_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/components/VideoTags.vue?vue&type=template&id=313bf700&
+// CONCATENATED MODULE: ./src/lib/components/VideoTags.vue?vue&type=template&id=c4adf5ea&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
 var iterator = __webpack_require__("5d58");
@@ -13831,6 +13831,24 @@ function typeof_typeof(obj) {
       }
     }
   },
+  watch: {
+    tagData: {
+      handler: function handler() {},
+      deep: true
+    },
+    movieTags: {
+      handler: function handler() {},
+      deep: true
+    },
+    tagDataBakInit: {
+      handler: function handler() {},
+      deep: true
+    },
+    pageSize: {
+      handler: function handler() {},
+      deep: true
+    }
+  },
   data: function data() {
     var _this = this;
 
@@ -13846,7 +13864,6 @@ function typeof_typeof(obj) {
       isMoreIndex: 0
     };
   },
-  computed: {},
   methods: {
     clone: function clone(obj) {
       var _this = this;
@@ -13916,69 +13933,64 @@ function typeof_typeof(obj) {
         return false;
       }
 
-      var tagNodes = [];
-
-      if (_this.tagData) {
-        _this.tagData.forEach(function (item, i) {
-          tagNodes = tagNodes.concat(item.tagNode);
-        });
-      }
-
       _this.tagDataBak = _this.tagDataBakInit;
       var tagDataBakNode = _this.tagDataBak[index].tagNode;
       var tagDataNode = _this.tagData[index].tagNode;
+      var tagIndex = _this.tagData.length;
 
       if (tagDataBakNode.length > tagDataNode.length) {
         //减
         if (tagDataBakNode) {
-          tagDataBakNode.forEach(function (tag, t) {
+          for (var t = 0; t < tagDataBakNode.length; t++) {
+            var tag = tagDataBakNode[t];
             var flag = true;
-            tagDataNode.forEach(function (item, i) {
-              if (tag.tagCode === item.tagCode) {
+
+            for (var i = 0; i < tagDataNode.length; i++) {
+              if (tag.tagCode === tagDataNode[i].tagCode) {
                 flag = false;
-                return false;
+                break;
               }
-            });
+            }
 
             if (flag && tag.nodeType === 1) {
-              _this.movieTags.forEach(function (item, i) {
-                if (tag.tagCode === item.tagCode) {
-                  _this.movieTags.splice(i, 1);
+              for (var _i = 0; _i < _this.movieTags.length; _i++) {
+                if (tag.tagCode === _this.movieTags[_i].tagCode) {
+                  _this.movieTags.splice(_i, 1);
 
-                  _this.tagData.splice(index + 1, _this.tagData.length);
+                  _this.tagData.splice(index + 1, tagIndex);
 
-                  _this.tagDataBak.splice(index + 1, _this.tagData.length);
+                  _this.tagDataBak.splice(index + 1, tagIndex);
 
-                  return false;
+                  break;
                 }
-              });
+              }
 
-              return false;
+              break;
             } else if (flag) {
-              _this.tagData.splice(index + 1, _this.tagData.length);
+              _this.tagData.splice(index + 1, tagIndex);
 
-              _this.tagDataBak.splice(index + 1, _this.tagData.length);
+              _this.tagDataBak.splice(index + 1, tagIndex);
 
-              return false;
+              break;
             }
-          });
+          }
         }
       } else {
         //增
         var tagLast = tags[tags.length - 1];
-        var flag = true;
+        var _flag = true;
 
         if (tagLast.nodeType === 1) {
           if (_this.movieTags) {
-            _this.movieTags.forEach(function (tag, i) {
-              if (tagLast.tagCode === tag.tagCode) {
-                flag = false;
-                return false;
+            for (var _i2 = 0; _i2 < _this.movieTags.length; _i2++) {
+              if (tagLast.tagCode === _this.movieTags[_i2].tagCode) {
+                _flag = false;
+                break;
               }
-            });
+            }
           }
 
-          if (flag && tagLast.nodeType === 1) {
+          if (_flag && tagLast.nodeType === 1) {
             _this.movieTags.push(tagLast);
           }
         } else {
@@ -14027,42 +14039,44 @@ function typeof_typeof(obj) {
       }
 
       var flag = true;
+      var tagNode = _this.tagData[index].tagNode;
 
-      if (_this.tagData[index].tagNode) {
-        _this.tagData[index].tagNode.forEach(function (item, i) {
-          if (tag.tagCode === item.tagCode) {
-            _this.tagData[index].tagNode.splice(i, 1);
-
+      if (tagNode) {
+        for (var i = 0; i < tagNode.length; i++) {
+          if (tag.tagCode === tagNode[i].tagCode) {
+            tagNode.splice(i, 1);
             flag = false;
-            return false;
+            break;
           }
-        });
+        }
       }
 
       if (flag) {
-        this.tagData[index].tagNode.push(tag);
+        tagNode.push(tag);
       }
 
-      this.changeTag(index, this.tagData[index].tagNode);
+      this.changeTag(index, tagNode);
     },
     getMoreNode: function getMoreNode(index, total, page) {
       if (total < this.pageSize) {
         return;
       }
 
+      var tagData = this.tagData[index - 1];
+
       if (index === 0) {
         this.tagCodeValue = '';
       } else {
-        this.tagCodeValue = this.tagData[index - 1].tagNode.tagCode;
-        this.tagParentCode = this.tagData[index - 1].tagNode.tagCode;
+        this.tagCodeValue = tagData.tagNode.tagCode;
+        this.tagParentCode = tagData.tagNode.tagCode;
         this.tagNodeIndex = index;
       }
 
       this.isMoreIndex = index;
-      this.tagData[index - 1].currentPage++;
+      tagData.currentPage++;
 
-      if (this.tagData[index - 1].currentPage <= page) {
-        this.currentPage = this.tagData[index - 1].currentPage; //this.getTagPageList()
+      if (tagData.currentPage <= page) {
+        this.currentPage = tagData.currentPage; //this.getTagPageList()
 
         this.$emit('updateTagData', this.tagData);
         this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex);
@@ -14115,8 +14129,8 @@ var VideoTagsvue_type_style_index_0_lang_stylus_ = __webpack_require__("a3cd");
 
 var VideoTags_component = normalizeComponent(
   components_VideoTagsvue_type_script_lang_js_,
-  VideoTagsvue_type_template_id_313bf700_render,
-  VideoTagsvue_type_template_id_313bf700_staticRenderFns,
+  VideoTagsvue_type_template_id_c4adf5ea_render,
+  VideoTagsvue_type_template_id_c4adf5ea_staticRenderFns,
   false,
   null,
   null,
@@ -16117,6 +16131,7 @@ var Booleanvue_type_template_id_e655725a_staticRenderFns = []
     type: String,
     errors: {},
     rules: {},
+    clearable: Boolean,
     min: Number,
     max: Number
   },
@@ -16219,14 +16234,15 @@ var Boolean_component = normalizeComponent(
 )
 
 /* harmony default export */ var form_Boolean = (Boolean_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5543b288-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=template&id=5b394dec&
-var Stringvue_type_template_id_5b394dec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input',{attrs:{"value":_vm.value,"type":_vm.type,"placeholder":_vm.placeholder},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))]],2)}
-var Stringvue_type_template_id_5b394dec_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5543b288-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=template&id=3501222e&
+var Stringvue_type_template_id_3501222e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?_c('el-input',{attrs:{"value":_vm.value,"type":_vm.type,"clearable":_vm.clearable,"placeholder":_vm.placeholder},on:{"input":function($event){return _vm.$emit('input', $event)},"change":function($event){return _vm.$emit('change', $event)}}}):[_vm._v(_vm._s(_vm.value))]],2)}
+var Stringvue_type_template_id_3501222e_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/form/String.vue?vue&type=template&id=5b394dec&
+// CONCATENATED MODULE: ./src/lib/form/String.vue?vue&type=template&id=3501222e&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/String.vue?vue&type=script&lang=js&
+//
 //
 //
 //
@@ -16260,8 +16276,8 @@ var Stringvue_type_template_id_5b394dec_staticRenderFns = []
 
 var String_component = normalizeComponent(
   form_Stringvue_type_script_lang_js_,
-  Stringvue_type_template_id_5b394dec_render,
-  Stringvue_type_template_id_5b394dec_staticRenderFns,
+  Stringvue_type_template_id_3501222e_render,
+  Stringvue_type_template_id_3501222e_staticRenderFns,
   false,
   null,
   null,

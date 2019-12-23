@@ -4,6 +4,7 @@
       v-if="!isReadonly"
       :value="value"
       :type="type"
+      :clearable="clearable"
       :placeholder="placeholder"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
