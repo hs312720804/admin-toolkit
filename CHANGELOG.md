@@ -54,7 +54,7 @@ All notable changes to this project will be documented in this file.
 ## 2019-12-31
 ----
 ### Added
-*头尾固定 FixHeaderAndFooter 组件 wanghaihua
+*头尾固定  @wanghaihua
 
 
 
