@@ -19,7 +19,7 @@
         ></el-button>
         <Breadcrumb class="breadcrumb" :items="breadcrumb"/>
       </el-header>
-      <el-main>
+      <el-main class="content">
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -27,51 +27,51 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       isCollapseMenu: false,
       items: [],
       breadcrumb: []
-    };
-  },
-  methods: {
-    getMenu() {
-      let item = {};
-      this.$router.options.routes.forEach(element => {
-        item = element.meta;
-        item.children = [];
-        element.children.forEach(e => {
-          item.children.push(e.meta);
-        });
-        this.items.push(item);
-      });
-    },
-    toggleMenu() {
-      this.isCollapseMenu = !this.isCollapseMenu;
-      this.$appState.$set("isCollapseMenu", this.isCollapseMenu);
     }
   },
-  created() {
-    this.getMenu();
-    this.isCollapseMenu = !!this.$appState.$get("isCollapseMenu");
+  methods: {
+    getMenu () {
+      let item = {}
+      this.$router.options.routes.forEach(element => {
+        item = element.meta
+        item.children = []
+        element.children.forEach(e => {
+          item.children.push(e.meta)
+        })
+        this.items.push(item)
+      })
+    },
+    toggleMenu () {
+      this.isCollapseMenu = !this.isCollapseMenu
+      this.$appState.$set('isCollapseMenu', this.isCollapseMenu)
+    }
+  },
+  created () {
+    this.getMenu()
+    this.isCollapseMenu = !!this.$appState.$get('isCollapseMenu')
     this.breadcrumb = this.$route.matched.map((v, i) => {
       return {
         to: v.path,
         name: v.meta.title
-      };
-    });
+      }
+    })
   },
   watch: {
-    $route: function(newV) {
+    $route: function (newV) {
       this.breadcrumb = newV.matched.map((v, i) => {
         return {
           to: v.path,
           name: v.meta.title
-        };
-      });
+        }
+      })
     }
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
 .el-container
@@ -80,6 +80,7 @@ export default {
 .aside_menu
   width: 230px
   background: #001529
+  overflow auto
 .log
   height: 40px
   width: 100%
@@ -109,7 +110,7 @@ export default {
 .aside-right
   flex-direction: column
   width 100%
-  // display block
+  display block
   .nav
     height: 40px
     line-height: 40px
@@ -124,4 +125,8 @@ export default {
   color: white
 .header >>> .el-breadcrumb__inner
   color: white
+.content
+  position relative
+  height 100vh
+  box-sizing border-box
 </style>

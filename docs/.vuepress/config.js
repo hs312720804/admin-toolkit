@@ -52,7 +52,8 @@ module.exports = {
               'components/OrderableTable.md',
               'components/ContextMenu.md',
               'components/VideoTags.md',
-              'components/CnRegionPicker.md'
+              'components/CnRegionPicker.md',
+              'components/FixHeaderAndFooter.md',
             ]
           },
           {

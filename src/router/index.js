@@ -104,6 +104,16 @@ const routes = [{
     }
   },
   {
+    path: 'FixHeaderAndFooter',
+    name: 'FixHeaderAndFooter',
+    component: demos.FixHeaderAndFooterDemo,
+    meta: {
+      title: '头尾固定',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'FixHeaderAndFooter'
+    }
+  },
+  {
     path: 'typeList',
     name: 'typeList',
     component: demos.TypeListDemo,

@@ -37,6 +37,7 @@ import EnumDemo from './form/EnumDemo.vue'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
 import CnRegionPickerDemo from './CnRegionPicker.vue'
+import FixHeaderAndFooterDemo from './FixHeaderAndFooterDemo'
 
 export {
   ActionListDemo,
@@ -77,5 +78,6 @@ export {
   EnumDemo,
   EnumListDemo,
   AnyDemo,
-  CnRegionPickerDemo
+  CnRegionPickerDemo,
+  FixHeaderAndFooterDemo
 }
