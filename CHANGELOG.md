@@ -51,6 +51,11 @@ All notable changes to this project will be documented in this file.
 * 文本省略  
 * 父子联动 
 
+## 2019-12-31
+----
+### Added
+*头尾固定  @wanghaihua
+
 
 
 
