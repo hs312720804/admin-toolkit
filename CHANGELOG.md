@@ -55,6 +55,10 @@ All notable changes to this project will be documented in this file.
 ----
 ### Added
 *头尾固定  @wanghaihua
+## 2020-01-02
+----
+### Added
+*添加多个对象  @wanghaihua
 
 
 
