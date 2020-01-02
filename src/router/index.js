@@ -114,6 +114,16 @@ const routes = [{
     }
   },
   {
+    path: 'AddMultiObj',
+    name: 'AddMultiObj',
+    component: demos.AddMultiObjDemo,
+    meta: {
+      title: '添加多个对象',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'AddMultiObj'
+    }
+  },
+  {
     path: 'typeList',
     name: 'typeList',
     component: demos.TypeListDemo,

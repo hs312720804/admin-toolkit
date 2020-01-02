@@ -20,7 +20,9 @@
     "@stateform/element": "^0.1.14",
     "@william17/vue-app-state": "^0.1.1",
     "big.js": "^5.2.2",
-    "gateschema-form-vue": "^0.2.4"
+    "gateschema-form-vue": "^0.2.4",
+    "vue": "^2.6.11",
+    "vue-server-renderer": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
@@ -38,7 +40,7 @@
     "stylus-loader": "^3.0.2",
     "vssue": "^0.5.3",
     "vssue-api-gitlab-v3": "git+ssh://git@gitlab.skysri.com:liangweiliang/vssue-api-gitlab-v3.git",
-    "vue-template-compiler": "^2.6.9",
+    "vue-template-compiler": "^2.6.11",
     "vuepress": "^0.14.11",
     "webpack-dev-middleware": "^3.7.2"
   }

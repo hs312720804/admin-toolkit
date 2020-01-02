@@ -54,6 +54,7 @@ module.exports = {
               'components/VideoTags.md',
               'components/CnRegionPicker.md',
               'components/FixHeaderAndFooter.md',
+              'components/AddMultiObj.md',
             ]
           },
           {

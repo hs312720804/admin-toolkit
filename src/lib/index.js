@@ -30,6 +30,7 @@ import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
 import VideoTags from './components/VideoTags'
 import CnRegionPicker from './components/CnRegionPicker'
+import AddMultiObj from './components/AddMultiObj'
 
 // DataForm
 import DataForm from './form/DataForm'
@@ -72,7 +73,6 @@ export {
   BaseSelector,
   ContextMenu,
   VideoTags,
-
   DataForm,
   Boolean,
   String,
@@ -80,5 +80,6 @@ export {
   Enum,
   EnumList,
   Any,
-  CnRegionPicker
+  CnRegionPicker,
+  AddMultiObj
 }
