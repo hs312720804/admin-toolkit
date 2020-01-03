@@ -31,7 +31,7 @@ import ContextMenu from './components/ContextMenu'
 import VideoTags from './components/VideoTags'
 import CnRegionPicker from './components/CnRegionPicker'
 import AddMultiObj from './components/AddMultiObj'
-
+import FixHeaderAndFooter from './components/FixHeaderAndFooter'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -81,5 +81,6 @@ export {
   EnumList,
   Any,
   CnRegionPicker,
-  AddMultiObj
+  AddMultiObj,
+  FixHeaderAndFooter
 }
