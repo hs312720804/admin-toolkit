@@ -13,7 +13,8 @@ export default {
     rules: {},
     clearable: Boolean,
     min: Number,
-    max: Number
+    max: Number,
+    multiple: Boolean
   },
   computed: {
     isReadonly () {

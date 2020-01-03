@@ -19,7 +19,7 @@
       <el-select
         v-else
         :value="value"
-        :multiple="true"
+        :multiple="multiple"
         @input="handleInputVal"
         @change="$emit('change', $event)"
         :disabled="disabled"
@@ -85,4 +85,3 @@ export default {
 
 <style>
 </style>
-
