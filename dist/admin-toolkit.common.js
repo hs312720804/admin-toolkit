@@ -16649,12 +16649,12 @@ var Enum_component = normalizeComponent(
 )
 
 /* harmony default export */ var Enum = (Enum_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"085734df-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/EnumList.vue?vue&type=template&id=fa74cb88&
-var EnumListvue_type_template_id_fa74cb88_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?[(_vm.type === 'checkbox')?_c('el-checkbox-group',{attrs:{"value":_vm.value,"disabled":_vm.disabled},on:{"input":_vm.handleInputVal,"change":function($event){return _vm.$emit('change', $event)}}},_vm._l((_vm.options),function(item,key){return _c('el-checkbox',{key:key,attrs:{"disabled":item.disabled,"label":item.value}},[_vm._v(_vm._s(item.label))])}),1):_c('el-select',{attrs:{"value":_vm.value,"multiple":_vm.multiple,"disabled":_vm.disabled,"placeholder":_vm.placeholder || '请选择',"filterable":_vm.filterable,"allow-create":_vm.allowCreate},on:{"input":_vm.handleInputVal,"change":function($event){return _vm.$emit('change', $event)}}},_vm._l((_vm.options),function(item,key){return _c('el-option',{key:key,attrs:{"disabled":item.disabled,"label":item.label,"value":item.value}})}),1)]:[_vm._v(_vm._s(_vm.getLabel(_vm.value)))],_vm._t("default")],2)}
-var EnumListvue_type_template_id_fa74cb88_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"085734df-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/EnumList.vue?vue&type=template&id=1630a63a&
+var EnumListvue_type_template_id_1630a63a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-form-item',{attrs:{"label":_vm.label,"prop":_vm.prop,"label-width":_vm.labelWidth,"rules":_vm.rules}},[(!_vm.isReadonly)?[(_vm.type === 'checkbox')?_c('el-checkbox-group',{attrs:{"value":_vm.value,"disabled":_vm.disabled},on:{"input":_vm.handleInputVal,"change":function($event){return _vm.$emit('change', $event)}}},_vm._l((_vm.options),function(item,key){return _c('el-checkbox',{key:key,attrs:{"disabled":item.disabled,"label":item.value}},[_vm._v(_vm._s(item.label))])}),1):_c('el-select',{attrs:{"value":_vm.value,"multiple":true,"disabled":_vm.disabled,"placeholder":_vm.placeholder || '请选择',"filterable":_vm.filterable,"allow-create":_vm.allowCreate},on:{"input":_vm.handleInputVal,"change":function($event){return _vm.$emit('change', $event)}}},_vm._l((_vm.options),function(item,key){return _c('el-option',{key:key,attrs:{"disabled":item.disabled,"label":item.label,"value":item.value}})}),1)]:[_vm._v(_vm._s(_vm.getLabel(_vm.value)))],_vm._t("default")],2)}
+var EnumListvue_type_template_id_1630a63a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/form/EnumList.vue?vue&type=template&id=fa74cb88&
+// CONCATENATED MODULE: ./src/lib/form/EnumList.vue?vue&type=template&id=1630a63a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/form/EnumList.vue?vue&type=script&lang=js&
 //
@@ -16761,8 +16761,8 @@ var EnumListvue_type_template_id_fa74cb88_staticRenderFns = []
 
 var EnumList_component = normalizeComponent(
   form_EnumListvue_type_script_lang_js_,
-  EnumListvue_type_template_id_fa74cb88_render,
-  EnumListvue_type_template_id_fa74cb88_staticRenderFns,
+  EnumListvue_type_template_id_1630a63a_render,
+  EnumListvue_type_template_id_1630a63a_staticRenderFns,
   false,
   null,
   null,

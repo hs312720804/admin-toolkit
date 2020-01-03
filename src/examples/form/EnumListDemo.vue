@@ -1,15 +1,15 @@
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <DataForm label-width="120px" :readonly="isReadonly">
       <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
-      <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
+      <EnumList label="兴趣"  v-model="form.hobbies" :options="hobbiesOptions" />
     </DataForm>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isReadonly: false,
       langOptions: [
@@ -43,7 +43,7 @@ export default {
       ],
       form: {
         skill: [],
-        hobbies: ['music'],
+        hobbies: ['music']
       }
     }
   }
