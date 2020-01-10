@@ -18,26 +18,25 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
-      isShowMainPage: true,//当为true时，展示主页
+      isShowMainPage: true, // 当为true时，展示主页
       title: '表格列表'
-    };
+    }
   },
   methods: {
-    /**  
+    /**
      * 打开表格列表页面
     */
-    openTableList() {
-      this.isShowMainPage = false;
+    openTableList () {
+      this.isShowMainPage = false
     },
-    /** 
+    /**
      * 返回
     */
-    goBack() {
-       this.isShowMainPage = true;
+    goBack () {
+      this.isShowMainPage = true
     }
   }
-};
+}
 </script>
-

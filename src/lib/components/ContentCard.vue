@@ -8,7 +8,7 @@
                 </slot>
             </div>
         </div>
-        <div v-else class="content-card__header">
+        <!-- <div v-else class="content-card__header">
           <div class="title">
            <slot name="title">
 
@@ -18,7 +18,7 @@
                 <slot name="actions">
                 </slot>
             </div>
-        </div>
+        </div> -->
         <div class="content-card__main">
             <slot name="default" />
         </div>
@@ -30,15 +30,15 @@
 
 <script>
 export default {
-    props: ['title'],
-    data () {
-      return {
+  props: ['title'],
+  data () {
+    return {
 
-      }
-    },
-    created () {
-     // debugger
     }
+  },
+  created () {
+    // debugger
+  }
 }
 </script>
 
@@ -63,6 +63,3 @@ export default {
         padding 0 20px
         float left
 </style>
-
-
-
