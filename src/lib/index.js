@@ -32,6 +32,8 @@ import VideoTags from './components/VideoTags'
 import CnRegionPicker from './components/CnRegionPicker'
 import AddMultiObj from './components/AddMultiObj'
 import FixHeaderAndFooter from './components/FixHeaderAndFooter'
+import ProductList from './components/ProductList'
+import VideoFilter from './components/VideoFilter'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -82,5 +84,7 @@ export {
   Any,
   CnRegionPicker,
   AddMultiObj,
-  FixHeaderAndFooter
+  FixHeaderAndFooter,
+  ProductList,
+  VideoFilter
 }

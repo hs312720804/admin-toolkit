@@ -39,6 +39,8 @@ import AnyDemo from './form/AnyDemo.vue'
 import CnRegionPickerDemo from './CnRegionPicker.vue'
 import FixHeaderAndFooterDemo from './FixHeaderAndFooterDemo'
 import AddMultiObjDemo from './AddMultiObjDemo'
+import ProductListDemo from './ProductListDemo'
+import VideoFilterDemo from './VideoFilterDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -80,5 +82,7 @@ export {
   AnyDemo,
   CnRegionPickerDemo,
   FixHeaderAndFooterDemo,
-  AddMultiObjDemo
+  AddMultiObjDemo,
+  ProductListDemo,
+  VideoFilterDemo
 }

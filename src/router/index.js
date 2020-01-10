@@ -162,6 +162,26 @@ const routes = [{
       icon: 'iconfont el-icon-cc-file-add',
       route: 'VideoTags'
     }
+  },
+  {
+    path: 'ProductList',
+    name: 'ProductList',
+    component: demos.ProductListDemo,
+    meta: {
+      title: '产品包列表',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'ProductList'
+    }
+  },
+  {
+    path: 'VideoFilter',
+    name: 'VideoFilter',
+    component: demos.VideoFilterDemo,
+    meta: {
+      title: '影片筛选器',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'VideoFilter'
+    }
   }
   ]
 },

@@ -55,6 +55,8 @@ module.exports = {
               'components/CnRegionPicker.md',
               'components/FixHeaderAndFooter.md',
               'components/AddMultiObj.md',
+              'components/ProductList.md',
+              'components/VideoFilter.md',
             ]
           },
           {
