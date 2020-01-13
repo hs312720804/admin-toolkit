@@ -6,7 +6,6 @@
         :value="value"
         @input="handleInputVal"
         @change="$emit('change', $event)"
-        v-on:keyup.enter="$emit('enter', $event)"
         :disabled="disabled"
       >
         <el-checkbox
@@ -23,7 +22,6 @@
         :multiple="true"
         @input="handleInputVal"
         @change="$emit('change', $event)"
-        v-on:keyup.enter="$emit('enter', $event)"
         :disabled="disabled"
         :placeholder="placeholder || '请选择'"
         :filterable="filterable"

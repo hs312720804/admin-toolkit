@@ -6,7 +6,6 @@
         :value="getBoolVal(value)"
         @input="handleInputVal"
         @change="handleChange"
-        v-on:keyup.enter="$emit('enter', $event)"
         :disabled="disabled"
       ></el-switch>
 
@@ -15,7 +14,6 @@
         :value="getBoolVal(value)"
         @input="handleInputVal"
         @change="handleChange"
-        v-on:keyup.enter="$emit('enter', $event)"
         :disabled="disabled"
       >
         <slot></slot>

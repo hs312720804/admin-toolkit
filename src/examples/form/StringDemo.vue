@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <DataForm label-width="120px" :readonly="isReadonly">
       <String label="姓名" v-model="form.name" />
     </DataForm>
   </div>
@@ -8,11 +8,11 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isReadonly: false,
       form: {
-        name: '张三',
+        name: '张三'
       }
     }
   }
