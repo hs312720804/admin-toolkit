@@ -7,6 +7,7 @@
       :max="max"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
+      v-on:keyup.enter="$emit('enter', $event)"
     />
     <template v-else>{{ value }}</template>
     <slot></slot>

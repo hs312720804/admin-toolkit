@@ -6,6 +6,7 @@
         :value="value"
         @input="handleInputVal"
         @change="$emit('change', $event)"
+        v-on:keyup.enter="$emit('enter', $event)"
         :disabled="disabled"
       >
         <el-radio
@@ -21,6 +22,7 @@
         :value="value"
         @input="handleInputVal"
         @change="$emit('change', $event)"
+        v-on:keyup.enter="$emit('enter', $event)"
         :clearable="clearable"
         :disabled="disabled"
         :placeholder="placeholder || '请选择'"
