@@ -1,6 +1,10 @@
 # Changelog  
 All notable changes to this project will be documented in this file.  
 
+## 0.3.0 - 2020-02-26 
+----
+* 菜单项通用path去判断是否可右链打开
+
 ## 0.3.0 - 2019-11-08  
 ----
 ### Added  
