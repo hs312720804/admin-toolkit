@@ -39,6 +39,7 @@ export default {
       let item = {}
       this.$router.options.routes.forEach(element => {
         item = element.meta
+        item.path = element.path || element.path === '/' ? element.path : ''
         item.children = []
         element.children.forEach(e => {
           item.children.push(e.meta)

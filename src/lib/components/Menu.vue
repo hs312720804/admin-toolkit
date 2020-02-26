@@ -20,10 +20,16 @@
             :key="idx"
             :index="child.route"
           >
-            <a :href="'#/' + child.route" onclick="return false">
+            <template v-if="item.path">
+              <a :href="'#' + item.path + (item.path === '/' ? '' : '/') + child.route" onclick="return false">
+                <i v-if="child.icon" :class="child.icon"></i>
+                <span slot="title">{{ child.title }}</span>
+              </a>
+            </template>
+            <template v-else>
               <i v-if="child.icon" :class="child.icon"></i>
               <span slot="title">{{ child.title }}</span>
-            </a>
+            </template>
           </el-menu-item>
           <el-submenu v-else :key="idx" :index="index +'_'+idx">
             <template slot="title">
@@ -61,6 +67,9 @@ export default {
     handleSelect (name) {
       this.$router.push({ name })
     }
+  },
+  created () {
+    console.log(this.items)
   }
 }
 </script>
