@@ -22,17 +22,19 @@ export default {
     return {
       menu: [
         {
-          "title":"导航一",
-          "icon":"el-icon-location",
-          "route":"nav1"
+          "path": '/'
+          "title": "导航一",
+          "icon": "el-icon-location",
+          "route": "nav1"
         },
         {
-          "title":"分组一",
-          "icon":"el-icon-menu",
-          "children":[
+          "path": 'group'
+          "title": "分组一",
+          "icon": "el-icon-menu",
+          "children": [
             {
-              "title":"导航二",
-              "route":"nav2"
+              "title": "导航二",
+              "route": "nav2"
             }
           ]
         }
