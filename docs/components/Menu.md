@@ -28,7 +28,7 @@ export default {
           "route": "nav1"
         },
         {
-          "path": 'group'
+          "path": '/group'
           "title": "分组一",
           "icon": "el-icon-menu",
           "children": [

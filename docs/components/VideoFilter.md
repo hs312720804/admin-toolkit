@@ -6,7 +6,9 @@
 ### 效果
 
 <Demo>
-  <VideoFilterDemo />
+  <ClientOnly>
+    <VideoFilterDemo />
+  </ClientOnly>
 </Demo>
 
 ### 代码  
