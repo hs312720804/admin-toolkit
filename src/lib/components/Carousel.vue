@@ -2,7 +2,7 @@
     <el-row>
         <el-col :span="12">
             <div class="block">
-                <span class="demonstration">默认 Hover 指示器触发</span>
+                <slot name="title"><span class="demonstration">默认 Hover 指示器触发</span></slot>
                 <el-carousel height="150px">
                     <el-carousel-item @click.native="xxxx" v-for="(item,index) in carouselList" :key="index">
                         <div class="carousel_con">

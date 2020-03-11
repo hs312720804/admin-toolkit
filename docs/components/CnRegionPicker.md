@@ -18,7 +18,7 @@
     <RegionPicker
       :pickedCity="pickedCity"
       @on-pick-city="pickedCity = $event"
-      :showCloseBtn="true" 
+      :showCloseBtn="true"
     ></RegionPicker>
 </template>
 
@@ -35,7 +35,6 @@ export default {
 
 ```
 
-
 ### 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
@@ -45,5 +44,7 @@ export default {
 | width | Number | 选择框宽度，默认200 | |
 | pickedCity | Array | 选择的地区数据，对象数组 | |
 
-
+### 方法
+| 名称 | 参数 | 描述 |
+| on-pick-city | ---- | 确定后，对话框关闭前的回调 |
 <Comment />

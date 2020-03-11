@@ -2,7 +2,7 @@
   <div>
     <OrderableTable 
       :header="table.header" 
-      :data="table.data">
+      v-model="table.data">
     </OrderableTable>
   </div>
 </template>

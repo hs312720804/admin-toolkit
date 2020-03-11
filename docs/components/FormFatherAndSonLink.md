@@ -243,8 +243,8 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| parentData | Array | 父组件的数据列表 |见上面例子 |
-| childData | Array | 子组件的数据列表 |见上面例子 |
+| parentData | Array:[{id, name}] | 父组件的数据列表 |见上面例子 |
+| childData | Array:[{ id, name, children: [] }] | 子组件的数据列表 |见上面例子 |
 | parantField | String | 父组件表单验证字段名 |见上面例子 |
 | childField | String | 子组件表单验证字段名 |见上面例子 |
 | parantLabel | String | 父组件的Label值 |见上面例子 |

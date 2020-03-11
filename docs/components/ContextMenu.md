@@ -40,4 +40,9 @@ export default {
 | selector | String | 可以指定特定元素右键时显示菜单， 默认整个 ContextMenu 包裹的区域| .table-header |
 ## 事件  
 
+## slot
+| 名称 | 描述 |
+| default | 触发的内容区域 |
+| menu | 右键菜单内容 |
+
 <Comment />
