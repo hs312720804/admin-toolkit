@@ -7,7 +7,7 @@ import TableWrapper from './TableWrapper'
 const TableBody = {
   extends: ElTable.components.TableBody,
   methods: {
-    getRowClass (row) {
+    getRowClass (row, rowIndex) {
       const classes = ['el-table__row']
       if (this.table.highlightCurrentRow && row === this.store.states.currentRow) {
         classes.push('current-row')
