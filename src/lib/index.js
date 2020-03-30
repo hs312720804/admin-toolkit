@@ -34,6 +34,7 @@ import AddMultiObj from './components/AddMultiObj'
 import FixHeaderAndFooter from './components/FixHeaderAndFooter'
 import ProductList from './components/ProductList'
 import VideoFilter from './components/VideoFilter'
+import AddFormObj from './components/AddFormObj'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -86,5 +87,6 @@ export {
   AddMultiObj,
   FixHeaderAndFooter,
   ProductList,
-  VideoFilter
+  VideoFilter,
+  AddFormObj
 }

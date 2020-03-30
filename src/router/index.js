@@ -124,6 +124,16 @@ const routes = [{
     }
   },
   {
+    path: 'AddFormObj',
+    name: 'AddFormObj',
+    component: demos.AddFormObjDemo,
+    meta: {
+      title: '动态添加',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'AddFormObj'
+    }
+  },
+  {
     path: 'typeList',
     name: 'typeList',
     component: demos.TypeListDemo,

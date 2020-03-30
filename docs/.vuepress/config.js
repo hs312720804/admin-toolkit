@@ -57,6 +57,7 @@ module.exports = {
               'components/AddMultiObj.md',
               'components/ProductList.md',
               'components/VideoFilter.md',
+              'components/AddFormObj.md',
             ]
           },
           {
