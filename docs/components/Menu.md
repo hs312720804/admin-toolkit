@@ -20,21 +20,31 @@
 export default {
   data() {
     return {
-      menu: [
+     menu: [
         {
-          "path": '/'
-          "title": "导航一",
-          "icon": "el-icon-location",
-          "route": "nav1"
+          title: '分组一',
+          icon: 'el-icon-location',
+          route: 'nav1'
         },
         {
-          "path": '/group'
-          "title": "分组一",
-          "icon": "el-icon-menu",
-          "children": [
+          title: '分组二',
+          icon: 'el-icon-menu',
+          children: [
             {
-              "title": "导航二",
-              "route": "nav2"
+              title: '导航一',
+              icon: 'el-icon-menu',
+              route: 'nav1'
+            },
+            {
+              title: '导航二',
+              icon: 'el-icon-menu',
+              children: [
+                {
+                  title: '选项一',
+                  route: 'nav2',
+                  icon: 'el-icon-menu'
+                }
+              ]
             }
           ]
         }
@@ -47,7 +57,7 @@ export default {
 
 
 ## 属性  
-目前只支持二级菜单  
+目前最多支持三级菜单  
 
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |

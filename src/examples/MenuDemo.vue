@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Menu :items="menu"/>
+    <Menu :items="threeLevelMenu"/>
   </div>
 </template>
 <script>
@@ -25,7 +25,8 @@ export default {
           ]
         }
       ],
-      threeLevelMenu: [
+      threeLevelMenu:
+      [
         {
           title: '分组一',
           icon: 'el-icon-location',
