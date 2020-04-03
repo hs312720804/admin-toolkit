@@ -64,6 +64,8 @@ All notable changes to this project will be documented in this file.
 ### Added
 *添加多个对象  @wanghaihua
 
-
+### menu 菜单修改
+*menu菜单支持三级菜单，由二级升级到三级 @wanghaihua
+## 2020-04-03
 
 
