@@ -39,8 +39,10 @@ export default {
 
 ## 属性
 | 名称 | 类型 | 描述 | 例子|
+| ---- | ---- | ---- | ---- |
 | carouselList | Array | { img: String, title: String } | ---- |
 
 ## slot
 | 名称 | 描述 |
+| ---- | ---- |
 | title | 走马灯标题 |

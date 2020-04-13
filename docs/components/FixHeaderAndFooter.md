@@ -119,6 +119,7 @@ export default {
 <!-- | FixHeaderAndFooter | String | 头尾固定 |见上面例子 | -->
 ## slot
 | 名称 | 描述 |
+| ---- | ---- |
 | default | main 内容 |
 | title | header 部分 |
 | actions | header右侧动作按钮 |

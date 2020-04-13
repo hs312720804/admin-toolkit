@@ -113,6 +113,7 @@ export default {
 
 ## 事件
 | 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- |
 | clickEdit | | 点击是否编辑分类 |
 | currData | data | 选中分类项数据
 | clickTypeHandler | data | 分类点击后触发事件

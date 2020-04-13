@@ -101,6 +101,7 @@ export default {
 
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
 | idField | String | 表格主键 | ---- |
 | filter | Object | 筛选条件 | ---- |
 | filterSchema | Object | 筛选主题，结合gateSchema使用 | ---- |
@@ -110,6 +111,7 @@ export default {
 
 ## slot
 | name | 说明 |
+| ---- | ---- | 
 | filter | 自定义筛选表格 |
 | item-list | 自定义内容 |
 | pagination | 自定义分页组件 |
@@ -118,6 +120,7 @@ export default {
 
 ## 事件  
 | 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- | 
 | select-end | (value: Array) | 确定按钮 |  
 | select-cancel | ---- | 取消按钮 |  
 | filter-change | ---- | 查询结果改变 |  

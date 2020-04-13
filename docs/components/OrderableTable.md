@@ -47,6 +47,7 @@ export default {
 ```
 ## 属性
 | 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
 | (value / v-model) | Array | Table组件的data属性 | ---- |
 | header | Array | ---- | ---- |
 | hideAction | Boolean | 是否隐藏删除动作 | ---- |
