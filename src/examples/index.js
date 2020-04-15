@@ -42,6 +42,7 @@ import AddMultiObjDemo from './AddMultiObjDemo'
 import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
+import InputIconEditDemo from './InputIconEditDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -86,5 +87,6 @@ export {
   AddMultiObjDemo,
   ProductListDemo,
   VideoFilterDemo,
-  AddFormObjDemo
+  AddFormObjDemo,
+  InputIconEditDemo
 }
