@@ -34,6 +34,15 @@ const routes = [{
     }
   },
   {
+    path: 'InputIconEdit',
+    name: 'InputIconEdit',
+    component: demos.InputIconEditDemo,
+    meta: {
+      title: '表格可编辑单元',
+      route: 'InputIconEdit'
+    }
+  },
+  {
     path: 'AppParams',
     name: 'AppParams',
     component: demos.AppParamsDemo,

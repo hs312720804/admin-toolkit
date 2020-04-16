@@ -35,6 +35,7 @@ import FixHeaderAndFooter from './components/FixHeaderAndFooter'
 import ProductList from './components/ProductList'
 import VideoFilter from './components/VideoFilter'
 import AddFormObj from './components/AddFormObj'
+import InputIconEdit from './components/InputIconEdit'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -88,5 +89,6 @@ export {
   FixHeaderAndFooter,
   ProductList,
   VideoFilter,
-  AddFormObj
+  AddFormObj,
+  InputIconEdit
 }
