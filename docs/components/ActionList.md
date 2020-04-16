@@ -16,6 +16,15 @@
     <ActionList 
       :actions="actions"
     />
+    <ActionList
+      :group="true"
+      :actions="actions"
+    />
+    <ActionList
+      :group="true"
+      align="left"
+      :actions="actions"
+    />
 </template>
 
 <script>
@@ -59,6 +68,8 @@ export default {
 | ---- | ---- | ---- | ---- |
 | actions | Object | key 为点击按钮时执行的方法, value 为按钮属性| 见上面例子 |
 | target | Vue 组件实例 | 执行 actions 里面的方法的组件, 当组件放在一个子组件的 slot 时用到| |
+| group | boolean | 是否为按钮组，默认值为 false | :group="true" |
+| align | String | left为左对齐，righ为右对齐，默认值为right | align="left" |
 
 按钮属性  
 | 名称 | 类型 | 描述 | 例子 |  
