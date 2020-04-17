@@ -1,5 +1,8 @@
 # Changelog  
 All notable changes to this project will be documented in this file.  
+## 0.3.2 - 2020-04-16 
+----
+* 操作按钮组(ActionList)增加group，align属性
 
 ## 0.3.1 - 2020-02-26 
 ----
