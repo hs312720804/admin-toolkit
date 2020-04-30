@@ -65,11 +65,11 @@ export default {
   ],
   methods: {
     handleSelect (name) {
-      this.$router.push({ name })
+      this.$router.push({ name }).catch(() => {})
     }
   },
   created () {
-    console.log(this.items)
+    // console.log(this.items)
   }
 }
 </script>

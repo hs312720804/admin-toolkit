@@ -1,8 +1,24 @@
 <template>
+  <div>
+    <h3>按钮列表</h3>
     <ActionList
       :actions="actions"
       :target="this"
     />
+    <h3>按钮组</h3>
+    <ActionList
+      :actions="actions"
+      :target="this"
+      :group="true"
+    />
+    <h3>左对齐</h3>
+    <ActionList
+      :actions="actions"
+      :target="this"
+      :group="true"
+      align="left"
+    />
+  </div>
 </template>
 
 <script>

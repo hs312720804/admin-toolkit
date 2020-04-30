@@ -1,14 +1,28 @@
 <template>
-   <div class="action-list">
+   <div class="action-list" :style="align === 'left' ? {'justify-content': 'flex-start'} : ''">
+     <template v-if="!group">
        <Button
             v-for="(item, key) in actions"
             :key="key"
             :type="item.type"
             @click="owner[key]()"
         >
-           {{ item.text }}
+          {{ item.text }}
        </Button>
-   </div>
+    </template>
+    <template v-else>
+      <el-button-group>
+        <Button
+            v-for="(item, key) in actions"
+            :key="key"
+            :type="item.type"
+            @click="owner[key]()"
+        >
+          {{ item.text }}
+        </Button>
+      </el-button-group>
+    </template>
+  </div>
 </template>
 
 <script>
@@ -23,7 +37,20 @@ export default {
       default: null
     }
   },
-  props: ['actions', 'target'],
+  props: {
+    actions: {
+      type: Object
+    },
+    target: {},
+    group: {
+      type: Boolean,
+      default: false
+    },
+    align: {
+      type: String,
+      default: 'right'
+    }
+  },
   computed: {
     owner () {
       return this.actionOwner || this.target || this.$parent

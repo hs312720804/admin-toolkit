@@ -55,11 +55,25 @@ export default {
 ```
 
 ## 属性  
-| 名称 | 类型 | 描述 | 例子 |  
+| 名称 | 类型 | 描述 | 默认值 |
 | ---- | ---- | ---- | ---- |
+| title | String | dialog的标题 | 选择 |
+| fullscreen | Boolean | ---- | true |
+| filter | Object | ---- | ---- |
+| filterSchema | Object | ---- | ---- |
+| pagination | Object | ---- | ---- |
+| customClass | String | Dialog 的自定义类名 | ---- |
+| showClose | Boolean | dialog是否显示关闭按钮 | true |
 
 ## 事件  
 | 名称 | 参数 | 描述 |  
-| ---- | ---- | ---- |  
+| ---- | ---- | ---- |
+| select-start | ---- | dialog打开后的回调函数 |  
 
+## slot
+| 名称 | 描述 |
+| ---- | ---- | 
+| default | 触发dialog的点选区域 |
+| title | dialog标题 |
+| content | dialog内容 |
 <Comment />

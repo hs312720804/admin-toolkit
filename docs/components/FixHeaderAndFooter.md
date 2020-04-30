@@ -116,5 +116,12 @@ export default {
 ## 属性
 | 名称 | 类型 | 描述 | 例子 |
 | ---- | ---- | ---- | ---- |
-| FixHeaderAndFooter | String | 头尾固定 |见上面例子 |
+<!-- | FixHeaderAndFooter | String | 头尾固定 |见上面例子 | -->
+## slot
+| 名称 | 描述 |
+| ---- | ---- |
+| default | main 内容 |
+| title | header 部分 |
+| actions | header右侧动作按钮 |
+| footer | footer 部分 |
 <Comment />

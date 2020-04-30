@@ -519,6 +519,7 @@ export default {
 
 ## 事件
 | 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- |
 | currTagData | | 点击标签返回值 |
 | getTagNodes | data | 获取已选标签列表
 | updateTagData | data | 更新标签列表

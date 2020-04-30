@@ -41,6 +41,8 @@ import FixHeaderAndFooterDemo from './FixHeaderAndFooterDemo'
 import AddMultiObjDemo from './AddMultiObjDemo'
 import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
+import AddFormObjDemo from './AddFormObjDemo'
+import InputIconEditDemo from './InputIconEditDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -84,5 +86,7 @@ export {
   FixHeaderAndFooterDemo,
   AddMultiObjDemo,
   ProductListDemo,
-  VideoFilterDemo
+  VideoFilterDemo,
+  AddFormObjDemo,
+  InputIconEditDemo
 }

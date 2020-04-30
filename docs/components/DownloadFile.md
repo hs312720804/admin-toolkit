@@ -57,4 +57,8 @@ export default {
 | 名称 | 参数 | 描述 |
 | ---- | ---- | ---- |
 | download-data | 无 |当用户点击按钮触发 |
+## slot
+| 名称 | 描述 |
+| ---- | ---- |
+| default | button包裹的内容 |
 <Comment />
