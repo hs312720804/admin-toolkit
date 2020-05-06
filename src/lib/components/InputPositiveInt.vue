@@ -21,21 +21,21 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       inputValue: undefined
     }
   },
   props: ['value', 'disabled', 'append', 'prepend', 'placeholder'],
   methods: {
-    handleInputValue(val) {
+    handleInputValue (val) {
       if (val === '' || /^[1-9]\d*$/.test(val)) {
         this.inputValue = val
         this.$emit('input', val)
       }
     }
   },
-  created() {
+  created () {
     this.$watch('value', (val) => {
       if (this.inputValue !== val) {
         this.inputValue = val

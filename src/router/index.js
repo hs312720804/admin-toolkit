@@ -367,6 +367,16 @@ const routes = [{
       icon: 'iconfont el-icon-cc-file-add',
       route: 'AnyDemo'
     }
+  },
+  {
+    path: 'MacDemo',
+    name: 'MacDemo',
+    component: demos.MacDemo,
+    meta: {
+      title: '表单Mac类型',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'MacDemo'
+    }
   }
   ]
 }

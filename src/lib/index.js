@@ -44,6 +44,7 @@ import Number from './form/Number'
 import Enum from './form/Enum'
 import EnumList from './form/EnumList'
 import Any from './form/Any'
+import Mac from './form/Mac'
 
 export {
   Menu,
@@ -84,6 +85,7 @@ export {
   Enum,
   EnumList,
   Any,
+  Mac,
   CnRegionPicker,
   AddMultiObj,
   FixHeaderAndFooter,
