@@ -76,5 +76,8 @@ All notable changes to this project will be documented in this file.
 ### added
 *dataform mac数据类型组件添加 @wanghaihua
 ## 2020-05-6
+### added
+*dataform EffectiveTime有效时间范围组件添加 @wanghaihua
+## 2020-05-8
 
 
