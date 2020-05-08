@@ -1,7 +1,7 @@
 <template>
   <div>
     <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
-      <Mac label="MAC" v-model="form.mac" prop="mac"/>
+      <EffectiveTime label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
     </DataForm>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     return {
       isReadonly: false,
       form: {
-        mac: ''
+        effectiveTime: ''
       },
       rules: {
         // 表单规则

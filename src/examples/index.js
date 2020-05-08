@@ -35,6 +35,7 @@ import NumberDemo from './form/NumberDemo.vue'
 import StringDemo from './form/StringDemo.vue'
 import EnumDemo from './form/EnumDemo.vue'
 import MacDemo from './form/MacDemo'
+import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
 import CnRegionPickerDemo from './CnRegionPicker.vue'
@@ -83,6 +84,7 @@ export {
   StringDemo,
   EnumDemo,
   MacDemo,
+  EffectiveTimeDemo,
   EnumListDemo,
   AnyDemo,
   CnRegionPickerDemo,

@@ -6,6 +6,8 @@
       :type="type"
       :clearable="clearable"
       :placeholder="placeholder"
+      :maxlength="type!=='textarea' ? 12 : undefined"
+      show-word-limit
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
     />

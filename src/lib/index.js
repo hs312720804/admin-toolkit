@@ -45,7 +45,7 @@ import Enum from './form/Enum'
 import EnumList from './form/EnumList'
 import Any from './form/Any'
 import Mac from './form/Mac'
-
+import EffectiveTime from './form/EffectiveTime'
 export {
   Menu,
   Breadcrumb,
@@ -86,6 +86,7 @@ export {
   EnumList,
   Any,
   Mac,
+  EffectiveTime,
   CnRegionPicker,
   AddMultiObj,
   FixHeaderAndFooter,

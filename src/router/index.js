@@ -377,6 +377,16 @@ const routes = [{
       icon: 'iconfont el-icon-cc-file-add',
       route: 'MacDemo'
     }
+  },
+  {
+    path: 'EffectiveTimeDemo',
+    name: 'EffectiveTimeDemo',
+    component: demos.EffectiveTimeDemo,
+    meta: {
+      title: '表单活动有效期范围',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'EffectiveTimeDemo'
+    }
   }
   ]
 }
