@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表单父子关联</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.dbc10dc5.css" as="style"><link rel="preload" href="/assets/js/app.301c17e9.js" as="script"><link rel="preload" href="/assets/js/22.0fe5cb4b.js" as="script"><link rel="prefetch" href="/assets/js/10.493ad948.js"><link rel="prefetch" href="/assets/js/11.877b6bec.js"><link rel="prefetch" href="/assets/js/12.358bec75.js"><link rel="prefetch" href="/assets/js/13.613e0100.js"><link rel="prefetch" href="/assets/js/14.95cc513d.js"><link rel="prefetch" href="/assets/js/15.ba7e3706.js"><link rel="prefetch" href="/assets/js/16.0f9b1010.js"><link rel="prefetch" href="/assets/js/17.93a22705.js"><link rel="prefetch" href="/assets/js/18.5dddb799.js"><link rel="prefetch" href="/assets/js/19.81f8bc6f.js"><link rel="prefetch" href="/assets/js/2.10575e32.js"><link rel="prefetch" href="/assets/js/20.2a50a4bf.js"><link rel="prefetch" href="/assets/js/21.b2c476d8.js"><link rel="prefetch" href="/assets/js/23.7b2694e3.js"><link rel="prefetch" href="/assets/js/24.345ca1c4.js"><link rel="prefetch" href="/assets/js/25.7cb4a050.js"><link rel="prefetch" href="/assets/js/26.6228d092.js"><link rel="prefetch" href="/assets/js/27.b63c49ab.js"><link rel="prefetch" href="/assets/js/28.08f10dd7.js"><link rel="prefetch" href="/assets/js/29.50b75779.js"><link rel="prefetch" href="/assets/js/3.a7828a8c.js"><link rel="prefetch" href="/assets/js/30.33ce18a9.js"><link rel="prefetch" href="/assets/js/31.0be886bc.js"><link rel="prefetch" href="/assets/js/32.2bd8edb5.js"><link rel="prefetch" href="/assets/js/33.d91cf78c.js"><link rel="prefetch" href="/assets/js/34.a03c21d7.js"><link rel="prefetch" href="/assets/js/35.ced94f3f.js"><link rel="prefetch" href="/assets/js/36.0cb9c5b1.js"><link rel="prefetch" href="/assets/js/37.87dda485.js"><link rel="prefetch" href="/assets/js/38.15b63053.js"><link rel="prefetch" href="/assets/js/39.28d2490c.js"><link rel="prefetch" href="/assets/js/4.e27bf76b.js"><link rel="prefetch" href="/assets/js/40.cc3d4f32.js"><link rel="prefetch" href="/assets/js/41.c417df36.js"><link rel="prefetch" href="/assets/js/42.ae161891.js"><link rel="prefetch" href="/assets/js/43.4662077d.js"><link rel="prefetch" href="/assets/js/44.ea7fa250.js"><link rel="prefetch" href="/assets/js/45.425fbda3.js"><link rel="prefetch" href="/assets/js/46.601d8c5c.js"><link rel="prefetch" href="/assets/js/47.f07c5bae.js"><link rel="prefetch" href="/assets/js/48.e3abd244.js"><link rel="prefetch" href="/assets/js/49.fab7e57d.js"><link rel="prefetch" href="/assets/js/5.c22926ae.js"><link rel="prefetch" href="/assets/js/6.d88effc2.js"><link rel="prefetch" href="/assets/js/7.cb72a14d.js"><link rel="prefetch" href="/assets/js/8.05239656.js"><link rel="prefetch" href="/assets/js/9.44be34c3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dbc10dc5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="表单父子关联"><a href="#表单父子关联" aria-hidden="true" class="header-anchor">#</a> 表单父子关联</h1> <p><code>FormFatherAndSonLink</code></p> <h2 id="示例1"><a href="#示例1" aria-hidden="true" class="header-anchor">#</a> 示例1</h2> <Demo><FormFatherAndSonLinkDemo></FormFatherAndSonLinkDemo></Demo> <h3 id="代码"><a href="#代码" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form</span> <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:rules</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>formRules<span class="token punctuation">&quot;</span></span> <span class="token attr-name">label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>100px<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>投放名称<span class="token punctuation">&quot;</span></span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>launchName<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>small<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form.launchName<span class="token punctuation">&quot;</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>投放名称<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormFatherAndSonLink</span>
+        <span class="token attr-name">:parentData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>strategyList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:childData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>crowdList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">parantField</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>strategyName<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">childField</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>crowdName<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:parantLabel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parantLabel<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:childLabel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>childLabel<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@get-children-list</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getChildrenList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@get-children-value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getChildrenValue<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormFatherAndSonLink</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submitForm<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> FormFatherAndSonLink <span class="token keyword">from</span> <span class="token string">'./../lib/components/FormFatherAndSonLink'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    FormFatherAndSonLink
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      parantLabel<span class="token punctuation">:</span> <span class="token string">'选择策略'</span><span class="token punctuation">,</span>
+      childLabel<span class="token punctuation">:</span> <span class="token string">'选择人群'</span><span class="token punctuation">,</span>
+      form<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        launchName<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        strategyName<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        crowdName<span class="token punctuation">:</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      formRules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        launchName<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请输入投放名称'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        strategyName<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请选择策略'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        crowdName<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请选择人群'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      strategyList<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'策略1'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'策略2'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      crowdList<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      crowdList_data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'数字型策略'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群1'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群2'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">2</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'数字型策略2'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群3'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">3</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群4'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">4</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getChildrenList</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>strategyName <span class="token operator">=</span> id
+      <span class="token keyword">this</span><span class="token punctuation">.</span>crowdList <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>crowdList_data<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getChildrenValue</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>crowdName <span class="token operator">=</span> id
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">submitForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>form<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token parameter">valid</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>valid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">//保存接口</span>
+           <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'保存'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h2 id="示例2"><a href="#示例2" aria-hidden="true" class="header-anchor">#</a> 示例2</h2> <Demo><FormFatherAndSonLinkDemo1></FormFatherAndSonLinkDemo1></Demo> <h3 id="代码-2"><a href="#代码-2" aria-hidden="true" class="header-anchor">#</a> 代码</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form</span> <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:rules</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>formRules<span class="token punctuation">&quot;</span></span> <span class="token attr-name">label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>100px<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>投放名称<span class="token punctuation">&quot;</span></span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>launchName<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>small<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form.launchName<span class="token punctuation">&quot;</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>投放名称<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormFatherAndSonLink</span>
+        <span class="token attr-name">:parentData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>strategyList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:childData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>crowdList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">parantField</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>strategyName<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">childField</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>crowdName<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:parantLabel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parantLabel<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:childLabel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>childLabel<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@get-children-list</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getChildrenList<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@get-children-value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getChildrenValue<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormFatherAndSonLink</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submitForm<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> FormFatherAndSonLink <span class="token keyword">from</span> <span class="token string">'./../lib/components/FormFatherAndSonLink'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    FormFatherAndSonLink
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      parantLabel<span class="token punctuation">:</span> <span class="token string">'选择策略'</span><span class="token punctuation">,</span>
+      childLabel<span class="token punctuation">:</span> <span class="token string">'选择人群'</span><span class="token punctuation">,</span>
+      form<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        launchName<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        strategyName<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        crowdName<span class="token punctuation">:</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      formRules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        launchName<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请输入投放名称'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        strategyName<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请选择策略'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        crowdName<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请选择人群'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      strategyList<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'策略1'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'策略2'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      crowdList<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      crowdList_data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群1'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群2'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">2</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群3'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">3</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              name<span class="token punctuation">:</span> <span class="token string">'人群4'</span><span class="token punctuation">,</span>
+              id<span class="token punctuation">:</span> <span class="token number">4</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getChildrenList</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>strategyName <span class="token operator">=</span> id
+      <span class="token keyword">this</span><span class="token punctuation">.</span>crowdList <span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>crowdList_data<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">result<span class="token punctuation">,</span>current</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>current<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           result <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>current<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> result
+      <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getChildrenValue</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>crowdName <span class="token operator">=</span> id
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">submitForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>form<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token parameter">valid</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>valid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">//保存接口</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token string">'保存'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h2 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h2> <table><thead><tr><th>名称</th> <th>类型</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>parentData</td> <td>Array:[{id, name}]</td> <td>父组件的数据列表</td> <td>见上面例子</td></tr> <tr><td>childData</td> <td>Array:[{ id, name, children: [] }]</td> <td>子组件的数据列表</td> <td>见上面例子</td></tr> <tr><td>parantField</td> <td>String</td> <td>父组件表单验证字段名</td> <td>见上面例子</td></tr> <tr><td>childField</td> <td>String</td> <td>子组件表单验证字段名</td> <td>见上面例子</td></tr> <tr><td>parantLabel</td> <td>String</td> <td>父组件的Label值</td> <td>见上面例子</td></tr> <tr><td>childLabel</td> <td>String</td> <td>子组件的Label值</td> <td>见上面例子</td></tr></tbody></table> <h2 id="事件"><a href="#事件" aria-hidden="true" class="header-anchor">#</a> 事件</h2> <table><thead><tr><th>名称</th> <th>参数</th> <th>描述</th> <th>例子</th></tr></thead> <tbody><tr><td>get-children-list</td> <td>（id:Array）</td> <td>id为父组件选中的值</td> <td>见上面例子</td></tr> <tr><td>get-children- value</td> <td>（id:Array）</td> <td>id为子组件选中的值</td> <td>见上面例子</td></tr></tbody></table> <Comment></Comment></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.301c17e9.js" defer></script><script src="/assets/js/22.0fe5cb4b.js" defer></script>
+  </body>
+</html>
