@@ -34,6 +34,8 @@ import BooleanDemo from './form/BooleanDemo.vue'
 import NumberDemo from './form/NumberDemo.vue'
 import StringDemo from './form/StringDemo.vue'
 import EnumDemo from './form/EnumDemo.vue'
+import MacDemo from './form/MacDemo'
+import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
 import CnRegionPickerDemo from './CnRegionPicker.vue'
@@ -43,6 +45,7 @@ import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
 import InputIconEditDemo from './InputIconEditDemo'
+
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -80,6 +83,8 @@ export {
   NumberDemo,
   StringDemo,
   EnumDemo,
+  MacDemo,
+  EffectiveTimeDemo,
   EnumListDemo,
   AnyDemo,
   CnRegionPickerDemo,

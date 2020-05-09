@@ -5,7 +5,10 @@
       :value="value"
       :type="type"
       :clearable="clearable"
+      :maxlength="maxlength"
+      :minlength="minlength"
       :placeholder="placeholder"
+      :show-word-limit="showWordLimit"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
     />

@@ -14,7 +14,10 @@ export default {
     clearable: Boolean,
     min: Number,
     max: Number,
-    multiple: Boolean
+    multiple: Boolean,
+    maxlength: Number,
+    minlength: Number,
+    showWordLimit: Boolean
   },
   computed: {
     isReadonly () {

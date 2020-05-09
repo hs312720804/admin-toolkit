@@ -1,5 +1,5 @@
 # 字符串  
-用于输入和展示字符串值
+对element ui el-input元素进行封装，用于输入和展示字符串值，所有的属性可以参考el-input的属性文档
 
 ## 示例  
 
@@ -37,5 +37,7 @@ export default {
 | 名称 | 类型 | 描述 | 默认 |  例子 |  
 | ---- | ---- | ---- | ---- | ---- |
 | label | String | 控件 label |  | |  
-
+| maxlength | Number | 最大长度 |  | |  
+| minlength | Number | 最小长度 | 0 | | 
+| show-word-limit | Boolean | 跟 el-input元素属性一致| false | | 
 <Comment />
