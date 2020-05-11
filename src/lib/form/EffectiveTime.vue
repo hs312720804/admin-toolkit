@@ -13,11 +13,16 @@
         @input="$emit('input', $event)"
         @change="$emit('change', $event)"
     ></el-date-picker>
-    <template v-else>{{ value }}</template>
+    <template v-else>
+      <template v-if="value!=='' && value!==undefined">
+          {{ $moment(value[0]).format('YYYY-MM-DD HH:mm:ss') }} ~ {{ $moment(value[1]).format('YYYY-MM-DD HH:mm:ss') }}
+      </template>
+      </template>
   </el-form-item>
 </template>
 
 <script>
+
 import formItemMixin from './formItemMixin'
 export default {
   mixins: [formItemMixin],
