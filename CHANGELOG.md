@@ -70,5 +70,14 @@ All notable changes to this project will be documented in this file.
 ### menu 菜单修改
 *menu菜单支持三级菜单，由二级升级到三级 @wanghaihua
 ## 2020-04-03
+### form表单组件修改
+*String组件添加maxlength，minlength，showWordLimit三个props属性 @wanghaihua
+## 2020-04-28
+### added
+*dataform mac数据类型组件添加 @wanghaihua
+## 2020-05-6
+### added
+*dataform EffectiveTime有效时间范围组件添加 @wanghaihua
+## 2020-05-8
 
 

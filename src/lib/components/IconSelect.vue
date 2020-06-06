@@ -3581,6 +3581,55 @@
             <div class="name">推送</div>
             <div class="code-name">.el-icon-cc-tuisong2</div>
           </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-lajitong"></span>
+            <div class="name">垃圾桶</div>
+            <div class="code-name">.el-icon-cc-lajitong</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-iconfront-"></span>
+            <div class="name">暂停</div>
+            <div class="code-name">.el-icon-cc-iconfront-</div>
+          </li>
+
+           <li class="dib">
+            <span class="icon iconfont el-icon-cc-guankan"></span>
+            <div class="name">观看</div>
+            <div class="code-name">.el-icon-cc-guankan-</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-wancheng"></span>
+            <div class="name">完成</div>
+            <div class="code-name">.el-icon-cc-wancheng</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-bofang"></span>
+            <div class="name">播放</div>
+            <div class="code-name">.el-icon-cc-bofang</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-shanchu"></span>
+            <div class="name">删除</div>
+            <div class="code-name">.el-icon-cc-shanchu</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-yuanxing"></span>
+            <div class="name">圆形</div>
+            <div class="code-name">.el-icon-cc-yuanxing</div>
+          </li>
+
+          <li class="dib">
+            <span class="icon iconfont el-icon-cc-riqi"></span>
+            <div class="name">日期</div>
+            <div class="code-name">.el-icon-cc-riqi</div>
+          </li>
+
         </ul>
       </div>
       <div v-if="!isUseInitialIcon" @click="getIconClassName">
