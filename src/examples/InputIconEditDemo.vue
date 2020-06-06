@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { Table } from '../lib/components/Table'
+import Table from '../lib/components/Table'
 import InputIconEdit from '../lib/components/InputIconEdit'
 export default {
   components: {

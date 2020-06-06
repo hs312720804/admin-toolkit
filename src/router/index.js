@@ -367,6 +367,26 @@ const routes = [{
       icon: 'iconfont el-icon-cc-file-add',
       route: 'AnyDemo'
     }
+  },
+  {
+    path: 'MacDemo',
+    name: 'MacDemo',
+    component: demos.MacDemo,
+    meta: {
+      title: '表单Mac类型',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'MacDemo'
+    }
+  },
+  {
+    path: 'EffectiveTimeDemo',
+    name: 'EffectiveTimeDemo',
+    component: demos.EffectiveTimeDemo,
+    meta: {
+      title: '表单活动有效期范围',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'EffectiveTimeDemo'
+    }
   }
   ]
 }

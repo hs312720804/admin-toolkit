@@ -21,263 +21,279 @@
 <script>
 export default {
   props: {
-      tagData: {
-          type: Array,
-          default: function () {
-              return []
-          }
-      },
-      movieTags: {
-          type: Array,
-          default: function () {
-              return []
-          }
-      },
-      tagDataBakInit: {
-          type: Array,
-          default: function () {
-              return []
-          }
-      },
-      pageSize: {
-          type: Number,
-          default: function () {
-              return 0
-          }
+    tagData: {
+      type: Array,
+      default: function () {
+        return []
       }
+    },
+    movieTags: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    },
+    tagDataBakInit: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    },
+    pageSize: {
+      type: Number,
+      default: function () {
+        return 0
+      }
+    }
   },
   watch: {
     tagData: {
       handler () {},
-      deep:true
+      deep: true
     },
     movieTags: {
       handler () {},
-      deep:true
+      deep: true
     },
     tagDataBakInit: {
       handler () {},
-      deep:true
+      deep: true
     },
     pageSize: {
       handler () {},
-      deep:true
+      deep: true
     }
   },
   data() {
-      var _this = this;
-      return {
-          loading: false,
-          tagDataBak: [],
-          tagNodeIndex: 0,
-          tagParentCode: '-1',
-          tagCodeValue: '',
-          tagNodeName: '',
-          currentPage: 1, // 当前页
-          isMoreIndex: 0
-      }
+    return {
+      loading: false,
+      tagDataBak: [],
+      tagNodeIndex: 0,
+      tagParentCode: '-1',
+      tagCodeValue: '',
+      tagNodeName: '',
+      currentPage: 1, // 当前页
+      isMoreIndex: 0
+    }
   },
   methods: {
-      clone: function (obj) {
-          var _this = this;
-          var o;
-          switch (typeof obj) {
-              case 'undefined':
-                  break;
-              case 'string':
-                  o = obj + '';
-                  break;
-              case 'number':
-                  o = obj - 0;
-                  break;
-              case 'boolean':
-                  o = obj;
-                  break;
-              case 'object':
-                  if (obj === null) {
-                      o = null;
-                  } else {
-                      if (obj instanceof Array) {
-                          o = [];
-                          for (var i = 0, len = obj.length; i < len; i++) {
-                              o.push(_this.clone(obj[i]));
-                          }
-                      } else {
-                          o = {};
-                          for (var k in obj) {
-                              o[k] = _this.clone(obj[k]);
-                          }
-                      }
-                  }
-                  break;
-              default:
-                  o = obj;
-                  break;
-          }
-          return o;
-      },
-      isCurrClass: function (item, tags) {
-          let flag = false;
-          for (let i=0; i<tags.length; i++) {
-            if (item.tagCode === tags[i].tagCode) {
-              flag = true;
-              break
-            }
-          }
-          return flag
-      },
-      changeTag: function (index, tags) {
-          let _this = this;
-          if (tags === undefined) {
-              return false
-          }
-          _this.tagDataBak = _this.tagDataBakInit;
-          let tagDataBakNode = _this.tagDataBak[index].tagNode;
-          let tagDataNode = _this.tagData[index].tagNode;
-          let tagIndex = _this.tagData.length
-          if (tagDataBakNode.length > tagDataNode.length) {
-            //减
-            if (tagDataBakNode) {
-              for (let t=0; t<tagDataBakNode.length; t++) {
-                let tag = tagDataBakNode[t]
-                let flag = true;
-                for (let i=0; i<tagDataNode.length; i++) {
-                  if (tag.tagCode === tagDataNode[i].tagCode) {
-                    flag = false;
-                    break
-                  }
-                }
-                if (flag && tag.nodeType === 1) {
-                  for (let i=0; i<_this.movieTags.length; i++) {
-                    if (tag.tagCode === _this.movieTags[i].tagCode) {
-                      _this.movieTags.splice(i, 1);
-                      _this.tagData.splice(index+1, tagIndex);
-                      _this.tagDataBak.splice(index+1, tagIndex);
-                      break
-                    }
-                  }
-                  break
-                } else if (flag) {
-                  _this.tagData.splice(index+1, tagIndex);
-                  _this.tagDataBak.splice(index+1, tagIndex);
-                  break
-                }
-              }
-            }
+    clone: function (obj) {
+      var _this = this
+      var o
+      switch (typeof obj) {
+        case 'undefined':
+          break
+        case 'string':
+          o = obj + ''
+          break
+        case 'number':
+          o = obj - 0
+          break
+        case 'boolean':
+          o = obj
+          break
+        case 'object':
+          if (obj === null) {
+            o = null
           } else {
-              //增
-              let tagLast = tags[tags.length-1];
-              let flag = true;
-              if (tagLast.nodeType === 1) {
-                if (_this.movieTags) {
-                  for (let i=0; i<_this.movieTags.length; i++) {
-                    if (tagLast.tagCode === _this.movieTags[i].tagCode) {
-                      flag = false;
-                      break
-                    }
-                  }
-                }
-                if (flag && tagLast.nodeType === 1) {
-                  _this.movieTags.push(tagLast)
-                }
-              } else {
-                let arrList = [];
-                if (tagDataNode) {
-                  tagDataNode.forEach(function (item, i) {
-                    if (item.nodeType === 1 || i === tagDataNode.length-1) {
-                      arrList.push(item)
-                    }
-                  });
-                }
-                _this.tagData[index].tagNode = [].concat(arrList)
+            if (obj instanceof Array) {
+              o = []
+              for (var i = 0, len = obj.length; i < len; i++) {
+                o.push(_this.clone(obj[i]))
               }
-              _this.getChildTagNode(index, tagLast);
-          }
-          _this.tagDataBak = _this.clone(_this.tagData);
-          _this.$emit('getTagNodes', _this.movieTags, _this.tagDataBak)
-      },
-      getChildTagNode: function (index, tags) {
-          if (tags === undefined) {
-              return false
-          }
-          this.isMoreIndex = 0;
-          this.currentPage = 1;
-          this.tagCodeValue = tags.tagCode;
-          this.tagParentCode = tags.tagCode;
-          this.tagNodeIndex = index+1;
-          this.tagData[index].currentPage = 1;
-          this.tagData[index].tagCodeOn = tags.tagCode;
-          this.tagData.splice(index+1, this.tagData.length);
-          //this.getTagPageList()
-          this.$emit('updateTagData', this.tagData);
-          this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
-      },
-      clickCheckedTagNode: function (index, tag) {
-        let _this = this;
-        if (tag === undefined) {
-            return false
-        }
-        let flag = true;
-        let tagNode = _this.tagData[index].tagNode
-        if (tagNode) {
-          for (let i=0; i<tagNode.length; i++) {
-            if (tag.tagCode === tagNode[i].tagCode) {
-              tagNode.splice(i, 1);
-              flag = false;
-              break
+            } else {
+              o = {}
+              for (var k in obj) {
+                o[k] = _this.clone(obj[k])
+              }
             }
           }
-        }
-        if (flag) {
-          tagNode.push(tag)
-        }
-        this.changeTag(index, tagNode)
-      },
-      getMoreNode: function (index, total, page) {
-          if (total < this.pageSize) {
-              return
-          }
-          let tagData = this.tagData[index-1]
-          if (index === 0) {
-              this.tagCodeValue = ''
-          } else {
-              this.tagCodeValue = tagData.tagNode.tagCode;
-              this.tagParentCode = tagData.tagNode.tagCode;
-              this.tagNodeIndex = index;
-          }
-          this.isMoreIndex = index;
-          tagData.currentPage++;
-          if (tagData.currentPage <= page) {
-              this.currentPage = tagData.currentPage;
-              //this.getTagPageList()
-              this.$emit('updateTagData', this.tagData);
-              this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
-          }
-      },
-      sectionToChinese: function(section){
-          var chnNumChar = ["零","一","二","三","四","五","六","七","八","九"];
-          var chnUnitChar = ["","十","百","千"];
-          var strIns = '', chnStr = '';
-          var unitPos = 0;
-          var zero = true;
-          while(section > 0){
-              var v = section % 10;
-              if(v === 0){
-                  if(!zero){
-                      zero = true;
-                      chnStr = chnNumChar[v] + chnStr;
-                  }
-              }else{
-                  zero = false;
-                  strIns = chnNumChar[v];
-                  strIns += chnUnitChar[unitPos];
-                  chnStr = strIns + chnStr;
-              }
-              unitPos++;
-              section = Math.floor(section / 10);
-          }
-          return chnStr;
+          break
+        default:
+          o = obj
+          break
       }
+      return o
+    },
+    isCurrClass: function (item, tags) {
+      let flag = false
+      for (let i = 0; i < tags.length; i++) {
+        if (item.tagCode === tags[i].tagCode) {
+          flag = true
+          break
+        }
+      }
+      return flag
+    },
+    changeTag: function (index, tags) {
+      console.log(tags)
+      let _this = this
+      if (tags === undefined) {
+        return false
+      }
+      _this.tagDataBak = _this.tagDataBakInit
+      let tagDataBakNode = []
+      if (_this.tagDataBakInit.length > 0) {
+        tagDataBakNode = _this.tagDataBak[index].tagNode
+      }
+      let tagDataNode = _this.tagData[index].tagNode
+      let tagIndex = _this.tagData.length
+      if (tagDataBakNode.length > tagDataNode.length) {
+        // 减
+        if (tagDataBakNode) {
+          for (let t = 0; t < tagDataBakNode.length; t++) {
+            let tag = tagDataBakNode[t]
+            let flag = true
+            for (let i = 0; i < tagDataNode.length; i++) {
+              if (tag.tagCode === tagDataNode[i].tagCode) {
+                flag = false
+                break
+              }
+            }
+            if (flag && tag.nodeType === 1) {
+              for (let i = 0; i < _this.movieTags.length; i++) {
+                if (tag.tagCode === _this.movieTags[i].tagCode) {
+                  _this.movieTags.splice(i, 1)
+                  _this.tagData.splice(index + 1, tagIndex)
+                  _this.tagDataBak.splice(index + 1, tagIndex)
+                  break
+                }
+              }
+              break
+            } else if (flag) {
+              _this.tagData.splice(index + 1, tagIndex)
+              _this.tagDataBak.splice(index + 1, tagIndex)
+              break
+            }
+          }
+        }
+      } else {
+        // 增
+        let tagLast = tags[tags.length - 1]
+        let flag = true
+        if (tagLast.nodeType === 1) {
+          if (_this.movieTags) {
+            for (let i = 0; i < _this.movieTags.length; i++) {
+              if (tagLast.tagCode === _this.movieTags[i].tagCode) {
+                flag = false
+                break
+              }
+            }
+          }
+          if (flag && tagLast.nodeType === 1) {
+            _this.movieTags.push(tagLast)
+          }
+        } else {
+          let arrList = []
+          if (tagDataNode) {
+            tagDataNode.forEach(function (item, i) {
+              if (item.nodeType === 1 || i === tagDataNode.length - 1) {
+                arrList.push(item)
+              }
+            })
+          }
+          _this.tagData[index].tagNode = [].concat(arrList)
+        }
+        _this.getChildTagNode(index, tagLast)
+      }
+      _this.tagDataBak = _this.clone(_this.tagData)
+      _this.$emit('getTagNodes', _this.movieTags, _this.tagDataBak)
+    },
+    getChildTagNode: function (index, tags) {
+      if (tags === undefined) {
+        return false
+      }
+      this.isMoreIndex = 0
+      this.currentPage = 1
+      this.tagCodeValue = tags.tagCode
+      this.tagParentCode = tags.tagCode
+      this.tagNodeIndex = index + 1
+      this.tagData[index].currentPage = 1
+      this.tagData[index].tagCodeOn = tags.tagCode
+      this.tagData.splice(index + 1, this.tagData.length)
+      // this.getTagPageList()
+      this.$emit('updateTagData', this.tagData)
+      this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
+    },
+    clickCheckedTagNode: function (index, tag) {
+      let _this = this
+      if (tag === undefined) {
+        return false
+      }
+      let flag = true
+      let tagNode = _this.tagData[index].tagNode
+      if (tagNode) {
+        for (let i = 0; i < tagNode.length; i++) {
+          if (tag.tagCode === tagNode[i].tagCode) {
+            tagNode.splice(i, 1)
+            flag = false
+            break
+          }
+        }
+        for (let i = 0; i < this.movieTags.length; i++) {
+          if (tag.tagCode === this.movieTags[i].tagCode) {
+            this.movieTags.splice(i, 1)
+            flag = false
+            break
+          }
+        }
+      }
+      if (flag) {
+        tagNode.push(tag)
+        if (tag.nodeType === 1) {
+          this.movieTags.push(tag)
+        }
+      }
+      this.tagDataBak = this.clone(this.tagData)
+      this.$emit('getTagNodes', this.movieTags, this.tagDataBak)
+      this.$emit('updateTagData', this.tagData)
+      // this.changeTag(index, tagNode)
+    },
+    getMoreNode: function (index, total, page) {
+      if (total < this.pageSize) {
+        return
+      }
+      let tagData = this.tagData[index - 1]
+      if (index === 0) {
+        this.tagCodeValue = ''
+      } else {
+        this.tagCodeValue = tagData.tagNode.tagCode
+        this.tagParentCode = tagData.tagNode.tagCode
+        this.tagNodeIndex = index
+      }
+      this.isMoreIndex = index
+      tagData.currentPage++
+      if (tagData.currentPage <= page) {
+        this.currentPage = tagData.currentPage
+        // this.getTagPageList()
+        this.$emit('updateTagData', this.tagData)
+        this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
+      }
+    },
+    sectionToChinese: function(section) {
+      var chnNumChar = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+      var chnUnitChar = ['', '十', '百', '千']
+      var strIns = ''; var chnStr = ''
+      var unitPos = 0
+      var zero = true
+      while (section > 0) {
+        var v = section % 10
+        if (v === 0) {
+          if (!zero) {
+            zero = true
+            chnStr = chnNumChar[v] + chnStr
+          }
+        } else {
+          zero = false
+          strIns = chnNumChar[v]
+          strIns += chnUnitChar[unitPos]
+          chnStr = strIns + chnStr
+        }
+        unitPos++
+        section = Math.floor(section / 10)
+      }
+      return chnStr
+    }
   }
 }
 </script>
