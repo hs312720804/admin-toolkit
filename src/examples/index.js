@@ -45,6 +45,7 @@ import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
 import InputIconEditDemo from './InputIconEditDemo'
+import CoocaaCascaderPanelDemo from './CoocaaCascaderPanelDemo'
 
 export {
   ActionListDemo,
@@ -93,5 +94,6 @@ export {
   ProductListDemo,
   VideoFilterDemo,
   AddFormObjDemo,
-  InputIconEditDemo
+  InputIconEditDemo,
+  CoocaaCascaderPanelDemo
 }

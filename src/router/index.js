@@ -233,6 +233,16 @@ const routes = [{
       icon: 'iconfont el-icon-cc-file-add',
       route: 'uploadFile'
     }
+  },
+  {
+    path: 'coocaaCascaderPanel',
+    name: 'coocaaCascaderPanel',
+    component: demos.CoocaaCascaderPanelDemo,
+    meta: {
+      title: '级联选择器',
+      icon: 'iconfont el-icon-cc-file-add',
+      route: 'coocaaCascaderPanel'
+    }
   }
   ]
 },

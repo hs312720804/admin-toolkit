@@ -36,6 +36,7 @@ import ProductList from './components/ProductList'
 import VideoFilter from './components/VideoFilter'
 import AddFormObj from './components/AddFormObj'
 import InputIconEdit from './components/InputIconEdit'
+import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -93,5 +94,6 @@ export {
   ProductList,
   VideoFilter,
   AddFormObj,
-  InputIconEdit
+  InputIconEdit,
+  CoocaaCascaderPanel
 }
