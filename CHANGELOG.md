@@ -80,4 +80,10 @@ All notable changes to this project will be documented in this file.
 *dataform EffectiveTime有效时间范围组件添加 @wanghaihua
 ## 2020-05-8
 
+### Added CoocaaCascaderPanel
+*级联选择器  @wanghaihua
+## 2020-06-11
+
+
+
 
