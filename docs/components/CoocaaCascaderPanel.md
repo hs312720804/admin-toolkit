@@ -18,10 +18,9 @@
   :props="{  multiple: true, emitPath: false }"
   :options="options"
   :selected-value="selectedValue"
-  @get-all-selected-nodes ="handleAllSelectedNodes"
   @get-selected-list="handleSelectedList"
   ></CoocaaCascaderPanel>
-  <el-button type="primary"  @click="handleSave">得到选中的节点值</el-button>
+  <el-button type="primary" style="margin-top: 10px"  @click="handleSave">得到选中的节点值</el-button>
 </div>
 </template>
 <script>
@@ -88,11 +87,8 @@ export default {
     handleSelectedList (selected) {
 
     },
-    handleAllSelectedNodes (nodes) {
-      this.selectedAllNodes = nodes
-    },
     handleSave () {
-      this.selectedValue = this.$refs.panel.getSelectedNodes(this.selectedAllNodes)
+      this.selectedValue = this.$refs.panel.getSelectedNodes()
       this.$message({
         type: 'success',
         message: '选中的节点为：' + this.selectedValue.join('和')
@@ -100,14 +96,13 @@ export default {
     }
   },
   mounted () {
-    this.leafValue = this.$refs.panel.setLeaf(this.selectedValue, this.options) // 子节点赋值
+    this.leafValue = this.$refs.panel.setLeaf(this.selectedValue) // 子节点赋值
   },
   created () {
     this.selectedValue = [3, 2]
   }
 }
 </script>
-
 ```
 
 ## 属性
@@ -119,15 +114,16 @@ export default {
 | placeholder | String | 默认提示语 | |
 | selectedValue |Array|  查看或者编辑时候，赋给组件的值，有父节点和子节点，父节点不是该子节点的父节点  |见上面例子 |
 | isExpand | Boolean | 是否展开，默认false |见上面例子 |
-| position | String | 位置，默认'bottom',目前只有'top', 'bottom',自定义位置时，输入任意其它字符串皆可, 会发射get-selected-list事件，参数为选中列表|见上面例子 |
+| position | String | 位置，默认'bottom',目前只有'top', 'bottom','custom',为'custom'时，需要自定义选中列表，get-selected-list事件返回选中列表|见上面例子 |
 ## 事件
 | 名称 | 参数 | 描述 |
 | ---- | ---- | ---- |
-| get-all-selected-nodes | 所有选中的节点|所有选中的节点|
-| get-selected-list | 所有的选中的父节点、子节点，父节点和子节点不存在父子关系||
+| get-selected-list | 所有的选中的父节点、子节点，父节点和子节点不存在父子关系| position为'custom'有效|
 | remote-method | 搜索的文本|动态加载数据时触发|
 ## 方法
 | 名称 | 参数 | 描述 |
 | ---- | ---- | ---- |
-|getSelectedNodes|||
+|setLeaf|选中的节点数组，所有的选中的父节点、子节点，父节点和子节点不存在父子关系|CoocaaCascaderPanel组件需要的value|
+|getSelectedNodes|得到所有的选中的父节点、子节点，父节点和子节点不存在父子关系|保存时候需要用到|
+|handleClose|节点对象，包括value,label字段|关闭节点的方法|
 <Comment />
