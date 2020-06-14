@@ -59,6 +59,7 @@ module.exports = {
               'components/ProductList.md',
               'components/VideoFilter.md',
               'components/AddFormObj.md',
+              'components/CoocaaCascaderPanel.md',
             ]
           },
           {
@@ -83,7 +84,6 @@ module.exports = {
               'form/EffectiveTime.md'
             ]
           }
-
         ]
       }
     }
