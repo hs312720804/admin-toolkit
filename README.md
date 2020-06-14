@@ -2,6 +2,12 @@ Admin Toolkit
 基于 [vuejs](https://vuejs.org/) 和 [element-ui](http://element-cn.eleme.io/#/zh-CN) 的管理后台组件和工具库  
 
 ## 安装    
+私有仓库安装：[前端模块私有仓库说明](http://wiki.skyoss.com/pages/viewpage.action?pageId=35726422)
+```
+npm install admin-toolkit --registry=http://172.20.155.102:4873
+```
+
+从gitLab安装：
 ```
 npm install git+ssh://git@gitlab.skysri.com:liangweiliang/admin-toolkit.git
 ```
