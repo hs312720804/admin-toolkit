@@ -21,21 +21,21 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       inputValue: undefined
     }
   },
   props: ['value', 'disabled', 'append', 'prepend', 'placeholder'],
   methods: {
-    handleInputValue(val) {
+    handleInputValue (val) {
       if (val === '' || /^(0|1|0\.[1-9]*)$/.test(val)) {
         this.inputValue = val
         this.$emit('input', parseFloat(val))
       }
     }
   },
-  created() {
+  created () {
     this.$watch('value', (val) => {
       if (parseFloat(this.inputValue) !== parseFloat(val)) {
         this.inputValue = val
@@ -47,5 +47,5 @@ export default {
 }
 </script>
 
-
+<style>
 </style>
