@@ -13,6 +13,7 @@
 ```vue
 <template>
   <CardList
+    :gutter="10"
     :data="table.data"
     :selection-type="table.selectionType"
     :selected="table.selected"
@@ -39,6 +40,26 @@ export default {
           {
             id: '2',
             name: '名称2'
+          },
+          {
+            id: '3',
+            name: '名称3'
+          },
+          {
+            id: '4',
+            name: '名称4'
+          },
+          {
+            id: '5',
+            name: '名称5'
+          },
+          {
+            id: '6',
+            name: '名称6'
+          },
+          {
+            id: '7',
+            name: '名称7'
           }
         ],
         selectionType: 'multiple',
@@ -79,6 +100,7 @@ export default {
 | data | Array | 表格数据 | |  
 | selectionType | 'none' / 'multiple' / 'single' |  none 为不使用选择功能, multiple 为多选, single 为单选| |
 | selected | Array 或者 Number | 如果 selectionType 是 multiple, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 single, 那么 selected 是被选中的 index | |  
+| gutter | Number | 栅格间隔（同el-row），默认20 | | 
 
 ## 事件  
 | 名称 | 参数 | 描述 |  
