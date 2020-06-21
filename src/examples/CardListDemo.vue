@@ -1,5 +1,6 @@
 <template>
   <CardList
+    :gutter="14"
     :data="table.data"
     :selection-type="table.selectionType"
     :selected="table.selected"
@@ -26,6 +27,26 @@ export default {
           {
             id: '2',
             name: '名称2'
+          },
+          {
+            id: '3',
+            name: '名称3'
+          },
+          {
+            id: '4',
+            name: '名称4'
+          },
+          {
+            id: '5',
+            name: '名称5'
+          },
+          {
+            id: '6',
+            name: '名称6'
+          },
+          {
+            id: '7',
+            name: '名称7'
           }
         ],
         selectionType: 'multiple',
@@ -40,7 +61,7 @@ export default {
     handleRowSelectionRemove (item, index) {
       this.table.selected = this.table.selected.filter(item => item !== index)
     },
-    handleRowSelectionChange(item, index) {
+    handleRowSelectionChange (item, index) {
       this.table.selected = index
     }
   }
@@ -49,8 +70,6 @@ export default {
 
 <style lang="stylus" scoped>
 .card-content
-  min-width 200px
   border 1px solid #ccc
   padding 10px
-  margin-right 10px
 </style>
