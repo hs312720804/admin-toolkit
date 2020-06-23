@@ -37,6 +37,7 @@ import VideoFilter from './components/VideoFilter'
 import AddFormObj from './components/AddFormObj'
 import InputIconEdit from './components/InputIconEdit'
 import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
+import CooTable from './components/CooTable.vue'
 // DataForm
 import DataForm from './form/DataForm'
 import Boolean from './form/Boolean'
@@ -95,5 +96,6 @@ export {
   VideoFilter,
   AddFormObj,
   InputIconEdit,
-  CoocaaCascaderPanel
+  CoocaaCascaderPanel,
+  CooTable
 }

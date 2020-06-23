@@ -33,6 +33,7 @@ module.exports = {
               'components/TagNav.md',
               'components/GateSchemaForm.md',
               'components/Table.md',
+              'components/CooTable.md',
               'components/CardList.md',
               'components/ContentWrapper.md',
               'components/RemoteSelect.md',

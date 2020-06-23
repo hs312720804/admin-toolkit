@@ -281,6 +281,16 @@ const routes = [
         }
       },
       {
+        path: 'treeTableList',
+        name: 'treeTableList',
+        component: demos.CooTableDemo,
+        meta: {
+          title: '树形表格',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'treeTableList'
+        }
+      },
+      {
         path: 'ContentWrapper',
         name: 'ContentWrapper',
         component: demos.ContentWrapperDemo,
