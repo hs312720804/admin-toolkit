@@ -46,6 +46,7 @@ import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
 import InputIconEditDemo from './InputIconEditDemo'
 import CoocaaCascaderPanelDemo from './CoocaaCascaderPanelDemo'
+import CooTableDemo from './CooTableDemo.vue'
 
 export {
   ActionListDemo,
@@ -95,5 +96,6 @@ export {
   VideoFilterDemo,
   AddFormObjDemo,
   InputIconEditDemo,
-  CoocaaCascaderPanelDemo
+  CoocaaCascaderPanelDemo,
+  CooTableDemo
 }
