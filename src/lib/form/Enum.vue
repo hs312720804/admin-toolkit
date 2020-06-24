@@ -19,6 +19,7 @@
       <el-select
         v-else
         :value="value"
+        ref="select"
         @input="handleInputVal"
         @change="$emit('change', $event)"
         :clearable="clearable"
