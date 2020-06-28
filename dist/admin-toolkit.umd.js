@@ -29325,12 +29325,12 @@ var DownloadFile_component = normalizeComponent(
 )
 
 /* harmony default export */ var DownloadFile = (DownloadFile_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4b2f4763-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Upload.vue?vue&type=template&id=158b1362&
-var Uploadvue_type_template_id_158b1362_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('input',{ref:"fileField",staticStyle:{"display":"none"},attrs:{"type":"file","disabled":_vm.disabled,"multiple":_vm.multiple,"accept":_vm.accept},on:{"change":_vm.handleUpload}}),_vm._t("preview",null,{"fileList":_vm.fileList})],2)}
-var Uploadvue_type_template_id_158b1362_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4b2f4763-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Upload.vue?vue&type=template&id=f92f89f6&
+var Uploadvue_type_template_id_f92f89f6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('input',{ref:"fileField",staticStyle:{"display":"none"},attrs:{"type":"file","disabled":_vm.disabled,"multiple":_vm.multiple,"accept":_vm.accept},on:{"change":_vm.handleUpload}}),_vm._t("preview",null,{"fileList":_vm.fileList})],2)}
+var Uploadvue_type_template_id_f92f89f6_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/components/Upload.vue?vue&type=template&id=158b1362&
+// CONCATENATED MODULE: ./src/lib/components/Upload.vue?vue&type=template&id=f92f89f6&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
 var es6_regexp_to_string = __webpack_require__("6b54");
@@ -29519,7 +29519,7 @@ var STATUS = {
     handleUpload: function handleUpload(event) {
       var _this2 = this;
 
-      console.log("文件上传。。。。。。。");
+      console.log('文件上传。。。。。。。');
       var target = event.target;
       var files = [].slice.call(target.files);
       var STATUS = this.STATUS;
@@ -29568,8 +29568,8 @@ var STATUS = {
 
 var Upload_component = normalizeComponent(
   components_Uploadvue_type_script_lang_js_,
-  Uploadvue_type_template_id_158b1362_render,
-  Uploadvue_type_template_id_158b1362_staticRenderFns,
+  Uploadvue_type_template_id_f92f89f6_render,
+  Uploadvue_type_template_id_f92f89f6_staticRenderFns,
   false,
   null,
   null,
