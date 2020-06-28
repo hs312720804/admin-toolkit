@@ -111,15 +111,16 @@ export default {
     handleAllRowSelectionChange (value) {
       if (value) {
         const table = this.table
-        const allData = table.props['tree-props'] ? this.recursion(table.data, []) : table.data
-        allData.forEach(this.handleRowSelectionAdd)
+        table.data.forEach(this.handleRowSelectionAdd)
       } else {
         this.handleAllRowSelectionRemove()
       }
     },
     handleAllRowSelectionRemove () {
       const idField = 'id'
-      const currentPageSelected = this.table.data.map(e => {
+      const table = this.table
+      const allData = table.props['tree-props'] ? this.recursion(table.data, []) : table.data
+      const currentPageSelected = allData.map(e => {
         return e[idField]
       })
       this.selected = this.selected.filter(e => {
