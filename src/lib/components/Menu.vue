@@ -7,6 +7,7 @@
     :defaultActive="defaultActive"
     @select="handleSelect"
     :collapse="isCollapse"
+    :mode="mode"
   >
     <template v-for="(item, index) in items">
       <el-submenu v-if="item.children" :key="index"  :index="index + ''">
@@ -61,7 +62,8 @@ export default {
     'defaultActive',
     'textColor',
     'activeTextColor',
-    'backgroundColor'
+    'backgroundColor',
+    'mode'
   ],
   methods: {
     handleSelect (name) {

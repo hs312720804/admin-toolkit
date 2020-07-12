@@ -67,6 +67,7 @@ export default {
 | textColor | String | 菜单的文字颜色（仅支持 hex 格式）,参见文档 | |
 | activeTextColor | String | 当前激活菜单的 index，参见文档 | |
 | backgroundColor | String | 菜单的背景色，参见文档 | |
+| mode | String | horizontal / vertical，参见Element UI文档 | |
 
 菜单项属性  
 | 名称 | 类型 | 描述  | 例子 |  
