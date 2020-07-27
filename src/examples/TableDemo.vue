@@ -1,5 +1,5 @@
 <template>
-  <Table
+  <c-table
     :data="table.data"
     :props="table.props"
     :header="table.header"
@@ -13,7 +13,7 @@
     @all-row-selection-change="handleAllRowSelectionChange"
     @row-click="handleRowClick"
   >
-  </Table>
+  </c-table>
 </template>
 <script>
 import { createOperationRender } from '../lib/utils/component'

@@ -1,6 +1,6 @@
 <script>
 import { Table as ElTable, TableColumn, Checkbox, Radio } from 'element-ui'
-import TableWrapper from './TableWrapper'
+import TableWrapper from '../../TableWrapper'
 
 // elementui 的 hover-row 功能导致在数据量大的时候很卡,
 // 下面通过特殊的手段禁用
@@ -49,6 +49,7 @@ const defaultTableProps = {
   'highlight-current-row': false
 }
 export default {
+  name: 'CTable',
   data () {
     return {
       hiddenColumns: []

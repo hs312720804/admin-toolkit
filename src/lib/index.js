@@ -1,6 +1,6 @@
 import Menu from './components/Menu'
 import Breadcrumb from './components/Breadcrumb'
-import Table from './components/Table'
+import CTable from './components/table/index'
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
 import ActionList from './components/ActionList'
@@ -51,7 +51,7 @@ import EffectiveTime from './form/EffectiveTime'
 export {
   Menu,
   Breadcrumb,
-  Table,
+  CTable,
   ContentWrapper,
   RemoteSelect,
   ActionList,
