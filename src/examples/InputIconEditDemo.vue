@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table
+    <c-table
       :data="table.data"
       :props="table.props"
       :header="table.header" />
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Table from '../lib/components/Table'
+import CTable from '../lib/components/table/index'
 import InputIconEdit from '../lib/components/InputIconEdit'
 export default {
   components: {
-    Table
+    CTable
   },
   props: {},
   data () {

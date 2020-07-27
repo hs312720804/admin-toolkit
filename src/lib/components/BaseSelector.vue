@@ -13,7 +13,7 @@
     </div>
     <div ref="selectorContent" class="remote-selector-main__content">
       <slot name="item-list">
-        <Table
+        <c-table
           :data="table.data"
           :header="table.header"
           :selected="tableSelected"
@@ -58,12 +58,12 @@
 </template>
 
 <script>
-import  Table  from './Table'
+import CTable from './table/index'
 export default {
   components: {
-    Table
+    CTable
   },
-  data() {
+  data () {
     return {
       tableHeight: undefined,
       selected: [],
@@ -72,7 +72,7 @@ export default {
   },
   props: ['idField', 'filter', 'filterSchema', 'table', 'pagination', 'selectionType'],
   computed: {
-    tableProps() {
+    tableProps () {
       const originProps = this.table.Props || {}
       if (!originProps.height) {
         return {...originProps, height: this.tableHeight}

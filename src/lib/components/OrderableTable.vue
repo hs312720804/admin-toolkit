@@ -1,5 +1,5 @@
 <template>
-  <Table
+  <c-table
     style="margin-top: 10px"
     :data="value"
     :header="tableHeader"
@@ -8,7 +8,7 @@
   />
 </template>
 <script>
-import Table from './Table'
+import CTable from './table/index'
 import InputOrder from './InputOrder'
 export default {
   data() {
@@ -21,7 +21,7 @@ export default {
     }
   },
   components: {
-    Table,
+    CTable,
     InputOrder
   },
   computed: {
