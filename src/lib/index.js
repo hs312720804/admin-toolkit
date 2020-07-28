@@ -45,7 +45,7 @@ import CFormBoolean from './form/boolean/index'
 import CFormString from './form/string/index'
 import CFormNumber from './form/number/index'
 import CFormEnum from './form/enum/index'
-import EnumList from './form/EnumList'
+import CFormEnumList from './form/enum-list/index'
 import CFormAny from './form/any/index'
 import CFormMac from './form/mac/index'
 import CFormEffectiveTime from './form/effective-time/index'
@@ -63,7 +63,8 @@ const components = [
   CFormString,
   CFormAny,
   CFormMac,
-  CFormEffectiveTime
+  CFormEffectiveTime,
+  CFormEnumList
 ]
 
 const install = function (Vue) {
@@ -115,7 +116,7 @@ export {
   CFormString,
   CFormNumber,
   CFormEnum,
-  EnumList,
+  CFormEnumList,
   CFormAny,
   CFormMac,
   CFormEffectiveTime,

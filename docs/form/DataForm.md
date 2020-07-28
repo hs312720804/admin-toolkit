@@ -18,8 +18,8 @@
       <c-form-number label="年龄" v-model="form.age" />
       <c-form-enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
       <c-form-enum label="岗位" v-model="form.job" :options="jobOptions" />
-      <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
-      <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
+      <c-form-enum-list type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
+      <c-form-enum-list label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
       <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
       <c-form-boolean label="" v-model="form.isIn">
         参加活动
