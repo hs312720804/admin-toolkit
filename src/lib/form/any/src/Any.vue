@@ -10,8 +10,9 @@
 </template>
 
 <script>
-import formItemMixin from './formItemMixin'
+import formItemMixin from '../../formItemMixin'
 export default {
+  name: 'CFormAny',
   mixins: [formItemMixin],
   data () {
     return {

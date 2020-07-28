@@ -19,10 +19,10 @@
       <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
       <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
       <c-form-boolean label v-model="form.isIn">参加活动</c-form-boolean>
-      <Any label="是否已婚">
+      <c-form-any label="是否已婚">
         <el-switch slot="edit" :value="!!form.isMarried" @input="form.isMarried = $event ? 1 : 0"></el-switch>
         <span slot="read">{{ form.isMarried ? '是' : '否' }}</span>
-      </Any>
+      </c-form-any>
       <el-form-item>
         <el-button type="primary" @click="saveForm">保存</el-button>
       </el-form-item>

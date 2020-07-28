@@ -14,7 +14,7 @@
 <template>
   <div>
     <c-form label-width="120px" :model="form"  :readonly="isReadonly">
-      <Mac label="MAC" v-model="form.mac" prop="mac" type="textarea"/>
+      <c-form-mac label="MAC" v-model="form.mac" prop="mac" type="textarea"/>
     </c-form>
   </div>
 </template>

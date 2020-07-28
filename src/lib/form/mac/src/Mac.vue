@@ -16,9 +16,10 @@
 </template>
 
 <script>
-import formItemMixin from './formItemMixin'
+import formItemMixin from '../../formItemMixin'
 import _ from 'lodash'
 export default {
+  name: 'CFormMac',
   mixins: [formItemMixin],
   data () {
     var validateMac = (rule, value, callback) => {

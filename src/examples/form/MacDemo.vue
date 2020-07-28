@@ -1,7 +1,7 @@
 <template>
   <div>
     <c-form label-width="120px" :model="form"  :readonly="isReadonly">
-      <Mac label="MAC" v-model="form.mac" prop="mac"/>
+      <c-form-mac label="MAC" v-model="form.mac" prop="mac"/>
     </c-form>
   </div>
 </template>
