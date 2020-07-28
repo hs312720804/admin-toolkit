@@ -14,7 +14,7 @@
   <div>
     <div class="switch-readonly">读写模式切换 <el-switch v-model="isReadonly" /></div>
     <c-form label-width="120px" :readonly="isReadonly"> 
-      <String label="姓名" v-model="form.name" />
+      <c-form-string label="姓名" v-model="form.name" />
       <c-form-number label="年龄" v-model="form.age" />
       <c-form-enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
       <c-form-enum label="岗位" v-model="form.job" :options="jobOptions" />

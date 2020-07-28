@@ -5,7 +5,7 @@
       <el-switch v-model="isReadonly" />
     </div>
     <c-form label-width="120px" ref="form" :readonly="isReadonly" :model="form" :rules="rules">
-      <String label="姓名" prop="name" v-model="form.name" />
+      <c-form-string label="姓名" prop="name" v-model="form.name" />
       <c-form-number label="年龄" v-model="form.age" />
       <c-form-enum
         label="性别"

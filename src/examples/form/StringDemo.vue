@@ -1,7 +1,7 @@
 <template>
   <div>
     <c-form label-width="120px" :readonly="isReadonly">
-      <String label="姓名" v-model="form.name" />
+      <c-form-string label="姓名" v-model="form.name" />
     </c-form>
   </div>
 </template>

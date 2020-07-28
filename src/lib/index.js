@@ -42,7 +42,7 @@ import CooTable from './components/CooTable.vue'
 // DataForm
 import CForm from './form/form/index'
 import CFormBoolean from './form/boolean/index'
-import String from './form/String'
+import CFormString from './form/string/index'
 import CFormNumber from './form/number/index'
 import CFormEnum from './form/enum/index'
 import EnumList from './form/EnumList'
@@ -59,7 +59,8 @@ const components = [
   CForm,
   CFormBoolean,
   CFormEnum,
-  CFormNumber
+  CFormNumber,
+  CFormString
 ]
 
 const install = function (Vue) {
@@ -108,7 +109,7 @@ export {
   VideoTags,
   CForm,
   CFormBoolean,
-  String,
+  CFormString,
   CFormNumber,
   CFormEnum,
   EnumList,
