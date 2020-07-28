@@ -14,7 +14,7 @@
 <template>
   <div>
     <c-form label-width="120px" :model="form"  :readonly="isReadonly">
-      <EffectiveTime label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
+      <c-form-effective-time label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
     </c-form>
   </div>
 </template>

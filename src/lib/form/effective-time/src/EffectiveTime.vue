@@ -1,6 +1,6 @@
 <template>
   <el-form-item :label="label" :prop="prop" :label-width="labelWidth" :rules="effectiveTimeRules">
-     <el-date-picker
+    <el-date-picker
         v-if="!isReadonly"
         :value="value"
         clearable
@@ -23,8 +23,9 @@
 
 <script>
 
-import formItemMixin from './formItemMixin'
+import formItemMixin from '../../formItemMixin'
 export default {
+  name: 'CFormEffectiveTime',
   mixins: [formItemMixin],
   data () {
     var validatEffectiveTime = (rule, value, callback) => {

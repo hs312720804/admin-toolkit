@@ -48,7 +48,7 @@ import CFormEnum from './form/enum/index'
 import EnumList from './form/EnumList'
 import CFormAny from './form/any/index'
 import CFormMac from './form/mac/index'
-import EffectiveTime from './form/EffectiveTime'
+import CFormEffectiveTime from './form/effective-time/index'
 
 const components = [
   CTable,
@@ -62,7 +62,8 @@ const components = [
   CFormNumber,
   CFormString,
   CFormAny,
-  CFormMac
+  CFormMac,
+  CFormEffectiveTime
 ]
 
 const install = function (Vue) {
@@ -117,7 +118,7 @@ export {
   EnumList,
   CFormAny,
   CFormMac,
-  EffectiveTime,
+  CFormEffectiveTime,
   CnRegionPicker,
   AddMultiObj,
   FixHeaderAndFooter,
