@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Menu :items="threeLevelMenu"/>
-    <Menu :items="threeLevelMenu" mode="horizontal"/>
+    <c-menu :items="threeLevelMenu"/>
+    <c-menu :items="threeLevelMenu" mode="horizontal"/>
   </div>
 </template>
 <script>

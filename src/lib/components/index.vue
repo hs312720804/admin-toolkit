@@ -2,12 +2,12 @@
   <el-container>
     <div :class="isCollapseMenu?'aside_menu aside__menu_collapse':'aside_menu' ">
       <div class="log">{{isCollapseMenu?'toolkit':"admin-toolkit"}}</div>
-      <Menu
+      <c-menu
         :isCollapse="isCollapseMenu"
         :items="items"
         class="main_menu"
         :default-active="$route.name"
-      ></Menu>
+      ></c-menu>
     </div>
     <el-container class="aside-right">
       <el-header class="header">

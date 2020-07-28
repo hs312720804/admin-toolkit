@@ -56,6 +56,7 @@
 
 <script>
 export default {
+  name: 'CMenu',
   props: [
     'isCollapse',
     'items',

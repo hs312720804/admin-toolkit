@@ -1,4 +1,4 @@
-import Menu from './components/Menu'
+import CMenu from './components/menu/index'
 import Breadcrumb from './components/Breadcrumb'
 import CTable from './components/table/index'
 import ContentWrapper from './components/ContentWrapper'
@@ -48,10 +48,28 @@ import EnumList from './form/EnumList'
 import Any from './form/Any'
 import Mac from './form/Mac'
 import EffectiveTime from './form/EffectiveTime'
-export {
-  Menu,
-  Breadcrumb,
+
+const components = [
   CTable,
+  CMenu
+]
+
+const install = function (Vue) {
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+}
+
+/* istanbul ignore if */
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+export {
+  CTable,
+  install,
+  CMenu,
+  Breadcrumb,
   ContentWrapper,
   RemoteSelect,
   ActionList,
@@ -99,3 +117,4 @@ export {
   CoocaaCascaderPanel,
   CooTable
 }
+

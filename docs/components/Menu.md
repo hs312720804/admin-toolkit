@@ -1,5 +1,5 @@
 # 菜单    
-`Menu`  
+`c-menu`  
 
 ## 示例  
 
@@ -12,7 +12,7 @@
 ### 代码  
 ```vue
 <template>
-  <Menu 
+  <c-menu 
     :items="menu" 
   />
 </template>
