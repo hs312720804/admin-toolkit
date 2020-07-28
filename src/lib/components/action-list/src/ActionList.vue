@@ -28,6 +28,7 @@
 <script>
 import { Row, Button } from 'element-ui'
 export default {
+  name: 'CActionList',
   components: {
     Row,
     Button

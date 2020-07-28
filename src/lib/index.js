@@ -5,7 +5,7 @@ import CCardList from './components/card-list/index'
 
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
-import ActionList from './components/ActionList'
+import CActionList from './components/action-list/index'
 import TagNav from './components/TagNav'
 import pop from './components/pop'
 import carousel from './components/Carousel'
@@ -55,7 +55,8 @@ const components = [
   CMenu,
   CBreadcrumb,
   CCardList,
-  CForm
+  CForm,
+  CActionList
 ]
 
 const install = function (Vue) {
@@ -77,7 +78,7 @@ export {
   CBreadcrumb,
   ContentWrapper,
   RemoteSelect,
-  ActionList,
+  CActionList,
   TagNav,
   GateSchemaForm,
   utils,

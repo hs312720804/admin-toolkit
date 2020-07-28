@@ -13,14 +13,14 @@
 ### 代码  
 ```vue
 <template>
-    <ActionList 
+    <c-action-list 
       :actions="actions"
     />
-    <ActionList
+    <c-action-list
       :group="true"
       :actions="actions"
     />
-    <ActionList
+    <c-action-list
       :group="true"
       align="left"
       :actions="actions"
