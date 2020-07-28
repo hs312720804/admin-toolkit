@@ -35,6 +35,7 @@
 
 <script>
 export default {
+  name: 'CCardList',
   props: {
     gutter: {
       type: Number,

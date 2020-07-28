@@ -1,6 +1,8 @@
 import CMenu from './components/menu/index'
 import CBreadcrumb from './components/breadcrumb/index'
 import CTable from './components/table/index'
+import CCardList from './components/card-list/index'
+
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
 import ActionList from './components/ActionList'
@@ -16,7 +18,6 @@ import DownloadFile from './components/DownloadFile'
 import Upload from './components/Upload'
 import AppParams from './bizComponents/AppParams'
 import AppParamsRead from './bizComponents/AppParamsRead'
-import CardList from './components/CardList'
 import utils from './utils'
 import FormFatherAndSonLink from './components/FormFatherAndSonLink'
 import probability from './components/probability'
@@ -52,7 +53,8 @@ import EffectiveTime from './form/EffectiveTime'
 const components = [
   CTable,
   CMenu,
-  CBreadcrumb
+  CBreadcrumb,
+  CCardList
 ]
 
 const install = function (Vue) {
@@ -70,6 +72,7 @@ export {
   CTable,
   install,
   CMenu,
+  CCardList,
   CBreadcrumb,
   ContentWrapper,
   RemoteSelect,
@@ -87,7 +90,6 @@ export {
   AppParams,
   AppParamsRead,
   TypeList,
-  CardList,
   FormFatherAndSonLink,
   probability,
   ClickEventSelector,

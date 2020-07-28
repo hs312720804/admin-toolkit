@@ -1,5 +1,5 @@
 <template>
-  <CardList
+  <c-card-list
     :gutter="14"
     :data="table.data"
     :selection-type="table.selectionType"
@@ -12,7 +12,7 @@
     <div class="card-content" slot="row" slot-scope="{row}">
         id: {{ row.id }}
     </div>
-  </CardList>
+  </c-card-list>
 </template>
 <script>
 export default {

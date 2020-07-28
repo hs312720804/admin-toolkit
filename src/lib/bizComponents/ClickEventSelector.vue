@@ -13,7 +13,7 @@
         :pagination="pagination"
       >
         <slot name="filter"></slot>
-        <CardList
+        <c-card-list
           class="click-event-list"
           :data="data"
           :selection-type="table.selectionType"
@@ -24,7 +24,7 @@
           <div class="card-content" slot="row" slot-scope="{row}" :title="row.label">
             {{ row.label }}
           </div>
-        </CardList>
+        </c-card-list>
       </ContentWrapper>
     </Dialog>
   </div>
