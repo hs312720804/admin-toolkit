@@ -43,7 +43,7 @@ import CooTable from './components/CooTable.vue'
 import CForm from './form/form/index'
 import CFormBoolean from './form/boolean/index'
 import String from './form/String'
-import Number from './form/Number'
+import CFormNumber from './form/number/index'
 import CFormEnum from './form/enum/index'
 import EnumList from './form/EnumList'
 import Any from './form/Any'
@@ -58,7 +58,8 @@ const components = [
   CActionList,
   CForm,
   CFormBoolean,
-  CFormEnum
+  CFormEnum,
+  CFormNumber
 ]
 
 const install = function (Vue) {
@@ -108,7 +109,7 @@ export {
   CForm,
   CFormBoolean,
   String,
-  Number,
+  CFormNumber,
   CFormEnum,
   EnumList,
   Any,

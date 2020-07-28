@@ -6,7 +6,7 @@
     </div>
     <c-form label-width="120px" ref="form" :readonly="isReadonly" :model="form" :rules="rules">
       <String label="姓名" prop="name" v-model="form.name" />
-      <Number label="年龄" v-model="form.age" />
+      <c-form-number label="年龄" v-model="form.age" />
       <c-form-enum
         label="性别"
         type="radio"

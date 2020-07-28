@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import formItemMixin from './formItemMixin'
+import formItemMixin from '../../formItemMixin'
 export default {
   mixins: [formItemMixin],
   data () {
