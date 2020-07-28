@@ -44,7 +44,7 @@ import CForm from './form/form/index'
 import CFormBoolean from './form/boolean/index'
 import String from './form/String'
 import Number from './form/Number'
-import Enum from './form/Enum'
+import CFormEnum from './form/enum/index'
 import EnumList from './form/EnumList'
 import Any from './form/Any'
 import Mac from './form/Mac'
@@ -55,9 +55,10 @@ const components = [
   CMenu,
   CBreadcrumb,
   CCardList,
-  CForm,
   CActionList,
-  CFormBoolean
+  CForm,
+  CFormBoolean,
+  CFormEnum
 ]
 
 const install = function (Vue) {
@@ -108,7 +109,7 @@ export {
   CFormBoolean,
   String,
   Number,
-  Enum,
+  CFormEnum,
   EnumList,
   Any,
   Mac,

@@ -16,8 +16,8 @@
     <c-form label-width="120px" :readonly="isReadonly"> 
       <String label="姓名" v-model="form.name" />
       <Number label="年龄" v-model="form.age" />
-      <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
-      <Enum label="岗位" v-model="form.job" :options="jobOptions" />
+      <c-form-enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
+      <c-form-enum label="岗位" v-model="form.job" :options="jobOptions" />
       <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
       <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
       <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />

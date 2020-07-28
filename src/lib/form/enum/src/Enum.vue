@@ -44,8 +44,9 @@
 </template>
 
 <script>
-import formItemMixin from './formItemMixin'
+import formItemMixin from '../../formItemMixin'
 export default {
+  name: 'CFormEnum',
   mixins: [formItemMixin],
   data () {
     return {

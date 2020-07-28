@@ -1,8 +1,8 @@
 <template>
   <div>
     <c-form label-width="120px" :readonly="isReadonly"> 
-      <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
-      <Enum label="岗位" v-model="form.job" :options="jobOptions" />
+      <c-form-enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
+      <c-form-enum label="岗位" v-model="form.job" :options="jobOptions" />
     </c-form>
   </div>
 </template>
