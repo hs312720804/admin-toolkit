@@ -17,8 +17,8 @@
       <Enum label="岗位" v-model="form.job" :options="jobOptions" />
       <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
       <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
-      <Boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
-      <Boolean label v-model="form.isIn">参加活动</Boolean>
+      <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
+      <c-form-boolean label v-model="form.isIn">参加活动</c-form-boolean>
       <Any label="是否已婚">
         <el-switch slot="edit" :value="!!form.isMarried" @input="form.isMarried = $event ? 1 : 0"></el-switch>
         <span slot="read">{{ form.isMarried ? '是' : '否' }}</span>

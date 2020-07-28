@@ -2,10 +2,10 @@ import CMenu from './components/menu/index'
 import CBreadcrumb from './components/breadcrumb/index'
 import CTable from './components/table/index'
 import CCardList from './components/card-list/index'
+import CActionList from './components/action-list/index'
 
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
-import CActionList from './components/action-list/index'
 import TagNav from './components/TagNav'
 import pop from './components/pop'
 import carousel from './components/Carousel'
@@ -41,7 +41,7 @@ import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
 import CooTable from './components/CooTable.vue'
 // DataForm
 import CForm from './form/form/index'
-import Boolean from './form/Boolean'
+import CFormBoolean from './form/boolean/index'
 import String from './form/String'
 import Number from './form/Number'
 import Enum from './form/Enum'
@@ -56,7 +56,8 @@ const components = [
   CBreadcrumb,
   CCardList,
   CForm,
-  CActionList
+  CActionList,
+  CFormBoolean
 ]
 
 const install = function (Vue) {
@@ -104,7 +105,7 @@ export {
   ContextMenu,
   VideoTags,
   CForm,
-  Boolean,
+  CFormBoolean,
   String,
   Number,
   Enum,
