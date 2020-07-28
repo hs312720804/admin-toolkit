@@ -17,7 +17,7 @@
           :icon="isCollapseMenu? 'iconfont el-icon-cc-indent' : 'iconfont el-icon-cc-outdent'"
           @click="toggleMenu"
         ></el-button>
-        <Breadcrumb class="breadcrumb" :items="breadcrumb"/>
+        <c-breadcrumb class="breadcrumb" :items="breadcrumb"/>
       </el-header>
       <el-main class="content">
         <router-view></router-view>

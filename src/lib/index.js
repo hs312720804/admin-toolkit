@@ -1,5 +1,5 @@
 import CMenu from './components/menu/index'
-import Breadcrumb from './components/Breadcrumb'
+import CBreadcrumb from './components/breadcrumb/index'
 import CTable from './components/table/index'
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
@@ -51,7 +51,8 @@ import EffectiveTime from './form/EffectiveTime'
 
 const components = [
   CTable,
-  CMenu
+  CMenu,
+  CBreadcrumb
 ]
 
 const install = function (Vue) {
@@ -69,7 +70,7 @@ export {
   CTable,
   install,
   CMenu,
-  Breadcrumb,
+  CBreadcrumb,
   ContentWrapper,
   RemoteSelect,
   ActionList,

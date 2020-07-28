@@ -12,6 +12,7 @@
 <script>
 import { Breadcrumb, BreadcrumbItem } from 'element-ui'
 export default {
+  name: 'CBreadcrumb',
   components: {
     'el-breadcrumb': Breadcrumb,
     'el-breadcrumb-item': BreadcrumbItem
