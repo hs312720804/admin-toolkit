@@ -4,7 +4,7 @@
       读写模式切换
       <el-switch v-model="isReadonly" />
     </div>
-    <DataForm label-width="120px" ref="form" :readonly="isReadonly" :model="form" :rules="rules">
+    <c-form label-width="120px" ref="form" :readonly="isReadonly" :model="form" :rules="rules">
       <String label="姓名" prop="name" v-model="form.name" />
       <Number label="年龄" v-model="form.age" />
       <Enum
@@ -26,7 +26,7 @@
       <el-form-item>
         <el-button type="primary" @click="saveForm">保存</el-button>
       </el-form-item>
-    </DataForm>
+    </c-form>
   </div>
 </template>
 

@@ -40,7 +40,7 @@ import InputIconEdit from './components/InputIconEdit'
 import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
 import CooTable from './components/CooTable.vue'
 // DataForm
-import DataForm from './form/DataForm'
+import CForm from './form/form/index'
 import Boolean from './form/Boolean'
 import String from './form/String'
 import Number from './form/Number'
@@ -54,7 +54,8 @@ const components = [
   CTable,
   CMenu,
   CBreadcrumb,
-  CCardList
+  CCardList,
+  CForm
 ]
 
 const install = function (Vue) {
@@ -101,7 +102,7 @@ export {
   BaseSelector,
   ContextMenu,
   VideoTags,
-  DataForm,
+  CForm,
   Boolean,
   String,
   Number,
@@ -120,4 +121,3 @@ export {
   CoocaaCascaderPanel,
   CooTable
 }
-

@@ -12,10 +12,10 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <c-form label-width="120px" :readonly="isReadonly"> 
       <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
       <Enum label="岗位" v-model="form.job" :options="jobOptions" />
-    </DataForm>
+    </c-form>
   </div>
 </template>
 

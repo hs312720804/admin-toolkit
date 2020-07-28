@@ -12,9 +12,9 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <c-form label-width="120px" :readonly="isReadonly"> 
       <String label="姓名" v-model="form.name" />
-    </DataForm>
+    </c-form>
   </div>
 </template>
 

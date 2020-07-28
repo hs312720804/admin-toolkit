@@ -13,7 +13,7 @@
 <template>
   <div>
     <div class="switch-readonly">读写模式切换 <el-switch v-model="isReadonly" /></div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <c-form label-width="120px" :readonly="isReadonly"> 
       <String label="姓名" v-model="form.name" />
       <Number label="年龄" v-model="form.age" />
       <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
@@ -24,7 +24,7 @@
       <Boolean label="" v-model="form.isIn">
         参加活动
       </Boolean>
-    </DataForm>
+    </c-form>
   </div>
 </template>
 

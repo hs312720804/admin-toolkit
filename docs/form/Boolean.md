@@ -12,12 +12,12 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
+    <c-form label-width="120px" :readonly="isReadonly"> 
       <Boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
       <Boolean label="" v-model="form.isIn">
         参加活动
       </Boolean>
-    </DataForm>
+    </c-form>
   </div>
 </template>
 

@@ -13,9 +13,9 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
+    <c-form label-width="120px" :model="form"  :readonly="isReadonly">
       <Mac label="MAC" v-model="form.mac" prop="mac" type="textarea"/>
-    </DataForm>
+    </c-form>
   </div>
 </template>
 
