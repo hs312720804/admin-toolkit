@@ -3641,6 +3641,7 @@
 <script>
 
 export default {
+  name: 'CIconSelect',
   props: {
     title: {
       type: String
@@ -3735,5 +3736,5 @@ li {
   display: none;
 }
 </style>
-<style scoped src="../../assets/icon/iconfont.css">
+<style scoped src="../../../../assets/icon/iconfont.css">
 </style>

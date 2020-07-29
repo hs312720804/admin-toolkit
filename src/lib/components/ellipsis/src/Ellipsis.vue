@@ -15,7 +15,7 @@
 export default {
   props: ['content', 'width', 'height'],
   computed: {
-    style() {
+    style () {
       const style = {}
       const { width, height } = this
       if (width !== undefined) {

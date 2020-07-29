@@ -11,7 +11,7 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <IconSelect @get-icon="getIcon" :title="title" :isUseInitialIcon="false" @go-back="goBack">
+      <c-icon-select @get-icon="getIcon" :title="title" :isUseInitialIcon="false" @go-back="goBack">
         <ul slot="addIcon">
           <li>
             <span class="icon iconfont el-icon-cc-denglu"></span>
@@ -22,7 +22,7 @@
             <div class="name">投放方案</div>
           </li>
         </ul>
-      </IconSelect>
+      </c-icon-select>
     </div>
   </div>
 </template>
