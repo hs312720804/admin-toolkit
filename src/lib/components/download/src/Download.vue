@@ -8,6 +8,7 @@
 </template>
 <script>
 export default {
+  name: 'CDownload',
   props: {
     downloadUrl: {
       type: String

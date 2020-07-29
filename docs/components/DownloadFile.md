@@ -1,5 +1,5 @@
 # 文件下载
-`DownloadFile`
+`c-download`
 通过接口请求数据，然后触发下载
 
 ## 示例
@@ -13,7 +13,7 @@
 ```vue
 <template>
   <div>
-    <DownloadFile @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</DownloadFile>
+    <c-download @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</c-download>
   </div>
 </template>
 <script>

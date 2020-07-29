@@ -14,7 +14,7 @@ import TypeList from './components/TypeList'
 import GateSchemaForm from './components/GateSchemaForm'
 import CIconSelect from './components/icon-select/index'
 import ContentCard from './components/ContentCard'
-import DownloadFile from './components/DownloadFile'
+import CDownload from './components/download/index'
 import CUpload from './components/upload/index'
 import AppParams from './bizComponents/AppParams'
 import AppParamsRead from './bizComponents/AppParamsRead'
@@ -69,7 +69,8 @@ const components = [
   CTagNav,
   CCarousel,
   CEllipsis,
-  CIconSelect
+  CIconSelect,
+  CDownload
 ]
 
 const install = function (Vue) {
@@ -100,7 +101,7 @@ export {
   CEllipsis,
   CIconSelect,
   ContentCard,
-  DownloadFile,
+  CDownload,
   CUpload,
   AppParams,
   AppParamsRead,

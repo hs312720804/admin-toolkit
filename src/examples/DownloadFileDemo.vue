@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DownloadFile @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</DownloadFile>
+    <c-download @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</c-download>
   </div>
 </template>
 <script>
