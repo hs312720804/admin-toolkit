@@ -19,6 +19,7 @@ const STATUS = {
   uploading: 'uploading'
 }
 export default {
+  name: 'CUpload',
   data () {
     return {
       fileList: [],

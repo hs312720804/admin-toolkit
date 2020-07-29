@@ -16,7 +16,7 @@
 <template>
   <div>
     <h2>简单上传</h2>
-    <Upload
+    <c-upload
       ref="upload"
       :multiple="true"
       :min-height="100"
@@ -44,7 +44,7 @@
           />
         </div>
       </div>
-    </Upload>
+    </c-upload>
   </div>
 </template>
 

@@ -15,7 +15,7 @@ import GateSchemaForm from './components/GateSchemaForm'
 import IconSelect from './components/IconSelect'
 import ContentCard from './components/ContentCard'
 import DownloadFile from './components/DownloadFile'
-import Upload from './components/Upload'
+import CUpload from './components/upload/index'
 import AppParams from './bizComponents/AppParams'
 import AppParamsRead from './bizComponents/AppParamsRead'
 import utils from './utils'
@@ -64,7 +64,8 @@ const components = [
   CFormAny,
   CFormMac,
   CFormEffectiveTime,
-  CFormEnumList
+  CFormEnumList,
+  CUpload
 ]
 
 const install = function (Vue) {
@@ -96,7 +97,7 @@ export {
   IconSelect,
   ContentCard,
   DownloadFile,
-  Upload,
+  CUpload,
   AppParams,
   AppParamsRead,
   TypeList,

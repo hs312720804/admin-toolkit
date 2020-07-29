@@ -64,7 +64,7 @@ export default {
       deep: true
     }
   },
-  data() {
+  data () {
     return {
       loading: false,
       tagDataBak: [],
