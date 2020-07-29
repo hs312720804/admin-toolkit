@@ -9,7 +9,7 @@ import RemoteSelect from './components/RemoteSelect'
 import CTagNav from './components/tag-nav/index'
 import pop from './components/pop'
 import CCarousel from './components/carousel/index'
-import ContentEllipsis from './components/ContentEllipsis'
+import CEllipsis from './components/ellipsis/index'
 import TypeList from './components/TypeList'
 import GateSchemaForm from './components/GateSchemaForm'
 import IconSelect from './components/IconSelect'
@@ -67,7 +67,8 @@ const components = [
   CFormEnumList,
   CUpload,
   CTagNav,
-  CCarousel
+  CCarousel,
+  CEllipsis
 ]
 
 const install = function (Vue) {
@@ -95,7 +96,7 @@ export {
   utils,
   pop,
   CCarousel,
-  ContentEllipsis,
+  CEllipsis,
   IconSelect,
   ContentCard,
   DownloadFile,
