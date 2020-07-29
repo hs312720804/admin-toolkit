@@ -91,6 +91,7 @@ class TagHistory {
 }
 
 export default {
+  name: 'CTagNav',
   data () {
     return {
       tags: [],

@@ -6,7 +6,7 @@ import CActionList from './components/action-list/index'
 
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
-import TagNav from './components/TagNav'
+import CTagNav from './components/tag-nav/index'
 import pop from './components/pop'
 import carousel from './components/Carousel'
 import ContentEllipsis from './components/ContentEllipsis'
@@ -65,7 +65,8 @@ const components = [
   CFormMac,
   CFormEffectiveTime,
   CFormEnumList,
-  CUpload
+  CUpload,
+  CTagNav
 ]
 
 const install = function (Vue) {
@@ -88,7 +89,7 @@ export {
   ContentWrapper,
   RemoteSelect,
   CActionList,
-  TagNav,
+  CTagNav,
   GateSchemaForm,
   utils,
   pop,

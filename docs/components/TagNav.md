@@ -12,7 +12,7 @@
 ### 代码  
 ```vue
 <template>
-  <TagNav />
+  <c-tag-nav />
 </template>
 ```
 
