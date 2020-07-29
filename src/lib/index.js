@@ -7,7 +7,7 @@ import CActionList from './components/action-list/index'
 import ContentWrapper from './components/ContentWrapper'
 import RemoteSelect from './components/RemoteSelect'
 import CTagNav from './components/tag-nav/index'
-import pop from './components/pop'
+import CPop from './components/pop/index'
 import CCarousel from './components/carousel/index'
 import CEllipsis from './components/ellipsis/index'
 import TypeList from './components/TypeList'
@@ -70,7 +70,8 @@ const components = [
   CCarousel,
   CEllipsis,
   CIconSelect,
-  CDownload
+  CDownload,
+  CPop
 ]
 
 const install = function (Vue) {
@@ -96,7 +97,7 @@ export {
   CTagNav,
   GateSchemaForm,
   utils,
-  pop,
+  CPop,
   CCarousel,
   CEllipsis,
   CIconSelect,

@@ -31,10 +31,9 @@
     <RemoteSelectDemo />
 
       <h2>pop</h2>
-      <pop
-              :title="pop.title">
-
-      </pop>
+      <c-pop
+        :title="pop.title">
+      </c-pop>
       <h2>Dropdown</h2>
       <dropdown :droplist = dropdown>
 

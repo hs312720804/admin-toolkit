@@ -2,18 +2,19 @@
     <div>
     <Button type="primary" @click="showPop">{{ title }}</Button>
     <Dialog
-            :title="title"
-            :visible.sync="showDialog"
-            width="50vw"
+      :title="title"
+      :visible.sync="showDialog"
+      width="50vw"
     >
-        <div>woshitachuang</div>
+      <div>woshitachuang</div>
     </Dialog>
     </div>
 </template>
 
 <script>
 import { Button, Dialog } from 'element-ui'
-export default{
+export default {
+  name: 'CPop',
   components: {
     Button,
     Dialog
