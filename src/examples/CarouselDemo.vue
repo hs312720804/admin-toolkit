@@ -1,5 +1,5 @@
 <template>
-        <carousel :carouselList = carousel />
+  <c-carousel :carouselList = carousel />
 </template>
 <script>
 export default {

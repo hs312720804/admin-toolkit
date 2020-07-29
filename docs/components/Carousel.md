@@ -10,7 +10,7 @@
 ## 代码
 ```vue
 <template>
-  <carousel :carouselList = carousel />
+  <c-carousel :carouselList = carousel />
 </template>
 <script>
 export default {

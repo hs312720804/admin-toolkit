@@ -42,9 +42,9 @@
     <h2>
       Carousel
     </h2>
-    <carousel :carouselList = carousel>
+    <c-carousel :carouselList = carousel>
 
-    </carousel>
+    </c-carousel>
   </div>
 </template>
 
