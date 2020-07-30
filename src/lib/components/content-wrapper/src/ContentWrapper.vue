@@ -2,6 +2,7 @@
 import GateSchemaForm from './GateSchemaForm'
 import { Pagination } from 'element-ui'
 export default {
+  name: 'CContentWrapper',
   data () {
     return {
       // 与表单绑定的 filter对象

@@ -1,5 +1,5 @@
 <template>
-  <ContentWrapper
+  <c-content-wrapper
     :filter="filter"
     :filterSchema="filterSchema"
     :pagination="pagination"
@@ -7,7 +7,7 @@
     @filter-reset="handleFilterReset"
   >
     <Table :props="table.props" :header="table.header" :data="table.data" />
-  </ContentWrapper>
+  </c-content-wrapper>
 </template>
 
 <script>

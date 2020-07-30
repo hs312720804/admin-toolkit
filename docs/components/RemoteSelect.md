@@ -21,7 +21,7 @@
     @selection-remove="handleTableRowSelectionRemove"
     @selection-clear="handleRemoteSelectClear"
   >
-    <ContentWrapper
+    <c-content-wrapper
       :filter="remoteSelect.filter"
       :filter-schema="remoteSelect.filterSchema"
       :pagination="remoteSelect.pagination"
@@ -37,7 +37,7 @@
         @row-selection-remove="handleTableRowSelectionRemove"
         @all-row-selection-change="handleTableAllRowSelectionChange"
       />
-    </ContentWrapper>
+    </c-content-wrapper>
   </c-remote-select>
 </template>
 <script>

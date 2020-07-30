@@ -4,7 +4,7 @@ import CTable from './components/table/index'
 import CCardList from './components/card-list/index'
 import CActionList from './components/action-list/index'
 
-import ContentWrapper from './components/ContentWrapper'
+import CContentWrapper from './components/content-wrapper/index'
 import CRemoteSelect from './components/remote-select/index'
 import CTagNav from './components/tag-nav/index'
 import CPop from './components/pop/index'
@@ -74,7 +74,8 @@ const components = [
   CPop,
   CCard,
   CRemoteSelect,
-  CTypeList
+  CTypeList,
+  CContentWrapper
 ]
 
 const install = function (Vue) {
@@ -94,7 +95,7 @@ export {
   CMenu,
   CCardList,
   CBreadcrumb,
-  ContentWrapper,
+  CContentWrapper,
   CRemoteSelect,
   CActionList,
   CTagNav,

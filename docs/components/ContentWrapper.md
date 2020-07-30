@@ -1,5 +1,5 @@
 # 内容包装器    
-`ContentWrapper`  
+`c-content-wrapper`  
 这个组件会给内容列表加上，推荐使用admin-base中的ab-list-layout
 * 过滤表单  
 * 分页
@@ -19,7 +19,7 @@
 ### 代码  
 ```vue
 <template>
-    <ContentWrapper 
+    <c-content-wrapper
       :filter="filter"
       :filterSchema="filterSchema"
       :pagination="pagination"
@@ -31,7 +31,7 @@
         :header="table.header"
         :data="table.data"
       />
-    </ContentWrapper>
+    </c-content-wrapper>
 </template>
 
 <script>

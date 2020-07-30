@@ -9,7 +9,7 @@
       :append-to-body="true"
       :fullscreen="fullscreen"
     >
-      <ContentWrapper
+      <c-content-wrapper
         :pagination="pagination"
       >
         <slot name="filter"></slot>
@@ -25,7 +25,7 @@
             {{ row.label }}
           </div>
         </c-card-list>
-      </ContentWrapper>
+      </c-content-wrapper>
     </Dialog>
   </div>
 </template>
