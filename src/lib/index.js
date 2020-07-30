@@ -10,7 +10,7 @@ import CTagNav from './components/tag-nav/index'
 import CPop from './components/pop/index'
 import CCarousel from './components/carousel/index'
 import CEllipsis from './components/ellipsis/index'
-import TypeList from './components/TypeList'
+import CTypeList from './components/type-list/index'
 import GateSchemaForm from './components/GateSchemaForm'
 import CIconSelect from './components/icon-select/index'
 import CCard from './components/card/index'
@@ -73,7 +73,8 @@ const components = [
   CDownload,
   CPop,
   CCard,
-  CRemoteSelect
+  CRemoteSelect,
+  CTypeList
 ]
 
 const install = function (Vue) {
@@ -108,7 +109,7 @@ export {
   CUpload,
   AppParams,
   AppParamsRead,
-  TypeList,
+  CTypeList,
   FormFatherAndSonLink,
   probability,
   ClickEventSelector,
