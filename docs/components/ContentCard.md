@@ -1,5 +1,5 @@
 # 标题返回
-`ContentCard`   
+`c-card`   
 在模版中是 content-card 组件
 
 ## 示例  
@@ -15,9 +15,9 @@
   <div>
     <el-button type="primary" v-show="isShowMainPage" @click="openTableList">打开表格</el-button>
     <div v-show="!isShowMainPage"></div>
-      <content-card :title="title" @go-back="goBack">
+      <c-card :title="title" @go-back="goBack">
         <table-demo></table-demo>
-      </content-card>
+      </c-card>
     </div>
   </div>
 </template>

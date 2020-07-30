@@ -2,7 +2,7 @@
   <div>
     <el-button type="primary" v-show="isShowMainPage" @click="openTableList">打开表格</el-button>
     <div v-show="!isShowMainPage">
-      <content-card :title="title" @go-back="goBack">
+      <c-card :title="title" @go-back="goBack">
         <table-demo></table-demo>
          <div class="sub-foot" slot="footer">
           <el-button
@@ -12,7 +12,7 @@
           type="primary"
         >提交审核</el-button>
          </div>
-      </content-card>
+      </c-card>
     </div>
   </div>
 </template>

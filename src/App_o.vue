@@ -35,31 +35,27 @@
         :title="pop.title">
       </c-pop>
       <h2>Dropdown</h2>
-      <dropdown :droplist = dropdown>
-
-      </dropdown>
+      <c-dropdown :droplist = dropdown></c-dropdown>
     <h2>
       Carousel
     </h2>
-    <c-carousel :carouselList = carousel>
-
-    </c-carousel>
+    <c-carousel :carouselList = carousel></c-carousel>
   </div>
 </template>
 
 <script>
-import pop from '@/lib/components/pop.vue'
-import Dropdown from '@/lib/components/Dropdown.vue'
-import Carousel from '@/lib/components/Carousel.vue'
+import CPop from '@/lib/components/pop/index'
+import CDropdown from '@/lib/components/dropdown/index'
+import CCarousel from '@/lib/components/carousel/index'
 import NumberInfo from '@/lib/components/NumberInfo'
-import Ellipsis from './lib/components/Ellipsis'
+import Ellipsis from './lib/components/ellipsis/index'
 
 export default {
   name: 'app',
   components: {
-    pop,
-    Dropdown,
-    Carousel,
+    CPop,
+    CDropdown,
+    CCarousel,
     NumberInfo,
     Ellipsis
 

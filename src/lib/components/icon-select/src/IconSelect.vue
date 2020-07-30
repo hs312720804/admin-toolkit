@@ -1,5 +1,5 @@
 <template>
-  <content-card :title="title" @go-back="goBack">
+  <c-card :title="title" @go-back="goBack">
     <div slot="actions" class="go-back">
       <el-button type="text" size="mini" :icon='goBackIcon' @click="$emit('go-back')">返回</el-button>
     </div>
@@ -3636,7 +3636,7 @@
         <slot name="addIcon"></slot>
       </div>
     </div>
-  </content-card>
+  </c-card>
 </template>
 <script>
 

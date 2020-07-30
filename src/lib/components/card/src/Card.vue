@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  name: 'CCard',
   props: ['title'],
   data () {
     return {
