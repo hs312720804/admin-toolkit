@@ -1,5 +1,5 @@
 <template>
-  <RemoteSelect
+  <c-remote-select
     :title="remoteSelect.title"
     :selected="remoteSelect.selected"
     @selection-remove="handleTableRowSelectionRemove"
@@ -22,7 +22,7 @@
         @all-row-selection-change="handleTableAllRowSelectionChange"
       />
     </ContentWrapper>
-  </RemoteSelect>
+  </c-remote-select>
 </template>
 <script>
 import _ from 'gateschema'

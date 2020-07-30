@@ -1,5 +1,5 @@
 # 远程数据选择      
-`RemoteSelect`  
+`c-remote-select`  
 用于在表单中选择远程数据记录  
 
 ## 示例  
@@ -15,7 +15,7 @@
 ### 代码  
 ```vue
 <template>
-  <RemoteSelect
+  <c-remote-select
     :title="remoteSelect.title" 
     :selected="remoteSelect.selected"
     @selection-remove="handleTableRowSelectionRemove"
@@ -38,7 +38,7 @@
         @all-row-selection-change="handleTableAllRowSelectionChange"
       />
     </ContentWrapper>
-  </RemoteSelect>
+  </c-remote-select>
 </template>
 <script>
 import _ from 'gateschema'

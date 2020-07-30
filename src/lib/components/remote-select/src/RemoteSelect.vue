@@ -35,6 +35,7 @@
 <script>
 import { Button, Tag, Dialog } from 'element-ui'
 export default {
+  name: 'CRemoteSelect',
   components: {
     Button,
     Dialog,
@@ -58,13 +59,13 @@ export default {
     },
     showSelection: {
       type: Boolean,
-      default() {
+      default () {
         return true
       }
     },
     showClearSelectionBtn: {
       type: Boolean,
-      default() {
+      default () {
         return true
       }
     }
