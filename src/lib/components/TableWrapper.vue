@@ -1,8 +1,8 @@
 <template>
-  <div class="cc-table-wrapper">
+  <div class="c-table-wrapper">
     <slot></slot>
     <div
-      class="cc-table-context-menu"
+      class="c-table-context-menu"
       :style="menuStyle"
     >
       <ul class="column-status">
@@ -48,12 +48,12 @@ export default {
     addEventListener () {
       const $el = this.$el
       $el.querySelector('thead').addEventListener('contextmenu', this.handleShowContextMenu)
-      $el.querySelector('.cc-table-context-menu').addEventListener('mouseleave', this.handleHideContextmenu)
+      $el.querySelector('.c-table-context-menu').addEventListener('mouseleave', this.handleHideContextmenu)
     },
     removeEventListener () {
       const $el = this.$el
       $el.querySelector('thead').removeEventListener('contextmenu', this.handleShowContextMenu)
-      $el.querySelector('.cc-table-context-menu').removeEventListener('mouseleave', this.handleHideContextmenu)
+      $el.querySelector('.c-table-context-menu').removeEventListener('mouseleave', this.handleHideContextmenu)
     }
   },
   mounted () {
@@ -66,12 +66,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.cc-table-context-menu
+.c-table-context-menu
   position fixed
   background #fff
   border 1px solid #ccc
   font-size 14px
-.cc-table-wrapper
+.c-table-wrapper
   position relative
 .column-status
   margin 0

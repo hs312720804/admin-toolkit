@@ -4,7 +4,7 @@
             <span>概率总数统计：</span>
             <el-input style="width: 200px;" v-model="totalProbability" :disabled="true">{{totalProbability}}</el-input>
         </div>
-        <probability :formdata="formData"  @probability-blur="probabilityBlur"></probability>
+        <c-probability :formdata="formData"  @probability-blur="probabilityBlur"></c-probability>
     </div>
 </template>
 

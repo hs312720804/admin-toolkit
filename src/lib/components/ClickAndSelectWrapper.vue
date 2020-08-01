@@ -39,7 +39,7 @@ export default {
     },
     fullscreen: {
       type: Boolean,
-      default() {
+      default () {
         return true
       }
     },
@@ -49,7 +49,7 @@ export default {
     customClass: String,
     showClose: {
       type: Boolean,
-      default() {
+      default () {
         return true
       }
     }
@@ -72,9 +72,9 @@ export default {
     handleSelectCancel () {
       this.showDialog = false
       this.$emit('select-cancel')
-    },
+    }
   },
-  created() {
+  created () {
   }
 }
 </script>

@@ -20,7 +20,7 @@ import CAppParams from './bizComponents/app-params/index'
 import AppParamsRead from './bizComponents/AppParamsRead'
 import utils from './utils'
 import FormFatherAndSonLink from './components/FormFatherAndSonLink'
-import probability from './components/probability'
+import CProbability from './components/probability/index'
 import ClickEventSelector from './bizComponents/ClickEventSelector'
 import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
 import InputOrder from './components/InputOrder'
@@ -113,7 +113,7 @@ export {
   AppParamsRead,
   CTypeList,
   FormFatherAndSonLink,
-  probability,
+  CProbability,
   ClickEventSelector,
   ClickAndSelectWrapper,
   InputOrder,

@@ -1,5 +1,5 @@
 # 表格概率修改
-`probability`
+`c-probability`
 封装了表格概率修改的组件，使用的过程中，需要自定义表格的数据和概率输入框失焦的方法
 
 
@@ -19,7 +19,7 @@
             <span>概率总数统计：</span>
             <el-input style="width: 200px;" v-model="totalProbability" :disabled="true">{{totalProbability}}</el-input>
         </div>
-        <probability :formdata="formData"  @probability-blur="probabilityBlur"></probability>
+        <c-probability :formdata="formData"  @probability-blur="probabilityBlur"></c-probability>
     </div>
 </template>
 
