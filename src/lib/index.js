@@ -16,7 +16,7 @@ import CIconSelect from './components/icon-select/index'
 import CCard from './components/card/index'
 import CDownload from './components/download/index'
 import CUpload from './components/upload/index'
-import AppParams from './bizComponents/AppParams'
+import CAppParams from './bizComponents/app-params/index'
 import AppParamsRead from './bizComponents/AppParamsRead'
 import utils from './utils'
 import FormFatherAndSonLink from './components/FormFatherAndSonLink'
@@ -109,7 +109,7 @@ export {
   CCard,
   CDownload,
   CUpload,
-  AppParams,
+  CAppParams,
   AppParamsRead,
   CTypeList,
   FormFatherAndSonLink,
