@@ -1,16 +1,3 @@
-# 点击图标修改单元格    
-`InputIconEdit`  
-
-## 示例  
-
-### 效果
-
-<Demo>
-  <InputIconEditDemo />
-</Demo>
-
-### 代码  
-```vue
 <template>
   <div>
     <c-table
@@ -22,7 +9,7 @@
 
 <script>
 import CTable from '../lib/components/table/index'
-import InputIconEdit from '../lib/components/InputIconEdit'
+import CCellEdit from '../lib/components/cell-edit/index'
 export default {
   components: {
     CTable
@@ -38,7 +25,7 @@ export default {
             prop: 'name',
             render: (h, { row }) => {
               return h(
-                InputIconEdit,
+                CCellEdit,
                 {
                   props: {
                     initValue: row.name
@@ -77,19 +64,3 @@ export default {
 
 <style lang="stylus" scoped>
 </style>
-```
-
-
-## 属性  
-
-| 名称 | 类型 | 描述 | 例子 |  
-| ---- | ---- | ---- | ---- |
-| init-value | String, Number, Boolean | input关联的v-model初始值 | dsp广告投放修改订单名称 |
-
-## 事件
-| 名称 | 参数 | 描述 |  
-| ---- | ---- | ---- |
-| input | value | input的事件回调 |
-| blur | value | 输入框失焦的事件回调 |
-
-<Comment />

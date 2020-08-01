@@ -44,7 +44,7 @@ import AddMultiObjDemo from './AddMultiObjDemo'
 import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
-import InputIconEditDemo from './InputIconEditDemo'
+import CellEditDemo from './CellEditDemo'
 import CoocaaCascaderPanelDemo from './CoocaaCascaderPanelDemo'
 import CooTableDemo from './CooTableDemo.vue'
 
@@ -95,7 +95,7 @@ export {
   ProductListDemo,
   VideoFilterDemo,
   AddFormObjDemo,
-  InputIconEditDemo,
+  CellEditDemo,
   CoocaaCascaderPanelDemo,
   CooTableDemo
 }

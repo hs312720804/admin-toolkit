@@ -47,7 +47,7 @@ module.exports = {
               // 'components/probability.md',
               'components/ClickAndSelectWrapper.md',
               'components/BaseSelector.md',
-              'components/InputIconEdit.md',
+              'components/CellEdit.md',
               'components/InputOrder.md',
               'components/InputPositiveInt.md',
               'components/InputPosibility.md',

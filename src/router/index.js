@@ -36,12 +36,12 @@ const routes = [
         }
       },
       {
-        path: 'InputIconEdit',
-        name: 'InputIconEdit',
-        component: demos.InputIconEditDemo,
+        path: 'CellEdit',
+        name: 'CellEdit',
+        component: demos.CellEditDemo,
         meta: {
           title: '表格可编辑单元',
-          route: 'InputIconEdit'
+          route: 'CellEdit'
         }
       },
       {

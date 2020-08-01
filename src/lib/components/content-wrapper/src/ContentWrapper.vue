@@ -1,5 +1,5 @@
 <script>
-import GateSchemaForm from './GateSchemaForm'
+import GateSchemaForm from '../../GateSchemaForm'
 import { Pagination } from 'element-ui'
 export default {
   name: 'CContentWrapper',

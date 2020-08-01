@@ -36,7 +36,7 @@ import FixHeaderAndFooter from './components/FixHeaderAndFooter'
 import ProductList from './components/ProductList'
 import VideoFilter from './components/VideoFilter'
 import AddFormObj from './components/AddFormObj'
-import InputIconEdit from './components/InputIconEdit'
+import CCellEdit from './components/cell-edit/index'
 import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
 import CooTable from './components/CooTable.vue'
 // DataForm
@@ -75,7 +75,8 @@ const components = [
   CCard,
   CRemoteSelect,
   CTypeList,
-  CContentWrapper
+  CContentWrapper,
+  CCellEdit
 ]
 
 const install = function (Vue) {
@@ -137,7 +138,7 @@ export {
   ProductList,
   VideoFilter,
   AddFormObj,
-  InputIconEdit,
+  CCellEdit,
   CoocaaCascaderPanel,
   CooTable
 }
