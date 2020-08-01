@@ -14,13 +14,13 @@
 ### 代码
 ``` vue
 <template>
-    <div class="probability">
-        <div class="probability-count">
-            <span>概率总数统计：</span>
-            <el-input style="width: 200px;" v-model="totalProbability" :disabled="true">{{totalProbability}}</el-input>
-        </div>
-        <c-probability :formdata="formData"  @probability-blur="probabilityBlur"></c-probability>
+  <div class="probability">
+    <div class="probability-count">
+      <span>概率总数统计：</span>
+      <el-input style="width: 200px;" v-model="totalProbability" :disabled="true">{{totalProbability}}</el-input>
     </div>
+    <c-probability :formdata="formData"  @probability-blur="probabilityBlur"></c-probability>
+  </div>
 </template>
 
 <script>

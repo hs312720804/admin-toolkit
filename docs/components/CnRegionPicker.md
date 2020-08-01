@@ -1,5 +1,5 @@
 # 中国地区选择    
-`CnRegionPicker`  
+`c-cn-region-picker`  
 用于中国地区城市选择，地区码是酷开的  
 
 ## 示例
@@ -15,11 +15,11 @@
 ### 代码  
 ```vue
 <template>
-    <RegionPicker
+    <c-cn-region-picker
       :pickedCity="pickedCity"
       @on-pick-city="pickedCity = $event"
       :showCloseBtn="true"
-    ></RegionPicker>
+    ></c-cn-region-picker>
 </template>
 
 <script>

@@ -30,7 +30,7 @@ import OrderableTable from './components/OrderableTable'
 import BaseSelector from './components/BaseSelector'
 import ContextMenu from './components/ContextMenu'
 import VideoTags from './components/VideoTags'
-import CnRegionPicker from './components/CnRegionPicker'
+import CRegionPickerCn from './components/region-picker/index'
 import AddMultiObj from './components/AddMultiObj'
 import FixHeaderAndFooter from './components/FixHeaderAndFooter'
 import ProductList from './components/ProductList'
@@ -76,7 +76,8 @@ const components = [
   CRemoteSelect,
   CTypeList,
   CContentWrapper,
-  CCellEdit
+  CCellEdit,
+  CRegionPickerCn
 ]
 
 const install = function (Vue) {
@@ -132,7 +133,7 @@ export {
   CFormAny,
   CFormMac,
   CFormEffectiveTime,
-  CnRegionPicker,
+  CRegionPickerCn,
   AddMultiObj,
   FixHeaderAndFooter,
   ProductList,
