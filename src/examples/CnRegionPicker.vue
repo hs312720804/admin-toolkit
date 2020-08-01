@@ -10,10 +10,18 @@
         :placeholder="placeholder"
         :style="`width: ${width}px;`"
       />
-      <span class="input-close" v-if="showCloseBtn" @click.stop.prevent="handleAllStatus(false)"></span>
+      <span
+        class="input-close"
+        v-if="showCloseBtn"
+        @click.stop.prevent="handleAllStatus(false)"
+      ></span>
     </div>
     <transition name="fade">
-      <div class="picker-bg" v-show="showPicker" @click.stop.self="closeModalPicker">
+      <div
+        class="picker-bg"
+        v-show="showPicker"
+        @click.stop.self="closeModalPicker"
+      >
         <!-- 此处不能prevent -->
         <div class="picker">
           <div class="container">
@@ -23,11 +31,20 @@
                 <button
                   class="clear warn color-button"
                   @click.stop.prevent="handleAllStatus(false)"
-                >全部清空</button>
-                <button @click.stop.prevent="handleAllStatus(true)">全选</button>
+                >
+                  全部清空
+                </button>
+                <button @click.stop.prevent="handleAllStatus(true)">
+                  全选
+                </button>
                 <button @click.stop.prevent="inverse">反选</button>
-                <button class="confirm color-button" @click.stop.prevent="pick">确认</button>
-                <div class="close" @click.stop.prevent="showPicker = false"></div>
+                <button class="confirm color-button" @click.stop.prevent="pick">
+                  确认
+                </button>
+                <div
+                  class="close"
+                  @click.stop.prevent="showPicker = false"
+                ></div>
               </div>
               <!-- <div class="sort">
                 <span
@@ -43,9 +60,13 @@
                 <div v-for="item in originCityData" :key="item.id">
                   <template v-if="item.parent === 0">
                     <div class="province">
-                      {{item.name}}
-                      <span @click="handleProvinceStatus(item, true)">全选</span>
-                      <span @click="handleProvinceStatus(item, false)">清空</span>
+                      {{ item.name }}
+                      <span @click="handleProvinceStatus(item, true)"
+                        >全选</span
+                      >
+                      <span @click="handleProvinceStatus(item, false)"
+                        >清空</span
+                      >
                       <!-- <label>
                         <img
                           class="check-box"
@@ -61,14 +82,30 @@
                     </div>
                     <div class="city">
                       <template v-for="cityItem in originCityData">
-                        <div v-if="cityItem.parent > 0 && cityItem.parent === item.regionId" class="city-item" :key="cityItem.index">
+                        <div
+                          v-if="
+                            cityItem.parent > 0 &&
+                              cityItem.parent === item.regionId
+                          "
+                          class="city-item"
+                          :key="cityItem.index"
+                        >
                           <label>
                             <img
                               class="check-box"
-                              :src="`${cityStatus['c' + cityItem.regionId] ? 'https://images.vrm.cn/2018/12/21/checked.png' : 'https://images.vrm.cn/2018/12/21/unchecked.png'}`"
+                              :src="
+                                `${
+                                  cityStatus['c' + cityItem.regionId]
+                                    ? 'https://images.vrm.cn/2018/12/21/checked.png'
+                                    : 'https://images.vrm.cn/2018/12/21/unchecked.png'
+                                }`
+                              "
                             />
-                            <input type="checkbox" v-model="cityStatus['c' + cityItem.regionId]" />
-                            {{cityItem.name}}
+                            <input
+                              type="checkbox"
+                              v-model="cityStatus['c' + cityItem.regionId]"
+                            />
+                            {{ cityItem.name }}
                           </label>
                         </div>
                       </template>
@@ -85,7 +122,7 @@
 </template>
 
 <script>
-import regions from "../assets/cc-regions";
+import regions from '../assets/cc-regions'
 const provinceData = regions.filter(item => {
   return item.parent === 0
 })
@@ -96,8 +133,8 @@ const provinceLength = provinceData.length
 const cityLength = cityData.length
 
 export default {
-  name: "CnRegionPicker",
-  data() {
+  name: 'CRegionPickerCn',
+  data () {
     return {
       showPicker: false,
       originCityData: Object.freeze(regions),
@@ -107,42 +144,42 @@ export default {
       // cityStatus: [...Array(cityLength)].map(_ => false),
       citySelect: [],
       letter: [
-        "全部",
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z"
+        '全部',
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+        'O',
+        'P',
+        'Q',
+        'R',
+        'S',
+        'T',
+        'U',
+        'V',
+        'W',
+        'X',
+        'Y',
+        'Z'
       ],
-      activeLetter: "全部",
+      activeLetter: '全部',
       pickData: []
-    };
+    }
   },
   props: {
     placeholder: {
       type: [String],
-      default: "选择城市"
+      default: '选择城市'
     },
     showCloseBtn: {
       type: [Boolean],
@@ -168,17 +205,17 @@ export default {
     pick () {
       let checkedCity = [] // 勾选的城市index
       let outPutArr = []
-      Object.keys(this.cityStatus).forEach((key) => {
+      Object.keys(this.cityStatus).forEach(key => {
         if (this.cityStatus[key]) {
           checkedCity.push(parseInt(key.slice(1)))
         }
-      });
+      })
       regions.forEach(item => {
         if (checkedCity.indexOf(item.regionId) !== -1) {
           outPutArr.push(item)
         }
-      });
-      this.$emit("on-pick-city", outPutArr)
+      })
+      this.$emit('on-pick-city', outPutArr)
       this.pickData = outPutArr
       this.showPicker = false
     },
@@ -189,10 +226,10 @@ export default {
       // this.provinceStatus.forEach((item, index) => {
       //   this.$set(this.provinceStatus, index, !item);
       // });
-      Object.keys(this.provinceStatus).forEach((key) => {
+      Object.keys(this.provinceStatus).forEach(key => {
         this.provinceStatus[key] = !this.provinceStatus[key]
       })
-      Object.keys(this.cityStatus).forEach((key) => {
+      Object.keys(this.cityStatus).forEach(key => {
         this.cityStatus[key] = !this.cityStatus[key]
       })
     },
@@ -200,38 +237,38 @@ export default {
     handleAllStatus (bool) {
       // this.cityStatus = [...Array(cityLength)].map(_ => bool);
       // this.provinceStatus = [...Array(provinceLength)].map(_ => bool);
-      Object.keys(this.provinceStatus).forEach((key) => {
+      Object.keys(this.provinceStatus).forEach(key => {
         this.provinceStatus[key] = bool
       })
-      Object.keys(this.cityStatus).forEach((key) => {
+      Object.keys(this.cityStatus).forEach(key => {
         this.cityStatus[key] = bool
       })
       if (!bool) {
         this.pickData = []
       }
     },
-    
+
     clickLetter (letter) {
       this.activeLetter = letter
       let originCityData = []
       regions.forEach(item => {
-        let sortCity = [];
+        let sortCity = []
         item.city.forEach(cityItem => {
           if (cityItem.pinYin[0].toUpperCase() === letter) {
-            sortCity.push(cityItem);
+            sortCity.push(cityItem)
           }
-        });
+        })
         if (sortCity.length > 0) {
           originCityData.push({
             city: sortCity,
             province: item.province
-          });
+          })
         }
-      });
+      })
       this.originCityData =
-        letter === "全部"
+        letter === '全部'
           ? Object.freeze(regions)
-          : Object.freeze(originCityData);
+          : Object.freeze(originCityData)
     },
 
     onProvinceChange (item, index, event) {
@@ -253,7 +290,7 @@ export default {
     },
     closeModalPicker () {
       if (this.clickModal) {
-        this.showPicker = false;
+        this.showPicker = false
       }
     }
   },
@@ -278,15 +315,15 @@ export default {
   },
   watch: {
     pickedCity: {
-      handler(newOne) {
+      handler (newOne) {
         this.pickData = newOne
       }
     },
     pickData: {
-      handler(newOne) {
+      handler (newOne) {
         newOne.forEach(city => {
-          this.cityStatus['c' + city.regionId] = true;
-        });
+          this.cityStatus['c' + city.regionId] = true
+        })
       }
     }
   }
@@ -566,4 +603,3 @@ export default {
   opacity: 0;
 }
 </style>
-

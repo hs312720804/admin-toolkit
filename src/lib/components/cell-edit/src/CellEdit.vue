@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'CCellEdit',
   components: {},
   props: ['initValue'],
   data () {

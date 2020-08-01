@@ -16,6 +16,7 @@
 <script>
 import formItemMixin from '../../formItemMixin'
 export default {
+  name: 'CFormNumber',
   mixins: [formItemMixin],
   data () {
     return {

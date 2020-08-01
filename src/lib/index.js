@@ -11,34 +11,34 @@ import CPop from './components/pop/index'
 import CCarousel from './components/carousel/index'
 import CEllipsis from './components/ellipsis/index'
 import CTypeList from './components/type-list/index'
-import GateSchemaForm from './components/GateSchemaForm'
+// import GateSchemaForm from './components/GateSchemaForm'
 import CIconSelect from './components/icon-select/index'
 import CCard from './components/card/index'
 import CDownload from './components/download/index'
 import CUpload from './components/upload/index'
 import CAppParams from './bizComponents/app-params/index'
-import AppParamsRead from './bizComponents/AppParamsRead'
+// import AppParamsRead from './bizComponents/AppParamsRead'
 import utils from './utils'
-import FormFatherAndSonLink from './components/FormFatherAndSonLink'
+// import FormFatherAndSonLink from './components/FormFatherAndSonLink'
 import CProbability from './components/probability/index'
-import ClickEventSelector from './bizComponents/ClickEventSelector'
-import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
-import InputOrder from './components/InputOrder'
-import InputPositiveInt from './components/InputPositiveInt'
-import InputPosibility from './components/InputPosibility'
-import OrderableTable from './components/OrderableTable'
-import BaseSelector from './components/BaseSelector'
-import ContextMenu from './components/ContextMenu'
-import VideoTags from './components/VideoTags'
+// import ClickEventSelector from './bizComponents/ClickEventSelector'
+// import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
+// import InputOrder from './components/InputOrder'
+// import InputPositiveInt from './components/InputPositiveInt'
+// import InputPosibility from './components/InputPosibility'
+// import OrderableTable from './components/OrderableTable'
+// import BaseSelector from './components/BaseSelector'
+// import ContextMenu from './components/ContextMenu'
+// import VideoTags from './components/VideoTags'
 import CRegionPickerCn from './components/region-picker/index'
-import AddMultiObj from './components/AddMultiObj'
-import FixHeaderAndFooter from './components/FixHeaderAndFooter'
-import ProductList from './components/ProductList'
-import VideoFilter from './components/VideoFilter'
-import AddFormObj from './components/AddFormObj'
+// import AddMultiObj from './components/AddMultiObj'
+// import FixHeaderAndFooter from './components/FixHeaderAndFooter'
+// import ProductList from './components/ProductList'
+// import VideoFilter from './components/VideoFilter'
+// import AddFormObj from './components/AddFormObj'
 import CCellEdit from './components/cell-edit/index'
-import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
-import CooTable from './components/CooTable.vue'
+// import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
+// import CooTable from './components/CooTable.vue'
 // DataForm
 import CForm from './form/form/index'
 import CFormBoolean from './form/boolean/index'
@@ -51,6 +51,7 @@ import CFormMac from './form/mac/index'
 import CFormEffectiveTime from './form/effective-time/index'
 
 const components = [
+  CAppParams,
   CTable,
   CMenu,
   CBreadcrumb,
@@ -82,6 +83,9 @@ const components = [
 
 const install = function (Vue) {
   components.forEach(component => {
+    if (!component.name) {
+      debugger
+    }
     Vue.component(component.name, component)
   })
 }
@@ -101,7 +105,7 @@ export {
   CRemoteSelect,
   CActionList,
   CTagNav,
-  GateSchemaForm,
+  // GateSchemaForm,
   utils,
   CPop,
   CCarousel,
@@ -111,19 +115,19 @@ export {
   CDownload,
   CUpload,
   CAppParams,
-  AppParamsRead,
+  // AppParamsRead,
   CTypeList,
-  FormFatherAndSonLink,
+  // FormFatherAndSonLink,
   CProbability,
-  ClickEventSelector,
-  ClickAndSelectWrapper,
-  InputOrder,
-  InputPositiveInt,
-  InputPosibility,
-  OrderableTable,
-  BaseSelector,
-  ContextMenu,
-  VideoTags,
+  // ClickEventSelector,
+  // ClickAndSelectWrapper,
+  // InputOrder,
+  // InputPositiveInt,
+  // InputPosibility,
+  // OrderableTable,
+  // BaseSelector,
+  // ContextMenu,
+  // VideoTags,
   CForm,
   CFormBoolean,
   CFormString,
@@ -134,12 +138,12 @@ export {
   CFormMac,
   CFormEffectiveTime,
   CRegionPickerCn,
-  AddMultiObj,
-  FixHeaderAndFooter,
-  ProductList,
-  VideoFilter,
-  AddFormObj,
-  CCellEdit,
-  CoocaaCascaderPanel,
-  CooTable
+  // AddMultiObj,
+  // FixHeaderAndFooter,
+  // ProductList,
+  // VideoFilter,
+  // AddFormObj,
+  CCellEdit
+  // CoocaaCascaderPanel,
+  // CooTable
 }

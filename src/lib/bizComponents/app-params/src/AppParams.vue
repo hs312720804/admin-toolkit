@@ -87,6 +87,7 @@
 
 <script>
 export default {
+  name: 'CAppParams',
   data () {
     function validateKV (rule, value, cb) {
       if (/[！￥……（）——【】：；“”‘’、《》，。？\s+]/.test(value)) {

@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import regions from '../../assets/cc-regions'
+import regions from './cc-regions'
 const provinceData = regions.filter(item => {
   return item.parent === 0
 })

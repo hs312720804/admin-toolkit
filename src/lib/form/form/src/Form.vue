@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'CForm',
   provide () {
     return {
       dataForm: this

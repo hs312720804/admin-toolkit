@@ -13,6 +13,7 @@
 </template>
 <script>
 export default {
+  name: 'CEllipsis',
   props: ['content', 'width', 'height'],
   computed: {
     style () {

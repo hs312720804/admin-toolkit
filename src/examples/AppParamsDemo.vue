@@ -1,9 +1,9 @@
 <template>
   <el-form :model="form" ref="form" label-width="140px">
     <c-app-params prop-prefix="appParams" v-model="form.appParams" />
-    <el-form-item>
-      <el-button @click="submitBtn">保存</el-button>
-    </el-form-item>
+      <el-form-item>
+        <el-button @click="submitBtn">保存</el-button>
+      </el-form-item>
   </el-form>
 </template>
 <script>
