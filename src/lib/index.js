@@ -83,11 +83,9 @@ const components = [
 
 const install = function (Vue) {
   components.forEach(component => {
-    if (!component.name) {
-      debugger
-    }
     Vue.component(component.name, component)
   })
+  Vue.prototype.$c_utils = utils
 }
 
 /* istanbul ignore if */
@@ -96,6 +94,58 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
+  CTable,
+  install,
+  CMenu,
+  CCardList,
+  CBreadcrumb,
+  CContentWrapper,
+  CRemoteSelect,
+  CActionList,
+  CTagNav,
+  // GateSchemaForm,
+  utils,
+  CPop,
+  CCarousel,
+  CEllipsis,
+  CIconSelect,
+  CCard,
+  CDownload,
+  CUpload,
+  CAppParams,
+  // AppParamsRead,
+  CTypeList,
+  // FormFatherAndSonLink,
+  CProbability,
+  // ClickEventSelector,
+  // ClickAndSelectWrapper,
+  // InputOrder,
+  // InputPositiveInt,
+  // InputPosibility,
+  // OrderableTable,
+  // BaseSelector,
+  // ContextMenu,
+  // VideoTags,
+  CForm,
+  CFormBoolean,
+  CFormString,
+  CFormNumber,
+  CFormEnum,
+  CFormEnumList,
+  CFormAny,
+  CFormMac,
+  CFormEffectiveTime,
+  CRegionPickerCn,
+  // AddMultiObj,
+  // FixHeaderAndFooter,
+  // ProductList,
+  // VideoFilter,
+  // AddFormObj,
+  CCellEdit
+  // CoocaaCascaderPanel,
+  // CooTable
+}
+export default {
   CTable,
   install,
   CMenu,

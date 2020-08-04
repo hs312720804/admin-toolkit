@@ -1,8 +1,10 @@
 import Vue from 'vue'
-import * as components from './lib/index'
+import components from './lib/index'
 import * as demos from './examples'
 import moment from 'moment'
-
+import { CCellEdit } from './lib/index'
+console.log(CCellEdit)
+debugger
 // import CTable from './lib/components/table/index'
 
 Vue.prototype.$moment = moment
