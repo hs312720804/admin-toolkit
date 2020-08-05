@@ -4,7 +4,6 @@ import * as demos from './examples'
 import moment from 'moment'
 import { CCellEdit } from './lib/index'
 console.log(CCellEdit)
-debugger
 // import CTable from './lib/components/table/index'
 
 Vue.prototype.$moment = moment

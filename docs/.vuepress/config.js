@@ -61,6 +61,8 @@ module.exports = {
               'components/VideoFilter.md',
               'components/AddFormObj.md',
               'components/CoocaaCascaderPanel.md',
+              'components/FilterTree.md',
+              'components/InputThousands.md',
             ]
           },
           {

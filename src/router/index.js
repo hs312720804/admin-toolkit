@@ -213,6 +213,26 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'CardList'
         }
+      },
+      {
+        path: 'filterTree',
+        name: 'filterTree',
+        component: demos.FilterTreeDemo,
+        meta: {
+          title: '树形过滤',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'filterTree'
+        }
+      },
+      {
+        path: 'inputThousands',
+        name: 'inputThousands',
+        component: demos.InputThousandsDemo,
+        meta: {
+          title: '输入千分位数字',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputThousands'
+        }
       }
     ]
   },

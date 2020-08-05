@@ -49,7 +49,8 @@ import CFormEnumList from './form/enum-list/index'
 import CFormAny from './form/any/index'
 import CFormMac from './form/mac/index'
 import CFormEffectiveTime from './form/effective-time/index'
-
+import CFilterTree from './components/filter-tree/index'
+import CInputThousands from './components/input-thousands/index'
 const components = [
   CAppParams,
   CTable,
@@ -78,7 +79,9 @@ const components = [
   CTypeList,
   CContentWrapper,
   CCellEdit,
-  CRegionPickerCn
+  CRegionPickerCn,
+  CFilterTree,
+  CInputThousands
 ]
 
 const install = function (Vue) {
@@ -141,7 +144,9 @@ export {
   // ProductList,
   // VideoFilter,
   // AddFormObj,
-  CCellEdit
+  CCellEdit,
+  CFilterTree,
+  CInputThousands
   // CoocaaCascaderPanel,
   // CooTable
 }
@@ -193,7 +198,9 @@ export default {
   // ProductList,
   // VideoFilter,
   // AddFormObj,
-  CCellEdit
+  CCellEdit,
+  CFilterTree,
+  CInputThousands
   // CoocaaCascaderPanel,
   // CooTable
 }

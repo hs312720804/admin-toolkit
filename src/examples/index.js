@@ -47,7 +47,8 @@ import AddFormObjDemo from './AddFormObjDemo'
 import CellEditDemo from './CellEditDemo'
 import CoocaaCascaderPanelDemo from './CoocaaCascaderPanelDemo'
 import CooTableDemo from './CooTableDemo.vue'
-
+import FilterTreeDemo from './FilterTreeDemo.vue'
+import InputThousandsDemo from './InputThousandsDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -97,5 +98,7 @@ export {
   AddFormObjDemo,
   CellEditDemo,
   CoocaaCascaderPanelDemo,
-  CooTableDemo
+  CooTableDemo,
+  FilterTreeDemo,
+  InputThousandsDemo
 }
