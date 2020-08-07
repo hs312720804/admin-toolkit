@@ -1,5 +1,5 @@
 <template>
-  <FixHeaderAndFooter @go-back="$emit('go-back')">
+  <c-fix-page @go-back="$emit('go-back')">
    <div slot="actions">
      <el-button type="text"  size="mini" icon="el-icon-back" @click="$emit('go-back')">返回</el-button>
    </div>
@@ -79,14 +79,10 @@
         >提交审核
         </el-button>
     </div>
-  </FixHeaderAndFooter>
+  </c-fix-page>
 </template>
 <script>
-import FixHeaderAndFooter from '../lib/components/FixHeaderAndFooter'
 export default {
-  components: {
-    FixHeaderAndFooter
-  },
   data () {
 
   }

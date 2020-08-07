@@ -1,6 +1,7 @@
 <script>
 import { Table as ElTable, TableColumn, Checkbox, Radio } from 'element-ui'
 import TableWrapper from '@/lib/components/table-wrapper/src/TableWrapper'
+// import TableWrapper from './TableWrapper'
 
 // elementui 的 hover-row 功能导致在数据量大的时候很卡,
 // 下面通过特殊的手段禁用
@@ -49,7 +50,7 @@ const defaultTableProps = {
   'highlight-current-row': false
 }
 export default {
-  name: 'CTable',
+  name: 'CTableTree',
   data () {
     return {
       hiddenColumns: []
@@ -57,7 +58,12 @@ export default {
   },
   computed: {
     selectStatus () {
-      const dataCount = this.data.length
+      let dataCount
+      if (this.props['tree-props']) {
+        dataCount = this.getTableDataLength(this.data)
+      } else {
+        dataCount = this.data.length
+      }
       const count = this.selected.length
       if (dataCount === 0 || count === 0) {
         return 'none'
@@ -69,6 +75,10 @@ export default {
     }
   },
   props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     props: {
     },
     data: {
@@ -109,6 +119,22 @@ export default {
     }
   },
   methods: {
+    /*
+    add by wanghaihua 2020/6/3
+    */
+    getTableDataLength (data) {
+      let fun = (data, init) => {
+        return data.reduce((r, c) => {
+          r = r + 1
+          const children = this.props['tree-props'].children
+          if (children && c.children && c.children.length > 0) {
+            r = fun(c.children, r)
+          }
+          return r
+        }, init)
+      }
+      return fun(data, 0)
+    },
     toggleColumn (index) {
       const hiddenColumns = this.hiddenColumns
       const idx = hiddenColumns.indexOf(index)
@@ -144,7 +170,7 @@ export default {
   },
   render (h) {
     const fixSelection = this.fixSelection
-    const rowIndexDisableSelection = this.rowIndexDisableSelection
+    //  const rowIndexDisableSelection = this.rowIndexDisableSelection
     const useContextMenu = this.useContextMenu
     const hiddenColumns = this.hiddenColumns
     const header = this.header.reduce((result, item, index) => {
@@ -180,7 +206,8 @@ export default {
           return h(Checkbox, {
             props: {
               value: this.selectStatus === 'all',
-              indeterminate: this.selectStatus === 'indeterminate'
+              indeterminate: this.selectStatus === 'indeterminate',
+              disabled: this.disabled
             },
             on: {
               input: () => {
@@ -193,6 +220,7 @@ export default {
         }
 
         options.scopedSlots.default = ({ $index: index, row }) => {
+          const rowIndexDisableSelection = this.rowIndexDisableSelection
           const disabled = rowIndexDisableSelection.includes(index)
           return h(Checkbox, {
             props: {
@@ -200,7 +228,9 @@ export default {
               disabled
             },
             nativeOn: {
-              'click': event => event.stopPropagation()
+              'click': event => {
+                event.stopPropagation()
+              }
             },
             on: {
               input: (value) => {
@@ -216,6 +246,7 @@ export default {
       }
       if (selectionType === 'single') {
         options.scopedSlots.default = ({ $index: index, row }) => {
+          const rowIndexDisableSelection = this.rowIndexDisableSelection
           const disabled = rowIndexDisableSelection.includes(index)
           return h(Radio, {
             class: 'hide-radio-label',

@@ -8,7 +8,6 @@
   />
 </template>
 <script>
-import CTable from './table/index'
 import InputOrder from './InputOrder'
 export default {
   data() {
@@ -21,7 +20,6 @@ export default {
     }
   },
   components: {
-    CTable,
     InputOrder
   },
   computed: {

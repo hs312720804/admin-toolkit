@@ -1,6 +1,6 @@
 <template>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
- <AddMultiObj label="应用列表"
+ <c-add-multi label="应用列表"
  @handle-add-item="handleAddItem"
  v-model="ruleForm.appList"
  ref="AddMultiObj">
@@ -17,7 +17,7 @@
           </el-form-item>
         </el-collapse-item>
     </template>
- </AddMultiObj>
+ </c-add-multi>
   <el-form-item label-width="50px">
     <el-button type="primary" @click="submitForm('ruleForm')">保存</el-button>
   </el-form-item>

@@ -1,9 +1,9 @@
 <template>
-    <GateSchemaForm
+    <c-gate-schema-form
       :schema="schema"
       v-model="formData"
     >
-    </GateSchemaForm>
+    </c-gate-schema-form>
 </template>
 
 <script>

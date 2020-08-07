@@ -8,12 +8,8 @@
 </template>
 
 <script>
-import CTable from '../lib/components/table/index'
 import CCellEdit from '../lib/components/cell-edit/index'
 export default {
-  components: {
-    CTable
-  },
   props: {},
   data () {
     return {

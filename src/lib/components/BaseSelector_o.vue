@@ -58,11 +58,7 @@
 </template>
 
 <script>
-import CTable from './table/index'
 export default {
-  components: {
-    CTable
-  },
   data () {
     return {
       tableHeight: undefined,

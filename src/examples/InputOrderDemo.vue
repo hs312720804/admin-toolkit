@@ -1,13 +1,13 @@
 <template>
   <div>
     <ul>
-      <li class="item" v-for="(item,index) in items" :key="index + Math.random().toString()">
-        <InputOrder :value="index + 1" @input="handleInputOrder(index, $event)" /> {{ item.name }}
+      <li class="item" v-for="(item, index) in items" :key="index + Math.random().toString()">
+        <c-input-order :value="index + 1" @order-data="handleOrderData" :data="items"/> 
+        {{ item.name }}
       </li>
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -20,21 +20,37 @@ export default {
         {
           id: 'bar',
           name: 'bar'
+        },
+        {
+          id: 'foo',
+          name: 'foo2',
+        },
+        {
+          id: 'bar',
+          name: 'bar2'
+        },
+        {
+          id: 'foo',
+          name: 'foo3',
+        },
+        {
+          id: 'bar',
+          name: 'bar3'
+        },
+        {
+          id: 'foo',
+          name: 'foo4',
+        },
+        {
+          id: 'bar',
+          name: 'bar4'
         }
       ]
     }
   },
   methods: {
-    handleInputOrder(index, order) {
-      const dataList = this.items
-      if (order > dataList.length) {
-          order = dataList.length
-      }
-      const newIndex = order - 1
-      const oldIndex = index
-      const item = dataList[oldIndex]
-      dataList.splice(oldIndex, 1)
-      this.items = [].concat(dataList.slice(0, newIndex), item, dataList.slice(newIndex))
+    handleOrderData (data) {
+      this.items = data
     }
   }
 }

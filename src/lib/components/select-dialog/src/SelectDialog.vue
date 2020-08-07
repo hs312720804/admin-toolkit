@@ -25,6 +25,7 @@
 <script>
 import { Button, Tag, Dialog } from 'element-ui'
 export default {
+  name: 'CSelectDialog',
   components: {
     Button,
     Dialog,

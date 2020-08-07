@@ -39,8 +39,8 @@ import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
 import CnRegionPickerDemo from './CnRegionPicker.vue'
-import FixHeaderAndFooterDemo from './FixHeaderAndFooterDemo'
-import AddMultiObjDemo from './AddMultiObjDemo'
+import FixPageDemo from './FixPageDemo.vue'
+import AddMultiDemo from './AddMultiDemo'
 import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
@@ -91,8 +91,8 @@ export {
   EnumListDemo,
   AnyDemo,
   CnRegionPickerDemo,
-  FixHeaderAndFooterDemo,
-  AddMultiObjDemo,
+  FixPageDemo,
+  AddMultiDemo,
   ProductListDemo,
   VideoFilterDemo,
   AddFormObjDemo,

@@ -1,5 +1,7 @@
 <template>
+  <div>
   <AddFormObj :formList="form.formList"></AddFormObj>
+  </div>
 </template>
 <script>
 export default {

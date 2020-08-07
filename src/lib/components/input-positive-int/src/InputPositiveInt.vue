@@ -1,5 +1,4 @@
 <template>
-<div>
   <el-input
     ref="input"
     type="text"
@@ -8,8 +7,7 @@
     @blur="$emit('blur')"
     @change="$emit('change')"
     :disabled="disabled"
-    :placeholder="placeholder"
-    >
+    :placeholder="placeholder">
     <span
       v-if="prepend"
       slot="prepend">
@@ -21,13 +19,11 @@
       {{append}}
     </span>
   </el-input>
-  </div>
 </template>
 
 <script>
-import _ from 'lodash'
 export default {
-  name: 'CInputThousands',
+  name: 'CInputPositiveInt',
   data () {
     return {
       inputValue: undefined
@@ -45,35 +41,17 @@ export default {
     }
   },
   methods: {
-    handleInputValue(val) {
-      val = _.trim(val).replace(/,/g, '')
+    handleInputValue (val) {
       if (val === '' || /^[1-9]\d*$/.test(val) || (val === '0' && this.isIncludeZero)) {
-        if (val !== '') {
-          this.inputValue = this.format_number(val)
-        } else {
-          this.inputValue = val
-        }
-        this.$emit('input', this.inputValue)
+        this.inputValue = val
+        this.$emit('input', val)
       }
-    },
-    getPositiveInt (data) {
-      return data.replace(/,/g, '')
-    },
-    format_number(n) {
-      n = n.toString()
-      var len = n.length
-      if (len <= 3) { return n }
-      var r = len % 3
-      const start = n.slice(0, r)
-      const end = n.slice(r).match(/\d{3}/g).join(',')
-      return r > 0 ? start + ',' + end : end
     }
   },
-  created() {
+  created () {
     this.$watch('value', (val) => {
       if (this.inputValue !== val) {
-        this.inputValue = this.format_number(val)
-        this.$emit('input', this.inputValue)
+        this.inputValue = val
       }
     }, {
       immediate: true

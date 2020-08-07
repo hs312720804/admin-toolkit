@@ -65,6 +65,16 @@ const routes = [
         }
       },
       {
+        path: 'contextMenu',
+        name: 'contextMenu',
+        component: demos.ContextMenuDemo,
+        meta: {
+          title: '右键菜单',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'contextMenu'
+        }
+      },
+      {
         path: 'tagNav',
         name: 'tagNav',
         component: demos.TagNavDemo,
@@ -115,23 +125,23 @@ const routes = [
         }
       },
       {
-        path: 'FixHeaderAndFooter',
-        name: 'FixHeaderAndFooter',
-        component: demos.FixHeaderAndFooterDemo,
+        path: 'fixPage',
+        name: 'fixPage',
+        component: demos.FixPageDemo,
         meta: {
           title: '头尾固定',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'FixHeaderAndFooter'
+          route: 'fixPage'
         }
       },
       {
-        path: 'AddMultiObj',
-        name: 'AddMultiObj',
-        component: demos.AddMultiObjDemo,
+        path: 'AddMulti',
+        name: 'AddMulti',
+        component: demos.AddMultiDemo,
         meta: {
           title: '添加多个对象',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'AddMultiObj'
+          route: 'AddMulti'
         }
       },
       {
@@ -232,6 +242,26 @@ const routes = [
           title: '输入千分位数字',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'inputThousands'
+        }
+      },
+      {
+        path: 'inputOrder',
+        name: 'inputOrder',
+        component: demos.InputOrderDemo,
+        meta: {
+          title: '序号排序',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputOrder'
+        }
+      },
+      {
+        path: 'inputPositiveInt',
+        name: 'inputPositiveInt',
+        component: demos.InputPositiveIntDemo,
+        meta: {
+          title: '正整数输入',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputPositiveInt'
         }
       }
     ]
