@@ -1,5 +1,5 @@
  <template>
-  <BaseSelector 
+  <c-base-selector 
     ref="baseSelector"
     id-field="id"
     :is-live="isLive"
@@ -13,7 +13,7 @@
     @filter-reset="handleFilterReset"
     @select-cancel="$emit('select-cancel')"
     @select-end="$emit('select-end')">
-  </BaseSelector>
+  </c-base-selector>
 </template>
  
 <script>

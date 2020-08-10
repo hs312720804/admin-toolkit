@@ -2,21 +2,24 @@
   <div>
     <section>
     <h2>默认按钮</h2>
-    <ClickAndSelectWrapper 
+    <c-select-dialog 
       title="选择数据2" 
       @select-start="handleSelectStart" 
-      @select-cancel="handleSelectCancel">
+      ref="selectDialog">
       <div slot="content">
-        通过content slot 插入数据列表
+        <base-selector-demo
+        @select-end="handleSelectEnd"
+        @select-cancel="$refs.selectDialog.handleSelectCancel()"
+        ></base-selector-demo>
       </div>
-    </ClickAndSelectWrapper>
+    </c-select-dialog>
     </section>
     <section>
       <h2>自定义点击元素</h2>
-      <ClickAndSelectWrapper 
+      <c-select-dialog 
         title="选择海报" 
         @select-start="handleSelectStart" 
-        @select-cancel="handleSelectCancel">
+        >
         <el-button type="primary">请选择</el-button>
         <div slot="title" style="color: red">
           自定义标题
@@ -26,17 +29,22 @@
             通过content slot 插入数据列表, 可以通过 isShow 来控制内容的渲染
           </template>
         </div>
-      </ClickAndSelectWrapper>
+      </c-select-dialog>
     </section>
   </div>
 </template>
 
 <script>
+import BaseSelectorDemo from './BaseSelectorDemo'
 export default {
+  componets: {
+    BaseSelectorDemo
+  },
   methods: {
     handleSelectStart() {
     },
-    handleSelectCancel() {
+    handleSelectEnd () {
+
     }
   }
 }

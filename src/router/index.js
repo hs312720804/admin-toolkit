@@ -263,6 +263,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'inputPositiveInt'
         }
+      },
+      {
+        path: 'selectDialog',
+        name: 'selectDialog',
+        component: demos.SelectDialogDemo,
+        meta: {
+          title: '基础数据选择器',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'selectDialog'
+        }
       }
     ]
   },

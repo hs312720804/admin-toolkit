@@ -1,6 +1,6 @@
 <script>
 import { Table as ElTable, TableColumn, Checkbox, Radio } from 'element-ui'
-import TableWrapper from '@/lib/components/table-wrapper/src/TableWrapper'
+import TableWrapper from '../../table-wrapper/src/TableWrapper'
 // import TableWrapper from './TableWrapper'
 
 // elementui 的 hover-row 功能导致在数据量大的时候很卡,

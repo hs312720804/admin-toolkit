@@ -41,6 +41,8 @@ import CContextMenu from './components/context-menu/index'
 import CGateSchemaForm from './components/gate-schema-form/index'
 import CInputOrder from './components/input-order/index'
 import CInputPositiveInt from './components/input-positive-int/index'
+import CInputPosibility from './components/input-posibility/index'
+import CVideoTags from './components/video-tags/index'
 const components = [
   CAppParams,
   CTable,
@@ -82,7 +84,9 @@ const components = [
   CContextMenu,
   CGateSchemaForm,
   CInputOrder,
-  CInputPositiveInt
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags
 ]
 
 const install = function (Vue) {
@@ -142,7 +146,9 @@ export {
   CContextMenu,
   CGateSchemaForm,
   CInputOrder,
-  CInputPositiveInt
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags
 }
 export default {
   CTable,
@@ -189,5 +195,7 @@ export default {
   CContextMenu,
   CGateSchemaForm,
   CInputOrder,
-  CInputPositiveInt
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags
 }

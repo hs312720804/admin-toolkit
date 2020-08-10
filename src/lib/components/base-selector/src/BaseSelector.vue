@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import GateSchemaForm from '@/lib/components/gate-schema-form/src/GateSchemaForm'
+import GateSchemaForm from '../../gate-schema-form/src/GateSchemaForm'
 export default {
   name: 'CBaseSelector',
   components: {

@@ -1,3 +1,8 @@
+<template>
+  <div>
+    
+  </div>
+</template>
 <script>
 import createStateForm from '@stateform/element'
 import '@stateform/element/dist/stateform-element.css'

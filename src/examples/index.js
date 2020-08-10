@@ -22,7 +22,7 @@ import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
 import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
 import probabilityDemo from './probabilityDemo.vue'
 import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
-import ClickAndSelectWrapperDemo from './ClickAndSelectWrapperDemo.vue'
+import SelectDialogDemo from './SelectDialogDemo.vue'
 import InputOrderDemo from './InputOrderDemo.vue'
 import InputPositiveIntDemo from './InputPositiveIntDemo.vue'
 import InputPosibilityDemo from './InputPosibilityDemo.vue'
@@ -74,7 +74,7 @@ export {
   FormFatherAndSonLinkDemo1,
   probabilityDemo,
   ClickEventSelectorDemo,
-  ClickAndSelectWrapperDemo,
+  SelectDialogDemo,
   InputOrderDemo,
   InputPositiveIntDemo,
   InputPosibilityDemo,

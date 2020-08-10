@@ -66,13 +66,13 @@ export default {
       this.showDialog = true
       this.$emit('select-start')
     },
-    handleSelectEnd () {
-      this.showDialog = false
-      this.$emit('select-end')
-    },
+    // handleSelectEnd () {
+    //   this.showDialog = false
+    //   this.$emit('select-end')
+    // },
     handleSelectCancel () {
       this.showDialog = false
-      this.$emit('select-cancel')
+      // this.$emit('select-cancel')
     }
   },
   created () {

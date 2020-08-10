@@ -5,7 +5,7 @@
 </template>
 <script>
 import _ from 'lodash'
-import InputPositiveInt from '@/lib/components/input-positive-int/src/InputPositiveInt' 
+import InputPositiveInt from '../../input-positive-int/src/InputPositiveInt' 
 export default {
   name: 'CInputOrder',
   components: {
