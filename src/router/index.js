@@ -299,6 +299,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'ContentWrapper'
         }
+      },
+      {
+        path: 'GateSchemaFormDemo',
+        name: 'GateSchemaFormDemo',
+        component: demos.GateSchemaFormDemo,
+        meta: {
+          title: 'GateSchemaForm表单',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'GateSchemaFormDemo'
+        }
       }
     ]
   },
