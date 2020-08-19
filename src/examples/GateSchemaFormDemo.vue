@@ -1,13 +1,22 @@
 <template>
-    <c-gate-schema-form
+    <!-- <c-gate-schema-form
       :schema="schema"
       v-model="formData"
     >
-    </c-gate-schema-form>
+    </c-gate-schema-form> -->
+    <div>
+      222
+    <gateSchemaForm
+      :schema="schema"
+      v-model="formData"
+    >
+    </gateSchemaForm>
+    </div>
 </template>
 
 <script>
 import _ from 'gateschema'
+import gateSchemaForm from '../lib/components/gate-schema-form'
 const schema = _
   .map({
     name: _
@@ -168,6 +177,9 @@ const schema = _
   })
 
 export default {
+  components: {
+    gateSchemaForm
+  },
   data () {
     return {
       schema,

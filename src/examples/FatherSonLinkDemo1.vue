@@ -4,7 +4,7 @@
       <el-form-item label="投放名称" prop="launchName">
         <el-input size="small" v-model="form.launchName" placeholder="投放名称"></el-input>
       </el-form-item>
-      <FormFatherAndSonLink
+      <c-father-son-link
         :parentData="strategyList"
         :childData="crowdList"
         parantField="strategyName"
@@ -13,7 +13,7 @@
         :childLabel="childLabel"
         @get-children-list="getChildrenList"
         @get-children-value="getChildrenValue"
-      ></FormFatherAndSonLink>
+      ></c-father-son-link>
       <el-form-item>
         <el-button type="primary" @click="submitForm">提交</el-button>
       </el-form-item>
@@ -21,11 +21,7 @@
   </div>
 </template>
 <script>
-import FormFatherAndSonLink from './../lib/components/FormFatherAndSonLink'
 export default {
-  components: {
-    FormFatherAndSonLink
-  },
   data() {
     return {
       parantLabel: '选择策略',

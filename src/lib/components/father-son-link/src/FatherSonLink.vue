@@ -38,6 +38,7 @@
 </template>
 <script>
 export default {
+  name: 'CFatherSonLink',
   props: {
     parentData: {
       type: Array

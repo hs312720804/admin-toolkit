@@ -61,6 +61,7 @@
 </template>
 <script>
 export default {
+  name: 'CAddFormObj',
   data () {
     return {
       shareTrack: 1,

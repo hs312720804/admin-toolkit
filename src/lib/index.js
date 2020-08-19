@@ -43,6 +43,11 @@ import CInputOrder from './components/input-order/index'
 import CInputPositiveInt from './components/input-positive-int/index'
 import CInputPosibility from './components/input-posibility/index'
 import CVideoTags from './components/video-tags/index'
+import CAddFormObj from './components/add-form-obj/index'
+import CFatherSonLink from './components/father-son-link/index'
+import CVideoFilter from './components/video-filter/index'
+import CProductList from './components/product-list/index'
+import COrderableTable from './components/orderable-table/index'
 const components = [
   CAppParams,
   CTable,
@@ -86,7 +91,12 @@ const components = [
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
-  CVideoTags
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable
 ]
 
 const install = function (Vue) {
@@ -133,7 +143,6 @@ export {
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,
-
   CFilterTree,
   CInputThousands,
   CAddMulti,
@@ -148,7 +157,12 @@ export {
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
-  CVideoTags
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable
 }
 export default {
   CTable,
@@ -197,5 +211,10 @@ export default {
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
-  CVideoTags
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable
 }

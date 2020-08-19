@@ -8,8 +8,9 @@
   />
 </template>
 <script>
-import InputOrder from './InputOrder'
+import InputOrder from '../../input-order/src/InputOrder'
 export default {
+  name: 'COrderableTable',
   data() {
     return {
       table: {

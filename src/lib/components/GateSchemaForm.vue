@@ -1,4 +1,8 @@
+<template>
+  <div>333</div>
+</template>
 <script>
+debugger
 import createStateForm from '@stateform/element'
 import '@stateform/element/dist/stateform-element.css'
 import { createForm } from 'gateschema-form-vue'
@@ -19,5 +23,8 @@ const StateForm = createStateForm({
 const GateSchemaForm = createForm({
   StateForm
 })
-export default GateSchemaForm
+export default {
+  //name: 'CGateSchemaForm',
+  GateSchemaForm
+}
 </script>

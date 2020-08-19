@@ -4,7 +4,6 @@
  ***********************************************************************************************/
  <template>
   <div class="cc-product-list-cont" v-loading="loading">
-    {{productList}}
     <div v-for="(item, index) in productList" :key="index" class="pro-sel">
       <el-select v-model="item.sourceId" @change="productChange(index)">
         <el-option v-for="product in item.child" :key="product.sourceId" :label="product.sourceName" :value="product.sourceId">{{companyStr2isSource(product.company)}}{{product.sourceName}}</el-option>
@@ -16,6 +15,7 @@
 
 <script>
 export default {
+  name: 'CProductList',
   props: {
     proData: {
       type: Array,

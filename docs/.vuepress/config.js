@@ -42,7 +42,7 @@ module.exports = {
               'components/Upload.md',
               'components/DownloadFile.md',
               'components/TypeList.md',
-              'components/FormFatherAndSonLink.md',
+              'components/FatherSonLink.md',
               'components/ContentEllipsis.md',
               // 'components/probability.md',
               'components/SelectDialog.md',

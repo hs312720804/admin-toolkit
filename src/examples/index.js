@@ -18,8 +18,8 @@ import AppParamsDemo from './AppParamsDemo.vue'
 import AppParamsReadDemo from './AppParamsReadDemo.vue'
 import TypeListDemo from './TypeListDemo'
 import CardListDemo from './CardListDemo'
-import FormFatherAndSonLinkDemo from './FormFatherAndSonLinkDemo.vue'
-import FormFatherAndSonLinkDemo1 from './FormFatherAndSonLinkDemo1.vue'
+import FatherSonLinkDemo from './FatherSonLinkDemo.vue'
+import FatherSonLinkDemo1 from './FatherSonLinkDemo1.vue'
 import probabilityDemo from './probabilityDemo.vue'
 import ClickEventSelectorDemo from './ClickEventSelectorDemo.vue'
 import SelectDialogDemo from './SelectDialogDemo.vue'
@@ -70,8 +70,8 @@ export {
   AppParamsReadDemo,
   TypeListDemo,
   CardListDemo,
-  FormFatherAndSonLinkDemo,
-  FormFatherAndSonLinkDemo1,
+  FatherSonLinkDemo,
+  FatherSonLinkDemo1,
   probabilityDemo,
   ClickEventSelectorDemo,
   SelectDialogDemo,

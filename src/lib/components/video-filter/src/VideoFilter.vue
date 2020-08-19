@@ -296,8 +296,9 @@
 </template>
 
 <script>
-import VideoTagList from './VideoTags'
+import VideoTagList from '../../video-tags/src/VideoTags'
 export default {
+  name: 'CVideoFilter',
   components: {
     VideoTagList
   },

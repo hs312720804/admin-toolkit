@@ -273,6 +273,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'selectDialog'
         }
+      },
+      {
+        path: 'gateSchemaForm',
+        name: 'gateSchemaForm',
+        component: demos.GateSchemaFormDemo,
+        meta: {
+          title: 'GateSchema表单',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'gateSchemaForm'
+        }
       }
     ]
   },
