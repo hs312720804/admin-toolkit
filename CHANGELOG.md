@@ -84,6 +84,8 @@ All notable changes to this project will be documented in this file.
 *级联选择器  @wanghaihua
 ## 2020-06-11
 
-
+### Added CooTable
+*支持树形结构的表格  @wanghaihua
+## 2020-06-23
 
 

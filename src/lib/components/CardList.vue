@@ -7,7 +7,7 @@
         :style="{'margin-bottom': gutter + 'px'}"
         v-for="(row, index) in data"
         :key="index"
-        @click="handleClickRow(index, row)"
+        @click.native="handleClickRow(index, row)"
       >
         <slot name="row" :row="row" :index="index"></slot>
         <div class="card-item__selection">

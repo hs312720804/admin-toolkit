@@ -1,6 +1,7 @@
 <template>
   <div>
     <Menu :items="threeLevelMenu"/>
+    <Menu :items="threeLevelMenu" mode="horizontal"/>
   </div>
 </template>
 <script>
