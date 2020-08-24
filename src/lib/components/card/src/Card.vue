@@ -8,17 +8,6 @@
                 </slot>
             </div>
         </div>
-        <!-- <div v-else class="content-card__header">
-          <div class="title">
-           <slot name="title">
-
-           </slot>
-          </div>
-           <div class="actions">
-                <slot name="actions">
-                </slot>
-            </div>
-        </div> -->
         <div class="content-card__main">
             <slot name="default" />
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-  <AddFormObj :formList="form.formList"></AddFormObj>
+  <c-add-form-obj :formList="form.formList"></c-add-form-obj>
   </div>
 </template>
 <script>

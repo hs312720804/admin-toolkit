@@ -1,5 +1,5 @@
 # 输入千分位数据
-`CInputThousands`
+`c-input-thousands`
 输入千分位的数字，只能输入0或者正整数
 
 ## 示例

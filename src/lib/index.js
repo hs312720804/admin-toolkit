@@ -38,7 +38,7 @@ import CTableTree from './components/table-tree/index'
 import CFixPage from './components/fix-page/index'
 import CTableWrapper from './components/table-wrapper/index'
 import CContextMenu from './components/context-menu/index'
-import CGateSchemaForm from './components/gate-schema-form/index'
+// import CGateSchemaForm from './components/gate-schema-form/index'
 import CInputOrder from './components/input-order/index'
 import CInputPositiveInt from './components/input-positive-int/index'
 import CInputPosibility from './components/input-posibility/index'
@@ -87,7 +87,7 @@ const components = [
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  CGateSchemaForm,
+  // CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
@@ -153,7 +153,7 @@ export {
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  CGateSchemaForm,
+  // CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
@@ -207,7 +207,7 @@ export default {
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  CGateSchemaForm,
+  // CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,

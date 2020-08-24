@@ -1,8 +1,4 @@
-<template>
-  <div>
-    
-  </div>
-</template>
+
 <script>
 import createStateForm from '@stateform/element'
 import '@stateform/element/dist/stateform-element.css'
@@ -24,8 +20,6 @@ const StateForm = createStateForm({
 const GateSchemaForm = createForm({
   StateForm
 })
-export default {
-  name: 'CGateSchemaForm',
-  GateSchemaForm
-}
+export default GateSchemaForm
+
 </script>

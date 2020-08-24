@@ -15,8 +15,8 @@
     @select-end="$emit('select-end')">
   </c-base-selector>
 </template>
- 
 <script>
+import _ from 'gateschema'
 export default {
   data() {
     return {
@@ -25,7 +25,31 @@ export default {
         pageSize: 15
       },
       filter: this.getDefaultFilter(),
-      filterSchema: null,
+      filterSchema: _.map({
+        id: _.o.string.other('form', {
+          placeholder: '请输入 id'
+        }),
+        name: _.o.string.other('form', {
+          placeholder: '请输入 name'
+        })
+      }).other('form', {
+        cols: {
+          item: 4,
+          label: 0,
+          wrapper: 20
+        },
+        layout: 'inline',
+        footer: {
+          cols: {
+            label: 0,
+            wrapper: 24
+          },
+          showSubmit: true,
+          submitText: '查询',
+          showReset: true,
+          resetText: '重置'
+        }
+      }),
       table: {
         props: {},
         header: [

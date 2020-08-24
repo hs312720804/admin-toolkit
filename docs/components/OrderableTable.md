@@ -10,10 +10,10 @@
 ```vue
 <template>
   <div>
-    <OrderableTable 
+    <c-orderable-table 
       :header="table.header" 
       v-model="table.data">
-    </OrderableTable>
+    </c-orderable-table>
   </div>
 </template>
 

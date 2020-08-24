@@ -1,5 +1,5 @@
 # 操作按钮组    
-`ActionList`  
+`c-action-list`  
 用于快速创建一组操作按钮  
 
 ## 示例  

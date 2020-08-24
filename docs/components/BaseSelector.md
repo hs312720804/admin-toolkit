@@ -1,6 +1,6 @@
 # 基础数据选择器
-`CBaseSelector`
-用于创建数据选择器，配合 `CSelectDialog选择器` 可实现点击弹窗选择数据  
+`c-base-selector`
+用于创建数据选择器，配合 `c-select-dialog选择器` 可实现点击弹窗选择数据  
 
 ## 示例  
 <Demo>

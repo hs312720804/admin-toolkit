@@ -1,5 +1,5 @@
 # 动态添加
-`AddFormObj`
+`c-add-form-obj`
 一次性可以添加多个对象
 
 ## 示例
@@ -12,7 +12,7 @@
 ### 代码
 ```vue
 <template>
-<AddFormObj :formList="form.formList"></AddFormObj>
+<c-add-form-obj :formList="form.formList"></c-add-form-obj>
 </template>
 <script>
 export default {

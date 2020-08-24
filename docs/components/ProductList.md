@@ -1,5 +1,5 @@
 # 标签列表    
-`ProductList`  
+`c-product-list`  
 
 ## 示例  
 
@@ -17,7 +17,7 @@
         <el-option label="影视" :value="0"></el-option>
         <el-option label="教育" :value="1"></el-option>
     </el-select>
-    <ProductList ref="proList" :proData="proData" :setProductAttr="setProductAttr"></ProductList>
+    <c-product-list ref="proList" :proData="proData" :setProductAttr="setProductAttr"></c-product-list>
   </div>
 </template>
 <script>

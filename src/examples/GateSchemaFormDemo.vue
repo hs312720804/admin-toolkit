@@ -1,22 +1,14 @@
+<!--这个组件1.0.0升级去除-->
 <template>
-    <!-- <c-gate-schema-form
-      :schema="schema"
-      v-model="formData"
-    >
-    </c-gate-schema-form> -->
-    <div>
-      222
     <gateSchemaForm
       :schema="schema"
       v-model="formData"
     >
     </gateSchemaForm>
-    </div>
 </template>
 
 <script>
 import _ from 'gateschema'
-import gateSchemaForm from '../lib/components/gate-schema-form'
 const schema = _
   .map({
     name: _
@@ -175,11 +167,7 @@ const schema = _
     },
     layout: 'vertical'
   })
-
 export default {
-  components: {
-    gateSchemaForm
-  },
   data () {
     return {
       schema,
@@ -189,5 +177,4 @@ export default {
     }
   }
 }
-
 </script>

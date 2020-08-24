@@ -117,7 +117,7 @@ const routes = [
       {
         path: 'contentCard',
         name: 'contentCard',
-        component: demos.ContentCardDemo,
+        component: demos.CardDemo,
         meta: {
           title: '标题返回',
           icon: 'iconfont el-icon-cc-file-add',
@@ -167,7 +167,7 @@ const routes = [
       {
         path: 'FormFatherAndSonLink',
         name: 'FormFatherAndSonLink',
-        component: demos.FormFatherAndSonLinkDemo,
+        component: demos.FatherSonLinkDemo,
         meta: {
           title: '表单父子关联',
           icon: 'iconfont el-icon-cc-file-add',
@@ -275,13 +275,13 @@ const routes = [
         }
       },
       {
-        path: 'gateSchemaForm',
-        name: 'gateSchemaForm',
-        component: demos.GateSchemaFormDemo,
+        path: 'ContentWrapperDemo',
+        name: 'ContentWrapperDemo',
+        component: demos.ContentWrapperDemo,
         meta: {
-          title: 'GateSchema表单',
+          title: '内容包装器',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'gateSchemaForm'
+          route: 'ContentWrapperDemo'
         }
       }
     ]
@@ -353,7 +353,7 @@ const routes = [
       {
         path: 'treeTableList',
         name: 'treeTableList',
-        component: demos.CooTableDemo,
+        component: demos.TableTreeDemo,
         meta: {
           title: '树形表格',
           icon: 'iconfont el-icon-cc-file-add',

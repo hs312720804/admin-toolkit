@@ -1,5 +1,5 @@
 # 表单父子关联
-`FatherSonLinkDemo`   
+`c-father-son-link`   
 ## 示例1
 
 <Demo>

@@ -1,5 +1,18 @@
+# 表格(支持树形结构)  
+`c-table-tree`  Table组件的功能扩展，在原始Table组件的功能上添加了树形功能，完全可以替代旧版本的Table组件
+
+## 示例  
+
+### 效果
+
+<Demo>
+  <TableTreeDemo />
+</Demo>
+
+### 代码  
+```vue
 <template>
-  <CooTable
+  <c-table-tree
     :data="table.data"
     :props="table.props"
     :header="table.header"
@@ -12,7 +25,7 @@
     @all-row-selection-change="handleAllRowSelectionChange"
     @row-click="handleRowClick"
   >
-  </CooTable>
+  </c-table-tree>
 </template>
 <script>
 import { createOperationRender } from '../lib/utils/component'
@@ -111,16 +124,15 @@ export default {
     handleAllRowSelectionChange (value) {
       if (value) {
         const table = this.table
-        table.data.forEach(this.handleRowSelectionAdd)
+        const allData = table.props['tree-props'] ? this.recursion(table.data, []) : table.data
+        allData.forEach(this.handleRowSelectionAdd)
       } else {
         this.handleAllRowSelectionRemove()
       }
     },
     handleAllRowSelectionRemove () {
       const idField = 'id'
-      const table = this.table
-      const allData = table.props['tree-props'] ? this.recursion(table.data, []) : table.data
-      const currentPageSelected = allData.map(e => {
+      const currentPageSelected = this.table.data.map(e => {
         return e[idField]
       })
       this.selected = this.selected.filter(e => {
@@ -166,3 +178,25 @@ export default {
   }
 }
 </script>
+
+```
+
+
+## 属性  
+| 名称 | 类型 | 描述 | 例子 |  
+| ---- | ---- | ---- | ---- |
+| props | Object | element-ui 表格属性 | |
+| header | Array | 表头 | | 
+| data | Array | 表格数据 | |  
+| selectionType | 'none' / 'multiple' / 'single' |  none 为不使用选择功能, multiple 为多选, single 为单选| |
+| selected | Array 或者 Number | 如果 selectionType 是 multiple, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 single, 那么 selected 是被选中的 index | |  
+
+## 事件  
+| 名称 | 参数 | 描述 |  
+| ---- | ---- | ---- |  
+| row-selection-add | (row: Object, index: Number) | 只在 selectoinType 为 multiple 时触发 |  
+| row-selection-remove | (row: Object, index: Number) | 只在 selectoinType 为 multiple 时触发 |  
+| row-selection-change | (row: Object, index: Number) | 只在 selectoinType 为 single 时触发 |  
+| all-row-selection-change | (value: Boolean) | 当所有行的选中状态改变时触发, value 为选中状态 |  
+
+<Comment />

@@ -10,11 +10,9 @@
 
 ### 效果
 
-<ClientOnly>
-  <Demo>
-    <ContentWrapperDemo />
-  </Demo>
-</ClientOnly>
+<Demo>
+  <ContentWrapperDemo />
+</Demo>
 
 ### 代码  
 ```vue
@@ -26,7 +24,7 @@
       @filter-change="handleFilterChange"
       @filter-reset="handleFilterReset"
     >
-      <Table 
+      <c-table 
         :props="table.props"
         :header="table.header"
         :data="table.data"

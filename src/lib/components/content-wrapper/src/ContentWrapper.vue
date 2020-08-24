@@ -78,7 +78,6 @@ export default {
     } else {
       filterForm = $slots.filterForm
     }
-
     const {
       handlePageSizeChange,
       handlePageChange

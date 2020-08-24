@@ -1,6 +1,6 @@
 <template>
   <div class="cc-video-filter">
-    <VideoFilter ref="videoFilter" :setVideoFilter="setVideoFilter" :setIsDisabled="setIsDisabled" :searchDataList="searchDataList" @get-search-name-list="getSearchNameList" @is-loading-end="clickLoadingClose" @get-search-params="getSearchParams"></VideoFilter>
+    <c-video-filter ref="videoFilter" :setVideoFilter="setVideoFilter" :setIsDisabled="setIsDisabled" :searchDataList="searchDataList" @get-search-name-list="getSearchNameList" @is-loading-end="clickLoadingClose" @get-search-params="getSearchParams"></c-video-filter>
   </div>
 </template>
 <script>

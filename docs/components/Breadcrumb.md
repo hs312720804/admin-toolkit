@@ -1,5 +1,5 @@
 # 面包屑导航  
-`Breadcrumb`      
+`c-breadcrumb`      
 
 ## 示例  
 ### 效果  

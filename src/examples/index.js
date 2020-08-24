@@ -11,7 +11,7 @@ import ContentEllipsisDemo from './ContentEllipsisDemo.vue'
 import TheIconDemoIndex from './TheIconDemoIndex.vue'
 import TheCustomIconDemo from './TheCustomIconDemo.vue'
 import TheInitIconDemo from './TheInitIconDemo.vue'
-import ContentCardDemo from './ContentCardDemo.vue'
+import CardDemo from './CardDemo.vue'
 import DownloadFileDemo from './DownloadFileDemo.vue'
 import UploadDemo from './UploadDemo.vue'
 import AppParamsDemo from './AppParamsDemo.vue'
@@ -45,10 +45,11 @@ import ProductListDemo from './ProductListDemo'
 import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
 import CellEditDemo from './CellEditDemo'
-import CoocaaCascaderPanelDemo from './CoocaaCascaderPanelDemo'
-import CooTableDemo from './CooTableDemo.vue'
+import CascaderPanelDemo from './CascaderPanelDemo.vue'
+import TableTreeDemo from './TableTreeDemo.vue'
 import FilterTreeDemo from './FilterTreeDemo.vue'
 import InputThousandsDemo from './InputThousandsDemo.vue'
+import OrderableTableDemo from './OrderableTableDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -63,7 +64,7 @@ export {
   TheIconDemoIndex,
   TheCustomIconDemo,
   TheInitIconDemo,
-  ContentCardDemo,
+  CardDemo,
   DownloadFileDemo,
   UploadDemo,
   AppParamsDemo,
@@ -97,8 +98,9 @@ export {
   VideoFilterDemo,
   AddFormObjDemo,
   CellEditDemo,
-  CoocaaCascaderPanelDemo,
-  CooTableDemo,
+  CascaderPanelDemo,
+  TableTreeDemo,
   FilterTreeDemo,
-  InputThousandsDemo
+  InputThousandsDemo,
+  OrderableTableDemo
 }

@@ -11,7 +11,7 @@
       :pagination="remoteSelect.pagination"
       @filter-change="fetchData"
     >
-      <Table
+      <c-table
         :data="remoteSelect.table.data"
         :props="remoteSelect.table.props"
         :header="remoteSelect.table.header"

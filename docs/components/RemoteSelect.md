@@ -7,9 +7,9 @@
 ### 效果
 
 <ClientOnly>
-  <Demo>
-    <RemoteSelectDemo />
-  </Demo>
+<Demo>
+  <RemoteSelectDemo />
+</Demo>
 </ClientOnly>
 
 ### 代码  

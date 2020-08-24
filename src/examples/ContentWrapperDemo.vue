@@ -6,7 +6,7 @@
     @filter-change="handleFilterChange"
     @filter-reset="handleFilterReset"
   >
-    <Table :props="table.props" :header="table.header" :data="table.data" />
+    <c-table :props="table.props" :header="table.header" :data="table.data" />
   </c-content-wrapper>
 </template>
 
@@ -19,33 +19,9 @@ export default {
       filterSchema: _.map({
         id: _.o.string.other('form', {
           placeholder: '请输入 id'
-          // cols: {
-          //   item: 5,
-          //   label: 0,
-          //   wrapper: 16,
-          //   xsLabel: 0,
-          //   xsWrapper: 24
-          // }
         }),
-        // height: _.o.enum({ a: 1, b: 2 }).other('form', {
-        //   placeholder: '请输入 id',
-        //   component: 'Select'
-        // }),
-        // age: _.o.string.other('form', {
-        //   placeholder: '请输入 id'
-        // }),
         name: _.o.string.other('form', {
           placeholder: '请输入 name'
-          // cols: {
-          //   item: 7,
-          //   label: 0,
-          //   wrapper: 16,
-          //   xsLabel: 0,
-          //   xsWrapper: {
-          //     offset: 2,
-          //     span: 22
-          //   }
-          // }
         })
       }).other('form', {
         cols: {
