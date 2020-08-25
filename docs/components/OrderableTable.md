@@ -1,5 +1,5 @@
 # 可调整顺序表格  
-
+`c-orderable-table`
 ## 示例  
 ### 效果
 <Demo>

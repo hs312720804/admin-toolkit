@@ -1,5 +1,6 @@
 # 点击选择包装器  
-c-select-dialog  原先的 ClickAndSelectWrapper组件
+`c-select-dialog`
+原先的 ClickAndSelectWrapper组件
 用于点击一个按钮，图片或者别的元素，然后弹出框选择内容  
 
 ## 示例  

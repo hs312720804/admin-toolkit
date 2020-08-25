@@ -45,7 +45,7 @@
 <script>
 import formItemMixin from '../../formItemMixin'
 export default {
-  name: 'CFromEnumList',
+  name: 'CFormEnumList',
   mixins: [formItemMixin],
   data () {
     return {

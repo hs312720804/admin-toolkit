@@ -1,6 +1,6 @@
 <template>
   <el-form label-width="140px">
-    <AppParamsRead :value="appParams" />
+    <c-app-params-read :value="appParams" />
   </el-form>
 </template>
 

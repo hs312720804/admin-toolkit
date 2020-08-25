@@ -1,5 +1,5 @@
 # 整数输入    
-c-input-positive-int
+`c-input-positive-int`
 只能输入0或者正整数
 ## 示例  
 <Demo>

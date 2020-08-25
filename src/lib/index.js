@@ -48,6 +48,8 @@ import CFatherSonLink from './components/father-son-link/index'
 import CVideoFilter from './components/video-filter/index'
 import CProductList from './components/product-list/index'
 import COrderableTable from './components/orderable-table/index'
+import CAppParamsRead from './bizComponents/app-params-read/index'
+import CClickEventSelector from './bizComponents/click-event-selector/index'
 const components = [
   CAppParams,
   CTable,
@@ -96,7 +98,9 @@ const components = [
   CFatherSonLink,
   CVideoFilter,
   CProductList,
-  COrderableTable
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector
 ]
 
 const install = function (Vue) {
@@ -162,7 +166,9 @@ export {
   CFatherSonLink,
   CVideoFilter,
   CProductList,
-  COrderableTable
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector
 }
 export default {
   CTable,
@@ -216,5 +222,7 @@ export default {
   CFatherSonLink,
   CVideoFilter,
   CProductList,
-  COrderableTable
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector
 }

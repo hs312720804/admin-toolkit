@@ -1,5 +1,6 @@
 # 表格(支持树形结构)  
-`c-table-tree`  Table组件的功能扩展，在原始Table组件的功能上添加了树形功能，完全可以替代旧版本的Table组件
+`c-table-tree`  
+Table组件的功能扩展，在原始Table组件的功能上添加了树形功能，完全可以替代旧版本的Table组件
 
 ## 示例  
 
