@@ -5,11 +5,13 @@
     @selection-remove="handleTableRowSelectionRemove"
     @selection-clear="handleRemoteSelectClear"
   >
-    <c-content-wrapper
+    <component
       :filter="remoteSelect.filter"
       :filter-schema="remoteSelect.filterSchema"
       :pagination="remoteSelect.pagination"
       @filter-change="fetchData"
+      v-if="dynamicComponent"
+      :is="dynamicComponent"
     >
       <c-table
         :data="remoteSelect.table.data"
@@ -21,7 +23,7 @@
         @row-selection-remove="handleTableRowSelectionRemove"
         @all-row-selection-change="handleTableAllRowSelectionChange"
       />
-    </c-content-wrapper>
+    </component>
   </c-remote-select>
 </template>
 <script>
@@ -29,6 +31,7 @@ import _ from 'gateschema'
 export default {
   data () {
     return {
+      dynamicComponent: null,
       remoteSelect: {
         title: '选择数据',
         filter: {},
@@ -146,6 +149,11 @@ export default {
         this.handleRemoteSelectClear()
       }
     }
+  },
+  mounted () {
+    import('../lib/components/content-wrapper/src/ContentWrapper').then(module => {
+      this.dynamicComponent = module.default
+    })
   }
 }
 </script>

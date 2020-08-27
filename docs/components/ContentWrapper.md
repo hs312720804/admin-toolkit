@@ -9,10 +9,11 @@
 ## 示例  
 
 ### 效果
-
+<ClientOnly>
 <Demo>
-  <ContentWrapperDemo />
+<ContentWrapperDemo />
 </Demo>
+</ClientOnly>
 
 ### 代码  
 ```vue

@@ -1,20 +1,29 @@
 <template>
-  <c-content-wrapper
+  <component
     :filter="filter"
     :filterSchema="filterSchema"
     :pagination="pagination"
     @filter-change="handleFilterChange"
     @filter-reset="handleFilterReset"
+    v-if="dynamicComponent"
+    :is="dynamicComponent"
   >
     <c-table :props="table.props" :header="table.header" :data="table.data" />
-  </c-content-wrapper>
+  </component>
+  
+  <!-- <component v-if="dynamicComponent" :is="dynamicComponent">
+        <c-table :props="table.props" :header="table.header" :data="table.data" />
+  </component> -->
 </template>
 
 <script>
+//  <c-content-wrapper
+import aa from '../lib/components/content-wrapper/src/ContentWrapper'
 import _ from 'gateschema'
 export default {
   data () {
     return {
+      dynamicComponent: null,
       filter: {},
       filterSchema: _.map({
         id: _.o.string.other('form', {
@@ -93,6 +102,13 @@ export default {
       this.filter = {}
       this.$message('筛选条件需要重置')
     }
+  },
+  mounted () {
+    import('../lib/components/content-wrapper/src/ContentWrapper').then(module => {
+      this.dynamicComponent = module.default
+      // use code
+    })
+    // this.dynamicComponent = 'c-content-wrapper'
   }
 }
 </script>

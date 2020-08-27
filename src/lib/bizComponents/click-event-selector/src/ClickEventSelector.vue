@@ -9,8 +9,10 @@
       :append-to-body="true"
       :fullscreen="fullscreen"
     >
-      <c-content-wrapper
+      <component
         :pagination="pagination"
+        v-if="dynamicComponent"
+        :is="dynamicComponent"
       >
         <slot name="filter"></slot>
         <c-card-list
@@ -25,7 +27,7 @@
             {{ row.label }}
           </div>
         </c-card-list>
-      </c-content-wrapper>
+      </component>
     </Dialog>
   </div>
 </template>
@@ -40,6 +42,7 @@ export default {
   name: 'CClickEventSelector',
   data () {
     return {
+      dynamicComponent: null,
       showDialog: false,
       table: {
         selected: undefined,
@@ -57,6 +60,11 @@ export default {
       this.showDialog = false
       this.$emit('select-end', row)
     }
+  },
+  mounted () {
+    import('../../../components/content-wrapper/src/ContentWrapper').then(module => {
+      this.dynamicComponent = module.default
+    })
   }
 }
 
