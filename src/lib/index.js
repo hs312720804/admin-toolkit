@@ -3,7 +3,7 @@ import CBreadcrumb from './components/breadcrumb/index'
 import CTable from './components/table/index'
 import CCardList from './components/card-list/index'
 import CActionList from './components/action-list/index'
-// import CContentWrapper from './components/content-wrapper/index'
+import CContentWrapper from './components/content-wrapper/index'
 import CRemoteSelect from './components/remote-select/index'
 import CTagNav from './components/tag-nav/index'
 import CPop from './components/pop/index'
@@ -76,7 +76,7 @@ const components = [
   CCard,
   CRemoteSelect,
   CTypeList,
-  //CContentWrapper,
+  CContentWrapper,
   CCellEdit,
   CRegionPickerCn,
   CFilterTree,
@@ -121,7 +121,7 @@ export {
   CMenu,
   CCardList,
   CBreadcrumb,
-  // CContentWrapper,
+  CContentWrapper,
   CRemoteSelect,
   CActionList,
   CTagNav,
@@ -176,7 +176,7 @@ export default {
   CMenu,
   CCardList,
   CBreadcrumb,
-  //CContentWrapper,
+  CContentWrapper,
   CRemoteSelect,
   CActionList,
   CTagNav,
