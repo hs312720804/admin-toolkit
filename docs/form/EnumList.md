@@ -1,4 +1,5 @@
 # 枚举列表  
+`c-form-enum-list`
 用于输入和展示多选值
 
 ## 示例  
@@ -12,10 +13,10 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
-      <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
-    </DataForm>
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-enum-list type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
+      <c-form-enum-list label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
+    </c-form>
   </div>
 </template>
 

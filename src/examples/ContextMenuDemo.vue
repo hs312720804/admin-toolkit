@@ -1,5 +1,5 @@
 <template>
-  <ContextMenu>
+  <c-context-menu>
     <div class="menu" slot="menu">
       <li>新建</li> 
       <li>编辑</li> 
@@ -7,7 +7,7 @@
     <div>
       右键我
     </div>
-  </ContextMenu>
+  </c-context-menu>
 </template>
 
 <script>

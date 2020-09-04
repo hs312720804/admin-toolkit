@@ -1,4 +1,5 @@
 # 字符串  
+`c-form-string `
 对element ui el-input元素进行封装，用于输入和展示字符串值，所有的属性可以参考el-input的属性文档
 
 ## 示例  
@@ -12,9 +13,9 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <String label="姓名" v-model="form.name" />
-    </DataForm>
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-string label="姓名" v-model="form.name" />
+    </c-form>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 # 第三方应用参数输入    
-`AppParams`  
+`c-app-params`  
 
 ## 示例  
 <Demo>
@@ -10,7 +10,7 @@
 ```vue
 <template>
     <el-form :model="form" label-width="140px">
-        <AppParams prop-prefix="appParams" v-model="form.appParams" />
+        <c-app-params prop-prefix="appParams" v-model="form.appParams" />
     </el-form>
 </template>
 

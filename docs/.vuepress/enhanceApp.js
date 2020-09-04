@@ -24,5 +24,11 @@ export default ({
     baseURL: 'http://gitlab.skysri.com'
   })
   Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+  // Vue.mixin({
+  //   mounted () {
+  //     import('../../src/register')
+  //   }
+  // })
+  
  // Vue.prototype.$ELEMENT = { size: "small", zIndex: 3000 };
 }

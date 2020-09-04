@@ -1,5 +1,5 @@
 <template>
-  <Breadcrumb :items="items" />
+  <c-breadcrumb :items="items" />
 </template>
 
 <script>

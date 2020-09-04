@@ -1,5 +1,5 @@
 # 点击事件选择器  
-`ClickEventSelector`  
+`c-click-event-selector`  
 
 ## 示例  
 <Demo>
@@ -10,14 +10,14 @@
 ```vue  
 <template>
   <div>
-    <ClickEventSelector 
+    <c-click-event-selector 
       title="快速填充" 
       :fullscreen="false"
       :data="data" 
       :pagination="pagination"
       @select-end="handleSelectEnd"
     >
-    </ClickEventSelector>
+    </c-click-event-selector>
     <span v-if="selected">
       {{ selected }}
     </span>

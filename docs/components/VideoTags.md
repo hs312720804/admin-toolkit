@@ -1,5 +1,5 @@
 # 标签列表    
-`VideoTags`  
+`c-video-tags`  
 
 ## 示例  
 
@@ -22,7 +22,7 @@
             @close="handleTagsClose(tag)">
         {{tag.tagCnName}}
     </el-tag>
-    <VideoTags ref="ccMediaTag" :tagData="tagData" :tagDataBakInit="tagDataBak" :pageSize="pageSize" @currTagData="getCurrTagData" @getTagNodes="getTagNodes" @updateTagData="updateTagData" />
+    <c-video-tags ref="ccMediaTag" :tagData="tagData" :tagDataBakInit="tagDataBak" :pageSize="pageSize" @currTagData="getCurrTagData" @getTagNodes="getTagNodes" @updateTagData="updateTagData" />
   </div>
 </template>
 <script>

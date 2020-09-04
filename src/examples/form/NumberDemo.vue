@@ -1,8 +1,8 @@
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <Number label="年龄" v-model="form.age" />
-    </DataForm>
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-number label="年龄" v-model="form.age" />
+    </c-form>
   </div>
 </template>
 

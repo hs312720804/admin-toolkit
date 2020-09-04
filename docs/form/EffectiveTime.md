@@ -1,5 +1,5 @@
 # 有效范围时间组件
- `EffectiveTime`组件  
+ `c-form-effective-time`
  有效期范围表单组件，有效时间范围开始时间不能小于当前时间，时间范围是当天之前的日期不可选择
 
 ## 示例  
@@ -13,9 +13,9 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
-      <EffectiveTime label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
-    </DataForm>
+    <c-form label-width="120px" :model="form"  :readonly="isReadonly">
+      <c-form-effective-time label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
+    </c-form>
   </div>
 </template>
 

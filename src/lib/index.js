@@ -1,101 +1,230 @@
-import Menu from './components/Menu'
-import Breadcrumb from './components/Breadcrumb'
-import Table from './components/Table'
-import ContentWrapper from './components/ContentWrapper'
-import RemoteSelect from './components/RemoteSelect'
-import ActionList from './components/ActionList'
-import TagNav from './components/TagNav'
-import pop from './components/pop'
-import carousel from './components/Carousel'
-import ContentEllipsis from './components/ContentEllipsis'
-import TypeList from './components/TypeList'
-import GateSchemaForm from './components/GateSchemaForm'
-import IconSelect from './components/IconSelect'
-import ContentCard from './components/ContentCard'
-import DownloadFile from './components/DownloadFile'
-import Upload from './components/Upload'
-import AppParams from './bizComponents/AppParams'
-import AppParamsRead from './bizComponents/AppParamsRead'
-import CardList from './components/CardList'
+import CMenu from './components/menu/index'
+import CBreadcrumb from './components/breadcrumb/index'
+import CTable from './components/table/index'
+import CCardList from './components/card-list/index'
+import CActionList from './components/action-list/index'
+import CContentWrapper from './components/content-wrapper/index'
+import CRemoteSelect from './components/remote-select/index'
+import CTagNav from './components/tag-nav/index'
+import CPop from './components/pop/index'
+import CCarousel from './components/carousel/index'
+import CEllipsis from './components/ellipsis/index'
+import CTypeList from './components/type-list/index'
+import CIconSelect from './components/icon-select/index'
+import CCard from './components/card/index'
+import CDownload from './components/download/index'
+import CUpload from './components/upload/index'
+import CAppParams from './bizComponents/app-params/index'
 import utils from './utils'
-import FormFatherAndSonLink from './components/FormFatherAndSonLink'
-import probability from './components/probability'
-import ClickEventSelector from './bizComponents/ClickEventSelector'
-import ClickAndSelectWrapper from './components/ClickAndSelectWrapper'
-import InputOrder from './components/InputOrder'
-import InputPositiveInt from './components/InputPositiveInt'
-import InputPosibility from './components/InputPosibility'
-import OrderableTable from './components/OrderableTable'
-import BaseSelector from './components/BaseSelector'
-import ContextMenu from './components/ContextMenu'
-import VideoTags from './components/VideoTags'
-import CnRegionPicker from './components/CnRegionPicker'
-import AddMultiObj from './components/AddMultiObj'
-import FixHeaderAndFooter from './components/FixHeaderAndFooter'
-import ProductList from './components/ProductList'
-import VideoFilter from './components/VideoFilter'
-import AddFormObj from './components/AddFormObj'
-import InputIconEdit from './components/InputIconEdit'
-import CoocaaCascaderPanel from './components/CoocaaCascaderPanel'
-import CooTable from './components/CooTable.vue'
-// DataForm
-import DataForm from './form/DataForm'
-import Boolean from './form/Boolean'
-import String from './form/String'
-import Number from './form/Number'
-import Enum from './form/Enum'
-import EnumList from './form/EnumList'
-import Any from './form/Any'
-import Mac from './form/Mac'
-import EffectiveTime from './form/EffectiveTime'
+import CProbability from './components/probability/index'
+import CRegionPickerCn from './components/region-picker/index'
+import CCellEdit from './components/cell-edit/index'
+import CForm from './form/form/index'
+import CFormBoolean from './form/boolean/index'
+import CFormString from './form/string/index'
+import CFormNumber from './form/number/index'
+import CFormEnum from './form/enum/index'
+import CFormEnumList from './form/enum-list/index'
+import CFormAny from './form/any/index'
+import CFormMac from './form/mac/index'
+import CFormEffectiveTime from './form/effective-time/index'
+import CFilterTree from './components/filter-tree/index'
+import CInputThousands from './components/input-thousands/index'
+import CAddMulti from './components/add-multi/index'
+import CBaseSelector from './components/base-selector/index'
+import CSelectDialog from './components/select-dialog/index'
+import CCascaderPanel from './components/cascader-panel/index'
+import CTableTree from './components/table-tree/index'
+import CFixPage from './components/fix-page/index'
+import CTableWrapper from './components/table-wrapper/index'
+import CContextMenu from './components/context-menu/index'
+// import CGateSchemaForm from './components/gate-schema-form/index'
+import CInputOrder from './components/input-order/index'
+import CInputPositiveInt from './components/input-positive-int/index'
+import CInputPosibility from './components/input-posibility/index'
+import CVideoTags from './components/video-tags/index'
+import CAddFormObj from './components/add-form-obj/index'
+import CFatherSonLink from './components/father-son-link/index'
+import CVideoFilter from './components/video-filter/index'
+import CProductList from './components/product-list/index'
+import COrderableTable from './components/orderable-table/index'
+import CAppParamsRead from './bizComponents/app-params-read/index'
+import CClickEventSelector from './bizComponents/click-event-selector/index'
+import CSearchDropdown from './components/search-dropdown/index'
+const components = [
+  CAppParams,
+  CTable,
+  CMenu,
+  CBreadcrumb,
+  CCardList,
+  CActionList,
+  CForm,
+  CFormBoolean,
+  CFormEnum,
+  CFormNumber,
+  CFormString,
+  CFormAny,
+  CFormMac,
+  CFormEffectiveTime,
+  CFormEnumList,
+  CUpload,
+  CTagNav,
+  CCarousel,
+  CEllipsis,
+  CIconSelect,
+  CDownload,
+  CPop,
+  CCard,
+  CRemoteSelect,
+  CTypeList,
+  CContentWrapper,
+  CCellEdit,
+  CRegionPickerCn,
+  CFilterTree,
+  CInputThousands,
+  CAddMulti,
+  CBaseSelector,
+  CSelectDialog,
+  CCascaderPanel,
+  CTableTree,
+  CFixPage,
+  CTableWrapper,
+  CContextMenu,
+  // CGateSchemaForm,
+  CInputOrder,
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector,
+  CSearchDropdown
+]
+
+const install = function (Vue) {
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+  Vue.prototype.$c_utils = utils
+}
+
+/* istanbul ignore if */
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
 export {
-  Menu,
-  Breadcrumb,
-  Table,
-  ContentWrapper,
-  RemoteSelect,
-  ActionList,
-  TagNav,
-  GateSchemaForm,
+  CTable,
+  install,
+  CMenu,
+  CCardList,
+  CBreadcrumb,
+  CContentWrapper,
+  CRemoteSelect,
+  CActionList,
+  CTagNav,
   utils,
-  pop,
-  carousel,
-  ContentEllipsis,
-  IconSelect,
-  ContentCard,
-  DownloadFile,
-  Upload,
-  AppParams,
-  AppParamsRead,
-  TypeList,
-  CardList,
-  FormFatherAndSonLink,
-  probability,
-  ClickEventSelector,
-  ClickAndSelectWrapper,
-  InputOrder,
-  InputPositiveInt,
-  InputPosibility,
-  OrderableTable,
-  BaseSelector,
-  ContextMenu,
-  VideoTags,
-  DataForm,
-  Boolean,
-  String,
-  Number,
-  Enum,
-  EnumList,
-  Any,
-  Mac,
-  EffectiveTime,
-  CnRegionPicker,
-  AddMultiObj,
-  FixHeaderAndFooter,
-  ProductList,
-  VideoFilter,
-  AddFormObj,
-  InputIconEdit,
-  CoocaaCascaderPanel,
-  CooTable
+  CPop,
+  CCarousel,
+  CEllipsis,
+  CIconSelect,
+  CCard,
+  CDownload,
+  CUpload,
+  CAppParams,
+  CTypeList,
+  CProbability,
+  CForm,
+  CFormBoolean,
+  CFormString,
+  CFormNumber,
+  CFormEnum,
+  CFormEnumList,
+  CFormAny,
+  CFormMac,
+  CFormEffectiveTime,
+  CRegionPickerCn,
+  CCellEdit,
+  CFilterTree,
+  CInputThousands,
+  CAddMulti,
+  CBaseSelector,
+  CSelectDialog,
+  CCascaderPanel,
+  CTableTree,
+  CFixPage,
+  CTableWrapper,
+  CContextMenu,
+  // CGateSchemaForm,
+  CInputOrder,
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector
+}
+export default {
+  CTable,
+  install,
+  CMenu,
+  CCardList,
+  CBreadcrumb,
+  CContentWrapper,
+  CRemoteSelect,
+  CActionList,
+  CTagNav,
+  utils,
+  CPop,
+  CCarousel,
+  CEllipsis,
+  CIconSelect,
+  CCard,
+  CDownload,
+  CUpload,
+  CAppParams,
+  CTypeList,
+  CProbability,
+  CForm,
+  CFormBoolean,
+  CFormString,
+  CFormNumber,
+  CFormEnum,
+  CFormEnumList,
+  CFormAny,
+  CFormMac,
+  CFormEffectiveTime,
+  CRegionPickerCn,
+  CCellEdit,
+
+  CFilterTree,
+  CInputThousands,
+  CAddMulti,
+  CBaseSelector,
+  CSelectDialog,
+  CCascaderPanel,
+  CTableTree,
+  CFixPage,
+  CTableWrapper,
+  CContextMenu,
+  // CGateSchemaForm,
+  CInputOrder,
+  CInputPositiveInt,
+  CInputPosibility,
+  CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  CVideoFilter,
+  CProductList,
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector
 }

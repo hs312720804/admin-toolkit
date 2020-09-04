@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>简单上传</h2>
-    <Upload
+    <c-upload
       ref="upload"
       :multiple="true"
       @upload="handleUpload"
@@ -27,7 +27,7 @@
           />
         </div>
       </div>
-    </Upload>
+    </c-upload>
   </div>
 </template>
 

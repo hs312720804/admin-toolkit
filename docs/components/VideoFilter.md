@@ -1,14 +1,14 @@
 # 标签列表    
-`VideoFilter`  
+`c-video-filter`  
 
 ## 示例  
 
 ### 效果
 
 <Demo>
-  <ClientOnly>
-    <VideoFilterDemo />
-  </ClientOnly>
+<ClientOnly>
+  <VideoFilterDemo />
+</ClientOnly>
 </Demo>
 
 ### 代码  
@@ -19,7 +19,7 @@
         <el-option label="影视" :value="0"></el-option>
         <el-option label="教育" :value="1"></el-option>
     </el-select>
-    <VideoFilter ref="proList" :proData="proData" :setProductAttr="setProductAttr"></VideoFilter>
+    <c-video-filter ref="proList" :proData="proData" :setProductAttr="setProductAttr"></c-video-filter>
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 # 基础数据选择器
-`BaseSelector`
-用于创建数据选择器，配合 `ClickAndSelectWrapper点击选择包装器` 可实现点击弹窗选择数据  
+`c-base-selector`
+用于创建数据选择器，配合 `c-select-dialog选择器` 可实现点击弹窗选择数据  
 
 ## 示例  
 <Demo>
@@ -10,7 +10,7 @@
 ## 代码  
 ```vue
 <template>
-  <BaseSelector 
+  <c-base-selector 
     ref="baseSelector"
     id-field="id"
     :is-live="isLive"
@@ -24,7 +24,7 @@
     @filter-reset="handleFilterReset"
     @select-cancel="$emit('select-cancel')"
     @select-end="$emit('select-end')">
-  </BaseSelector>
+  </c-base-selector>
 </template>
  
 <script>

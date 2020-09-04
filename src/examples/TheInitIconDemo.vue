@@ -11,9 +11,13 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <IconSelect @get-icon="getIcon" :title="title"  :go-back-icon="'el-icon-cc-arrowleft'" :isUseInitialIcon="true" @go-back="goBack">
-
-      </IconSelect>
+      <c-icon-select
+        @get-icon="getIcon"
+        :title="title"
+        :go-back-icon="'el-icon-cc-arrowleft'"
+        :isUseInitialIcon="true"
+        @go-back="goBack"
+      ></c-icon-select>
     </div>
   </div>
 </template>

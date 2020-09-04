@@ -1,5 +1,5 @@
 <template>
-  <InputPosibility placeholder="请输入概率" />
+  <c-input-posibility placeholder="请输入概率" />
 </template>
 
 <script>

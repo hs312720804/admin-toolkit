@@ -1,5 +1,5 @@
 # 图标组件
-`IconSelect`   
+`c-icon-select`   
 图标组件依赖于阿里图标库，所以需要引入iconfont.css样式
 
 ## 示例1
@@ -24,8 +24,8 @@
       </el-form>
     </div>
     <div v-show="!isShowMainPage">
-      <TheIcon @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
-      </TheIcon>
+      <c-icon-select @get-icon="getIcon" :title="title" :isUseInitialIcon="true" @go-back="goBack">
+      </c-icon-select>
     </div>
   </div>
 </template>

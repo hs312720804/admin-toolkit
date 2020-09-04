@@ -4,7 +4,7 @@
         <el-option label="影视" :value="0"></el-option>
         <el-option label="教育" :value="1"></el-option>
     </el-select>
-    <ProductList ref="proList" :proData="proData" :setProductAttr="setProductAttr" :partnerList="partnerList"></ProductList>
+    <c-product-list ref="proList" :proData="proData" :setProductAttr="setProductAttr" :partnerList="partnerList"></c-product-list>
   </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 # 文本省略
-`ContentEllipsis`   
+`c-ellipsis`   
 ## 示例  
 ### 效果  
 
@@ -10,13 +10,13 @@
 ### 代码  
 ```vue
 <template>
-       <ContentEllipsis :content='EllipsisContent' width="100" height="100" ></ContentEllipsis>
+  <c-ellipsis :content='ellipsisContent' width="100" height="100" ></c-ellipsis>
 </template>
 <script>
 export default {
   data () {
     return {
-      EllipsisContent: `Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. `
+      ellipsisContent: `Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. `
     }
   }
 }

@@ -1,5 +1,5 @@
 # 卡片列表    
-`CardList`  
+`c-card-list`  
 卡片列表，可用于展示图片或图文列表，带有选择功能，与 `Table` 组件的事件基本一致，可无缝切换    
 
 ## 示例  
@@ -12,7 +12,7 @@
 ### 代码  
 ```vue
 <template>
-  <CardList
+  <c-card-list
     :gutter="10"
     :data="table.data"
     :selection-type="table.selectionType"
@@ -25,7 +25,7 @@
     <div class="card-content" slot="row" slot-scope="{row}">
         id: {{ row.id }}
     </div>
-  </CardList>
+  </c-card-list>
 </template>
 <script>
 export default {

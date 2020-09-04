@@ -1,5 +1,5 @@
 # Mac数据类型
- `Mac`  
+ `c-form-mac`  
  只能用来输入以a-f、A-F、0-9组成的12位MAC地址,可以用来输入一个MAC地址和多个，当type为textarea时，可以用来输入多个Mac地址，以英文逗号隔开，反之只能输入一个MAC地址
 
 ## 示例  
@@ -13,9 +13,9 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
-      <Mac label="MAC" v-model="form.mac" prop="mac" type="textarea"/>
-    </DataForm>
+    <c-form label-width="120px" :model="form"  :readonly="isReadonly">
+      <c-form-mac label="MAC" v-model="form.mac" prop="mac" type="textarea"/>
+    </c-form>
   </div>
 </template>
 

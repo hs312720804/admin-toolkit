@@ -1,51 +1,36 @@
 <template>
-  <ContentWrapper
+  <component
     :filter="filter"
     :filterSchema="filterSchema"
     :pagination="pagination"
     @filter-change="handleFilterChange"
     @filter-reset="handleFilterReset"
+    v-if="dynamicComponent"
+    :is="dynamicComponent"
   >
-    <Table :props="table.props" :header="table.header" :data="table.data" />
-  </ContentWrapper>
+    <c-table :props="table.props" :header="table.header" :data="table.data" />
+  </component>
+  
+  <!-- <component v-if="dynamicComponent" :is="dynamicComponent">
+        <c-table :props="table.props" :header="table.header" :data="table.data" />
+  </component> -->
 </template>
 
 <script>
+//  <c-content-wrapper
+import aa from '../lib/components/content-wrapper/src/ContentWrapper'
 import _ from 'gateschema'
 export default {
   data () {
     return {
+      dynamicComponent: null,
       filter: {},
       filterSchema: _.map({
         id: _.o.string.other('form', {
           placeholder: '请输入 id'
-          // cols: {
-          //   item: 5,
-          //   label: 0,
-          //   wrapper: 16,
-          //   xsLabel: 0,
-          //   xsWrapper: 24
-          // }
         }),
-        // height: _.o.enum({ a: 1, b: 2 }).other('form', {
-        //   placeholder: '请输入 id',
-        //   component: 'Select'
-        // }),
-        // age: _.o.string.other('form', {
-        //   placeholder: '请输入 id'
-        // }),
         name: _.o.string.other('form', {
           placeholder: '请输入 name'
-          // cols: {
-          //   item: 7,
-          //   label: 0,
-          //   wrapper: 16,
-          //   xsLabel: 0,
-          //   xsWrapper: {
-          //     offset: 2,
-          //     span: 22
-          //   }
-          // }
         })
       }).other('form', {
         cols: {
@@ -117,6 +102,13 @@ export default {
       this.filter = {}
       this.$message('筛选条件需要重置')
     }
+  },
+  mounted () {
+    import('../lib/components/content-wrapper/src/ContentWrapper').then(module => {
+      this.dynamicComponent = module.default
+      // use code
+    })
+    // this.dynamicComponent = 'c-content-wrapper'
   }
 }
 </script>

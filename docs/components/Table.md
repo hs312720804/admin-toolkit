@@ -1,5 +1,5 @@
 # 表格  
-`Table`  
+`c-table`  
 
 ## 示例  
 
@@ -12,7 +12,7 @@
 ### 代码  
 ```vue
 <template>
-  <Table
+  <c-table
     :data="table.data"
     :props="table.props"
     :header="table.header"
@@ -26,7 +26,7 @@
     @all-row-selection-change="handleAllRowSelectionChange"
     @row-click="handleRowClick"
   >
-  </Table>
+  </c-table>
 </template>
 <script>
 import { createOperationRender } from '../lib/utils/component'

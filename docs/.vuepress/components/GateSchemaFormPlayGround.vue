@@ -15,7 +15,7 @@
       @keydown.tab.prevent="tabber($event)"
     />
     <div class="form">
-      <GateSchemaForm :schema="schema" v-model="formData" />
+      <c-gate-schema-form :schema="schema" v-model="formData" />
     </div>
   </div>
 </template>

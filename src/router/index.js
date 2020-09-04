@@ -36,12 +36,12 @@ const routes = [
         }
       },
       {
-        path: 'InputIconEdit',
-        name: 'InputIconEdit',
-        component: demos.InputIconEditDemo,
+        path: 'CellEdit',
+        name: 'CellEdit',
+        component: demos.CellEditDemo,
         meta: {
           title: '表格可编辑单元',
-          route: 'InputIconEdit'
+          route: 'CellEdit'
         }
       },
       {
@@ -62,6 +62,16 @@ const routes = [
           title: '菜单',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'menu'
+        }
+      },
+      {
+        path: 'contextMenu',
+        name: 'contextMenu',
+        component: demos.ContextMenuDemo,
+        meta: {
+          title: '右键菜单',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'contextMenu'
         }
       },
       {
@@ -107,7 +117,7 @@ const routes = [
       {
         path: 'contentCard',
         name: 'contentCard',
-        component: demos.ContentCardDemo,
+        component: demos.CardDemo,
         meta: {
           title: '标题返回',
           icon: 'iconfont el-icon-cc-file-add',
@@ -115,23 +125,23 @@ const routes = [
         }
       },
       {
-        path: 'FixHeaderAndFooter',
-        name: 'FixHeaderAndFooter',
-        component: demos.FixHeaderAndFooterDemo,
+        path: 'fixPage',
+        name: 'fixPage',
+        component: demos.FixPageDemo,
         meta: {
           title: '头尾固定',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'FixHeaderAndFooter'
+          route: 'fixPage'
         }
       },
       {
-        path: 'AddMultiObj',
-        name: 'AddMultiObj',
-        component: demos.AddMultiObjDemo,
+        path: 'AddMulti',
+        name: 'AddMulti',
+        component: demos.AddMultiDemo,
         meta: {
           title: '添加多个对象',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'AddMultiObj'
+          route: 'AddMulti'
         }
       },
       {
@@ -157,7 +167,7 @@ const routes = [
       {
         path: 'FormFatherAndSonLink',
         name: 'FormFatherAndSonLink',
-        component: demos.FormFatherAndSonLinkDemo,
+        component: demos.FatherSonLinkDemo,
         meta: {
           title: '表单父子关联',
           icon: 'iconfont el-icon-cc-file-add',
@@ -212,6 +222,66 @@ const routes = [
           title: '卡片列表',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'CardList'
+        }
+      },
+      {
+        path: 'filterTree',
+        name: 'filterTree',
+        component: demos.FilterTreeDemo,
+        meta: {
+          title: '树形过滤',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'filterTree'
+        }
+      },
+      {
+        path: 'inputThousands',
+        name: 'inputThousands',
+        component: demos.InputThousandsDemo,
+        meta: {
+          title: '输入千分位数字',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputThousands'
+        }
+      },
+      {
+        path: 'inputOrder',
+        name: 'inputOrder',
+        component: demos.InputOrderDemo,
+        meta: {
+          title: '序号排序',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputOrder'
+        }
+      },
+      {
+        path: 'inputPositiveInt',
+        name: 'inputPositiveInt',
+        component: demos.InputPositiveIntDemo,
+        meta: {
+          title: '正整数输入',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'inputPositiveInt'
+        }
+      },
+      {
+        path: 'selectDialog',
+        name: 'selectDialog',
+        component: demos.SelectDialogDemo,
+        meta: {
+          title: '基础数据选择器',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'selectDialog'
+        }
+      },
+      {
+        path: 'ContentWrapperDemo',
+        name: 'ContentWrapperDemo',
+        component: demos.ContentWrapperDemo,
+        meta: {
+          title: '内容包装器',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'ContentWrapperDemo'
         }
       }
     ]
@@ -283,7 +353,7 @@ const routes = [
       {
         path: 'treeTableList',
         name: 'treeTableList',
-        component: demos.CooTableDemo,
+        component: demos.TableTreeDemo,
         meta: {
           title: '树形表格',
           icon: 'iconfont el-icon-cc-file-add',

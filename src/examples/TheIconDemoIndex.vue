@@ -11,20 +11,20 @@
   </div>
 </template>
 <script>
-import TheCustomIconDemo from  './TheCustomIconDemo'
+import TheCustomIconDemo from './TheCustomIconDemo'
 import TheInitIconDemo from './TheInitIconDemo'
 export default {
   components: {
     TheCustomIconDemo,
     TheInitIconDemo
   },
-  data() {
+  data () {
     return {
-    activeName: "first"
+      activeName: "first"
     }
   },
   methods: {
-    handleClick() {
+    handleClick () {
       //debugger;
     }
   }

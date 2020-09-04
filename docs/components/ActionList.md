@@ -1,5 +1,5 @@
 # 操作按钮组    
-`ActionList`  
+`c-action-list`  
 用于快速创建一组操作按钮  
 
 ## 示例  
@@ -13,14 +13,14 @@
 ### 代码  
 ```vue
 <template>
-    <ActionList 
+    <c-action-list 
       :actions="actions"
     />
-    <ActionList
+    <c-action-list
       :group="true"
       :actions="actions"
     />
-    <ActionList
+    <c-action-list
       :group="true"
       align="left"
       :actions="actions"

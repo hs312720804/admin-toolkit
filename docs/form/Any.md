@@ -1,4 +1,5 @@
 # 自定义  
+`c-form-any`
 用于自定义DataForm控件, 需要自定义两个 slot.
 
 ## 示例  
@@ -12,12 +13,12 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <Any label="是否已婚">
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-any label="是否已婚">
         <el-switch slot="edit" :value="!!form.isMarried" @input="form.isMarried = $event ? 1 : 0"></el-switch>
         <span slot="read">{{ form.isMarried ? '是' : '否' }} </span>
-      </Any>
-    </DataForm>
+      </c-form-any>
+    </c-form>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 # 面包屑导航  
-`Breadcrumb`      
+`c-breadcrumb`      
 
 ## 示例  
 ### 效果  
@@ -11,7 +11,7 @@
 ### 代码  
 ```vue
 <template>
-  <Breadcrumb :items="items" />
+  <c-breadcrumb :items="items" />
 </template>
 
 <script>

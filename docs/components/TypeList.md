@@ -1,5 +1,5 @@
 # 分类列表    
-`TypeList`  
+`c-type-list`  
 
 ## 示例  
 
@@ -14,7 +14,7 @@
 <template>
   <div>
     <div><el-button type="primary" icon="el-icon-edit" @click="clickEdit">{{eidtText}}</el-button></div>
-    <TypeList :lists="datas" :defaultProps="defaultProps" @currData="getNodeData" @clickTypeHandler="clickTypeHandler" />
+    <c-type-list :lists="datas" :defaultProps="defaultProps" @currData="getNodeData" @clickTypeHandler="clickTypeHandler" />
   </div>
 </template>
 <script>

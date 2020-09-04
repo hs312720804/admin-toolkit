@@ -1,4 +1,5 @@
 # 表单  
+`c-form`
 数据表单根组件，所有数据表单组件应放本组件里面  
 
 ## 示例  
@@ -13,18 +14,18 @@
 <template>
   <div>
     <div class="switch-readonly">读写模式切换 <el-switch v-model="isReadonly" /></div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <String label="姓名" v-model="form.name" />
-      <Number label="年龄" v-model="form.age" />
-      <Enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
-      <Enum label="岗位" v-model="form.job" :options="jobOptions" />
-      <EnumList type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
-      <EnumList label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
-      <Boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
-      <Boolean label="" v-model="form.isIn">
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-string label="姓名" v-model="form.name" />
+      <c-form-number label="年龄" v-model="form.age" />
+      <c-form-enum label="性别" type="radio" confirm="是否更改性别"  v-model="form.gender" :options="genderOptions" />
+      <c-form-enum label="岗位" v-model="form.job" :options="jobOptions" />
+      <c-form-enum-list type="checkbox" v-model="form.skill" label="语言技能" :options="langOptions" />
+      <c-form-enum-list label="兴趣" v-model="form.hobbies" :options="hobbiesOptions" />
+      <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
+      <c-form-boolean label="" v-model="form.isIn">
         参加活动
-      </Boolean>
-    </DataForm>
+      </c-form-boolean>
+    </c-form>
   </div>
 </template>
 

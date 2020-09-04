@@ -1,9 +1,10 @@
+<!--这个组件1.0.0升级去除-->
 <template>
-    <GateSchemaForm
+    <gateSchemaForm
       :schema="schema"
       v-model="formData"
     >
-    </GateSchemaForm>
+    </gateSchemaForm>
 </template>
 
 <script>
@@ -166,7 +167,6 @@ const schema = _
     },
     layout: 'vertical'
   })
-
 export default {
   data () {
     return {
@@ -177,5 +177,4 @@ export default {
     }
   }
 }
-
 </script>

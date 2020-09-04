@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DownloadFile @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</DownloadFile>
+    <c-download @download-data="downloadData" :downloadUrl="downloadUrl">下载远程文件</c-download>
   </div>
 </template>
 <script>
@@ -17,7 +17,7 @@ export default {
       /**
         * 下载地址为远程的地址时
       */
-      this.downloadUrl = 'http://172.20.155.102/fakeData.xlsx?_r=' + Math.random()
+      this.downloadUrl = 'notdataCollect.xls?_r=' + Math.random()
       /**
         * 下载地址为本地的某个文件时，把该文件放到该项目public目录下，然后加上文件名
       */

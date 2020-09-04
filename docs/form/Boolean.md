@@ -1,4 +1,5 @@
-# 布尔  
+# 布尔 
+`c-form-boolean `
 用于输入和展示布尔值
 
 ## 示例  
@@ -12,12 +13,12 @@
 ```vue
 <template>
   <div>
-    <DataForm label-width="120px" :readonly="isReadonly"> 
-      <Boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
-      <Boolean label="" v-model="form.isIn">
+    <c-form label-width="120px" :readonly="isReadonly"> 
+      <c-form-boolean type="switch" label="是否正式员工" v-model="form.isRegular" />
+      <c-form-boolean label="" v-model="form.isIn">
         参加活动
-      </Boolean>
-    </DataForm>
+      </c-form-boolean>
+    </c-form>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
-      <EffectiveTime label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
-    </DataForm>
+    <c-form label-width="120px" :model="form"  :readonly="isReadonly">
+      <c-form-effective-time label="有效期" v-model="form.effectiveTime" prop="effectiveTime" :rules="rules.noEmpty"/>
+    </c-form>
   </div>
 </template>
 

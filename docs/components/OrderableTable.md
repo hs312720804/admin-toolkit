@@ -1,5 +1,5 @@
 # 可调整顺序表格  
-
+`c-orderable-table`
 ## 示例  
 ### 效果
 <Demo>
@@ -10,10 +10,10 @@
 ```vue
 <template>
   <div>
-    <OrderableTable 
+    <c-orderable-table 
       :header="table.header" 
       v-model="table.data">
-    </OrderableTable>
+    </c-orderable-table>
   </div>
 </template>
 

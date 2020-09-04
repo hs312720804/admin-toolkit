@@ -1,8 +1,8 @@
 <template>
   <div>
-    <DataForm label-width="120px" :model="form"  :readonly="isReadonly">
-      <Mac label="MAC" v-model="form.mac" prop="mac"/>
-    </DataForm>
+    <c-form label-width="120px" :model="form"  :readonly="isReadonly">
+      <c-form-mac label="MAC" v-model="form.mac" prop="mac"/>
+    </c-form>
   </div>
 </template>
 

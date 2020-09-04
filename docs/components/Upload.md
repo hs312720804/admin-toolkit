@@ -1,7 +1,6 @@
 # 文件上传  
-`Upload`  
+`c-upload`  
 封装了文件上传相关的一些逻辑，使用的过程中，需要自定义文件的显示方式和实现具体的上传方法
-
 
 ## 示例  
 
@@ -16,7 +15,7 @@
 <template>
   <div>
     <h2>简单上传</h2>
-    <Upload
+    <c-upload
       ref="upload"
       :multiple="true"
       :min-height="100"
@@ -44,7 +43,7 @@
           />
         </div>
       </div>
-    </Upload>
+    </c-upload>
   </div>
 </template>
 
