@@ -16,6 +16,17 @@ const routes = [
     },
     children: [
       {
+        path: 'searchDropdown',
+        name: 'searchDropdown',
+        
+        component: demos.SearchDropdownDemo,
+        meta: {
+          title: '下拉框远程搜索',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'searchDropdown'
+        }
+      },
+      {
         path: 'actionList',
         name: 'actionList',
         component: demos.ActionListDemo,
@@ -494,8 +505,10 @@ const routes = [
         }
       }
     ]
-  }
+  },
+
 ]
+console.log('routes==' + JSON.stringify(routes))
 const router = new Router({
   routes
 })

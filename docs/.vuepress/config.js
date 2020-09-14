@@ -63,6 +63,7 @@ module.exports = {
               'components/CascaderPanel.md',
               'components/FilterTree.md',
               'components/InputThousands.md',
+              'components/SearchDropdown.md',
             ]
           },
           {

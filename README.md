@@ -214,7 +214,7 @@ npm install
 npm install vue element-ui gateschema gateschema-form-vue @stateform/element --save
 
 ```
-// 本地运行docs 
+// 本地运行docs
 npx vuepress dev docs
 
 // 文档打包

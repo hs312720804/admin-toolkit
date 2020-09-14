@@ -1,4 +1,4 @@
-import CSearchDropdown from './src/SearchInput.vue'
+import CSearchDropdown from './src/SearchDropdown.vue'
 import install from '../../install'
 install(CSearchDropdown)
 
