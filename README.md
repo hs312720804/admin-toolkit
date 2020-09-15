@@ -19,6 +19,7 @@ import AdminToolkit from 'admin-toolkit'
 Vue.use(AdminToolkit)
 ```
 单个引入:
+```
 借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
 首先，安装 babel-plugin-component：
 npm install babel-plugin-component -D
@@ -37,8 +38,6 @@ module.exports = {
     ]
   ]
 }
-
-```
 import { CCard, CForm, CFormString, CFormNumber, CMenu, CTagNav, CContentWrapper, CTable } from 'admin-toolkit'
 Vue.use(CCard)
 Vue.use(CForm)
@@ -79,6 +78,7 @@ const componentUtil = utils.component
  请查看 [源代码](http://gitlab.skysri.com/flower/admin-toolkit) 
 
 ## 源代码运行
+```
 运行代码：
 npm install
 npm run serve 开发环境
@@ -86,4 +86,11 @@ npm run build 生产环境
 运用文档： 
 npm run docs:dev  开发环境
 npm run docs:build  生产环境
+```
+## 安装commitizen,为了规范化git commit 方便使用changelog
 
+```
+npm install -g commitizen
+commitizen init cz-conventional-changelog --save --save-exact
+具体使用见 [源代码](https://blog.csdn.net/m0_37263637/article/details/86723431) 
+```
