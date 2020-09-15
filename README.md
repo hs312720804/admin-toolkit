@@ -4,7 +4,7 @@ Admin Toolkit
 ## 安装    
 私有仓库安装：[前端模块私有仓库说明](http://wiki.skyoss.com/pages/viewpage.action?pageId=35726422)
 ```
-npm install admin-toolkit@版本号 --registry=http://172.20.155.102:4873
+npm install @ccprivate/admin-toolkit@版本号 --registry=http://172.20.155.102:4873
 ```
 
 从gitLab安装：
@@ -15,14 +15,14 @@ npm install git+ssh://git@gitlab.skysri.com:flower/admin-toolkit.git
 ## 使用
 完整引入:
 ```
-import AdminToolkit from 'admin-toolkit'
+import AdminToolkit from '@ccprivate/admin-toolkit'
 Vue.use(AdminToolkit)
 ```
 单个引入:
-```
-借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
-首先，安装 babel-plugin-component：
-npm install babel-plugin-component -D
+```javascript
+借助 babel-plugin-import，我们可以只引入需要的组件，以达到减小项目体积的目的。
+首先，安装 babel-plugin-import
+npm install babel-plugin-import -D
 然后，将 .babelrc 或者babel.config.js 修改为：
 module.exports = {
   presets: [
@@ -30,27 +30,45 @@ module.exports = {
   ],
   plugins: [
     [
-      'component',
+      'import',
       {
-        libraryName: 'admin-toolkit',
-        styleLibraryName: 'theme-chalk'
+        libraryDirectory: 'src/lib',
+        libraryName: '@ccprivate/admin-toolkit',
+        customName (name, file) {
+          const compenentPathMap = {
+            'c-app-params': 'bizComponents/app-params',
+            'c-app-params-read': 'bizComponents/app-params-read',
+            'c-form': 'form/form',
+            'c-form-string': 'form/string',
+            'c-form-any': 'form/any'
+          }
+          return `@ccprivate/admin-toolkit/src/lib/${compenentPathMap[name] || `components/${name.replace('c-', '')}`}`
+        }
       }
     ]
   ]
 }
-import { CCard, CForm, CFormString, CFormNumber, CMenu, CTagNav, CContentWrapper, CTable } from 'admin-toolkit'
-Vue.use(CCard)
-Vue.use(CForm)
-Vue.use(CFormString)
-Vue.use(CFormNumber)
+import { CMenu, CBreadcrumb, CCard, CActionList, CTable, CCardList, CTagNav, CContentWrapper, CAppParams, CAppParamsRead, CUpload, CForm, CFormString, CFormAny } from '@ccprivate/admin-toolkit'
+
 Vue.use(CMenu)
+Vue.use(CBreadcrumb)
+Vue.use(CCard)
+Vue.use(CActionList)
+Vue.use(CTable)
+Vue.use(CTable)
+Vue.use(CCardList)
 Vue.use(CTagNav)
 Vue.use(CContentWrapper)
-Vue.use(CTable)
+Vue.use(CAppParams)
+Vue.use(CAppParamsRead)
+Vue.use(CUpload)
+Vue.use(CForm)
+Vue.use(CFormString)
+Vue.use(CFormAny)
 ```
 ## 工具函数  
 ```
-import { utils } from 'admin-toolkit'
+import { utils } from '@ccprivate/admin-toolkit'
 或
 this.$c_utils this 为Vue 对象
 
