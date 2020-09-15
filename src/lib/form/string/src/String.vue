@@ -4,6 +4,7 @@
       v-if="!isReadonly"
       :value="value"
       :type="type"
+      :disabled="disabled"
       :clearable="clearable"
       :maxlength="maxlength"
       :minlength="minlength"

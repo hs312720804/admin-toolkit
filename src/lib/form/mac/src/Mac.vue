@@ -4,6 +4,7 @@
       v-if="!isReadonly"
       :value="value"
       :type="type"
+      :disabled="disabled"
       :clearable="clearable"
       :placeholder="placeholder"
       :maxlength="type!=='textarea' ? 12 : undefined"
