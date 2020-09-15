@@ -1,3 +1,15 @@
+# [1.1.0](http://gitlab.skysri.com/flower/admin-toolkit/compare/1.0.4...1.1.0) (2020-09-15)
+
+
+### Bug Fixes
+
+* **changelog:** 修复changelog中修改历史跳转失效的BUG ([e2b725c](http://gitlab.skysri.com/flower/admin-toolkit/commit/e2b725c8e754ddfe4e5bd7c3e868382108d9b6f8))
+
+
+
+## [1.0.4](http://gitlab.skysri.com/flower/admin-toolkit/compare/v1.0.4...1.0.4) (2020-09-15)
+
+
 
 ## [1.0.4](http://gitlab.skysri.com/flower/admin-toolkit/compare/0.5.3...v1.0.4) (2020-09-15)
 
