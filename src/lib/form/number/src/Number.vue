@@ -5,6 +5,7 @@
       :value="value"
       :min="min"
       :max="max"
+      :disabled="disabled"
       @input="$emit('input', $event)"
       @change="$emit('change', $event)"
     />

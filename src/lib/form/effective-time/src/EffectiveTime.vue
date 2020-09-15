@@ -6,6 +6,7 @@
         clearable
         type="datetimerange"
         align="right"
+        :disabled="disabled"
         :placeholder="placeholder"
         :picker-options="pickerOptions"
         :default-time="defaultValue"
