@@ -18,7 +18,6 @@ const routes = [
       {
         path: 'searchDropdown',
         name: 'searchDropdown',
-        
         component: demos.SearchDropdownDemo,
         meta: {
           title: '下拉框远程搜索',
@@ -515,10 +514,8 @@ const routes = [
         }
       }
     ]
-  },
-
+  }
 ]
-console.log('routes==' + JSON.stringify(routes))
 const router = new Router({
   routes
 })
