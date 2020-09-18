@@ -51,6 +51,7 @@ import FilterTreeDemo from './FilterTreeDemo.vue'
 import InputThousandsDemo from './InputThousandsDemo.vue'
 import OrderableTableDemo from './OrderableTableDemo.vue'
 import SearchDropdownDemo from './SearchDropdownDemo.vue'
+import TreeSelectDemo from './TreeSelectDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -104,5 +105,6 @@ export {
   FilterTreeDemo,
   InputThousandsDemo,
   OrderableTableDemo,
-  SearchDropdownDemo
+  SearchDropdownDemo,
+  TreeSelectDemo
 }

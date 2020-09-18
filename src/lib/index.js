@@ -51,6 +51,7 @@ import COrderableTable from './components/orderable-table/index'
 import CAppParamsRead from './bizComponents/app-params-read/index'
 import CClickEventSelector from './bizComponents/click-event-selector/index'
 import CSearchDropdown from './components/search-dropdown/index'
+import CTreeSelect from './components/tree-select/index'
 const components = [
   CAppParams,
   CTable,
@@ -102,7 +103,8 @@ const components = [
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector,
-  CSearchDropdown
+  CSearchDropdown,
+  CTreeSelect
 ]
 
 const install = function (Vue) {
