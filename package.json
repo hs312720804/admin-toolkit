@@ -1,7 +1,7 @@
 {
-  "name": "admin-toolkit",
-  "version": "1.0.4",
-  "main": "./dist/admin-toolkit.common.js",
+  "name": "@ccprivate/admin-toolkit",
+  "version": "1.1.0",
+  "main": "./src/lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode production --target lib --name admin-toolkit src/lib/index.js",
@@ -13,7 +13,8 @@
   },
   "files": [
     "dist",
-    "src/lib"
+    "src/lib",
+    "src/assets"
   ],
   "peerDependencies": {
     "vue": "^2.6.9",
@@ -30,6 +31,7 @@
     "ci": "^1.0.0",
     "gateschema-form-vue": "^0.2.4",
     "moment": "^2.28.0",
+    "pinyin-match": "^1.1.1",
     "vue": "^2.6.12",
     "vue-router": "^3.4.3",
     "vue-server-renderer": "^2.6.12"
@@ -68,5 +70,9 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.skysri.com/flower/admin-toolkit"
   }
 }
