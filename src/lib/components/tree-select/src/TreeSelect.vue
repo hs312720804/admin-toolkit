@@ -106,24 +106,24 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
- .el-scrollbar .el-scrollbar__view .el-select-dropdown__item{
+ .el-scrollbar .el-scrollbar__view .el-select-dropdown__item {
     height: auto;
     max-height: 274px;
     padding: 0;
     overflow: hidden;
     overflow-y: auto;
   }
-  .el-select-dropdown__item.selected{
+  .el-select-dropdown__item.selected {
     font-weight: normal;
   }
-  ul li >>>.el-tree .el-tree-node__content{
+  ul li >>>.el-tree .el-tree-node__content {
     height:auto;
     padding: 0 20px;
   }
   .el-tree-node__label{
     font-weight: normal;
   }
-  .el-tree >>>.is-current .el-tree-node__label{
+  .el-tree >>>.is-current .el-tree-node__label {
     color: #409EFF;
     font-weight: 700;
   }
@@ -131,4 +131,4 @@ export default {
     color:#606266;
     font-weight: normal;
   }
-</style>>
+</style>
