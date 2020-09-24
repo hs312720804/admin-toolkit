@@ -9,7 +9,7 @@ import CTagNav from './components/tag-nav/index'
 import CPop from './components/pop/index'
 import CCarousel from './components/carousel/index'
 import CEllipsis from './components/ellipsis/index'
-import CTypeList from './components/type-list/index'
+// import CTypeList from './components/type-list_d/index'
 import CIconSelect from './components/icon-select/index'
 import CCard from './components/card/index'
 import CDownload from './components/download/index'
@@ -38,7 +38,7 @@ import CTableTree from './components/table-tree/index'
 import CFixPage from './components/fix-page/index'
 import CTableWrapper from './components/table-wrapper/index'
 import CContextMenu from './components/context-menu/index'
-// import CGateSchemaForm from './components/gate-schema-form/index'
+import CGateSchemaForm from './components/gate-schema-form/index'
 import CInputOrder from './components/input-order/index'
 import CInputPositiveInt from './components/input-positive-int/index'
 import CInputPosibility from './components/input-posibility/index'
@@ -46,7 +46,7 @@ import CVideoTags from './components/video-tags/index'
 import CAddFormObj from './components/add-form-obj/index'
 import CFatherSonLink from './components/father-son-link/index'
 import CVideoFilter from './components/video-filter/index'
-import CProductList from './components/product-list/index'
+// import CProductList from './components/product-list/index'
 import COrderableTable from './components/orderable-table/index'
 import CAppParamsRead from './bizComponents/app-params-read/index'
 import CClickEventSelector from './bizComponents/click-event-selector/index'
@@ -77,7 +77,6 @@ const components = [
   CPop,
   CCard,
   CRemoteSelect,
-  CTypeList,
   CContentWrapper,
   CCellEdit,
   CRegionPickerCn,
@@ -91,7 +90,7 @@ const components = [
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  // CGateSchemaForm,
+  CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
@@ -99,7 +98,6 @@ const components = [
   CAddFormObj,
   CFatherSonLink,
   CVideoFilter,
-  CProductList,
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector,
@@ -138,7 +136,6 @@ export {
   CDownload,
   CUpload,
   CAppParams,
-  CTypeList,
   CProbability,
   CForm,
   CFormBoolean,
@@ -161,7 +158,7 @@ export {
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  // CGateSchemaForm,
+  CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
@@ -169,7 +166,6 @@ export {
   CAddFormObj,
   CFatherSonLink,
   CVideoFilter,
-  CProductList,
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector
@@ -193,7 +189,7 @@ export default {
   CDownload,
   CUpload,
   CAppParams,
-  CTypeList,
+  // CTypeList,
   CProbability,
   CForm,
   CFormBoolean,
@@ -217,7 +213,7 @@ export default {
   CFixPage,
   CTableWrapper,
   CContextMenu,
-  // CGateSchemaForm,
+  CGateSchemaForm,
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
@@ -225,7 +221,6 @@ export default {
   CAddFormObj,
   CFatherSonLink,
   CVideoFilter,
-  CProductList,
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector

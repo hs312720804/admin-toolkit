@@ -20,6 +20,7 @@ const StateForm = createStateForm({
 const GateSchemaForm = createForm({
   StateForm
 })
+GateSchemaForm.name = 'CGateSchemaForm'
 export default GateSchemaForm
 
 </script>

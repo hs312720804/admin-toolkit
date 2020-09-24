@@ -2,7 +2,7 @@
   <div class="remote-selector-main">
     <div class="remote-selector-main__filter">
       <slot name="filter">
-        <gate-schema-form 
+        <gate-schema-form
           v-if="filterSchema"
           :schema="filterSchema"
           v-model="filter"

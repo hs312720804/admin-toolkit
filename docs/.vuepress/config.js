@@ -31,7 +31,7 @@ module.exports = {
               'components/ActionList.md',
               'components/Breadcrumb.md',
               'components/TagNav.md',
-              // 'components/GateSchemaForm.md',
+               'components/GateSchemaForm.md',
               'components/Table.md',
               'components/TableTree.md',
               'components/CardList.md',
@@ -41,7 +41,7 @@ module.exports = {
               'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
-              'components/TypeList.md',
+              // 'components/TypeList.md',
               'components/FatherSonLink.md',
               'components/ContentEllipsis.md',
               // 'components/probability.md',
@@ -53,11 +53,11 @@ module.exports = {
               'components/InputPosibility.md',
               // 'components/OrderableTable.md',
               'components/ContextMenu.md',
-              'components/VideoTags.md',
+              
               'components/CnRegionPicker.md',
               'components/FixPage.md',
               'components/AddMultiObj.md',
-              'components/ProductList.md',
+              //'components/ProductList.md',
               // 'components/VideoFilter.md',
               'components/AddFormObj.md',
               'components/CascaderPanel.md',
@@ -72,7 +72,8 @@ module.exports = {
             children: [
               'bizComponents/AppParams.md',
               'bizComponents/AppParamsRead.md',
-              'bizComponents/ClickEventSelector.md'
+              'bizComponents/ClickEventSelector.md',
+              'components/VideoTags.md'
             ]
           },
           {

@@ -1,5 +1,5 @@
 # GateSchema 表单  
-`GateSchemaForm`  
+`c-gate-schema-form`  
 
 使用一个特定的数据结构(gateschema)来创建一个表单
 
@@ -14,11 +14,13 @@
 ### 代码  
 ```vue
 <template>
-    <GateSchemaForm 
-      :schema="schema" 
+   <div style="padding-bottom:50px;">
+    <c-gate-schema-form
+      :schema="schema"
       v-model="formData"
     >
-    </GateSchemaForm>
+    </c-gate-schema-form>
+   </div>
 </template>
 
 <script>

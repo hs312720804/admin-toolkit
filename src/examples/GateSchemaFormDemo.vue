@@ -1,10 +1,12 @@
-<!--这个组件1.0.0升级去除-->
+
 <template>
-    <gateSchemaForm
+   <div style="padding-bottom:50px;">
+    <c-gate-schema-form
       :schema="schema"
       v-model="formData"
     >
-    </gateSchemaForm>
+    </c-gate-schema-form>
+   </div>
 </template>
 
 <script>
