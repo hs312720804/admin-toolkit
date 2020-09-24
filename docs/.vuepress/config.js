@@ -59,7 +59,7 @@ module.exports = {
               'components/AddMultiObj.md',
               //'components/ProductList.md',
               // 'components/VideoFilter.md',
-              'components/AddFormObj.md',
+             
               'components/CascaderPanel.md',
               'components/FilterTree.md',
               'components/InputThousands.md',
@@ -73,7 +73,8 @@ module.exports = {
               'bizComponents/AppParams.md',
               'bizComponents/AppParamsRead.md',
               'bizComponents/ClickEventSelector.md',
-              'components/VideoTags.md'
+              'components/VideoTags.md',
+              'components/AddFormObj.md'
             ]
           },
           {
