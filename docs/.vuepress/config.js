@@ -74,7 +74,8 @@ module.exports = {
               'bizComponents/AppParamsRead.md',
               'bizComponents/ClickEventSelector.md',
               'components/VideoTags.md',
-              'components/AddFormObj.md'
+              'components/AddFormObj.md',
+              'components/SelectChange.md'
             ]
           },
           {

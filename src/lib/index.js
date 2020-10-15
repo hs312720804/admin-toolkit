@@ -52,6 +52,7 @@ import CAppParamsRead from './bizComponents/app-params-read/index'
 import CClickEventSelector from './bizComponents/click-event-selector/index'
 import CSearchDropdown from './components/search-dropdown/index'
 import CTreeSelect from './components/tree-select/index'
+import CSelectChange from './components/select-change/index'
 const components = [
   CAppParams,
   CTable,
@@ -102,7 +103,8 @@ const components = [
   CAppParamsRead,
   CClickEventSelector,
   CSearchDropdown,
-  CTreeSelect
+  CTreeSelect,
+  CSelectChange
 ]
 
 const install = function (Vue) {
@@ -168,7 +170,8 @@ export {
   CVideoFilter,
   COrderableTable,
   CAppParamsRead,
-  CClickEventSelector
+  CClickEventSelector,
+  CSelectChange
 }
 export default {
   CTable,
@@ -223,5 +226,6 @@ export default {
   CVideoFilter,
   COrderableTable,
   CAppParamsRead,
-  CClickEventSelector
+  CClickEventSelector,
+  CSelectChange
 }
