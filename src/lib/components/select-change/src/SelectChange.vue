@@ -3,10 +3,9 @@
   @input="handleInput"
   :value="tempVal"
   >
-  <el-checkbox-button :label="0" v-if="allText !== ''">{{allText}}</el-checkbox-button>
+  <el-checkbox-button :label="allTextVal" v-if="allText !== ''">{{allText}}</el-checkbox-button>
     <el-checkbox-button
     v-for=" (item, index) in dataList"
-    v-show="(item.isShow !== null && item.isShow !== undefined) ? item.isShow : true"
     :disabled="(item.disabled !== null && item.disabled !== undefined) ? item.disabled : false"
     :key="index"
     :label="item[labelKey]">{{item[valKey]}}</el-checkbox-button>
@@ -21,6 +20,11 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    allTextVal:{
+      default() {
+        return 0
       }
     },
     valKey: {
@@ -72,6 +76,7 @@ export default {
           })
         }
       }
+      this.$emit('input', this.tempVal)
     },
     handleChange(val) {
       this.$emit('change', val)

@@ -49,6 +49,5 @@ export default {
 | labelKey | String | 选中的数据对应的属性 |见上面例子 |
 | valKey | String | 展示的数值对应的属性 |见上面例子 |
 | allBtnCheck | Boolean | 所传数组与选中的数值一致时是否选中为不限按钮 |true-选中，false-不选中，默认为false。如例子所示 |
-| isShow | Boolean | 当前数据是否显示在多选按钮中 |true-显示，false-不显示，默认为true |
 | disabled | Boolean | 当前数据按钮是否禁用 |true-禁用，false-不禁用，默认为false |
 <Comment />
