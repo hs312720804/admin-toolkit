@@ -46,6 +46,7 @@ export default {
 | ---- | ---- | ---- | ---- |
 | DataList | Array | 传过去的数组数据 |见上面例子 |
 | allText | Array | 不限条件显示的文本，不传则不显示 |见上面例子 |
+| allTextVal |  | 不限条件的label值 | 默认0 |
 | labelKey | String | 选中的数据对应的属性 |见上面例子 |
 | valKey | String | 展示的数值对应的属性 |见上面例子 |
 | allBtnCheck | Boolean | 所传数组与选中的数值一致时是否选中为不限按钮 |true-选中，false-不选中，默认为false。如例子所示 |
