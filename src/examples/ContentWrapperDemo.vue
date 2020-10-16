@@ -10,15 +10,8 @@
   >
     <c-table :props="table.props" :header="table.header" :data="table.data" />
   </component>
-  
-  <!-- <component v-if="dynamicComponent" :is="dynamicComponent">
-        <c-table :props="table.props" :header="table.header" :data="table.data" />
-  </component> -->
 </template>
-
 <script>
-//  <c-content-wrapper
-import aa from '../lib/components/content-wrapper/src/ContentWrapper'
 import _ from 'gateschema'
 export default {
   data () {
@@ -108,7 +101,6 @@ export default {
       this.dynamicComponent = module.default
       // use code
     })
-    // this.dynamicComponent = 'c-content-wrapper'
   }
 }
 </script>

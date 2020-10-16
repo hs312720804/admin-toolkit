@@ -313,6 +313,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'searchDropdown'
         }
+      },
+      {
+        path: 'selectChange',
+        name: 'selectChange',
+        component: demos.SelectChangeDemo,
+        meta: {
+          title: '条件选择',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'selectChange'
+        }
       }
     ]
   },

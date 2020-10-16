@@ -1,14 +1,22 @@
 <template>
-  <el-checkbox-group
-  @input="handleInput"
-  :value="tempVal"
-  >
-  <el-checkbox-button :label="allTextVal" v-if="allText !== ''">{{allText}}</el-checkbox-button>
+  <el-checkbox-group @input="handleInput" :value="tempVal">
+    <el-checkbox-button :label="0" v-if="allText !== ''">{{
+      allText
+    }}</el-checkbox-button>
     <el-checkbox-button
-    v-for=" (item, index) in dataList"
-    :disabled="(item.disabled !== null && item.disabled !== undefined) ? item.disabled : false"
-    :key="index"
-    :label="item[labelKey]">{{item[valKey]}}</el-checkbox-button>
+      v-for="(item, index) in dataList"
+      v-show="
+        item.isShow !== null && item.isShow !== undefined ? item.isShow : true
+      "
+      :disabled="
+        item.disabled !== null && item.disabled !== undefined
+          ? item.disabled
+          : false
+      "
+      :key="index"
+      :label="item[labelKey]"
+      >{{ item[valKey] }}</el-checkbox-button
+    >
   </el-checkbox-group>
 </template>
 <script>
@@ -18,56 +26,56 @@ export default {
     value: {},
     allText: {
       type: String,
-      default() {
+      default () {
         return ''
       }
     },
-    allTextVal:{
-      default() {
+    allTextVal: {
+      default () {
         return 0
       }
     },
     valKey: {
       type: String,
-      default() {
+      default () {
         return 'label'
       }
     },
     labelKey: {
       type: String,
-      default() {
+      default () {
         return 'value'
       }
     },
     dataList: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     },
     allBtnCheck: {
       type: Boolean,
-      default() {
+      default () {
         return false
       }
     }
   },
-  data() {
+  data () {
     return {
       tempVal: []
     }
   },
-  mounted() {
+  mounted () {
     this.tempVal = this.value
   },
   methods: {
-    handleInput(val) {
-      const index = val.findIndex((item) => item === 0)
+    handleInput (val) {
+      const index = val.findIndex(item => item === 0)
       const length = val.length
       if ((index === 0 && length < 1) || index === length - 1) {
         this.tempVal = [0]
       } else {
-        this.tempVal = val.filter((item) => item !== 0)
+        this.tempVal = val.filter(item => item !== 0)
       }
       if (this.allBtnCheck) {
         if (this.dataList.length === length) {
@@ -77,13 +85,12 @@ export default {
         }
       }
       this.$emit('input', this.tempVal)
-    },
-    handleChange(val) {
-      this.$emit('change', val)
     }
+    // ,
+    // handleChange (val) {
+    //   this.$emit('change', val)
+    // }
   }
 }
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
