@@ -3,9 +3,9 @@
     ref="select"
     :value="value"
     placeholder="请选择"
-    filterable
+    :filterable="filterable"
     remote
-    clearable
+    :clearable="clearable"
     :remote-method="remoteMethod"
     reserve-keyword
     @input="handleInputValue"
@@ -19,6 +19,7 @@
 </template>
 <script>
 export default {
+  name: 'CLazyRemoteSelect',
   props: {
     filter: {
       type: Object
@@ -34,6 +35,14 @@ export default {
       type: String
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    filterable: {
+      type: Boolean,
+      default: false
+    },
+    clearable: {
       type: Boolean,
       default: false
     }
@@ -114,24 +123,29 @@ export default {
     getList (formData) {
       this.removeTips()
       // 这里是接口请求数据, 带分页条件
-      return this.$service[this.serviceName](formData).then(data => {
-        const labelMap = this.optionsMap.label.split('.')
-        const result = data.rows.map(item => {
-          return {
-            label: labelMap.length > 1 ? item[labelMap[0]][labelMap[1]] : item[labelMap[0]],
-            value: item[this.optionsMap.key]
+      if (this.serviceName) {
+        return this.$service[this.serviceName](formData).then(data => {
+          const labelMap = this.optionsMap.label.split('.')
+          const result = data.rows.map(item => {
+            return {
+              label: labelMap.length > 1 ? item[labelMap[0]][labelMap[1]] : item[labelMap[0]],
+              value: item[this.optionsMap.key]
+            }
+          })
+          this.options = [...this.options, ...result]
+          this.total = data.total
+          if (this.options.length === 0) {
+            this.loading = true
+            this.loadingText = '暂无数据'
+          } else {
+            this.loading = false
+            this.loadingText = '加载中'
           }
         })
-        this.options = [...this.options, ...result]
-        this.total = data.total
-        if (this.options.length === 0) {
-          this.loading = true
-          this.loadingText = '暂无数据'
-        } else {
-          this.loading = false
-          this.loadingText = '加载中'
-        }
-      })
+      } else {
+        this.loading = true
+        this.loadingText = '暂无数据'
+      }
     },
     remoteMethod (query) {
       this.handleSearchParams(query, this.filter)

@@ -6,7 +6,7 @@
 ### 效果
 
 <Demo>
-  <LazyRemoteSelect/>
+  <LazyRemoteSelectDemo/>
 </Demo>
 
 ### 代码

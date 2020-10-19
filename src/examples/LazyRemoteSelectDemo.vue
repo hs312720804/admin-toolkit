@@ -6,6 +6,8 @@
       :primaryKey="primaryKey"
       :optionsMap="optionsMap"
       :serviceName="serviceName"
+      :filterable="true"
+      :clearable="true"
       ref="commonLazySelect"
     ></c-lazy-remote-select>
   </div>
@@ -24,7 +26,7 @@ export default {
         label: 'name'
       }, // 接口返回格式化options
       primaryKey: 'id', // select的唯一标示
-      serviceName: 'getList' // 接口请求名称
+      serviceName: '' // 接口请求名称
     }
   }
 }
