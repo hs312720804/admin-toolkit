@@ -1,13 +1,13 @@
 <template>
   <div>
-    <CommonLazySelect
+    <c-lazy-remote-select
       v-model="id"
       :filter="filter"
       :primaryKey="primaryKey"
       :optionsMap="optionsMap"
       :serviceName="serviceName"
       ref="commonLazySelect"
-    ></CommonLazySelect>
+    ></c-lazy-remote-select>
   </div>
 </template>
 
@@ -29,6 +29,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

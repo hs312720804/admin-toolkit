@@ -327,7 +327,7 @@ const routes = [
       {
         path: 'lazyRemoteSelect',
         name: 'lazyRemoteSelect',
-        component: demos.LazyRemoteSelect,
+        component: demos.LazyRemoteSelectDemo,
         meta: {
           title: '分页加载',
           icon: 'iconfont el-icon-cc-file-add',

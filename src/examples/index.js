@@ -53,6 +53,7 @@ import OrderableTableDemo from './OrderableTableDemo.vue'
 import SearchDropdownDemo from './SearchDropdownDemo.vue'
 import TreeSelectDemo from './TreeSelectDemo.vue'
 import SelectChangeDemo from './SelectChangeDemo.vue'
+import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -108,5 +109,6 @@ export {
   OrderableTableDemo,
   SearchDropdownDemo,
   TreeSelectDemo,
-  SelectChangeDemo
+  SelectChangeDemo,
+  LazyRemoteSelectDemo
 }
