@@ -323,6 +323,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'selectChange'
         }
+      },
+      {
+        path: 'lazyRemoteSelect',
+        name: 'lazyRemoteSelect',
+        component: demos.LazyRemoteSelect,
+        meta: {
+          title: '分页加载',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'lazyRemoteSelect'
+        }
       }
     ]
   },
