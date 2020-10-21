@@ -54,6 +54,7 @@ import CSearchDropdown from './components/search-dropdown/index'
 import CTreeSelect from './components/tree-select/index'
 import CSelectChange from './components/select-change/index'
 import CLazyRemoteSelect from './components/lazy-remote-select/index'
+import CAnchorStep from './components/anchor-step/index'
 const components = [
   CAppParams,
   CTable,
@@ -106,7 +107,8 @@ const components = [
   CSearchDropdown,
   CTreeSelect,
   CSelectChange,
-  CLazyRemoteSelect
+  CLazyRemoteSelect,
+  CAnchorStep
 ]
 
 const install = function (Vue) {
@@ -174,7 +176,8 @@ export {
   CAppParamsRead,
   CClickEventSelector,
   CSelectChange,
-  CLazyRemoteSelect
+  CLazyRemoteSelect,
+  CAnchorStep
 }
 export default {
   CTable,
@@ -231,5 +234,6 @@ export default {
   CAppParamsRead,
   CClickEventSelector,
   CSelectChange,
-  CLazyRemoteSelect
+  CLazyRemoteSelect,
+  CAnchorStep
 }

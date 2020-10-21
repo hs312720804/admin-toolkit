@@ -54,6 +54,7 @@ import SearchDropdownDemo from './SearchDropdownDemo.vue'
 import TreeSelectDemo from './TreeSelectDemo.vue'
 import SelectChangeDemo from './SelectChangeDemo.vue'
 import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
+import AnchorStepDemo from './AnchorStepDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -110,5 +111,6 @@ export {
   SearchDropdownDemo,
   TreeSelectDemo,
   SelectChangeDemo,
-  LazyRemoteSelectDemo
+  LazyRemoteSelectDemo,
+  AnchorStepDemo
 }
