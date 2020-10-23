@@ -164,6 +164,17 @@ const routes = [
           route: 'SelectChange'
         }
       },
+      
+      {
+        path: 'SelectLimit',
+        name: 'SelectLimit',
+        component: demos.SelectLimitDemo,
+        meta: {
+          title: 'select输入长度',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'SelectLimit'
+        }
+      },
       {
         path: 'typeList',
         name: 'typeList',

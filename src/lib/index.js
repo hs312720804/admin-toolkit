@@ -55,6 +55,7 @@ import CTreeSelect from './components/tree-select/index'
 import CSelectChange from './components/select-change/index'
 import CLazyRemoteSelect from './components/lazy-remote-select/index'
 import CAnchorStep from './components/anchor-step/index'
+import CSelectLimit from './components/select-limit/index'
 const components = [
   CAppParams,
   CTable,
@@ -108,7 +109,8 @@ const components = [
   CTreeSelect,
   CSelectChange,
   CLazyRemoteSelect,
-  CAnchorStep
+  CAnchorStep,
+  CSelectLimit
 ]
 
 const install = function (Vue) {
@@ -177,7 +179,8 @@ export {
   CClickEventSelector,
   CSelectChange,
   CLazyRemoteSelect,
-  CAnchorStep
+  CAnchorStep,
+  CSelectLimit
 }
 export default {
   CTable,
@@ -235,5 +238,6 @@ export default {
   CClickEventSelector,
   CSelectChange,
   CLazyRemoteSelect,
-  CAnchorStep
+  CAnchorStep,
+  CSelectLimit
 }

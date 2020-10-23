@@ -55,6 +55,7 @@ import TreeSelectDemo from './TreeSelectDemo.vue'
 import SelectChangeDemo from './SelectChangeDemo.vue'
 import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
 import AnchorStepDemo from './AnchorStepDemo.vue'
+import SelectLimitDemo from './SelectLimitDemo.vue'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -112,5 +113,6 @@ export {
   TreeSelectDemo,
   SelectChangeDemo,
   LazyRemoteSelectDemo,
-  AnchorStepDemo
+  AnchorStepDemo,
+  SelectLimitDemo
 }

@@ -65,6 +65,7 @@ module.exports = {
               'components/InputThousands.md',
               'components/SearchDropdown.md',
               'components/TreeSelect.md',
+              'components/SelectLimit.md'
             ]
           },
           {
