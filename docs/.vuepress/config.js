@@ -65,7 +65,9 @@ module.exports = {
               'components/InputThousands.md',
               'components/SearchDropdown.md',
               'components/TreeSelect.md',
-              'components/SelectLimit.md'
+              'components/SelectLimit.md',
+              'components/AnchorStep.md',
+              'components/LazyRemoteSelect.md'
             ]
           },
           {
