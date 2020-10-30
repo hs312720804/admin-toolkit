@@ -1,6 +1,6 @@
 <template>
   <div>
-    <c-form label-width="120px" :readonly="isReadonly"> 
+    <c-form label-width="120px" :readonly="isReadonly">
       <c-form-number label="年龄" v-model="form.age" />
     </c-form>
   </div>
@@ -8,11 +8,11 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isReadonly: false,
       form: {
-        age: 22,
+        age: 22
       }
     }
   }

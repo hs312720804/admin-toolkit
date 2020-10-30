@@ -20,14 +20,13 @@ export default {
   },
   data () {
     return {
-      activeName: "first"
+      activeName: 'first'
     }
   },
   methods: {
     handleClick () {
-      //debugger;
+      // debugger;
     }
   }
 }
 </script>
-

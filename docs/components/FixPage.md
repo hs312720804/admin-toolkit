@@ -13,7 +13,7 @@
 ### 代码
 ```vue
 <template>
-  <c-fix-page @go-back="$emit('go-back')">
+  <c-fix-page @go-back="$emit('go-back')" height="80vh">
    <div slot="actions">
      <el-button type="text"  size="mini" icon="el-icon-back" @click="$emit('go-back')">返回</el-button>
    </div>
@@ -107,10 +107,10 @@ export default {
 
 ```
 
-<!-- ## 属性
+## 属性
 | 名称 | 类型 | 描述 | 例子 |
 | ---- | ---- | ---- | ---- |
-| FixHeaderAndFooter | String | 头尾固定 |见上面例子 | -->
+| height | String | 内容区域高度，默认100vh |见上面例子 |
 ## slot
 | 名称 | 描述 |
 | ---- | ---- |

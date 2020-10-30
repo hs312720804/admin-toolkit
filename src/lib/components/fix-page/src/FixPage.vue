@@ -1,5 +1,5 @@
 <template>
-    <div class="fix-header-footer">
+    <div class="fix-header-footer" :style="{ height: height }">
         <div  class="fix-header-footer__header">
           <div class="title">
             <slot name="title">
@@ -28,6 +28,12 @@ export default {
 
     }
   },
+  props: {
+    height: {
+      type: String,
+      default: '100vh'
+    }
+  },
   created () {
 
   }
@@ -37,7 +43,7 @@ export default {
 .fix-header-footer
   overflow auto
   height 100vh
-  padding-bottom 85px
+  padding-bottom 115px
   box-sizing border-box
   display flex
   flex-direction column

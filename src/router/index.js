@@ -155,6 +155,27 @@ const routes = [
         }
       },
       {
+        path: 'SelectChange',
+        name: 'SelectChange',
+        component: demos.SelectChangeDemo,
+        meta: {
+          title: '条件选择',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'SelectChange'
+        }
+      },
+      
+      {
+        path: 'SelectLimit',
+        name: 'SelectLimit',
+        component: demos.SelectLimitDemo,
+        meta: {
+          title: 'select输入长度',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'SelectLimit'
+        }
+      },
+      {
         path: 'typeList',
         name: 'typeList',
         component: demos.TypeListDemo,
@@ -302,6 +323,36 @@ const routes = [
           title: '下拉框远程搜索',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'searchDropdown'
+        }
+      },
+      {
+        path: 'selectChange',
+        name: 'selectChange',
+        component: demos.SelectChangeDemo,
+        meta: {
+          title: '条件选择',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'selectChange'
+        }
+      },
+      {
+        path: 'lazyRemoteSelect',
+        name: 'lazyRemoteSelect',
+        component: demos.LazyRemoteSelectDemo,
+        meta: {
+          title: '分页加载',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'lazyRemoteSelect'
+        }
+      },
+      {
+        path: 'anchorStep',
+        name: 'anchorStep',
+        component: demos.AnchorStepDemo,
+        meta: {
+          title: '瞄点步骤',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'anchorStep'
         }
       }
     ]

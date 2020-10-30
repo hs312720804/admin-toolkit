@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       parantLabel: '选择策略',
       childLabel: '选择人群',
@@ -82,23 +82,23 @@ export default {
     }
   },
   methods: {
-    getChildrenList(id) {
+    getChildrenList (id) {
       this.form.strategyName = id
       this.form.crowdName = null
-      this.crowdList =this.crowdList_data.reduce(function(result,current){
-         if (id.includes(current.id + '') === true) {
-           result = result.concat(current.data)
+      this.crowdList = this.crowdList_data.reduce(function (result, current) {
+        if (id.includes(current.id + '') === true) {
+          result = result.concat(current.data)
         }
         return result
-      },[])
+      }, [])
     },
-    getChildrenValue(id) {
+    getChildrenValue (id) {
       this.form.crowdName = id
     },
-    submitForm() {
+    submitForm () {
       this.$refs.form.validate(valid => {
         if (valid) {
-          //保存接口
+          // 保存接口
           this.$message('保存')
         }
       })
@@ -106,4 +106,3 @@ export default {
   }
 }
 </script>
-

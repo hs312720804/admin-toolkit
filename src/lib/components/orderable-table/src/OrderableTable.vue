@@ -11,7 +11,7 @@
 import InputOrder from '../../input-order/src/InputOrder'
 export default {
   name: 'COrderableTable',
-  data() {
+  data () {
     return {
       table: {
         props: {
@@ -103,7 +103,7 @@ export default {
     //       const index = selectedListIndexed[item[idField]]
     //       if (index !== undefined) {
     //           newList.push(item)
-    //           selectedList[index] = undefined 
+    //           selectedList[index] = undefined
     //       }
     //   })
     //   this.$emit('input', newList.concat(selectedList.filter(function(item) { return item })))

@@ -2,9 +2,9 @@
   <div>
     <section>
     <h2>默认按钮</h2>
-    <c-select-dialog 
-      title="选择数据2" 
-      @select-start="handleSelectStart" 
+    <c-select-dialog
+      title="选择数据2"
+      @select-start="handleSelectStart"
       ref="selectDialog">
       <div slot="content">
         <base-selector-demo
@@ -16,9 +16,9 @@
     </section>
     <section>
       <h2>自定义点击元素</h2>
-      <c-select-dialog 
-        title="选择海报" 
-        @select-start="handleSelectStart" 
+      <c-select-dialog
+        title="选择海报"
+        @select-start="handleSelectStart"
         >
         <el-button type="primary">请选择</el-button>
         <div slot="title" style="color: red">
@@ -41,7 +41,7 @@ export default {
     BaseSelectorDemo
   },
   methods: {
-    handleSelectStart() {
+    handleSelectStart () {
     },
     handleSelectEnd () {
 

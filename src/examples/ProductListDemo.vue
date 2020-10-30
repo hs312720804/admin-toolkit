@@ -53,7 +53,7 @@ export default {
         partnerArr: [],
         productCurrList: []
       },
-      partnerList: [{'partnerStatus':1,'createdDate':'2019-09-10 17:36:25','partnerCode':'000001','partnerName':'tencent','lastUpdateDate':'2019-09-10 17:36:33','partnerValue':1,'partnerModel':0,'sdkType':0,'sourceTitle':'腾讯电视','partnerId':1,'sourceName':'腾讯'},{'partnerStatus':1,'createdDate':'2018-03-20 14:36:22','partnerCode':'000010','partnerName':'yinhe','lastUpdateDate':'2019-04-25 22:46:00','partnerValue':2,'partnerModel':0,'sdkType':0,'sourceTitle':'爱奇艺电视','partnerId':2,'sourceName':'爱奇艺'},{'partnerStatus':1,'createdDate':'2019-09-10 17:37:48','partnerCode':'000100','partnerName':'youku','lastUpdateDate':'2019-09-10 17:37:48','partnerValue':4,'partnerModel':0,'sdkType':0,'sourceTitle':'优酷电视','partnerId':22,'sourceName':'优酷'}]
+      partnerList: [{ 'partnerStatus': 1, 'createdDate': '2019-09-10 17:36:25', 'partnerCode': '000001', 'partnerName': 'tencent', 'lastUpdateDate': '2019-09-10 17:36:33', 'partnerValue': 1, 'partnerModel': 0, 'sdkType': 0, 'sourceTitle': '腾讯电视', 'partnerId': 1, 'sourceName': '腾讯' }, { 'partnerStatus': 1, 'createdDate': '2018-03-20 14:36:22', 'partnerCode': '000010', 'partnerName': 'yinhe', 'lastUpdateDate': '2019-04-25 22:46:00', 'partnerValue': 2, 'partnerModel': 0, 'sdkType': 0, 'sourceTitle': '爱奇艺电视', 'partnerId': 2, 'sourceName': '爱奇艺' }, { 'partnerStatus': 1, 'createdDate': '2019-09-10 17:37:48', 'partnerCode': '000100', 'partnerName': 'youku', 'lastUpdateDate': '2019-09-10 17:37:48', 'partnerValue': 4, 'partnerModel': 0, 'sdkType': 0, 'sourceTitle': '优酷电视', 'partnerId': 22, 'sourceName': '优酷' }]
     }
   },
   methods: {

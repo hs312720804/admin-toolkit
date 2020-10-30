@@ -59,7 +59,7 @@ export default {
       type: String
     }
   },
-  data() {
+  data () {
     return {
       parentValue: [],
       childrenValue: []
@@ -69,21 +69,18 @@ export default {
     /*
     判断显示哪一个模式
      */
-    showWhich: function() {
-      if (this.childData.length > 0)
-        return typeof this.childData[0].children !== 'undefined' ? true : false
-      else return false
+    showWhich: function () {
+      if (this.childData.length > 0) { return typeof this.childData[0].children !== 'undefined' } else return false
     }
   },
   methods: {
-    getChildren(id) {
+    getChildren (id) {
       this.childrenValue = []
       this.$emit('get-children-list', id)
     },
-    changeCheckboxValue(id) {
+    changeCheckboxValue (id) {
       this.$emit('get-children-value', id)
     }
   }
 }
 </script>
-

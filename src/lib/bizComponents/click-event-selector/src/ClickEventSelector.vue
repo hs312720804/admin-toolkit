@@ -47,15 +47,15 @@ export default {
       table: {
         selected: undefined,
         selectionType: 'single'
-      },
+      }
     }
   },
   props: ['title', 'fullscreen', 'data', 'pagination'],
   methods: {
-    handleSelectStart() {
+    handleSelectStart () {
       this.showDialog = true
     },
-    handleRowSelectionChange(row, index) {
+    handleRowSelectionChange (row, index) {
       this.table.selected = index
       this.showDialog = false
       this.$emit('select-end', row)
@@ -81,6 +81,6 @@ export default {
   text-overflow ellipsis
   &:hover
     border 1px solid #606266
-.click-event-list >>> .card-item__selection 
+.click-event-list >>> .card-item__selection
   display none
 </style>

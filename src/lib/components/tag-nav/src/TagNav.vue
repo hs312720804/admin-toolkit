@@ -125,13 +125,13 @@ export default {
     },
     titles: {
       type: Object,
-      default() {
+      default () {
         return {}
       }
     },
     theme: {
       type: String,
-      default() {
+      default () {
         return 'tag-nav'
       }
     }
@@ -232,7 +232,7 @@ export default {
       const activeItem = this.$el.querySelector('.tag-nav__item--active')
       if (activeItem) {
         const viewPort = this.$refs.viewPort
-        const tagList= this.$refs.tagList
+        const tagList = this.$refs.tagList
         const viewPortWidth = viewPort.clientWidth
         const tagListScrollWidth = tagList.scrollWidth
         const activeItemWidth = activeItem.clientWidth
@@ -241,7 +241,7 @@ export default {
         if (position < cursor) {
           this.cursor = position
         } else if (position + activeItemWidth - cursor > viewPortWidth) {
-          this.cursor = Math.min(tagListScrollWidth - viewPortWidth, position - viewPortWidth/2)
+          this.cursor = Math.min(tagListScrollWidth - viewPortWidth, position - viewPortWidth / 2)
         }
       }
     }
@@ -396,7 +396,7 @@ export default {
       background #2d8cf0
   .tag-nav__item:hover .tag-nav__dot
     background rgb(254, 183, 154)
-  
+
   .tag-nav__btn
     position absolute
     height 100%

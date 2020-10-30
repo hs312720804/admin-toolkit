@@ -1,7 +1,7 @@
 <template>
   <div>
-    <c-orderable-table 
-      :header="table.header" 
+    <c-orderable-table
+      :header="table.header"
       v-model="table.data">
     </c-orderable-table>
   </div>
@@ -9,12 +9,12 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       table: {
         header: [{
-           label: '名称',
-           prop: 'name'
+          label: '名称',
+          prop: 'name'
         }],
         data: [
           {
@@ -25,7 +25,7 @@ export default {
             id: '2',
             name: 'bar2'
           },
-            {
+          {
             id: '1',
             name: 'foo3'
           },
@@ -33,7 +33,7 @@ export default {
             id: '3',
             name: 'bar4'
           },
-            {
+          {
             id: '4',
             name: 'foo5'
           },

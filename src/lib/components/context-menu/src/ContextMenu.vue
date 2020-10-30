@@ -54,6 +54,13 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+.menu li:hover{
+  // color: $--color-primary;
+  cursor: pointer;
+}
+</style>
+
 <style lang="stylus" scoped>
 .context-menu
   position relative

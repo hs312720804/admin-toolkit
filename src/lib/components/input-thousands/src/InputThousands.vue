@@ -45,7 +45,7 @@ export default {
     }
   },
   methods: {
-    handleInputValue(val) {
+    handleInputValue (val) {
       val = _.trim(val).replace(/,/g, '')
       if (val === '' || /^[1-9]\d*$/.test(val) || (val === '0' && this.isIncludeZero)) {
         if (val !== '') {
@@ -59,7 +59,7 @@ export default {
     getPositiveInt (data) {
       return data.replace(/,/g, '')
     },
-    format_number(n) {
+    format_number (n) {
       n = n.toString()
       var len = n.length
       if (len <= 3) { return n }
@@ -69,7 +69,7 @@ export default {
       return r > 0 ? start + ',' + end : end
     }
   },
-  created() {
+  created () {
     this.$watch('value', (val) => {
       if (this.inputValue !== val) {
         this.inputValue = this.format_number(val)
