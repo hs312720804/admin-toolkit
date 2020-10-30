@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <div class="type-list">
     <el-tree
@@ -132,21 +133,27 @@ export default {
       }
     },
     handleDragStart (node, ev) {
+      // eslint-disable-next-line no-console
       console.log('drag start', node)
     },
     handleDragEnter (draggingNode, dropNode, ev) {
+      // eslint-disable-next-line no-console
       console.log('tree drag enter: ', dropNode.label)
     },
     handleDragLeave (draggingNode, dropNode, ev) {
+      // eslint-disable-next-line no-console
       console.log('tree drag leave: ', dropNode.label)
     },
     handleDragOver (draggingNode, dropNode, ev) {
+      // eslint-disable-next-line no-console
       console.log('tree drag over: ', dropNode.label)
     },
     handleDragEnd (draggingNode, dropNode, dropType, ev) {
+      // eslint-disable-next-line no-console
       console.log('tree drag end: ', dropNode && dropNode.label, dropType)
     },
     handleDrop (draggingNode, dropNode, dropType, ev) {
+      // eslint-disable-next-line no-console
       console.log('tree drop: ', dropNode.label, dropType)
     },
     allowDrop (draggingNode, dropNode, type) {},

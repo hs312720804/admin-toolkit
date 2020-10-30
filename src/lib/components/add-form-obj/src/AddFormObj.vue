@@ -129,6 +129,18 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+// 11111
+.add-code-more{
+  border: none;
+  color: $--color-primary;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0px 16px;
+}
+
+</style>
+
 <style lang="stylus" scoped>
 .el-row
   margin 0
@@ -139,12 +151,13 @@ export default {
 >>> .el-radio-button__orig-radio:checked + .el-radio-button__inner
   background-color #FC4C00
   border-color #FC4C00
-.add-code-more
-  border none
-  color #FC4C00
-  cursor pointer
-  font-size 14px
-  padding 0px 16px
+// .add-code-more{
+//   border: none;
+//   color: #FC4C00;
+//   cursor: pointer;
+//   font-size: 14px;
+//   padding: 0px 16px;
+// }
 .box
   border 1px solid #d8d8d8
   margin-bottom 16px

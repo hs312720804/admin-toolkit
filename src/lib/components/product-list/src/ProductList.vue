@@ -8,7 +8,8 @@
       <el-select v-model="item.sourceId" @change="productChange(index)">
         <el-option v-for="product in item.child" :key="product.sourceId" :label="product.sourceName" :value="product.sourceId">{{companyStr2isSource(product.company)}}{{product.sourceName}}</el-option>
       </el-select>
-      <el-switch v-model="item.isVip" disabled active-color="#4db3ff"></el-switch>
+      <!-- <el-switch v-model="item.isVip" disabled active-color="#4db3ff"></el-switch> -->
+      <el-switch v-model="item.isVip" disabled></el-switch>
     </div>
   </div>
 </template>

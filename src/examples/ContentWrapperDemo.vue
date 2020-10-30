@@ -10,7 +10,7 @@
   >
     <c-table :props="table.props" :header="table.header" :data="table.data" />
   </component>
-  
+
   <!-- <component v-if="dynamicComponent" :is="dynamicComponent">
         <c-table :props="table.props" :header="table.header" :data="table.data" />
   </component> -->
