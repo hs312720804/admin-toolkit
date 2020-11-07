@@ -3,9 +3,9 @@
     ref="select"
     :value="value"
     placeholder="请选择"
-    :filterable="filterable"
+    filterable
     remote
-    :clearable="clearable"
+    clearable
     :remote-method="remoteMethod"
     reserve-keyword
     @input="handleInputValue"
@@ -20,33 +20,7 @@
 <script>
 export default {
   name: 'CLazyRemoteSelect',
-  props: {
-    filter: {
-      type: Object
-    },
-    optionsMap: {
-      type: Object
-    },
-    serviceName: {
-      type: String
-    },
-    value: {},
-    primaryKey: {
-      type: String
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    filterable: {
-      type: Boolean,
-      default: false
-    },
-    clearable: {
-      type: Boolean,
-      default: false
-    }
-  },
+  props: ['filter', 'optionsMap', 'serviceName', 'value', 'primaryKey', 'disabled', 'isNoLableClean'],
   data () {
     return {
       loading: false,
@@ -56,7 +30,8 @@ export default {
       inputValue: this.value,
       pageObj: {
         pageNo: 1,
-        pageSize: 10
+        pageSize: 10,
+        tvbOperator: 'like'
       }
     }
   },
@@ -123,31 +98,28 @@ export default {
     getList (formData) {
       this.removeTips()
       // 这里是接口请求数据, 带分页条件
-      if (this.serviceName) {
-        return this.$service[this.serviceName](formData).then(data => {
-          const labelMap = this.optionsMap.label.split('.')
-          const result = data.rows.map(item => {
-            return {
-              label: labelMap.length > 1 ? item[labelMap[0]][labelMap[1]] : item[labelMap[0]],
-              value: item[this.optionsMap.key]
-            }
-          })
-          this.options = [...this.options, ...result]
-          this.total = data.total
-          if (this.options.length === 0) {
-            this.loading = true
-            this.loadingText = '暂无数据'
-          } else {
-            this.loading = false
-            this.loadingText = '加载中'
+      return this.$service[this.serviceName](formData).then(data => {
+        const labelMap = this.optionsMap.label.split('.')
+        const result = data.rows.map(item => {
+          return {
+            label: labelMap.length > 1 ? item[labelMap[0]][labelMap[1]] : item[labelMap[0]],
+            value: item[this.optionsMap.key]
           }
         })
-      } else {
-        this.loading = true
-        this.loadingText = '暂无数据'
-      }
+        this.options = [...this.options, ...result]
+        this.total = data.total
+        if (this.options.length === 0) {
+          this.loading = true
+          this.loadingText = '暂无数据'
+        } else {
+          this.loading = false
+          this.loadingText = '加载中'
+        }
+      })
     },
     remoteMethod (query) {
+      this.pageObj.pageSize = 10
+      this.pageObj.pageNo = 1
       this.handleSearchParams(query, this.filter)
       if (query !== '') {
         setTimeout(() => {
@@ -175,6 +147,7 @@ export default {
         this.options = []
         this.getList(filter)
       }
+      debugger
       this.$emit('input', val)
     },
     handleSearchParams (query, obj) {
@@ -182,8 +155,14 @@ export default {
         if (typeof (obj[i]) === 'object') {
           this.handleSearchParams(query, obj[i])
         } else {
-          obj[i] = query
+          obj[i] = query // 这里只能查询第一个参数的值
+          return true
         }
+      }
+    },
+    handleCleanLabel (value) {
+      if (!this.options.some(item => item.value === value) && this.isNoLableClean) {
+        this.$emit('input', '')
       }
     }
   },

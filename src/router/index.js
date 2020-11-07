@@ -164,7 +164,7 @@ const routes = [
           route: 'SelectChange'
         }
       },
-      
+
       {
         path: 'SelectLimit',
         name: 'SelectLimit',
@@ -340,19 +340,9 @@ const routes = [
         name: 'lazyRemoteSelect',
         component: demos.LazyRemoteSelectDemo,
         meta: {
-          title: '分页加载',
+          title: '懒加载搜索',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'lazyRemoteSelect'
-        }
-      },
-      {
-        path: 'anchorStep',
-        name: 'anchorStep',
-        component: demos.AnchorStepDemo,
-        meta: {
-          title: '瞄点步骤',
-          icon: 'iconfont el-icon-cc-file-add',
-          route: 'anchorStep'
         }
       }
     ]

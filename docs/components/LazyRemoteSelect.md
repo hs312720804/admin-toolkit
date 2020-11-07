@@ -1,6 +1,6 @@
-# 支持远程搜索的分页加载
+# 懒加载搜索
 `c-lazy-remote-select`
-支持远程搜索的分页加载
+懒加载搜索
 
 ## 示例
 ### 效果
@@ -12,28 +12,30 @@
 ### 代码
 ```vue
 <template>
-<c-lazy-remote-select  
-      v-model="id"
-      :filter="filter"
-      :primaryKey="primaryKey"
-      :optionsMap="optionsMap"
-      :serviceName="serviceName"
-      ></c-lazy-remote-select>
+ <c-lazy-remote-select
+    v-model="selectedValue"
+    :filter="filter"
+    :primaryKey="primaryKey"
+    :optionsMap="optionsMap"
+    serviceName="getList"
+></c-lazy-remote-select>
+{{selectedValue}}
 </template>
 <script>
 export default {
   data () {
     return {
-      id: '',
+      selectedValue: undefined,
       filter: {
-        name: ''
-      }, // 查询条件
+        label: ''
+      },
+      primaryKey: {
+        value: ''
+      },
       optionsMap: {
         key: 'id',
         label: 'name'
-      }, // 接口返回格式化options
-      primaryKey: 'id', // select的唯一标示
-      serviceName: 'getList', // 接口请求名称
+      }
     }
   }
 }
@@ -45,9 +47,8 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| id | String | 绑定值 |见上面例子 |
-| filter | Object | 查询条件 | 见上面例子 |
-| primaryKey | String | 唯一值 |见上面例子 |
-| optionsMap | Obecjt | options格式化 |见上面例子 |
-| serviceName | String | 接口名称 |见上面例子 |
+| selectedValue | String | 绑定的值 |见上面例子 |
+| filter | Object | 选择框查询的条件 |见上面例子 |
+| primaryKey | Object | 关键值，用于回显 |见上面例子 |
+| optionsMap | Object | 映射接口 |见上面例子 |
 <Comment />

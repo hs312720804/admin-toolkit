@@ -53,9 +53,9 @@ import CClickEventSelector from './bizComponents/click-event-selector/index'
 import CSearchDropdown from './components/search-dropdown/index'
 import CTreeSelect from './components/tree-select/index'
 import CSelectChange from './components/select-change/index'
-import CLazyRemoteSelect from './components/lazy-remote-select/index'
-import CAnchorStep from './components/anchor-step/index'
 import CSelectLimit from './components/select-limit/index'
+import CLazyRemoteSelect from './components/lazy-remote-select/index'
+import service from './service/index'
 const components = [
   CAppParams,
   CTable,
@@ -108,9 +108,9 @@ const components = [
   CSearchDropdown,
   CTreeSelect,
   CSelectChange,
-  CLazyRemoteSelect,
-  CAnchorStep,
-  CSelectLimit
+  CSelectLimit,
+  CLazyRemoteSelect
+
 ]
 
 const install = function (Vue) {
@@ -118,6 +118,7 @@ const install = function (Vue) {
     Vue.component(component.name, component)
   })
   Vue.prototype.$c_utils = utils
+  Vue.prototype.$service = service
 }
 
 /* istanbul ignore if */
@@ -178,9 +179,9 @@ export {
   CAppParamsRead,
   CClickEventSelector,
   CSelectChange,
+  CSelectLimit,
   CLazyRemoteSelect,
-  CAnchorStep,
-  CSelectLimit
+  service
 }
 export default {
   CTable,
@@ -214,7 +215,6 @@ export default {
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,
-
   CFilterTree,
   CInputThousands,
   CAddMulti,
@@ -237,7 +237,8 @@ export default {
   CAppParamsRead,
   CClickEventSelector,
   CSelectChange,
+  CSelectLimit,
   CLazyRemoteSelect,
-  CAnchorStep,
-  CSelectLimit
+  service
+
 }
