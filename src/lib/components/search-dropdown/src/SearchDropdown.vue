@@ -26,7 +26,7 @@
     </div>
 
     <!-- 搜索下拉列表 -->
-    <div class="search-list" v-if="isFocus || isShowList">
+    <div class="search-list" v-if="isShowList">
       <div class="search-result" ref="ul">
         <ul v-for="(item, index) in result" :key="index">
           <li
@@ -49,6 +49,7 @@
         <div class="result-null" v-if="value && result.length == 0">没有结果</div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -95,13 +96,12 @@ export default {
   mounted () {
     this.value = this.keyValue // 在生命周期中，把获取的value值获取给key
 
-    let that = this
     document.body.addEventListener(
       'click',
       () => {
         // 鼠标单击组件之外时收起下拉列表
-        that.isFocus = false
-        // that.value = ''
+        this.isFocus = false
+        // this.value = ''
         this.isShowList = false
       },
       false
@@ -123,6 +123,7 @@ export default {
         this.$refs.searchInput.focus() // 输入查询条件清空后获取焦点
       }
     },
+
     clickSearch () {
       // 回车后查询
       if (event.code === 'ArrowDown' || event.code === 'ArrowUp') {
@@ -155,9 +156,14 @@ export default {
       } else {
         this.$refs.searchInput.focus() // 没有输入查询条件焦点不应该失去
       }
+
+      // 搜索数据大于0，显示下拉框
+      if (this.result.length > 0) {
+        this.isShowList = true
+      }
     },
 
-    getKeyWord: function (name, search) {
+    getKeyWord (name, search) {
       // 关键字
       let keyword = []
       keyword[0] = name.substring(0, search[0])
@@ -171,15 +177,22 @@ export default {
       return keyword
     },
 
-    handleClickResultItem: function (data) {
+    handleClickResultItem (data) {
       // 单击下拉列表中的选项
 
+      // 全部选项选中状态为 false
       this.result.map(item => {
         item.isSelected = false
       })
       data.isSelected = true
       // console.log('data==' + JSON.stringify(data))
+
+      // 设置输入框值
       this.value = data.keyword.join('')
+
+      // 关闭下拉框
+      this.isShowList = false
+      this.isFocus = false
       this.$emit('confirm', data)
     },
 
@@ -231,14 +244,14 @@ export default {
 <style lang="scss" scoped>
 .search-wrapper {
   // background-color: $--color-primary;
-  height: 580px;
-  width: 325px;
-  overflow: hidden;
+  // height: 580px;
+  width: 100%;
+  // overflow: hidden;
   border-radius: 3px;
   font-family: 'Microsoft YaHei';
   box-sizing: border-box;
-  padding: 10px;
-
+  // padding: 10px;
+  position: relative;
   .search-input {
     position: relative;
 
@@ -300,18 +313,18 @@ export default {
   }
 
   .search-list {
-    height: 480px;
-    margin-top: 8px;
     border: 0 none;
     border-radius: 3px;
     // box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
     background-color: #fff;
+    position: absolute;
+    width: 100%;
 
     .search-result {
-      height: 100%;
+      max-height: 480px;
       overflow-x: hidden;
       overflow-y: auto;
-
+      border: 1px solid #dcdfe6;
       ul, li {
         margin: 0px;
         padding: 0px;
@@ -367,9 +380,9 @@ export default {
     }
 
     .result-null {
-      margin-top: 100px;
       text-align: center;
       font-size: 16px;
+      padding: 30px;
     }
   }
 }
