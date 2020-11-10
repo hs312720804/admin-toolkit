@@ -164,7 +164,6 @@ const routes = [
           route: 'SelectChange'
         }
       },
-
       {
         path: 'SelectLimit',
         name: 'SelectLimit',
@@ -175,16 +174,16 @@ const routes = [
           route: 'SelectLimit'
         }
       },
-      {
-        path: 'typeList',
-        name: 'typeList',
-        component: demos.TypeListDemo,
-        meta: {
-          title: '分类列表',
-          icon: 'iconfont el-icon-cc-file-add',
-          route: 'typeList'
-        }
-      },
+      // {
+      //   path: 'typeList',
+      //   name: 'typeList',
+      //   component: demos.TypeListDemo,
+      //   meta: {
+      //     title: '分类列表',
+      //     icon: 'iconfont el-icon-cc-file-add',
+      //     route: 'typeList'
+      //   }
+      // },
       {
         path: 'FormFatherAndSonLink',
         name: 'FormFatherAndSonLink',
@@ -315,16 +314,16 @@ const routes = [
           route: 'treeSelect'
         }
       },
-      {
-        path: 'searchDropdown',
-        name: 'searchDropdown',
-        component: demos.SearchDropdownDemo,
-        meta: {
-          title: '下拉框远程搜索',
-          icon: 'iconfont el-icon-cc-file-add',
-          route: 'searchDropdown'
-        }
-      },
+      // {
+      //   path: 'searchDropdown',
+      //   name: 'searchDropdown',
+      //   component: demos.SearchDropdownDemo,
+      //   meta: {
+      //     title: '下拉框远程搜索',
+      //     icon: 'iconfont el-icon-cc-file-add',
+      //     route: 'searchDropdown'
+      //   }
+      // },
       {
         path: 'selectChange',
         name: 'selectChange',
