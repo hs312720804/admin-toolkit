@@ -138,7 +138,7 @@ export default {
 // 11111
 .add-code-more{
   border: none;
-  color: $--color-primary;
+  color: #409EFF;
   cursor: pointer;
   font-size: 14px;
   padding: 0px 16px;
