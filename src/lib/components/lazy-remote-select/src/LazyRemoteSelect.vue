@@ -147,7 +147,6 @@ export default {
         this.options = []
         this.getList(filter)
       }
-      debugger
       this.$emit('input', val)
     },
     handleSearchParams (query, obj) {

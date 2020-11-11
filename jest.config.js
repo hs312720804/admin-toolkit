@@ -15,7 +15,7 @@ module.exports = {
   // snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   // ['jest-serializer-vue'],
   testMatch: [
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
+    '**/tests/unit/**/*.(spec|test).(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
     // '<rootDir>/test/unit/specs/*.spec.js'
   ],
   transformIgnorePatterns: [

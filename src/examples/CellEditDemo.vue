@@ -27,6 +27,7 @@ export default {
                   },
                   on: {
                     blur: (val) => {
+                      row.name = val
                       this.$message.info('传给后端的值为:' + val)
                     }
                   }

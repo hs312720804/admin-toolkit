@@ -15,8 +15,8 @@ function getList (params) {
     if (params.pageNo > 1) {
       data = data.map(item => {
         return {
-          name: item.name + '1',
-          id: item.id + '1'
+          name: item.name + params.pageNo,
+          id: item.id + 'a' + params.pageNo
         }
       })
     }
