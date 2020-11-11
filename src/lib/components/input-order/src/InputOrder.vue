@@ -5,7 +5,7 @@
 </template>
 <script>
 import _ from 'lodash'
-import InputPositiveInt from '../../input-positive-int/src/InputPositiveInt' 
+import InputPositiveInt from '../../input-positive-int/src/InputPositiveInt'
 export default {
   name: 'CInputOrder',
   components: {
@@ -34,10 +34,10 @@ export default {
         this.handleInputOrder(this.value, val)
       }
     },
-    handleInputOrder(index, order) {
+    handleInputOrder (index, order) {
       const dataList = this.data
       if (order > dataList.length) {
-          order = dataList.length
+        order = dataList.length
       }
       const newIndex = order - 1
       const oldIndex = index - 1

@@ -34,8 +34,8 @@
 <script>
 export default {
   methods: {
-    handleUpload(file, fileListItem) {
-      function update() {
+    handleUpload (file, fileListItem) {
+      function update () {
         if (fileListItem.percentage < 100) {
           fileListItem.percentage += 10
         } else {

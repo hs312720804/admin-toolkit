@@ -271,7 +271,7 @@ export default {
         this.$emit('currTagData', this.tagParentCode, this.tagNodeIndex)
       }
     },
-    sectionToChinese: function(section) {
+    sectionToChinese: function (section) {
       var chnNumChar = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
       var chnUnitChar = ['', '十', '百', '千']
       var strIns = ''; var chnStr = ''

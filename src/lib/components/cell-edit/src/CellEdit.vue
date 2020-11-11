@@ -9,9 +9,9 @@
         @focus="handleFocus"
         @blur="handleBlur"
       />
-      <div v-else class="input-place">{{initValue}}</div>
+      <div v-else class="input-place">{{ initValue }}</div>
     </div>
-    <i class="el-icon-edit icon" @click="handleEdit" style="cursor: pointer" />
+    <i class="el-icon-edit icon" @click="handleEdit" style="cursor: pointer;" />
   </div>
 </template>
 

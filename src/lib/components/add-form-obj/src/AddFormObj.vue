@@ -7,7 +7,7 @@
                 <el-select v-model="m.type" v-if="m.type !== 'baoguang'" @change="getCodeType($event,key,index)">
                   <el-option
                     :key="item.value"
-                    v-for="item in monitorOptions"
+                    v-for="item in classTypeOption"
                     :value="item.value"
                     :label="item.label"
                   ></el-option>
@@ -17,7 +17,7 @@
               <div class="el-form-item__content">
                 <div class="monitor-form" v-for="(c,i) in m.value" :key="i">
                   <el-row :gutter="10">
-                    <el-col :span="4">
+                    <el-col :span="6">
                       <el-select v-model="c.serviceProvider" @change="getserviceProvider($event,key,index,i,m.type)">
                         <el-option
                           v-for="item in serviceOptions"
@@ -28,10 +28,18 @@
                         </el-option>
                       </el-select>
                     </el-col>
-                    <el-col :span="16">
+                    <el-col :span="14">
                       <el-input
+                      v-if="inputType === 'textArea'"
                       type="textarea"
                       :autosize="{ minRows: 3, maxRows: 5}"
+                      placeholder="请输入内容"
+                      v-model="c.code"
+                      @change="handleIputCode($event,key,index,i,m.type)"
+                      >
+                      </el-input>
+                       <el-input
+                       v-else
                       placeholder="请输入内容"
                       v-model="c.code"
                       @change="handleIputCode($event,key,index,i,m.type)"
@@ -62,31 +70,28 @@
 <script>
 export default {
   name: 'CAddFormObj',
-  data () {
-    return {
-      shareTrack: 1,
-      serviceOptions: [],
-      monitorOptions: [
-        {
-          value: 'startTrackList',
-          label: '起播监测'
-        },
-        {
-          value: 'clickTrackList',
-          label: '点击监测'
-        },
-        {
-          value: 'middleTrackList',
-          label: '中点监测'
-        },
-        {
-          value: 'endTrackList',
-          label: '结束监测'
-        }
-      ]
+  props: {
+    formList: {
+      type: Array,
+      default: () => []
+    },
+    classTypeOption: {
+      type: Array,
+      default: () => []
+    },
+    serviceOptions: {
+      type: Array,
+      default: () => []
+    },
+    inputType: {
+      type: String,
+      default: ''
     }
   },
-  props: ['formList'],
+  data () {
+    return {
+    }
+  },
   methods: {
     getserviceProvider (value, key, index, i, type) {
       this.formList[key].moreMediaList[index].value[i].serviceProvider = value
@@ -129,6 +134,18 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+// 11111
+.add-code-more{
+  border: none;
+  color: $--color-primary;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0px 16px;
+}
+
+</style>
+
 <style lang="stylus" scoped>
 .el-row
   margin 0
@@ -139,12 +156,13 @@ export default {
 >>> .el-radio-button__orig-radio:checked + .el-radio-button__inner
   background-color #FC4C00
   border-color #FC4C00
-.add-code-more
-  border none
-  color #FC4C00
-  cursor pointer
-  font-size 14px
-  padding 0px 16px
+// .add-code-more{
+//   border: none;
+//   color: #FC4C00;
+//   cursor: pointer;
+//   font-size: 14px;
+//   padding: 0px 16px;
+// }
 .box
   border 1px solid #d8d8d8
   margin-bottom 16px

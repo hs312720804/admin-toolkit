@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       parantLabel: '选择策略',
       childLabel: '选择人群',
@@ -87,7 +87,7 @@ export default {
     /*
     id为父组件选中的值数组，通过父组件的ID去获取相应的自组件列表
      */
-    getChildrenList(id) {
+    getChildrenList (id) {
       this.form.strategyName = id
       this.form.crowdName = null
       this.crowdList = this.crowdList_data.filter(e => {
@@ -97,22 +97,20 @@ export default {
     /*
     给表单子组件赋值
     */
-    getChildrenValue(id) {
+    getChildrenValue (id) {
       this.form.crowdName = id
     },
     /*
     提交表单
      */
-    submitForm() { 
+    submitForm () {
       this.$refs.form.validate(valid => {
         if (valid) {
-
-          //保存接口
-           this.$message('保存')
+          // 保存接口
+          this.$message('保存')
         }
       })
     }
   }
 }
 </script>
-

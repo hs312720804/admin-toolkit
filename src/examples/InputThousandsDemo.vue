@@ -13,7 +13,7 @@ export default {
     }
   },
   methods: {
-    /** 
+    /**
      * 获取输入的数据
     */
     handleGetValue () {

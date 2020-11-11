@@ -4,7 +4,6 @@
       <el-checkbox-group
         v-if="type === 'checkbox'"
         :value="value"
-        
         @input="handleInputVal"
         @change="$emit('change', $event)"
         :disabled="disabled"

@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       isShowMainPage: true,
       iconName: '',
@@ -36,20 +36,20 @@ export default {
     }
   },
   methods: {
-    selectIcon() {
+    selectIcon () {
       this.isShowMainPage = false
     },
     /**
      * 得到icon
      */
-    getIcon(iconName, name) {
+    getIcon (iconName, name) {
       this.iconName = iconName
       this.isShowMainPage = true
     },
     /**
      * 返回
      */
-    goBack() {
+    goBack () {
       this.isShowMainPage = true
     }
   }
@@ -115,5 +115,3 @@ li {
 </style>
 <style scoped src="../assets/icon/iconfont.css">
 </style>
-
-

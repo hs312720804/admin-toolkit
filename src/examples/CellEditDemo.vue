@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import CCellEdit from '../lib/components/cell-edit/index'
 export default {
   props: {},
   data () {
@@ -21,14 +20,15 @@ export default {
             prop: 'name',
             render: (h, { row }) => {
               return h(
-                CCellEdit,
+                'c-cell-edit',
                 {
                   props: {
                     initValue: row.name
                   },
                   on: {
                     blur: (val) => {
-                      this.$message.info('传给后端的值为', val)
+                      row.name = val
+                      this.$message.info('传给后端的值为:' + val)
                     }
                   }
                 }

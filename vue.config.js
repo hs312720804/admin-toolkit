@@ -3,9 +3,8 @@ const isPro = ENV === 'production'
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
 const forElementUI = require('webpack-theme-color-replacer/forElementUI')
 const JoinFileContentPlugin = require('join-file-content-plugin')
-// const appConfig = require('./lib/config')
 let themeColor = '#409EFF'
-
+const path = require('path')
 const proConfig = {
 
   // externals: {
@@ -20,6 +19,7 @@ module.exports = {
   configureWebpack: config => {
     config['externals'] = isPro ? proConfig : undefined
 
+    // 更换 ElementUI 主题色
     // 需要 npm i -D webpack-theme-color-replacer
     const plugins = []
     plugins.push(
@@ -47,6 +47,41 @@ module.exports = {
     )
 
     config.plugins = [...config.plugins, ...plugins]
+  },
+
+  css: {
+    loaderOptions: {
+      // 配置全局sass/scss变量
+      sass: {
+        // sass 版本 9 中使用 additionalData 版本 8 中使用 prependData
+        additionalData: `@import "@/css/defines.scss";`
+      }
+    }
+  },
+
+  // chainWebpack: config => {
+  //   const oneOfsMap = config.module.rule('scss').oneOfs.store
+  //   oneOfsMap.forEach(item => {
+  //     item
+  //       .use('sass-resources-loader')
+  //       .loader('sass-resources-loader')
+  //       .options({
+  //         // Provide path to the file with resources
+  //         resources: `@import "@/css/defines.scss"`
+
+  //         // Or array of paths
+  //         // resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+  //       })
+  //       .end()
+  //   })
+  // },
+
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        path.resolve(__dirname, './src/css/defines.scss')
+      ]
+    }
   }
-  // themeColor: '#f67a17'
 }

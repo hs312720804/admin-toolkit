@@ -155,15 +155,35 @@ const routes = [
         }
       },
       {
-        path: 'typeList',
-        name: 'typeList',
-        component: demos.TypeListDemo,
+        path: 'SelectChange',
+        name: 'SelectChange',
+        component: demos.SelectChangeDemo,
         meta: {
-          title: '分类列表',
+          title: '条件选择',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'typeList'
+          route: 'SelectChange'
         }
       },
+      {
+        path: 'SelectLimit',
+        name: 'SelectLimit',
+        component: demos.SelectLimitDemo,
+        meta: {
+          title: 'select输入长度',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'SelectLimit'
+        }
+      },
+      // {
+      //   path: 'typeList',
+      //   name: 'typeList',
+      //   component: demos.TypeListDemo,
+      //   meta: {
+      //     title: '分类列表',
+      //     icon: 'iconfont el-icon-cc-file-add',
+      //     route: 'typeList'
+      //   }
+      // },
       {
         path: 'FormFatherAndSonLink',
         name: 'FormFatherAndSonLink',
@@ -294,14 +314,34 @@ const routes = [
           route: 'treeSelect'
         }
       },
+      // {
+      //   path: 'searchDropdown',
+      //   name: 'searchDropdown',
+      //   component: demos.SearchDropdownDemo,
+      //   meta: {
+      //     title: '下拉框远程搜索',
+      //     icon: 'iconfont el-icon-cc-file-add',
+      //     route: 'searchDropdown'
+      //   }
+      // },
       {
-        path: 'searchDropdown',
-        name: 'searchDropdown',
-        component: demos.SearchDropdownDemo,
+        path: 'selectChange',
+        name: 'selectChange',
+        component: demos.SelectChangeDemo,
         meta: {
-          title: '下拉框远程搜索',
+          title: '条件选择',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'searchDropdown'
+          route: 'selectChange'
+        }
+      },
+      {
+        path: 'lazyRemoteSelect',
+        name: 'lazyRemoteSelect',
+        component: demos.LazyRemoteSelectDemo,
+        meta: {
+          title: '懒加载搜索',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'lazyRemoteSelect'
         }
       }
     ]

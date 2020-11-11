@@ -1,22 +1,14 @@
-# [1.1.0](http://gitlab.skysri.com/flower/admin-toolkit/compare/1.0.4...1.1.0) (2020-09-15)
+## [1.1.1](http://gitlab.skysri.com/flower/admin-toolkit/compare/0.5.3...1.1.1) (2020-10-16)
 
 
 ### Bug Fixes
 
-* **changelog:** 修复changelog中修改历史跳转失效的BUG ([e2b725c](http://gitlab.skysri.com/flower/admin-toolkit/commit/e2b725c8e754ddfe4e5bd7c3e868382108d9b6f8))
-
-
-
-## [1.0.4](http://gitlab.skysri.com/flower/admin-toolkit/compare/v1.0.4...1.0.4) (2020-09-15)
-
-
-
-## [1.0.4](http://gitlab.skysri.com/flower/admin-toolkit/compare/0.5.3...v1.0.4) (2020-09-15)
-
-
-### Bug Fixes
-
+* AddFormObj组件移到业务组建分类中 ([b5fa73d](http://gitlab.skysri.com/flower/admin-toolkit/commit/b5fa73df58c7e81c9abc4b2f8803756934196397))
 * 加上commit提交规范commitizen、commitlint、husky ([9b36814](http://gitlab.skysri.com/flower/admin-toolkit/commit/9b36814bb0cc17116ddc0d63e0ff7396e11ea031))
+* 加上selectChange例子 ([9f4c145](http://gitlab.skysri.com/flower/admin-toolkit/commit/9f4c1456965a43da55cd73f8612890ed40fc62cc))
+* 新增不限条件时按钮的值自定义属性 ([556fd02](http://gitlab.skysri.com/flower/admin-toolkit/commit/556fd02505792ce4c2003d06b962bf48efc9fe9a))
+* 选中数据不显示 ([cea0da2](http://gitlab.skysri.com/flower/admin-toolkit/commit/cea0da206c2bb76e1561b2f056a4cdf3f6a25da3))
+* **changelog:** 修复changelog中修改历史跳转失效的BUG ([e2b725c](http://gitlab.skysri.com/flower/admin-toolkit/commit/e2b725c8e754ddfe4e5bd7c3e868382108d9b6f8))
 * **CTable:** CTable改名后产生的错误修正 ([a1c0131](http://gitlab.skysri.com/flower/admin-toolkit/commit/a1c0131a0a1fff963b037a359f60dd68e55ce910))
 * **package.json和表单提交组件:** 用commitizen规范化commit文档以及表单组件加上了disabled属性 ([3699b98](http://gitlab.skysri.com/flower/admin-toolkit/commit/3699b98d1b9a39a6db068cf3ab7c4003bd67903c))
 * **register:** 组件use注册测试，处理出现的问题。补上缺失的name ([f6587ed](http://gitlab.skysri.com/flower/admin-toolkit/commit/f6587ed34b94e0e80f39c4f8afee6cf826580d01))
@@ -24,7 +16,12 @@
 
 ### Features
 
+* fixPage组建加了控制内容区域高度的props属性height ([309a70f](http://gitlab.skysri.com/flower/admin-toolkit/commit/309a70fd862b205fa8b571373d8e190bc322a26b))
 * git commit 提交规范化并实现了changlog功能 ([dd76bed](http://gitlab.skysri.com/flower/admin-toolkit/commit/dd76bed57923490c1ec94c1942fcba133eb28b45))
+* 去掉c-product-list、c-type-list，加上了CGateSchemaForm组件 ([cade3db](http://gitlab.skysri.com/flower/admin-toolkit/commit/cade3dbc43c5212f13596db182de80a7e993ef4e))
+* 发布1.1.1版本到私服 ([e8fbef3](http://gitlab.skysri.com/flower/admin-toolkit/commit/e8fbef325f0fcb74e2f03066b50a15e99649cf09))
+* 更改业务组件动态添加 ([bf6dc2d](http://gitlab.skysri.com/flower/admin-toolkit/commit/bf6dc2d12a1bd999d314035493d5e9a3fe356afc))
+* 添加条件选择 ([c493fa4](http://gitlab.skysri.com/flower/admin-toolkit/commit/c493fa477e54c113d18f10bbfaa286bb9b1db81a))
 
 
 ### Performance Improvements

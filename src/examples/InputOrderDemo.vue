@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li class="item" v-for="(item, index) in items" :key="index + Math.random().toString()">
-        <c-input-order :value="index + 1" @order-data="handleOrderData" :data="items"/> 
+        <c-input-order :value="index + 1" @order-data="handleOrderData" :data="items"/>
         {{ item.name }}
       </li>
     </ul>
@@ -10,12 +10,12 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       items: [
         {
           id: 'foo',
-          name: 'foo',
+          name: 'foo'
         },
         {
           id: 'bar',
@@ -23,7 +23,7 @@ export default {
         },
         {
           id: 'foo',
-          name: 'foo2',
+          name: 'foo2'
         },
         {
           id: 'bar',
@@ -31,7 +31,7 @@ export default {
         },
         {
           id: 'foo',
-          name: 'foo3',
+          name: 'foo3'
         },
         {
           id: 'bar',
@@ -39,7 +39,7 @@ export default {
         },
         {
           id: 'foo',
-          name: 'foo4',
+          name: 'foo4'
         },
         {
           id: 'bar',

@@ -133,9 +133,9 @@ export default {
 </script>
 
 <style lang="stylus">
-.tree-type div.is-current > .el-tree-node__content
-  color #fff
-  background #57b0f7
+// .tree-type div.is-current > .el-tree-node__content
+//   color #fff
+//   background #57b0f7
 
 .tree-type .is-out-icon, .tree-type .is-down-icon, .tree-type .is-show-icon
     display  inline-block

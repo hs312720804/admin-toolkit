@@ -112,3 +112,5 @@ npm install -g commitizen
 commitizen init cz-conventional-changelog --save --save-exact
 具体使用见 [源代码](https://blog.csdn.net/m0_37263637/article/details/86723431) 
 ```
+# 版本号 1.1.2版本新增的组件如下:
+ c-select-limit、c-lazy-remote-select、c-tree-select、c-search-dropdown、c-select-change

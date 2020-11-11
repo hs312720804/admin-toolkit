@@ -1,7 +1,10 @@
+const path = require('path')
+
 module.exports = {
   base: '/admin-toolkit/',
   title: 'Admin Toolkit',
   description: '酷开 Vue 组件库',
+  
   themeConfig: {
     nav: [
       {text: '文档', link: '/'},
@@ -65,6 +68,8 @@ module.exports = {
               'components/InputThousands.md',
               'components/SearchDropdown.md',
               'components/TreeSelect.md',
+              'components/SelectLimit.md',
+              'components/LazyRemoteSelect'
             ]
           },
           {
@@ -74,7 +79,8 @@ module.exports = {
               'bizComponents/AppParamsRead.md',
               'bizComponents/ClickEventSelector.md',
               'components/VideoTags.md',
-              'components/AddFormObj.md'
+              'components/AddFormObj.md',
+              'components/SelectChange.md'
             ]
           },
           {
@@ -95,4 +101,59 @@ module.exports = {
       }
     }
   },
+  // chainWebpack: config => {
+  //   const oneOfsMap = config.module.rule('scss').oneOfs.store
+  //   console.log(1111)
+  //   oneOfsMap.forEach(item => {
+  //     item
+  //       .use('sass-resources-loader')
+  //       .loader('sass-resources-loader')
+  //       .options({
+  //         // Provide path to the file with resources
+  //         resources: `@import "@/css/defines.scss"`
+
+  //         // Or array of paths
+  //         // resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+  //       })
+  //       .end()
+  //   })
+  // },
+  // sass: { 
+  //   indentedSyntax: true,
+  //   additionalData: `@import "@/css/defines.scss";`
+  // },
+  // sass: {
+  //   indentedSyntax: true,
+  //   additionalData: '@import "~@/css/defines.scss"'
+    // additionalData: path.resolve(__dirname, './css/defines.scss')  //注意自己的路径
+    // additionalData: `@import "@/css/defines.scss";`
+    // additionalData: (content, loaderContext) => {
+    //   // More information about available properties https://webpack.js.org/api/loaders/
+    //   const { resourcePath, rootContext } = loaderContext;
+    //   const relativePath = path.relative(rootContext, resourcePath);
+
+    //   if (relativePath === 'styles/foo.scss') {
+    //     return '$value: 100px;';
+    //   }
+
+    //   return '$value: red';
+    // },
+    // includePaths: ['/src/css/defines.scss'],
+    // sassOptions: {
+    //   indentWidth: 4,
+      
+    // },
+  // },
+  configureWebpack: {
+    resolve: {
+        alias: {
+          '@': path.resolve(__dirname, '../../src')
+        }
+    }
+  },
+  scss: {
+    additionalData: '@import "@/css/defines.scss";'
+  }
 }
+
+console.log(path.resolve(__dirname, '../../srcc'))

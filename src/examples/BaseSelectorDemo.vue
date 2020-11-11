@@ -1,10 +1,10 @@
  <template>
-  <c-base-selector 
+  <c-base-selector
     ref="baseSelector"
     id-field="id"
     :is-live="isLive"
     selection-type="multiple"
-    :table="table" 
+    :table="table"
     :pagination="pagination"
     :filter="filter"
     :filter-schema="filterSchema"
@@ -18,7 +18,7 @@
 <script>
 import _ from 'gateschema'
 export default {
-  data() {
+  data () {
     return {
       pagination: {
         currentPage: 1,
@@ -54,14 +54,14 @@ export default {
         props: {},
         header: [
           {
-            label: "ID",
-            prop: "id",
-            width: "70"
+            label: 'ID',
+            prop: 'id',
+            width: '70'
           },
-           {
-            label: "名称",
-            prop: "name",
-          },
+          {
+            label: '名称',
+            prop: 'name'
+          }
         ],
         data: [
           {
@@ -72,22 +72,22 @@ export default {
             id: 2,
             name: 'bar'
           }
-        ] 
+        ]
       }
     }
   },
   computed: {
-    selected() {
+    selected () {
       return this.$refs.baseSelector.selected.slice()
     }
   },
   props: ['isLive', 'selectionType'],
   methods: {
-    getDefaultFilter() {
+    getDefaultFilter () {
       return {
       }
     },
-    getFilter() {
+    getFilter () {
       const pagination = this.pagination
       const filter = Object.assign({}, this.filter)
       if (pagination) {
@@ -96,19 +96,19 @@ export default {
       }
       return filter
     },
-    handleFilterReset() {
+    handleFilterReset () {
       this.filter = this.getDefaultFilter()
       this.pagination.currentPage = 1
       this.fetchData()
     },
-    fetchData() {
+    fetchData () {
     }
   },
-  created() {
+  created () {
     this.fetchData()
   }
 }
 </script>
- 
+
  <style lang='stylus' scoped>
 </style>

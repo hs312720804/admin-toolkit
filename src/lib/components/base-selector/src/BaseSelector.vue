@@ -44,10 +44,10 @@
       </div>
       <div class="remote-selector-main__actions">
         <slot name="actions">
-            <el-button type="primary" @click="handleSelectEnd">  
+            <el-button type="primary" @click="handleSelectEnd">
               确定
             </el-button>
-            <el-button @click="handleSelectCancel">  
+            <el-button @click="handleSelectCancel">
               取消
             </el-button>
         </slot>
@@ -76,7 +76,7 @@ export default {
     tableProps () {
       const originProps = this.table.Props || {}
       if (!originProps.height) {
-        return {...originProps, height: this.tableHeight}
+        return { ...originProps, height: this.tableHeight }
       }
       return originProps
     }
@@ -85,7 +85,7 @@ export default {
     data: 'updateTableSelected'
   },
   methods: {
-    clearSelected() {
+    clearSelected () {
       this.selected = []
       this.tableSelected = []
     },
@@ -113,29 +113,29 @@ export default {
     handleResetFilterForm () {
       this.$emit('filter-reset')
     },
-    handleTableRowSelectionChange(item, index) {
+    handleTableRowSelectionChange (item, index) {
       this.selected = [item]
       this.tableSelected = index
     },
-    handleTableRowSelectionAdd(targetItem) {
+    handleTableRowSelectionAdd (targetItem) {
       this.selected = this.selected.concat(targetItem)
       this.updateTableSelected()
     },
-    handleTableRowSelectionRemove(targetItem) {
+    handleTableRowSelectionRemove (targetItem) {
       const ID = this.idField
       this.selected = this.selected.filter(item => {
         return item[ID] !== targetItem[ID]
       })
       this.updateTableSelected()
     },
-    handleTableAllRowSelectionChange(value) {
+    handleTableAllRowSelectionChange (value) {
       if (value) {
         this.table.data.forEach(this.handleTableRowSelectionAdd)
       } else {
         this.table.data.forEach(this.handleTableRowSelectionRemove)
       }
     },
-    updateTableSelected() {
+    updateTableSelected () {
       const ID = this.idField
       const table = this.table
       const newSelectedIndex = this.selected.map(item => item[ID])
@@ -146,33 +146,33 @@ export default {
         return result
       }, [])
     },
-    setTableHeight() {
+    setTableHeight () {
       this.tableHeight = this.$refs.selectorContent.clientHeight + 'px'
     }
   },
-  created() {
+  created () {
     console.log(this.table)
   },
-  mounted() {
+  mounted () {
     // window.addEventListener('resize', this.setTableHeight)
     // this.setTableHeight()
   },
-  beforeDestroy() {
+  beforeDestroy () {
     // window.removeEventListener('resize', this.setTableHeight)
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.remote-selector-main 
+.remote-selector-main
   height 100%
   display flex
   flex-direction column
 .remote-selector-main__content
   overflow auto
   margin 10px 0
-  border-top 1px solid #EBEEF5 
-  border-bottom 1px solid #EBEEF5 
+  border-top 1px solid #EBEEF5
+  border-bottom 1px solid #EBEEF5
   flex 1
 .remote-selector-main__footer
   height 35px

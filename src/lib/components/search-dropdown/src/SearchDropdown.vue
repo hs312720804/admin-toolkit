@@ -26,13 +26,13 @@
     </div>
 
     <!-- 搜索下拉列表 -->
-    <div class="search-list">
+    <div class="search-list" v-if="isShowList">
       <div class="search-result" ref="ul">
         <ul v-for="(item, index) in result" :key="index">
           <li
             class="select-li"
             :class="{'is-selected': item.isSelected}"
-            @click="clickResultItem(item)"
+            @click="handleClickResultItem(item)"
           >
             <!-- <img class="user-avatar" src="../../images/avatar.png"> -->
             <div class="user-name">
@@ -49,6 +49,7 @@
         <div class="result-null" v-if="value && result.length == 0">没有结果</div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -67,6 +68,7 @@ export default {
       type: Array,
       default: () => []
     }
+
   },
 
   data () {
@@ -75,7 +77,8 @@ export default {
       value: '', // 输入的搜索关键字
       result: [], // 全部搜索结果
       curIndex: 0, // 选中的搜索结果的下标
-      selectItem: {} // 选中的搜索结果
+      selectItem: {}, // 选中的搜索结果
+      isShowList: false // 是否展示下拉列表
     }
   },
   watch: {
@@ -93,13 +96,13 @@ export default {
   mounted () {
     this.value = this.keyValue // 在生命周期中，把获取的value值获取给key
 
-    let that = this
     document.body.addEventListener(
       'click',
       () => {
         // 鼠标单击组件之外时收起下拉列表
-        that.isFocus = false
-        that.value = ''
+        this.isFocus = false
+        // this.value = ''
+        this.isShowList = false
       },
       false
     )
@@ -120,6 +123,7 @@ export default {
         this.$refs.searchInput.focus() // 输入查询条件清空后获取焦点
       }
     },
+
     clickSearch () {
       // 回车后查询
       if (event.code === 'ArrowDown' || event.code === 'ArrowUp') {
@@ -127,7 +131,7 @@ export default {
         return
       }
       if (event.code === 'Enter' && this.selectItem) {
-        this.clickResultItem(this.selectItem) // 有搜索结果时按下enter直接选中第一项
+        this.handleClickResultItem(this.selectItem) // 有搜索结果时按下enter直接选中第一项
         return
       }
       this.result = [] // 全部搜索结果
@@ -152,9 +156,14 @@ export default {
       } else {
         this.$refs.searchInput.focus() // 没有输入查询条件焦点不应该失去
       }
+
+      // 搜索数据大于0，显示下拉框
+      if (this.result.length > 0) {
+        this.isShowList = true
+      }
     },
 
-    getKeyWord: function (name, search) {
+    getKeyWord (name, search) {
       // 关键字
       let keyword = []
       keyword[0] = name.substring(0, search[0])
@@ -168,11 +177,23 @@ export default {
       return keyword
     },
 
-    clickResultItem: function (data) {
+    handleClickResultItem (data) {
       // 单击下拉列表中的选项
-      this.$emit('confirm', data)
 
-      alert('您选择了' + data.name)
+      // 全部选项选中状态为 false
+      this.result.map(item => {
+        item.isSelected = false
+      })
+      data.isSelected = true
+      // console.log('data==' + JSON.stringify(data))
+
+      // 设置输入框值
+      this.value = data.keyword.join('')
+
+      // 关闭下拉框
+      this.isShowList = false
+      this.isFocus = false
+      this.$emit('confirm', data)
     },
 
     navigateOptions (direction) {
@@ -220,17 +241,17 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .search-wrapper {
-  background-color: rgb(235, 148, 148);
-  height: 580px;
-  width: 325px;
-  overflow: hidden;
+  // background-color: $--color-primary;
+  // height: 580px;
+  width: 100%;
+  // overflow: hidden;
   border-radius: 3px;
   font-family: 'Microsoft YaHei';
   box-sizing: border-box;
-  padding: 10px;
-
+  // padding: 10px;
+  position: relative;
   .search-input {
     position: relative;
 
@@ -244,9 +265,10 @@ export default {
       padding: 0px 40px 0px 10px;
       outline: 0;
       font-size: 14px;
-      color: #E5EAEE;
+      color: #222;
       // background-color: #209df7;
       background-color: #fff;
+      border: 1px solid #dcdfe6;
     }
 
     input::-webkit-input-placeholder {
@@ -269,7 +291,7 @@ export default {
       color: #222 !important;
       // border: 1px solid #fff !important;
       // background-color: #fff !important;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 15px hsla(0, 0%, 100%, 0.3) !important;
+      // box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 15px hsla(0, 0%, 100%, 0.3) !important;
     }
 
     .search-icons {
@@ -291,18 +313,18 @@ export default {
   }
 
   .search-list {
-    height: 480px;
-    margin-top: 8px;
     border: 0 none;
     border-radius: 3px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    // box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
     background-color: #fff;
+    position: absolute;
+    width: 100%;
 
     .search-result {
-      height: 100%;
+      max-height: 480px;
       overflow-x: hidden;
       overflow-y: auto;
-
+      border: 1px solid #dcdfe6;
       ul, li {
         margin: 0px;
         padding: 0px;
@@ -313,11 +335,21 @@ export default {
       }
 
       .select-li {
-        cursor: pointer;
-        padding: 8px 10px;
+        // cursor: pointer;
+        // padding: 8px 10px;
+        // overflow: hidden;
+        // border-bottom: 1px solid #ebebeb;
+        font-size: 14px;
+        padding: 0 20px;
+        position: relative;
+        white-space: nowrap;
         overflow: hidden;
-        border-bottom: 1px solid #ebebeb;
-
+        text-overflow: ellipsis;
+        color: #606266;
+        height: 34px;
+        line-height: 34px;
+        box-sizing: border-box;
+        cursor: pointer;
         .user-avatar {
           border-radius: 50%;
           float: left;
@@ -327,10 +359,10 @@ export default {
         }
 
         .user-name {
-          width: 200px;
-          float: left;
-          margin-left: 15px;
-          line-height: 40px;
+          // width: 200px;
+          // float: left;
+          // margin-left: 15px;
+          // line-height: 40px;
 
           .keyword {
             color: #008cee;
@@ -339,7 +371,7 @@ export default {
       }
 
       .select-li:hover {
-        background-color: #e5f0fa;
+        background-color: #f5f7fa; //element
       }
 
       .is-selected {
@@ -348,9 +380,9 @@ export default {
     }
 
     .result-null {
-      margin-top: 100px;
       text-align: center;
-      font-size: 20px;
+      font-size: 16px;
+      padding: 30px;
     }
   }
 }
