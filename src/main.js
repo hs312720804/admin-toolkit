@@ -10,8 +10,7 @@ import AppState from '@william17/vue-app-state'
 import $x from './js/$x'
 // 设置主题颜色
 import { initThemeColor, changeThemeColor } from './js/themeColorClient'
-
-// import './css/defines.scss'
+// import './css/customDefines.scss'
 // 通用组件，便于处理
 Vue.prototype.$x = Vue.$x = $x
 
