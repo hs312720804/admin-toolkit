@@ -4,9 +4,11 @@
       v-if="!isReadonly"
       :value="value"
       :type="type"
+      autosize
       :disabled="disabled"
       :clearable="clearable"
       :maxlength="maxlength"
+      :rows="rows"
       :minlength="minlength"
       :placeholder="placeholder"
       :show-word-limit="showWordLimit"

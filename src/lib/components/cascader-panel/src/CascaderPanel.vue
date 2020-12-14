@@ -6,7 +6,7 @@
         </el-tag>
      </div>
     <div class="search-selector-body">
-      <el-input :placeholder="placeholder" @focus="isShowPanel=true" suffix-icon="el-icon-search" v-model="searchText" @input="handleSearch"></el-input>
+      <el-input :placeholder="placeholder" ref="search-input" @focus="isShowPanel=true" suffix-icon="el-icon-search" v-model="searchText" @input="handleSearch"></el-input>
       <div v-show="isShowPanel">
         <el-cascader-panel v-if="panelOptions.length > 0"  ref="panel" v-model="inputValue"  :options="panelOptions" :props="props"></el-cascader-panel>
         <div v-else class="coocaa-cascader-panel--empty">
@@ -184,8 +184,8 @@ export default {
       this.$nextTick(() => {
         if (this.$refs.panel) {
           this.selectedAllNodes = this.$refs.panel && this.$refs.panel.getCheckedNodes(false) // 获取所有选中节点
-          this.$emit('input', this.inputValue)
           this.selectedItem = this.getSelectedNodes(true)
+          this.$emit('input', this.inputValue)
           this.$emit('get-selected-list', this.selectedItem)
         }
       })
