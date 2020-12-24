@@ -1,6 +1,6 @@
 
 <template>
-  <el-select :value="valueTitle" :clearable="clearable" @clear="clearHandle">
+  <el-select :value="valueTitle" ref="select" :clearable="clearable" @clear="clearHandle">
     <el-option :value="valueTitle" :label="valueTitle">
       <el-tree  id="tree-option"
         ref="selectTree"
@@ -9,6 +9,7 @@
         :props="props"
         :node-key="props.value"
         :default-expanded-keys="defaultExpandedKey"
+        @dblclick.native="handleClose"
         @node-click="handleNodeClick">
       </el-tree>
     </el-option>
@@ -61,12 +62,25 @@ export default {
     this.initHandle()
   },
   methods: {
+    /**
+     * add by wanghaihua
+     */
+    handleClose () {
+      this.$refs.select.blur()
+    },
     // 初始化值
     initHandle () {
       if (this.valueId) {
         this.valueTitle = this.$refs.selectTree.getNode(this.valueId).data[this.props.label] // 初始化显示
         this.$refs.selectTree.setCurrentKey(this.valueId) // 设置默认选中
         this.defaultExpandedKey = [this.valueId] // 设置默认展开
+      } else {
+        /**
+         * add by wanghaihua
+         */
+        this.valueTitle = null // 初始化显示
+        this.$refs.selectTree.setCurrentKey(null) // 设置默认选中
+        this.defaultExpandedKey = [] // 设置默认展开
       }
       this.$nextTick(() => {
         let scrollWrap = document.querySelectorAll('.el-scrollbar .el-select-dropdown__wrap')[0]

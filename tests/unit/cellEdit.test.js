@@ -48,8 +48,8 @@ describe('cellEdit组件测试', () => {
     expect(mockFn).toHaveBeenCalledTimes(1)
     // wrapper.vm.handleBlur()  // is ok
   })
-  it.only('删除一个标签时，选中项自动删除相应的选项', () => {
-    const wrapper = mount(CellEdit, { localVue })
-    window.console.log(wrapper.findComponent({ name: 'ElTag' }))
-  })
+  // it.only('删除一个标签时，选中项自动删除相应的选项', () => {
+  //   const wrapper = mount(CellEdit, { localVue })
+  //   window.console.log(wrapper.findComponent({ name: 'ElTag' }))
+  // })
 })
