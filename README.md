@@ -113,4 +113,7 @@ commitizen init cz-conventional-changelog --save --save-exact
 具体使用见 [源代码](https://blog.csdn.net/m0_37263637/article/details/86723431) 
 ```
 ## 版本号 1.1.2版本新增的组件如下:
- c-select-limit、c-lazy-remote-select、c-tree-select、c-search-dropdown、c-select-change
+ c-select-limit、c-lazy-remote-select、c-tree-select、c-search-dropdown、c-select-
+## 版本号 1.1.3版本改动如下:
+1、c-tree-select 加上双击关闭功能
+2、组件内$service 改成$adminService,不会污染外部系统
