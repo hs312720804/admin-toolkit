@@ -378,13 +378,13 @@ const routes = [
         }
       },
       {
-        path: 'coocaaCascaderPanel',
-        name: 'coocaaCascaderPanel',
-        component: demos.CoocaaCascaderPanelDemo,
+        path: 'cascaderPanelDemo',
+        name: 'cascaderPanelDemo',
+        component: demos.CascaderPanelDemo,
         meta: {
           title: '级联选择器',
           icon: 'iconfont el-icon-cc-file-add',
-          route: 'coocaaCascaderPanel'
+          route: 'cascaderPanelDemo'
         }
       }
     ]

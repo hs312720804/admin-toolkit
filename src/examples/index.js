@@ -42,7 +42,7 @@ import CnRegionPickerDemo from './CnRegionPicker.vue'
 import FixPageDemo from './FixPageDemo.vue'
 import AddMultiDemo from './AddMultiDemo'
 import ProductListDemo from './ProductListDemo'
-import VideoFilterDemo from './VideoFilterDemo'
+// import VideoFilterDemo from './VideoFilterDemo'
 import AddFormObjDemo from './AddFormObjDemo'
 import CellEditDemo from './CellEditDemo'
 import CascaderPanelDemo from './CascaderPanelDemo.vue'
@@ -100,7 +100,7 @@ export {
   FixPageDemo,
   AddMultiDemo,
   ProductListDemo,
-  VideoFilterDemo,
+  // VideoFilterDemo,
   AddFormObjDemo,
   CellEditDemo,
   CascaderPanelDemo,

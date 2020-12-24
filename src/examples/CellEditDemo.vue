@@ -2,6 +2,7 @@
   <div>
     <c-table
       :data="table.data"
+      ref="table"
       :props="table.props"
       :header="table.header" />
   </div>

@@ -45,7 +45,7 @@ import CInputPosibility from './components/input-posibility/index'
 import CVideoTags from './components/video-tags/index'
 import CAddFormObj from './components/add-form-obj/index'
 import CFatherSonLink from './components/father-son-link/index'
-import CVideoFilter from './components/video-filter/index'
+import CVideoFilter from './components/video-filter_d/index'
 // import CProductList from './components/product-list/index'
 import COrderableTable from './components/orderable-table/index'
 import CAppParamsRead from './bizComponents/app-params-read/index'
@@ -118,7 +118,7 @@ const install = function (Vue) {
     Vue.component(component.name, component)
   })
   Vue.prototype.$c_utils = utils
-  Vue.prototype.$service = service
+  Vue.prototype.$adminService = service
 }
 
 /* istanbul ignore if */

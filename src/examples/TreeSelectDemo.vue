@@ -1,5 +1,6 @@
 <template>
   <!-- 调用树形下拉框组件 -->
+<div>
   <c-tree-select
     :props="props"
     :options="optionData"
@@ -7,6 +8,7 @@
     :clearable="isClearable"
     :accordion="isAccordion"
     @getValue="getValue($event)"/>
+</div>
 </template>
 <script>
 export default {

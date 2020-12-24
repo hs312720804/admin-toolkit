@@ -1,12 +1,9 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+
+import { shallowMount, localVue, mount } from './common'
 import CellEdit from '@/lib/components/cell-edit/src/CellEdit.vue'
-import ElementUI from 'element-ui'
-// import CellEditDemo from '@/examples/CellEditDemo.vue'
-const localVue = createLocalVue()
-localVue.use(ElementUI)
 describe('cellEdit组件测试', () => {
   let msg = '人群名称1'
-  it('组件传的值赋值给输入框', async () => {
+  it('组件传的值赋值给输入框', () => {
     const wrapper = shallowMount(CellEdit, {
       propsData: {
         initValue: msg
@@ -15,26 +12,44 @@ describe('cellEdit组件测试', () => {
     })
     expect(wrapper.vm.$data.value).toBe(msg)
   })
-  it('点击编辑按钮，输入框出现', async () => {
+  it('点击编辑按钮，输入框出现', () => {
     const wrapper = shallowMount(CellEdit, {
       propsData: {
         initValue: msg
       },
       localVue
     })
-    await wrapper.find('.el-icon-edit').trigger('click')
+    wrapper.find('.el-icon-edit').trigger('click')
     expect(wrapper.vm.$data.readonly).toBe(false)
   })
-  // it.only('输入框失去焦点，输入框不存在并且返回输入的值', async () => {
-  //   const wrapper = shallowMount(CellEditDemo, { localVue })
-  //   const CellEditWrapper = wrapper.find('c-cell-edit').setProps({
-  //     propsData: {
-  //       initValue: msg
-  //     },
-  //     localVue
-  //   })
-  //   CellEditWrapper.vm.$emit('blur', '123')
-  //   await CellEditWrapper.find('el-input').trigger('blur')
-  //   expect(CellEditWrapper.vm.$data.readonly).toBe(true)
+  it('calls handleBlur when component blur', () => {
+    const wrapper = shallowMount(CellEdit, {
+      propsData: {
+        initValue: msg
+      },
+      localVue
+    })
+    const mockFn = jest.fn()
+    // const mockFn = jest.spyOn(wrapper1.vm, 'handleBlur')
+    wrapper.setMethods({ handleBlur: mockFn })
+    wrapper.vm.$data.readonly = false
+    wrapper.vm.$nextTick(() => {
+      wrapper.findComponent({ ref: 'input' }).vm.$emit('blur')
+      expect(mockFn).toHaveBeenCalled()
+      expect(mockFn).toHaveBeenCalledTimes(1)
+    })
+  })
+  it('triggers a $on event when a handleBlur method is called', () => {
+    const wrapper = shallowMount(CellEdit, { localVue })
+    const mockFn = jest.fn()
+    wrapper.vm.$on('blur', mockFn)
+    wrapper.vm.handleBlur()
+    expect(mockFn).toHaveBeenCalled()
+    expect(mockFn).toHaveBeenCalledTimes(1)
+    // wrapper.vm.handleBlur()  // is ok
+  })
+  // it.only('删除一个标签时，选中项自动删除相应的选项', () => {
+  //   const wrapper = mount(CellEdit, { localVue })
+  //   window.console.log(wrapper.findComponent({ name: 'ElTag' }))
   // })
 })

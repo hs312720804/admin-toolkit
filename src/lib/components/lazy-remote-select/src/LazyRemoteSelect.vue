@@ -98,7 +98,7 @@ export default {
     getList (formData) {
       this.removeTips()
       // 这里是接口请求数据, 带分页条件
-      return this.$service[this.serviceName](formData).then(data => {
+      return this.$adminService[this.serviceName](formData).then(data => {
         const labelMap = this.optionsMap.label.split('.')
         const result = data.rows.map(item => {
           return {

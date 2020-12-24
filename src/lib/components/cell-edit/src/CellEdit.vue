@@ -52,9 +52,6 @@ export default {
   },
   created () {
     this.value = this.initValue
-  },
-  updated () {
-    this.$refs.input && this.$refs.input.focus()
   }
 }
 </script>
