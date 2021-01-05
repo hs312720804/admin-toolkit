@@ -14,7 +14,14 @@ import { initThemeColor, changeThemeColor } from './js/themeColorClient'
 // 通用组件，便于处理
 Vue.prototype.$x = Vue.$x = $x
 Vue.use(ElementUI, {
-  i18n: (key, value) => i18n.t(key, value)
+  // i18n: (key, value) => i18n.t(key, value)
+  i18n: function (path, options) {
+    let value = i18n.t(path, options)
+    if (value !== null && value !== undefined) {
+      return value
+    }
+    return ''
+  }
 })
 Vue.use(AppState)
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
