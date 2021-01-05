@@ -6,7 +6,7 @@ import './register'
 import '@/assets/icon/iconfont.css'
 import router from '@/router/index.js'
 import AppState from '@william17/vue-app-state'
-import i18n from './lang/index'
+import i18n from './lib/lang'
 import $x from './js/$x'
 // 设置主题颜色
 import { initThemeColor, changeThemeColor } from './js/themeColorClient'
