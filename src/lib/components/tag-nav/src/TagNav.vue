@@ -4,11 +4,10 @@
     <el-button class="tag-nav__btn tag-nav__right" icon="el-icon-arrow-right" @click="handleScroll('right')"></el-button>
     <el-dropdown split-button class="tag-nav__btn tag-nav__more">
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item @click.native="handleCloseOther">关闭其它</el-dropdown-item>
-        <el-dropdown-item @click.native="handleCloseAll">关闭所有</el-dropdown-item>
+        <el-dropdown-item @click.native="handleCloseOther">{{$t('m.closeOther')}}</el-dropdown-item>
+        <el-dropdown-item @click.native="handleCloseAll">{{$t('m.closeAll')}}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
-
     <div
       ref="viewPort"
       class="tag-nav__view-port">

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <el-form-item label="应用包名">{{ value.packagename }}</el-form-item>
-    <el-form-item label="应用版本号">{{ value.versioncode }}</el-form-item>
-    <el-form-item label="启动动作">{{ value.dowhat }}</el-form-item>
-    <el-form-item label="启动方式">{{ value.bywhat }}</el-form-item>
-    <el-form-item label="启动参数">{{ value.byvalue }}</el-form-item>
+    <el-form-item :label="$t('m.packageName')">{{ value.packagename }}</el-form-item>
+    <el-form-item :label="$t('m.versionCode')">{{ value.versioncode }}</el-form-item>
+    <el-form-item :label="$t('m.dowhat')">{{ value.dowhat }}</el-form-item>
+    <el-form-item :label="$t('m.bywhat')">{{ value.bywhat }}</el-form-item>
+    <el-form-item :label="$t('m.byvalue')">{{ value.byvalue }}</el-form-item>
     <slot></slot>
-    <el-form-item label="扩展参数">
+    <el-form-item :label="$t('m.extendParams')">
       <div class="app-extend-params" v-for="(param, index) in value.params" :key="index">
         <el-form-item label label-width="0px">
           <el-tag>key</el-tag>&nbsp;

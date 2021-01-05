@@ -1,21 +1,21 @@
 <template>
   <div>
     <el-form-item
-      label="应用包名"
+      :label="$t('m.packageName')"
       :prop="formProp('packagename')"
       :rules="rules.packagename"
     >
       <el-input v-model.trim="inputValue.packagename"></el-input>
     </el-form-item>
     <el-form-item
-      label="应用版本号"
+      :label="$t('m.versionCode')"
       :prop="formProp('versioncode')"
       :rules="rules.versioncode"
     >
       <el-input v-model.trim="inputValue.versioncode"></el-input>
     </el-form-item>
     <el-form-item
-      label="启动动作"
+      :label="$t('m.dowhat')"
       :prop="formProp('dowhat')"
       :rules="rules.dowhat"
     >
@@ -30,7 +30,7 @@
       </el-select>
     </el-form-item>
     <el-form-item
-      label="启动方式"
+      :label="$t('m.bywhat')"
       :prop="formProp('bywhat')"
       :rules="rules.bywhat"
     >
@@ -45,14 +45,14 @@
       </el-select>
     </el-form-item>
     <el-form-item
-      label="启动参数"
+      :label="$t('m.byvalue')"
       :prop="formProp('byvalue')"
       :rules="rules.byvalue"
     >
       <el-input type="textarea" v-model.trim="inputValue.byvalue"></el-input>
     </el-form-item>
     <slot></slot>
-    <el-form-item label="扩展参数">
+    <el-form-item  :label="$t('m.extendParams')">
       <div
         class="app-extend-params"
         v-for="(param, index) in inputValue.params"
@@ -79,7 +79,7 @@
         </a>
       </div>
       <el-button type="primary" plain @click="handleAddParam">
-        <i class="el-icon-plus"></i>&nbsp;添加
+        <i class="el-icon-plus"></i>&nbsp;{{$t('button.add')}}
       </el-button>
     </el-form-item>
   </div>
@@ -91,7 +91,7 @@ export default {
   data () {
     function validateKV (rule, value, cb) {
       if (/[！￥……（）——【】：；“”‘’、《》，。？\s+]/.test(value)) {
-        cb(new Error('请勿输入特殊或空白字符'))
+        cb(new Error(this.$t('rules.notSpeAndSpaceCharacters')))
       } else {
         cb()
       }
@@ -108,27 +108,27 @@ export default {
       },
       rules: {
         packagename: [
-          { required: true, message: '请输入应用包名', trigger: 'blur' }
+          { required: true, message: this.$t('rules.required'), trigger: 'blur' }
         ],
         versioncode: [
-          { required: true, message: '请输入应用版本号', trigger: 'blur' }
+          { required: true, message: this.$t('rules.required'), trigger: 'blur' }
         ],
         dowhat: [
-          { required: true, message: '请选择启动动作', trigger: 'change' }
+          { required: true, message: this.$t('rules.required'), trigger: 'change' }
         ],
         bywhat: [
-          { required: true, message: '请选择启动方式', trigger: 'change' }
+          { required: true, message: this.$t('rules.required'), trigger: 'change' }
         ],
         byvalue: [
-          { required: true, message: '请输入启动参数', trigger: 'blur' }
+          { required: true, message: this.$t('rules.required'), trigger: 'blur' }
         ],
         params: {
           key: [
-            { required: true, message: '不能为空', trigger: 'blur' },
+            { required: true, message: this.$t('rules.required'), trigger: 'blur' },
             { validator: validateKV, trigger: 'blur' }
           ],
           value: [
-            { required: true, message: '不能为空', trigger: 'blur' },
+            { required: true, message: this.$t('rules.required'), trigger: 'blur' },
             { validator: validateKV, trigger: 'blur' }
           ]
         }

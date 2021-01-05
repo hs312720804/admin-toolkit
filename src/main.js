@@ -6,15 +6,16 @@ import './register'
 import '@/assets/icon/iconfont.css'
 import router from '@/router/index.js'
 import AppState from '@william17/vue-app-state'
-
+import i18n from './lang/index'
 import $x from './js/$x'
 // 设置主题颜色
 import { initThemeColor, changeThemeColor } from './js/themeColorClient'
 // import './css/customDefines.scss'
 // 通用组件，便于处理
 Vue.prototype.$x = Vue.$x = $x
-
-Vue.use(ElementUI)
+Vue.use(ElementUI, {
+  i18n: (key, value) => i18n.t(key, value)
+})
 Vue.use(AppState)
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
 Vue.config.productionTip = false
@@ -24,5 +25,6 @@ initThemeColor()
 
 new Vue({
   router,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

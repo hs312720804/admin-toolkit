@@ -110,7 +110,6 @@ const components = [
   CSelectChange,
   CSelectLimit,
   CLazyRemoteSelect
-
 ]
 
 const install = function (Vue) {
@@ -240,5 +239,4 @@ export default {
   CSelectLimit,
   CLazyRemoteSelect,
   service
-
 }
