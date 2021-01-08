@@ -17,7 +17,7 @@ const messages = {
   }
 }
 const i18n = new VueI18n({
-  locale: localStorage.lang || 'en',
+  locale: localStorage.lang || 'zh',
   messages
 })
 locale.i18n((key, value) => i18n.t(key, value))
