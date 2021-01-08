@@ -1,12 +1,12 @@
 <template>
   <div>
-    <el-form-item :label="$t('m.packageName')">{{ value.packagename }}</el-form-item>
-    <el-form-item :label="$t('m.versionCode')">{{ value.versioncode }}</el-form-item>
-    <el-form-item :label="$t('m.dowhat')">{{ value.dowhat }}</el-form-item>
-    <el-form-item :label="$t('m.bywhat')">{{ value.bywhat }}</el-form-item>
-    <el-form-item :label="$t('m.byvalue')">{{ value.byvalue }}</el-form-item>
+    <el-form-item :label="$t('cMessage.packageName')">{{ value.packagename }}</el-form-item>
+    <el-form-item :label="$t('cMessage.versionCode')">{{ value.versioncode }}</el-form-item>
+    <el-form-item :label="$t('cMessage.dowhat')">{{ value.dowhat }}</el-form-item>
+    <el-form-item :label="$t('cMessage.bywhat')">{{ value.bywhat }}</el-form-item>
+    <el-form-item :label="$t('cMessage.byvalue')">{{ value.byvalue }}</el-form-item>
     <slot></slot>
-    <el-form-item :label="$t('m.extendParams')">
+    <el-form-item :label="$t('cMessage.extendParams')">
       <div class="app-extend-params" v-for="(param, index) in value.params" :key="index">
         <el-form-item label label-width="0px">
           <el-tag>key</el-tag>&nbsp;

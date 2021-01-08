@@ -36,7 +36,9 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: '输入关键字进行过滤'
+      default: () => {
+        return this.$t('cMessage.inputkeyWord')
+      }
     },
     defaultProps: {
       type: Object,

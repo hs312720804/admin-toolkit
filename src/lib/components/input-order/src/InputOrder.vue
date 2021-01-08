@@ -26,7 +26,7 @@ export default {
       if (_.trim(val) === '') {
         this.$message({
           type: 'error',
-          message: '请输入正整数'
+          message: this.$t('cMessage.inputPositiveInteger')
         })
         return
       }

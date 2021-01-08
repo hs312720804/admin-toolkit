@@ -8,61 +8,61 @@
         <ul class="icon_lists dib-box">
           <li class="dib">
             <span class="icon iconfont el-icon-cc-denglu"></span>
-            <div class="name">登录</div>
+            <div class="name">login</div>
             <div class="code-name">.el-icon-cc-denglu</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-iconfontduigou"></span>
-            <div class="name">启用</div>
+            <div class="name">enable</div>
             <div class="code-name">.el-icon-cc-iconfontduigou</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-toufangfangan"></span>
-            <div class="name">投放方案</div>
+            <div class="name">launch plan</div>
             <div class="code-name">.el-icon-cc-toufangfangan</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-huidingbu"></span>
-            <div class="name">返回顶部</div>
+            <div class="name">go up</div>
             <div class="code-name">.el-icon-cc-huidingbu</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-gongju"></span>
-            <div class="name">工具</div>
+            <div class="name">toolkit</div>
             <div class="code-name">.el-icon-cc-gongju</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-iconset0225"></span>
-            <div class="name">投放仪</div>
+            <div class="name">launch</div>
             <div class="code-name">.el-icon-cc-iconset0225</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-iconset0226"></span>
-            <div class="name">投放仪</div>
+            <div class="name">launch</div>
             <div class="code-name">.el-icon-cc-iconset0226</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-iconset0329"></span>
-            <div class="name">标签</div>
+            <div class="name">tag</div>
             <div class="code-name">.el-icon-cc-iconset0329</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-renqun"></span>
-            <div class="name">人群</div>
+            <div class="name">crowd</div>
             <div class="code-name">.el-icon-cc-renqun</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-tongji"></span>
-            <div class="name">统计</div>
+            <div class="name">statistics</div>
             <div class="code-name">.el-icon-cc-tongji</div>
           </li>
 
@@ -74,31 +74,31 @@
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-bankuaiguanli"></span>
-            <div class="name">版块管理</div>
+            <div class="name">block manage</div>
             <div class="code-name">.el-icon-cc-bankuaiguanli</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-caozuo"></span>
-            <div class="name">操作</div>
+            <div class="name">operate</div>
             <div class="code-name">.el-icon-cc-caozuo</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-xitong"></span>
-            <div class="name">系统</div>
+            <div class="name">system</div>
             <div class="code-name">.el-icon-cc-xitong</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-jiaose"></span>
-            <div class="name">角色</div>
+            <div class="name">role</div>
             <div class="code-name">.el-icon-cc-jiaose</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-yanzheng"></span>
-            <div class="name">验证</div>
+            <div class="name">verification</div>
             <div class="code-name">.el-icon-cc-yanzheng</div>
           </li>
 
@@ -110,157 +110,157 @@
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-tubiaozhizuomoban"></span>
-            <div class="name">个人</div>
+            <div class="name">person</div>
             <div class="code-name">.el-icon-cc-tubiaozhizuomoban</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-banner"></span>
-            <div class="name">广告位</div>
+            <div class="name">advertising</div>
             <div class="code-name">.el-icon-cc-banner</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-gonggong"></span>
-            <div class="name">公共</div>
+            <div class="name">common</div>
             <div class="code-name">.el-icon-cc-gonggong</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-celve1"></span>
-            <div class="name">策略</div>
+            <div class="name">strategy</div>
             <div class="code-name">.el-icon-cc-celve1</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-email"></span>
-            <div class="name">邮件</div>
+            <div class="name">email</div>
             <div class="code-name">.el-icon-cc-email</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-institute"></span>
-            <div class="name">机构</div>
+            <div class="name">organization</div>
             <div class="code-name">.el-icon-cc-institute</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-menu1"></span>
-            <div class="name">菜单</div>
+            <div class="name">menu</div>
             <div class="code-name">.el-icon-cc-menu1</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-zhuti"></span>
-            <div class="name">主题</div>
+            <div class="name">theme</div>
             <div class="code-name">.el-icon-cc-zhuti</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-banmianguanli-"></span>
-            <div class="name">版面管理</div>
+            <div class="name">block manage</div>
             <div class="code-name">.el-icon-cc-banmianguanli-</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-zhuti1"></span>
-            <div class="name">主题</div>
+            <div class="name">theme</div>
             <div class="code-name">.el-icon-cc-zhuti1</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-huanying"></span>
-            <div class="name">欢迎</div>
+            <div class="name">welcome</div>
             <div class="code-name">.el-icon-cc-huanying</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-rizhi"></span>
-            <div class="name">日志</div>
+            <div class="name">daily</div>
             <div class="code-name">.el-icon-cc-rizhi</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-renyuanguanli"></span>
-            <div class="name">人员管理</div>
+            <div class="name">user manage</div>
             <div class="code-name">.el-icon-cc-renyuanguanli</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-rizhiguanli"></span>
-            <div class="name">日志管理</div>
+            <div class="name">daily manage</div>
             <div class="code-name">.el-icon-cc-rizhiguanli</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-zhushou"></span>
-            <div class="name">助手</div>
+            <div class="name">helper</div>
             <div class="code-name">.el-icon-cc-zhushou</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-huaban"></span>
-            <div class="name">资源管理</div>
+            <div class="name">resource administration</div>
             <div class="code-name">.el-icon-cc-huaban</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-daichuli"></span>
-            <div class="name">待处理</div>
+            <div class="name">pending</div>
             <div class="code-name">.el-icon-cc-daichuli</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-yanjizhushou-shangchuan_xitong"></span>
-            <div class="name">系统</div>
+            <div class="name">system</div>
             <div class="code-name">.el-icon-cc-yanjizhushou-shangchuan_xitong</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-lanjie"></span>
-            <div class="name">拦截</div>
+            <div class="name">intercept</div>
             <div class="code-name">.el-icon-cc-lanjie</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-celveguanli"></span>
-            <div class="name">策略管理</div>
+            <div class="name"> strategic management</div>
             <div class="code-name">.el-icon-cc-celveguanli</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-celve"></span>
-            <div class="name">策略</div>
+            <div class="name">strategic</div>
             <div class="code-name">.el-icon-cc-celve</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-kaitongkuai"></span>
-            <div class="name">开通快</div>
+            <div class="name">fast</div>
             <div class="code-name">.el-icon-cc-kaitongkuai</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-yincang"></span>
-            <div class="name">隐藏</div>
+            <div class="name">hide</div>
             <div class="code-name">.el-icon-cc-yincang</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-guanggaoweihezuoshangyeruzhupingtaidiannaomian"></span>
-            <div class="name">广告位 合作 商业 入驻 平台 电脑 面</div>
+            <div class="name">platform</div>
             <div class="code-name">.el-icon-cc-guanggaoweihezuoshangyeruzhupingtaidiannaomian</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-xinxi"></span>
-            <div class="name">信息</div>
+            <div class="name">information</div>
             <div class="code-name">.el-icon-cc-xinxi</div>
           </li>
 
           <li class="dib">
             <span class="icon iconfont el-icon-cc-mima"></span>
-            <div class="name">密码</div>
+            <div class="name">password</div>
             <div class="code-name">.el-icon-cc-mima</div>
           </li>
 

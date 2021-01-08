@@ -6,8 +6,7 @@ import CActionList from './components/action-list/index'
 import CContentWrapper from './components/content-wrapper/index'
 import CRemoteSelect from './components/remote-select/index'
 import CTagNav from './components/tag-nav/index'
-import CPop from './components/pop/index'
-import CCarousel from './components/carousel/index'
+// import CPop from './components/pop/index'
 import CEllipsis from './components/ellipsis/index'
 // import CTypeList from './components/type-list_d/index'
 import CIconSelect from './components/icon-select/index'
@@ -16,7 +15,7 @@ import CDownload from './components/download/index'
 import CUpload from './components/upload/index'
 import CAppParams from './bizComponents/app-params/index'
 import utils from './utils'
-import CProbability from './components/probability/index'
+// import CProbability from './components/probability/index'
 import CRegionPickerCn from './components/region-picker/index'
 import CCellEdit from './components/cell-edit/index'
 import CForm from './form/form/index'
@@ -42,10 +41,10 @@ import CGateSchemaForm from './components/gate-schema-form/index'
 import CInputOrder from './components/input-order/index'
 import CInputPositiveInt from './components/input-positive-int/index'
 import CInputPosibility from './components/input-posibility/index'
-import CVideoTags from './components/video-tags/index'
+// import CVideoTags from './components/video-tags/index'
 import CAddFormObj from './components/add-form-obj/index'
 import CFatherSonLink from './components/father-son-link/index'
-import CVideoFilter from './components/video-filter_d/index'
+// import CVideoFilter from './components/video-filter_d/index'
 // import CProductList from './components/product-list/index'
 import COrderableTable from './components/orderable-table/index'
 import CAppParamsRead from './bizComponents/app-params-read/index'
@@ -75,11 +74,10 @@ const components = [
   CFormEnumList,
   CUpload,
   CTagNav,
-  CCarousel,
   CEllipsis,
   CIconSelect,
   CDownload,
-  CPop,
+  // CPop,
   CCard,
   CRemoteSelect,
   CContentWrapper,
@@ -99,10 +97,10 @@ const components = [
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
-  CVideoTags,
+  // CVideoTags,
   CAddFormObj,
   CFatherSonLink,
-  CVideoFilter,
+  // CVideoFilter,
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector,
@@ -126,64 +124,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-// export {
-//   CTable,
-//   install,
-//   CMenu,
-//   CCardList,
-//   CBreadcrumb,
-//   CContentWrapper,
-//   CRemoteSelect,
-//   CActionList,
-//   CTagNav,
-//   utils,
-//   CPop,
-//   CCarousel,
-//   CEllipsis,
-//   CIconSelect,
-//   CCard,
-//   CDownload,
-//   CUpload,
-//   CAppParams,
-//   CProbability,
-//   CForm,
-//   CFormBoolean,
-//   CFormString,
-//   CFormNumber,
-//   CFormEnum,
-//   CFormEnumList,
-//   CFormAny,
-//   CFormMac,
-//   CFormEffectiveTime,
-//   CRegionPickerCn,
-//   CCellEdit,
-//   CFilterTree,
-//   CInputThousands,
-//   CAddMulti,
-//   CBaseSelector,
-//   CSelectDialog,
-//   CCascaderPanel,
-//   CTableTree,
-//   CFixPage,
-//   CTableWrapper,
-//   CContextMenu,
-//   CGateSchemaForm,
-//   CInputOrder,
-//   CInputPositiveInt,
-//   CInputPosibility,
-//   CVideoTags,
-//   CAddFormObj,
-//   CFatherSonLink,
-//   CVideoFilter,
-//   COrderableTable,
-//   CAppParamsRead,
-//   CClickEventSelector,
-//   CSelectChange,
-//   CSelectLimit,
-//   CLazyRemoteSelect,
-//   service
-// }
-export default {
+export {
   CTable,
   install,
   CMenu,
@@ -194,15 +135,14 @@ export default {
   CActionList,
   CTagNav,
   utils,
-  CPop,
-  CCarousel,
+  // CPop,
   CEllipsis,
   CIconSelect,
   CCard,
   CDownload,
   CUpload,
   CAppParams,
-  CProbability,
+  // CProbability,
   CForm,
   CFormBoolean,
   CFormString,
@@ -228,10 +168,66 @@ export default {
   CInputOrder,
   CInputPositiveInt,
   CInputPosibility,
-  CVideoTags,
+  // CVideoTags,
   CAddFormObj,
   CFatherSonLink,
-  CVideoFilter,
+  // CVideoFilter,
+  COrderableTable,
+  CAppParamsRead,
+  CClickEventSelector,
+  CSelectChange,
+  CSelectLimit,
+  CLazyRemoteSelect,
+  service
+}
+export default {
+  CTable,
+  install,
+  CMenu,
+  CCardList,
+  CBreadcrumb,
+  CContentWrapper,
+  CRemoteSelect,
+  CActionList,
+  CTagNav,
+  utils,
+  // CPop,
+  CEllipsis,
+  CIconSelect,
+  CCard,
+  CDownload,
+  CUpload,
+  CAppParams,
+  // CProbability,
+  CForm,
+  CFormBoolean,
+  CFormString,
+  CFormNumber,
+  CFormEnum,
+  CFormEnumList,
+  CFormAny,
+  CFormMac,
+  CFormEffectiveTime,
+  CRegionPickerCn,
+  CCellEdit,
+  CFilterTree,
+  CInputThousands,
+  CAddMulti,
+  CBaseSelector,
+  CSelectDialog,
+  CCascaderPanel,
+  CTableTree,
+  CFixPage,
+  CTableWrapper,
+  CContextMenu,
+  CGateSchemaForm,
+  CInputOrder,
+  CInputPositiveInt,
+  CInputPosibility,
+  // CVideoTags,
+  CAddFormObj,
+  CFatherSonLink,
+  // CVideoFilter,
   COrderableTable,
   CAppParamsRead,
   CClickEventSelector,

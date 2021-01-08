@@ -23,7 +23,7 @@
         @input="handleInputVal"
         @change="$emit('change', $event)"
         :disabled="disabled"
-        :placeholder="placeholder || '请选择'"
+        :placeholder="placeholder || $t('cMessage.pleaseSelect')"
         :filterable="filterable"
         :allow-create="allowCreate"
       >
@@ -67,7 +67,7 @@ export default {
         let title
         let content
         if (typeof confirm === 'string') {
-          title = '提示'
+          title = this.$t('cMessage.tip')
           content = confirm
         } else {
           title = confirm.title

@@ -27,7 +27,7 @@ export default {
       const reg = /^[a-fA-F0-9]{12}$/
       value = _.trim(value)
       if (value !== '' && !reg.test(value)) {
-        callback(new Error('请输入以a-f、A-F、0-9组成的12位MAC地址'))
+        callback(new Error(this.$t('cMessage.inputRuleMac')))
       } else {
         callback()
       }
@@ -35,13 +35,13 @@ export default {
     var validateMacs = (rule, value, callback) => {
       const reg = /^[a-fA-F0-9]{12}$/
       if (value.indexOf('，') > -1) {
-        callback(new Error('只能用英文逗号隔开'))
+        callback(new Error(this.$t('cMessage.useEnglishComma')))
       }
       value = value.split(',')
       try {
         value.forEach((e, index) => {
           if (e !== '' && !reg.test(_.trim(e))) {
-            throw Error('第' + (index + 1) + '个MAC地址不符合要求，请输入以a-f、A-F、0-9组成的12位MAC地址')
+            throw Error(this.$t('cMessage.the') + (index + 1) + this.$t('cMessage.macError'))
           }
         })
         callback()

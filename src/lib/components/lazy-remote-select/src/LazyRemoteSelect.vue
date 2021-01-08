@@ -2,14 +2,14 @@
   <el-select
     ref="select"
     :value="value"
-    placeholder="请选择"
+    :placeholder="$t('cPlaceholder.select')"
     filterable
     remote
     clearable
     :remote-method="remoteMethod"
     reserve-keyword
     @input="handleInputValue"
-    no-data-text="暂无数据"
+    :no-data-text="$t('cMessage.noData')"
     :loading="loading"
     :loading-text="loadingText"
     :disabled="disabled"
@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       loading: false,
-      loadingText: '加载中',
+      loadingText: this.$t('cMessage.loading'),
       options: [],
       total: 0,
       inputValue: this.value,
@@ -71,13 +71,13 @@ export default {
     showNoMore () {
       this.$nextTick(() => {
         this.appendTips()
-        document.getElementById('appendId').innerText = '没有数据了'
+        document.getElementById('appendId').innerText = this.$t('cMessage.noData')
       })
     },
     showLoading () {
       this.$nextTick(() => {
         this.appendTips()
-        document.getElementById('appendId').innerText = '加载中'
+        document.getElementById('appendId').innerText = this.$t('cMessage.loading')
       })
     },
     appendTips () {
@@ -110,10 +110,10 @@ export default {
         this.total = data.total
         if (this.options.length === 0) {
           this.loading = true
-          this.loadingText = '暂无数据'
+          this.loadingText = this.$t('cMessage.noData')
         } else {
           this.loading = false
-          this.loadingText = '加载中'
+          this.loadingText = this.$t('cMessage.loading')
         }
       })
     },

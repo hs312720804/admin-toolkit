@@ -57,7 +57,7 @@ module.exports = {
               // 'components/OrderableTable.md',
               'components/ContextMenu.md',
               
-              'components/CnRegionPicker.md',
+              // 'components/CnRegionPicker.md',
               'components/FixPage.md',
               'components/AddMultiObj.md',
               //'components/ProductList.md',

@@ -33,7 +33,7 @@ export default {
       const startTime = new Date(value[0]).getTime()
       const currentTime = new Date().getTime()
       if (startTime < currentTime) {
-        return callback(new Error('开始时间要大于当前时间'))
+        return callback(new Error(this.$t('cMessage.startGEnd')))
       } else {
         callback()
       }

@@ -12,7 +12,7 @@
                     :label="item.label"
                   ></el-option>
                 </el-select>
-                <template v-if="m.type === 'baoguang'">曝光监测</template>
+                <template v-if="m.type === 'baoguang'">{{$t('cMessage.ExposureM')}}</template>
               </div>
               <div class="el-form-item__content">
                 <div class="monitor-form" v-for="(c,i) in m.value" :key="i">
@@ -33,34 +33,34 @@
                       v-if="inputType === 'textArea'"
                       type="textarea"
                       :autosize="{ minRows: 3, maxRows: 5}"
-                      placeholder="请输入内容"
+                      :placeholder="$t('cMessage.content')"
                       v-model="c.code"
                       @change="handleIputCode($event,key,index,i,m.type)"
                       >
                       </el-input>
                        <el-input
                        v-else
-                      placeholder="请输入内容"
+                      :placeholder="$t('cMessage.content')"
                       v-model="c.code"
                       @change="handleIputCode($event,key,index,i,m.type)"
                       >
                       </el-input>
                     </el-col>
                     <el-col :span="2">
-                      <el-button :disabled="m.value.length > 1 ? false : true " @click="handleDeleteExposure(key,index,i,m.type)">删除</el-button>
+                      <el-button :disabled="m.value.length > 1 ? false : true " @click="handleDeleteExposure(key,index,i,m.type)">{{$t('cButton.del')}}</el-button>
                     </el-col>
                   </el-row>
                 </div>
                 <el-row>
                   <el-col>
-                    <el-button class="normal-btn-orange" @click="handleAddExposure(key,index,m.type)">增加</el-button>
+                    <el-button class="normal-btn-orange" @click="handleAddExposure(key,index,m.type)">{{$t('cButton.add')}}</el-button>
                   </el-col>
                 </el-row>
               </div>
             </div>
             <el-row>
               <el-col>
-                <p class="add-code-more" @click="handleAddCode(key)">+增加更多</p>
+                <p class="add-code-more" @click="handleAddCode(key)">+{{$t('cButton.addMore')}}</p>
               </el-col>
             </el-row>
           </div>

@@ -35,7 +35,7 @@ export default {
     title: {
       type: String,
       default () {
-        return '选择'
+        return this.$t('cMessage.selectText')
       }
     },
     fullscreen: {

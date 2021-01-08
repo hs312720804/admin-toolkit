@@ -6,7 +6,7 @@ import MenuDemo from './MenuDemo'
 import RemoteSelectDemo from './RemoteSelectDemo'
 import TableDemo from './TableDemo'
 import TagNavDemo from './TagNavDemo'
-import CarouselDemo from './CarouselDemo'
+// import CarouselDemo from './CarouselDemo'
 import ContentEllipsisDemo from './ContentEllipsisDemo.vue'
 import TheIconDemoIndex from './TheIconDemoIndex.vue'
 import TheCustomIconDemo from './TheCustomIconDemo.vue'
@@ -28,7 +28,7 @@ import InputPositiveIntDemo from './InputPositiveIntDemo.vue'
 import InputPosibilityDemo from './InputPosibilityDemo.vue'
 import BaseSelectorDemo from './BaseSelectorDemo.vue'
 import ContextMenuDemo from './ContextMenuDemo.vue'
-import VideoTagsDemo from './VideoTagsDemo.vue'
+// import VideoTagsDemo from './VideoTagsDemo.vue'
 import DataFormDemo from './form/DataFormDemo.vue'
 import BooleanDemo from './form/BooleanDemo.vue'
 import NumberDemo from './form/NumberDemo.vue'
@@ -38,7 +38,7 @@ import MacDemo from './form/MacDemo'
 import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
-import CnRegionPickerDemo from './CnRegionPicker.vue'
+import CnRegionPickerDemo from './RegionPickerCnDemo'
 import FixPageDemo from './FixPageDemo.vue'
 import AddMultiDemo from './AddMultiDemo'
 import ProductListDemo from './ProductListDemo'
@@ -64,7 +64,6 @@ export {
   RemoteSelectDemo,
   TableDemo,
   TagNavDemo,
-  CarouselDemo,
   ContentEllipsisDemo,
   TheIconDemoIndex,
   TheCustomIconDemo,
@@ -86,7 +85,7 @@ export {
   InputPosibilityDemo,
   BaseSelectorDemo,
   ContextMenuDemo,
-  VideoTagsDemo,
+  // VideoTagsDemo,
   DataFormDemo,
   BooleanDemo,
   NumberDemo,

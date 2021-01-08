@@ -112,11 +112,11 @@ export default {
 
         const fileSize = file.size
         if (minSize !== undefined && fileSize < minSize) {
-          return rejectError(`文件不够大`)
+          return rejectError(this.$t('cMessage.fileNBig'))
         }
 
         if (maxSize !== undefined && fileSize > maxSize) {
-          return rejectError('文件太大')
+          return rejectError(this.$t('cMessage.fileTooBig'))
         }
         if (
           height !== undefined ||
@@ -133,28 +133,28 @@ export default {
               const ratio = imgInfo.width / imgInfo.height
               switch (true) {
                 case height !== undefined && height !== imgInfo.height:
-                  rejectError('图片高度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case minHeight !== undefined && minHeight > imgInfo.height:
-                  rejectError('图片高度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case maxHeight !== undefined && maxHeight < imgInfo.height:
-                  rejectError('图片高度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case width !== undefined && width !== imgInfo.width:
-                  rejectError('图片宽度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case minWidth !== undefined && minWidth > imgInfo.width:
-                  rejectError('图片宽度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case maxWidth !== undefined && maxWidth < imgInfo.width:
-                  rejectError('图片宽度不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case maxRatio !== undefined && ratio > maxRatio:
-                  rejectError('图片尺寸比例不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 case minRatio !== undefined && ratio < minRatio:
-                  rejectError('图片尺寸比例不符合要求')
+                  rejectError(this.$t('cMessage.imgHeightError'))
                   break
                 default:
                   resolve()
@@ -167,7 +167,6 @@ export default {
       })
     },
     handleUpload (event) {
-      console.log('文件上传。。。。。。。')
       const target = event.target
       const files = [].slice.call(target.files)
       const STATUS = this.STATUS

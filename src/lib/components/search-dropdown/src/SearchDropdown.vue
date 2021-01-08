@@ -46,7 +46,7 @@
         </ul>
 
         <!-- 查询结果为空时候 -->
-        <div class="result-null" v-if="value && result.length == 0">没有结果</div>
+        <div class="result-null" v-if="value && result.length == 0">{{$t('cMessage.noResult')}}</div>
       </div>
     </div>
 
@@ -62,7 +62,9 @@ export default {
     },
     placeholderValue: {
       type: String,
-      default: '搜索...'
+      default: () => {
+        return this.$t('cMessage.search') + '...'
+      }
     },
     FuzzySearchList: {
       type: Array,

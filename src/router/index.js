@@ -343,6 +343,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'lazyRemoteSelect'
         }
+      },
+      {
+        path: 'region',
+        name: 'region',
+        component: demos.CnRegionPickerDemo,
+        meta: {
+          title: '中国地区选择',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'region'
+        }
       }
     ]
   },

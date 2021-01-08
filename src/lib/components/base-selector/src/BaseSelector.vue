@@ -45,10 +45,10 @@
       <div class="remote-selector-main__actions">
         <slot name="actions">
             <el-button type="primary" @click="handleSelectEnd">
-              确定
+              {{$t('cButton.ok')}}
             </el-button>
             <el-button @click="handleSelectCancel">
-              取消
+              {{$t('cButton.cancel')}}
             </el-button>
         </slot>
       </div>
