@@ -54,6 +54,7 @@ import CTreeSelect from './components/tree-select/index'
 import CSelectChange from './components/select-change/index'
 import CSelectLimit from './components/select-limit/index'
 import CLazyRemoteSelect from './components/lazy-remote-select/index'
+import CBoxGroup from './components/box-group/index'
 import service from './service/index'
 import lang from './lang/index'
 const components = [
@@ -108,7 +109,8 @@ const components = [
   CTreeSelect,
   CSelectChange,
   CSelectLimit,
-  CLazyRemoteSelect
+  CLazyRemoteSelect,
+  CBoxGroup
 ]
 
 const install = function (Vue) {
@@ -178,6 +180,7 @@ export {
   CSelectChange,
   CSelectLimit,
   CLazyRemoteSelect,
+  CBoxGroup,
   service
 }
 export default {
@@ -235,5 +238,6 @@ export default {
   CSelectLimit,
   CLazyRemoteSelect,
   service,
-  langMessages: lang.messages
+  langMessages: lang.messages,
+  CBoxGroup
 }

@@ -69,7 +69,8 @@ module.exports = {
               'components/SearchDropdown.md',
               'components/TreeSelect.md',
               'components/SelectLimit.md',
-              'components/LazyRemoteSelect'
+              'components/LazyRemoteSelect',
+              'components/BoxGroup.md'
             ]
           },
           {
