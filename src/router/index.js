@@ -353,6 +353,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'region'
         }
+      },
+      {
+        path: 'colorPicker',
+        name: 'CColorPicker',
+        component: demos.ColorPickerDemo,
+        meta: {
+          title: '颜色选择器',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'CColorPicker'
+        }
       }
     ]
   },
