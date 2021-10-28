@@ -57,6 +57,7 @@ import SelectChangeDemo from './SelectChangeDemo.vue'
 import SelectLimitDemo from './SelectLimitDemo.vue'
 import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
 import BoxGroupDemo from './BoxGroupDemo.vue'
+import ColorPickerDemo from './ColorPickerDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -115,5 +116,6 @@ export {
   SelectChangeDemo,
   SelectLimitDemo,
   LazyRemoteSelectDemo,
-  BoxGroupDemo
+  BoxGroupDemo,
+  ColorPickerDemo
 }

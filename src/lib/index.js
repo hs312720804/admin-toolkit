@@ -58,6 +58,7 @@ import CLazyRemoteSelect from './components/lazy-remote-select/index'
 import CBoxGroup from './components/box-group/index'
 import service from './service/index'
 import lang from './lang/index'
+import CColorPicker from './components/color-picker'
 const components = [
   CAppParams,
   CTable,
@@ -112,7 +113,8 @@ const components = [
   CSelectChange,
   CSelectLimit,
   CLazyRemoteSelect,
-  CBoxGroup
+  CBoxGroup,
+  CColorPicker
 ]
 
 const install = function (Vue) {
@@ -184,7 +186,8 @@ export {
   CSelectLimit,
   CLazyRemoteSelect,
   CBoxGroup,
-  service
+  service,
+  CColorPicker
 }
 export default {
   CTable,
@@ -243,5 +246,6 @@ export default {
   CLazyRemoteSelect,
   service,
   langMessages: lang.messages,
-  CBoxGroup
+  CBoxGroup,
+  CColorPicker
 }

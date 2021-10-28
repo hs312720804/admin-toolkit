@@ -4,7 +4,7 @@ module.exports = {
   base: '/admin-toolkit/',
   title: 'Admin Toolkit',
   description: '酷开 Vue 组件库',
-  
+
   themeConfig: {
     nav: [
       {text: '文档', link: '/'},
@@ -56,13 +56,13 @@ module.exports = {
               'components/InputPosibility.md',
               // 'components/OrderableTable.md',
               'components/ContextMenu.md',
-              
+
               // 'components/CnRegionPicker.md',
               'components/FixPage.md',
               'components/AddMultiObj.md',
               //'components/ProductList.md',
               // 'components/VideoFilter.md',
-             
+
               'components/CascaderPanel.md',
               'components/FilterTree.md',
               'components/InputThousands.md',
@@ -70,7 +70,8 @@ module.exports = {
               'components/TreeSelect.md',
               'components/SelectLimit.md',
               'components/LazyRemoteSelect',
-              'components/BoxGroup.md'
+              'components/BoxGroup.md',
+              'components/ColorPick.md'
             ]
           },
           {
@@ -120,7 +121,7 @@ module.exports = {
   //       .end()
   //   })
   // },
-  // sass: { 
+  // sass: {
   //   indentedSyntax: true,
   //   additionalData: `@import "@/css/defines.scss";`
   // },
@@ -143,7 +144,7 @@ module.exports = {
     // includePaths: ['/src/css/defines.scss'],
     // sassOptions: {
     //   indentWidth: 4,
-      
+
     // },
   // },
   configureWebpack: {
