@@ -38,7 +38,6 @@ export default {
 ## 属性  
 | 名称 | 类型 | 描述 | 例子 |  
 | ---- | ---- | ---- | ---- |
-| value | String | | |
 | required | Boolean | 是否为必填表单项, 默认为false | |
 | regexpLable | String | 未通过正则校验时提示的内容, 为空时会取placeholder的值 | |
 | regexp | RegExp | value需匹配的正则表达式 | |
