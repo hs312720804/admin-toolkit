@@ -95,6 +95,7 @@ module.exports = {
               'form/EnumList.md',
               'form/Any.md',
               'form/Mac.md',
+              'form/Regexp.md',
               'form/EffectiveTime.md'
             ]
           }

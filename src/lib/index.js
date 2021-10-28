@@ -26,6 +26,7 @@ import CFormEnum from './form/enum/index'
 import CFormEnumList from './form/enum-list/index'
 import CFormAny from './form/any/index'
 import CFormMac from './form/mac/index'
+import CFormRegexp from './form/regexp/index'
 import CFormEffectiveTime from './form/effective-time/index'
 import CFilterTree from './components/filter-tree/index'
 import CInputThousands from './components/input-thousands/index'
@@ -71,6 +72,7 @@ const components = [
   CFormString,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CFormEnumList,
   CUpload,
@@ -153,6 +155,7 @@ export {
   CFormEnumList,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,
@@ -210,6 +213,7 @@ export default {
   CFormEnumList,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,

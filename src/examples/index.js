@@ -35,6 +35,7 @@ import NumberDemo from './form/NumberDemo.vue'
 import StringDemo from './form/StringDemo.vue'
 import EnumDemo from './form/EnumDemo.vue'
 import MacDemo from './form/MacDemo'
+import RegexpDemo from './form/RegexpDemo'
 import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
@@ -93,6 +94,7 @@ export {
   StringDemo,
   EnumDemo,
   MacDemo,
+  RegexpDemo,
   EffectiveTimeDemo,
   EnumListDemo,
   AnyDemo,

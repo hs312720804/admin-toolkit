@@ -564,6 +564,16 @@ const routes = [
         }
       },
       {
+        path: 'RegexpDemo',
+        name: 'RegexpDemo',
+        component: demos.RegexpDemo,
+        meta: {
+          title: '自定义正则输入',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'RegexpDemo'
+        }
+      },
+      {
         path: 'EffectiveTimeDemo',
         name: 'EffectiveTimeDemo',
         component: demos.EffectiveTimeDemo,
