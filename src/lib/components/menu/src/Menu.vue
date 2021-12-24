@@ -10,7 +10,7 @@
     :mode="mode"
   >
     <template v-for="(item, index) in items">
-      <el-submenu v-if="item.children" :key="index"  :index="index + ''">
+      <el-submenu v-if="item.children" :key="item.route"  :index="index + ''">
         <template slot="title">
           <i v-if="item.icon" :class="item.icon"></i>
           <span>{{ item.title }}</span>
@@ -18,7 +18,7 @@
         <template v-for="(child, idx) in item.children">
           <el-menu-item
             v-if="typeof(child.children) === 'undefined'"
-            :key="idx"
+            :key="child.route"
             :index="child.route"
           >
             <template v-if="item.path">
@@ -32,13 +32,13 @@
               <span slot="title">{{ child.title }}</span>
             </template>
           </el-menu-item>
-          <el-submenu v-else :key="idx" :index="index +'_'+idx">
+          <el-submenu v-else :key="child.route" :index="index +'_'+idx">
             <template slot="title">
               <i v-if="child.icon" :class="child.icon"></i>
               <span>{{ child.title }}</span>
             </template>
-            <template v-for="(c,n) in child.children">
-              <el-menu-item :key="n" :index="c.route">
+            <template v-for="(c) in child.children">
+              <el-menu-item :key="c.route" :index="c.route">
                 <i v-if="c.icon" :class="c.icon"></i>
                 <span slot="title">{{c.title}}</span>
               </el-menu-item>
@@ -46,7 +46,7 @@
           </el-submenu>
         </template>
       </el-submenu>
-      <el-menu-item v-else :key="index" :index="item.route">
+      <el-menu-item v-else :key="item.route" :index="item.route">
         <i v-if="item.icon" :class="item.icon"></i>
         <span slot="title">{{ item.title }}</span>
       </el-menu-item>

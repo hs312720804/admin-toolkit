@@ -143,6 +143,10 @@ export default {
       return this.titles[name] || (meta && meta.title) || name
     },
     handleNavigate (route) {
+      // 避免重复导航报错 vue-router在3.1版本之后会出现此问题
+      if (this.$route.path === route.fullPath) {
+        return true
+      }
       this.$router.push({ path: route.fullPath })
       this.$emit('navigate', route)
     },

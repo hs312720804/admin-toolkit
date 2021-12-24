@@ -35,6 +35,7 @@ import NumberDemo from './form/NumberDemo.vue'
 import StringDemo from './form/StringDemo.vue'
 import EnumDemo from './form/EnumDemo.vue'
 import MacDemo from './form/MacDemo'
+import RegexpDemo from './form/RegexpDemo'
 import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
@@ -55,6 +56,8 @@ import TreeSelectDemo from './TreeSelectDemo.vue'
 import SelectChangeDemo from './SelectChangeDemo.vue'
 import SelectLimitDemo from './SelectLimitDemo.vue'
 import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
+import BoxGroupDemo from './BoxGroupDemo.vue'
+import ColorPickerDemo from './ColorPickerDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -92,6 +95,7 @@ export {
   StringDemo,
   EnumDemo,
   MacDemo,
+  RegexpDemo,
   EffectiveTimeDemo,
   EnumListDemo,
   AnyDemo,
@@ -111,5 +115,7 @@ export {
   TreeSelectDemo,
   SelectChangeDemo,
   SelectLimitDemo,
-  LazyRemoteSelectDemo
+  LazyRemoteSelectDemo,
+  BoxGroupDemo,
+  ColorPickerDemo
 }

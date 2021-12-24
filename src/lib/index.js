@@ -26,6 +26,7 @@ import CFormEnum from './form/enum/index'
 import CFormEnumList from './form/enum-list/index'
 import CFormAny from './form/any/index'
 import CFormMac from './form/mac/index'
+import CFormRegexp from './form/regexp/index'
 import CFormEffectiveTime from './form/effective-time/index'
 import CFilterTree from './components/filter-tree/index'
 import CInputThousands from './components/input-thousands/index'
@@ -54,8 +55,10 @@ import CTreeSelect from './components/tree-select/index'
 import CSelectChange from './components/select-change/index'
 import CSelectLimit from './components/select-limit/index'
 import CLazyRemoteSelect from './components/lazy-remote-select/index'
+import CBoxGroup from './components/box-group/index'
 import service from './service/index'
 import lang from './lang/index'
+import CColorPicker from './components/color-picker'
 const components = [
   CAppParams,
   CTable,
@@ -70,6 +73,7 @@ const components = [
   CFormString,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CFormEnumList,
   CUpload,
@@ -108,7 +112,9 @@ const components = [
   CTreeSelect,
   CSelectChange,
   CSelectLimit,
-  CLazyRemoteSelect
+  CLazyRemoteSelect,
+  CBoxGroup,
+  CColorPicker
 ]
 
 const install = function (Vue) {
@@ -151,6 +157,7 @@ export {
   CFormEnumList,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,
@@ -178,7 +185,9 @@ export {
   CSelectChange,
   CSelectLimit,
   CLazyRemoteSelect,
-  service
+  CBoxGroup,
+  service,
+  CColorPicker
 }
 export default {
   CTable,
@@ -207,6 +216,7 @@ export default {
   CFormEnumList,
   CFormAny,
   CFormMac,
+  CFormRegexp,
   CFormEffectiveTime,
   CRegionPickerCn,
   CCellEdit,
@@ -235,5 +245,7 @@ export default {
   CSelectLimit,
   CLazyRemoteSelect,
   service,
-  langMessages: lang.messages
+  langMessages: lang.messages,
+  CBoxGroup,
+  CColorPicker
 }

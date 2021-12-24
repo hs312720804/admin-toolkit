@@ -353,6 +353,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'region'
         }
+      },
+      {
+        path: 'colorPicker',
+        name: 'CColorPicker',
+        component: demos.ColorPickerDemo,
+        meta: {
+          title: '颜色选择器',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'CColorPicker'
+        }
       }
     ]
   },
@@ -561,6 +571,16 @@ const routes = [
           title: '表单Mac类型',
           icon: 'iconfont el-icon-cc-file-add',
           route: 'MacDemo'
+        }
+      },
+      {
+        path: 'RegexpDemo',
+        name: 'RegexpDemo',
+        component: demos.RegexpDemo,
+        meta: {
+          title: '自定义正则输入',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'RegexpDemo'
         }
       },
       {

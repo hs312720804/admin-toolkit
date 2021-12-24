@@ -1,6 +1,6 @@
 {
   "name": "@ccprivate/admin-toolkit",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "main": "./src/lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -t final_v && git add CHANGELOG.md",
     "test:unit": "vue-cli-service test:unit --watch"
   },
   "files": [
@@ -33,6 +33,7 @@
     "moment": "^2.28.0",
     "pinyin-match": "^1.1.1",
     "vue": "^2.6.12",
+    "vue-gpickr": "^0.2.7",
     "vue-i18n": "^8.22.2",
     "vue-router": "^3.4.3",
     "vue-server-renderer": "^2.6.12"
