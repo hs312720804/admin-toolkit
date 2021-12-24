@@ -1,6 +1,19 @@
 # [1.2.0](http://gitlab.skysri.com/flower/admin-toolkit/compare/final_v1.1.4...final_v1.2.0) (2021-12-24)
 
 
+### Bug Fixes
+
+* **menu:** 解决菜单数据更新时，el-menu中items没有正确重置的BUG ([c23a4a5](http://gitlab.skysri.com/flower/admin-toolkit/commit/c23a4a5c81c2096142176a3f8d93973d482c1b6a))
+* **TagNav:** 修复重复导航报错问题 ([6ff12d4](http://gitlab.skysri.com/flower/admin-toolkit/commit/6ff12d4323c23b18c2e12f27ed986cc9342f41f2))
+* **TagNav:** 修复重复导航报错问题 ([1f57da7](http://gitlab.skysri.com/flower/admin-toolkit/commit/1f57da7845b9f68a6202313da6c2c9e3acac49ef))
+
+
+### Features
+
+* **Regexp:** 新增表单组件：自定义正则输入 ([037e00f](http://gitlab.skysri.com/flower/admin-toolkit/commit/037e00f85e5f66fe884f9f0225d23e34636b83a2))
+* 增加单项选择按钮形式组件 ([bc941d1](http://gitlab.skysri.com/flower/admin-toolkit/commit/bc941d116864852b6fe8ce3ee89a88c13793dc35))
+
+
 
 ## [1.1.4](http://gitlab.skysri.com/flower/admin-toolkit/compare/final_v1.1.3...final_v1.1.4) (2021-01-08)
 
