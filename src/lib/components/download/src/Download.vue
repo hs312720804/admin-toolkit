@@ -1,8 +1,8 @@
 <template>
   <div>
     <a :href="downloadUrl" download ref="download_Url"></a>
-    <el-button type="primary" class="download" @click="downloadData">
-        <slot/>
+    <el-button :type="buttonType" class="download" @click="downloadData">
+      <slot/>
     </el-button>
   </div>
 </template>
@@ -12,6 +12,10 @@ export default {
   props: {
     downloadUrl: {
       type: String
+    },
+    buttonType: {
+      type: String,
+      default: 'primary'
     }
   },
   data () {

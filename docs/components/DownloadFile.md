@@ -50,6 +50,7 @@ export default {
 | 名称 | 类型 | 描述 | 例子 |
 | ---- | ---- | ---- | ---- |
 | downloadUrl | String | 下载地址 |见上面例子 |
+| buttonType | String | 按钮type |参考element Button  type |
 ## 事件
 | 名称 | 参数 | 描述 |
 | ---- | ---- | ---- |
