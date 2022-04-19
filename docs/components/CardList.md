@@ -101,6 +101,12 @@ export default {
 | selectionType | 'none' / 'multiple' / 'single' |  none 为不使用选择功能, multiple 为多选, single 为单选| |
 | selected | Array 或者 Number | 如果 selectionType 是 multiple, 那么 selected 需要是一个数组,  包含选中的 index; 如果 selectionType 是 single, 那么 selected 是被选中的 index | |  
 | gutter | Number | 栅格间隔（同el-row），默认20 | | 
+| xs | Number | 参考element响应式栅格属性，默认值:24 | | 
+| sm | Number | 参考element响应式栅格属性，默认值:12 | | 
+| md | Number | 参考element响应式栅格属性，默认值:8 | | 
+| lg | Number | 参考element响应式栅格属性，默认值:6 | | 
+| xl | Number | 参考element响应式栅格属性，默认值:4 | | 
+
 
 ## 事件  
 | 名称 | 参数 | 描述 |  

@@ -2,7 +2,11 @@
   <div class="card-list">
     <el-row :gutter="gutter">
       <el-col
-        :xs="24" :sm="12" :md="8" :lg="6" :xl="4"
+        :xs="xs"
+        :sm="sm"
+        :md="md"
+        :lg="lg"
+        :xl="xl"
         class="card-item-wrapper"
         :style="{'margin-bottom': gutter + 'px'}"
         v-for="(row, index) in data"
@@ -37,6 +41,26 @@
 export default {
   name: 'CCardList',
   props: {
+    xs: {
+      type: Number,
+      default: 24
+    },
+    sm: {
+      type: Number,
+      default: 12
+    },
+    md: {
+      type: Number,
+      default: 8
+    },
+    lg: {
+      type: Number,
+      default: 6
+    },
+    xl: {
+      type: Number,
+      default: 4
+    },
     gutter: {
       type: Number,
       default: 20
