@@ -151,7 +151,7 @@ export default {
     }
   },
   created () {
-    console.log(this.table)
+    // console.log(this.table)
   },
   mounted () {
     // window.addEventListener('resize', this.setTableHeight)

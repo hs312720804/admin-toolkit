@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import { Row, Button } from 'element-ui'
+import { Button } from 'element-ui'
 export default {
   name: 'CActionList',
   components: {
-    Row,
+    // Row,
     Button
   },
   inject: {

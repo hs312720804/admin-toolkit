@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    InputOrder
+    // InputOrder
   },
   computed: {
     tableHeader () {
@@ -42,6 +42,7 @@ export default {
             },
             on: {
               'order-data': (data) => {
+                // eslint-disable-next-line vue/no-side-effects-in-computed-properties
                 this.table.data = data
                 // this.handleChangeOrder($index, order)
               }

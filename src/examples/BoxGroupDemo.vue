@@ -27,7 +27,7 @@ export default {
       this.$confirm('是否修改素材类型?', {
         type: 'warning'
       }).then(() => {
-        this.select  = val
+        this.select = val
       }).catch(() => {})
     }
   }

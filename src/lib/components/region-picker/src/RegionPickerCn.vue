@@ -129,8 +129,8 @@ const provinceData = regions.filter(item => {
 const cityData = regions.filter(item => {
   return item.parent > 0
 })
-const provinceLength = provinceData.length
-const cityLength = cityData.length
+// const provinceLength = provinceData.length
+// const cityLength = cityData.length
 
 // const cityLength =
 //   regions[regions.length - 1].city[regions[regions.length - 1].city.length - 1]
@@ -303,6 +303,7 @@ export default {
     showPickedCity () {
       let result = ''
       this.pickData.forEach(city => {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         this.cityStatus['c' + city.regionId] = true
         result += `${city.name} `
       })
