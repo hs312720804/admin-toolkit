@@ -1,5 +1,12 @@
 <template>
   <el-form-item :label="label" :prop="prop" :label-width="labelWidth" :rules="effectiveTimeRules">
+    <template slot="label">
+      <span>{{ label }}</span>
+      <el-popover v-if="isPopover" trigger="hover" :placement="popoverPlacement">
+        <i slot="reference" class="form-label-tip" :class="[popoverIcon]"></i>
+        <slot name="popover-content"></slot>
+      </el-popover>
+    </template>
     <el-date-picker
         v-if="!isReadonly"
         :value="value"

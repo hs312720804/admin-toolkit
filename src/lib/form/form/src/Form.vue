@@ -19,5 +19,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.data-form
+  >>>.form-label-tip
+    margin-left 5px
 </style>
