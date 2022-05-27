@@ -18,7 +18,19 @@ export default {
     multiple: Boolean,
     maxlength: Number,
     minlength: Number,
-    showWordLimit: Boolean
+    showWordLimit: Boolean,
+    isPopover: {
+      type: Boolean,
+      default: false
+    },
+    popoverPlacement: {
+      type: String,
+      default: 'top'
+    },
+    popoverIcon: {
+      type: String,
+      default: 'el-icon-question'
+    }
   },
   computed: {
     isReadonly () {

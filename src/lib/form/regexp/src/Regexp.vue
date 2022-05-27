@@ -1,5 +1,12 @@
 <template>
   <el-form-item :label="label" :prop="prop" :rules="regexpRules">
+    <template slot="label">
+      <span>{{ label }}</span>
+      <el-popover v-if="isPopover" trigger="hover" :placement="popoverPlacement">
+        <i slot="reference" class="form-label-tip" :class="[popoverIcon]"></i>
+        <slot name="popover-content"></slot>
+      </el-popover>
+    </template>
     <el-input
       v-if="!isReadonly"
       :value="value"

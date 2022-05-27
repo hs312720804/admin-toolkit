@@ -25,6 +25,7 @@ const TableBody = {
       if (typeof rowClassName === 'string') {
         classes.push(rowClassName)
       } else if (typeof rowClassName === 'function') {
+        // eslint-disable-next-line no-useless-call
         classes.push(rowClassName.call(null, {
           row,
           rowIndex

@@ -37,57 +37,57 @@
 
 <script>
 
-class TagHistory {
-  constructor ({ router, stack, cursor }) {
-    this.cursor = cursor !== undefined ? cursor : -1
-    this.stack = stack || []
-    this.router = router
-    this.isGoing = false
-    this.isNavigating = false
-  }
-  clear () {
-    this.cursor = -1
-    this.stack = []
-  }
-  push (route) {
-    if (!this.isGoing && !this.isNavigating) {
-      let { cursor, stack } = this
-      if (cursor !== stack.length - 1) {
-        // 如果不是在末端
-        // 截取前面的
-        stack = stack.slice(0, cursor + 1)
-      }
-      // 压到最新
-      stack.push(route)
-      this.stack = stack
-      this.cursor = ++cursor
-    } else {
-      this.isGoing = false
-      this.isNavigating = false
-    }
-  }
-  active () {
-    const path = this.stack[this.cursor].fullPath
-    this.isNavigating = true
-    this.router.push({ path }, undefined, () => {
-      this.isNavigating = false
-    })
-  }
-  go (position) {
-    const { cursor, stack, router } = this
-    const nextCursor = cursor + position
-    const nextRoute = stack[nextCursor]
-    if (nextRoute) {
-      // 前后移动的时候不需要修改栈
-      this.isGoing = true
-      router.push({ path: nextRoute.fullPath }, () => {
-        this.cursor = nextCursor
-      }, () => {
-        this.isGoing = false
-      })
-    }
-  }
-}
+// class TagHistory {
+//   constructor ({ router, stack, cursor }) {
+//     this.cursor = cursor !== undefined ? cursor : -1
+//     this.stack = stack || []
+//     this.router = router
+//     this.isGoing = false
+//     this.isNavigating = false
+//   }
+//   clear () {
+//     this.cursor = -1
+//     this.stack = []
+//   }
+//   push (route) {
+//     if (!this.isGoing && !this.isNavigating) {
+//       let { cursor, stack } = this
+//       if (cursor !== stack.length - 1) {
+//         // 如果不是在末端
+//         // 截取前面的
+//         stack = stack.slice(0, cursor + 1)
+//       }
+//       // 压到最新
+//       stack.push(route)
+//       this.stack = stack
+//       this.cursor = ++cursor
+//     } else {
+//       this.isGoing = false
+//       this.isNavigating = false
+//     }
+//   }
+//   active () {
+//     const path = this.stack[this.cursor].fullPath
+//     this.isNavigating = true
+//     this.router.push({ path }, undefined, () => {
+//       this.isNavigating = false
+//     })
+//   }
+//   go (position) {
+//     const { cursor, stack, router } = this
+//     const nextCursor = cursor + position
+//     const nextRoute = stack[nextCursor]
+//     if (nextRoute) {
+//       // 前后移动的时候不需要修改栈
+//       this.isGoing = true
+//       router.push({ path: nextRoute.fullPath }, () => {
+//         this.cursor = nextCursor
+//       }, () => {
+//         this.isGoing = false
+//       })
+//     }
+//   }
+// }
 
 export default {
   name: 'CTagNav',
@@ -228,7 +228,7 @@ export default {
       }
     },
     init () {
-      const router = this.$router
+      // const router = this.$router
       this.tags = this.initTags
     },
     scrollIntoView () {

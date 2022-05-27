@@ -10,14 +10,14 @@
     :mode="mode"
   >
     <template v-for="(item, index) in items">
-      <el-submenu v-if="item.children" :key="item.route"  :index="index + ''">
+      <el-submenu v-if="item.children && item.children.length > 0" :key="item.route"  :index="index + ''">
         <template slot="title">
           <i v-if="item.icon" :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </template>
         <template v-for="(child, idx) in item.children">
           <el-menu-item
-            v-if="typeof(child.children) === 'undefined'"
+            v-if="!child.children || child.children.length <= 0"
             :key="child.route"
             :index="child.route"
           >
