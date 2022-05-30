@@ -14,15 +14,15 @@
         <menu-item :items="item.children" :path="item.path"></menu-item>
       </el-submenu>
       <el-menu-item v-else :key="item.route" :index="item.route">
-        <template v-if="item['path']">
-          <a
+        <template v-if="isRightClick">
+          <router-link
             slot="title"
-            :href="item.path.substring(0, 1) === '/' ? item['path'] : aHref + item.path"
             onclick="return false;"
             class="route-link"
+            :to="{name: item.route}"
           >
             <i v-if="item.icon" :class="item.icon"></i>{{ item.title }}
-          </a>
+          </router-link>
         </template>
         <template v-else>
           <i v-if="item.icon" :class="item.icon"></i>
@@ -46,35 +46,13 @@ export default {
     path: {
       type: String,
       default: ''
-    }
-  },
-  data () {
-    return {
-      aHref: ''
+    },
+    isRightClick: {
+      type: Boolean,
+      default: true
     }
   },
   created () {
-    if (this.$router.mode === 'hash') {
-      if (this.path === '/') {
-        this.aHref = '#/'
-      } else {
-        this.aHref = this.path
-          ? this.path.substring(0, 1) === '/'
-            ? `#${this.path}/`
-            : `#/${this.path}/`
-          : `#/`
-      }
-    } else {
-      if (this.path === '/') {
-        this.aHref = '/'
-      } else {
-        this.aHref = this.path
-          ? this.path.substring(0, 1) === '/'
-            ? `${this.path}/`
-            : `/${this.path}/`
-          : `/`
-      }
-    }
   }
 }
 </script>

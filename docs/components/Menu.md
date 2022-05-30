@@ -69,6 +69,7 @@ export default {
 | activeTextColor | String | 当前激活菜单的 index，参见文档 | |
 | backgroundColor | String | 菜单的背景色，参见文档 | |
 | mode | String | horizontal / vertical，参见Element UI文档 | |
+| isRightClick | Boolean | 是否支持鼠标右键，默认值为true, 1.2.6版本增加 | |
 
 菜单项属性  
 | 名称 | 类型 | 描述  | 例子 |  
@@ -77,6 +78,5 @@ export default {
 | icon | String | 菜单图标 | | 
 | route | String | 菜单对应的路由名 | |  
 | children | Array | 子菜单项列表 | |
-| path | String | 同路由的path，有值时，可以生成a标签支持右键跳转 ||
 
 <Comment />
