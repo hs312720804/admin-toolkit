@@ -1,6 +1,6 @@
 {
   "name": "@ccprivate/admin-toolkit",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "./src/lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -33,7 +33,7 @@
     "moment": "^2.28.0",
     "pinyin-match": "^1.1.1",
     "vue": "^2.6.12",
-    "vue-gpickr": "^0.2.7",
+    "vue-gpickr": "^0.4.2",
     "vue-i18n": "^8.22.2",
     "vue-router": "^3.4.3",
     "vue-server-renderer": "^2.6.12"

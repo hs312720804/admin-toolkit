@@ -57,7 +57,9 @@ export default {
         item.path = element.path || element.path === '/' ? element.path : ''
         item.children = []
         element.children.forEach(e => {
-          item.children.push(e.meta)
+          const ci = e.meta
+          ci.path = e.path
+          item.children.push(ci)
         })
         this.items.push(item)
       })
