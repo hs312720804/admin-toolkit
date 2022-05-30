@@ -16,7 +16,7 @@ const routes = [
     },
     children: [
       {
-        path: 'actionList',
+        path: '/',
         name: 'actionList',
         component: demos.ActionListDemo,
         meta: {
@@ -378,7 +378,7 @@ const routes = [
     },
     children: [
       {
-        path: 'downloadFile',
+        path: '/downloadFile',
         name: 'downloadFile',
         component: demos.DownloadFileDemo,
         meta: {

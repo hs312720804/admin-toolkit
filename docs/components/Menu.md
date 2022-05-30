@@ -33,7 +33,8 @@ export default {
             {
               title: '导航一',
               icon: 'el-icon-menu',
-              route: 'nav1'
+              route: 'nav1',
+              path: 'nav1'
             },
             {
               title: '导航二',
@@ -76,6 +77,6 @@ export default {
 | icon | String | 菜单图标 | | 
 | route | String | 菜单对应的路由名 | |  
 | children | Array | 子菜单项列表 | |
-
+| path | String | 同路由的path，有值时，可以生成a标签支持右键跳转 ||
 
 <Comment />
