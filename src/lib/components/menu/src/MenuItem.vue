@@ -11,7 +11,7 @@
           <span>{{ item.title }}</span>
         </template>
         <!-- 递归调用自己 -->
-        <menu-item :items="item.children" :path="item.path"></menu-item>
+        <menu-item :items="item.children"></menu-item>
       </el-submenu>
       <el-menu-item v-else :key="item.route" :index="item.route">
         <template v-if="isRightClick">
@@ -42,10 +42,6 @@ export default {
       default: () => {
         return []
       }
-    },
-    path: {
-      type: String,
-      default: ''
     },
     isRightClick: {
       type: Boolean,
