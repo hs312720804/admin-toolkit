@@ -58,10 +58,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  created () {
-    // eslint-disable-next-line no-console
-    console.log(this.collapse)
   }
 }
 </script>
