@@ -42,4 +42,9 @@ export default {
 <style lang="stylus">
 .el-submenu .el-menu-item
   padding 0
+.el-menu--collapse
+  .el-submenu>.el-submenu__title .el-submenu__icon-arrow
+    display none
+  .el-submenu>.el-submenu__title span
+    display none
 </style>
