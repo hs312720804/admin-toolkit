@@ -9,7 +9,7 @@
     :collapse="isCollapse"
     :mode="mode"
   >
-    <MenuItem :items="items"></MenuItem>
+    <MenuItem :items="items" :collapse="isCollapse"></MenuItem>
   </el-menu>
 </template>
 
