@@ -11,18 +11,25 @@
           <span>{{ item.title }}</span>
         </template>
         <!-- 递归调用自己 -->
-        <menu-item :items="item.children" :path="item.path"></menu-item>
+        <menu-item :items="item.children"></menu-item>
       </el-submenu>
       <el-menu-item v-else :key="item.route" :index="item.route">
         <template v-if="isRightClick">
-          <router-link
-            slot="title"
-            onclick="return false;"
-            class="route-link"
-            :to="{name: item.route}"
-          >
-            <i v-if="item.icon" :class="item.icon"></i>{{ item.title }}
-          </router-link>
+          <i v-if="item.icon" :class="item.icon"></i>
+          <span slot="title">
+            <router-link
+              onclick="return false;"
+              class="route-link"
+              :to="{name: item.route}"
+              v-if="!collapse"
+            >
+              {{ item.title }}
+            </router-link>
+            <template v-else>
+              {{ item.title }}
+            </template>
+          </span>
+          <!-- <span v-else>{{ item.title }}</span> -->
         </template>
         <template v-else>
           <i v-if="item.icon" :class="item.icon"></i>
@@ -43,16 +50,14 @@ export default {
         return []
       }
     },
-    path: {
-      type: String,
-      default: ''
-    },
     isRightClick: {
       type: Boolean,
       default: true
+    },
+    collapse: {
+      type: Boolean,
+      default: false
     }
-  },
-  created () {
   }
 }
 </script>
@@ -61,5 +66,4 @@ export default {
 a.route-link
   color inherit
   text-decoration none
-  display block
 </style>

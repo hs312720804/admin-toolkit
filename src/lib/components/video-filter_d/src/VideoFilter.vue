@@ -448,7 +448,6 @@ export default {
         })
         this.sourceList = result[0].childVideoPartnerInfoList
       }
-      console.log(this.sourceList)
     },
     searchChannelSourceData () { // 全部按内容源查看影片
       // if (this.isMore) {
