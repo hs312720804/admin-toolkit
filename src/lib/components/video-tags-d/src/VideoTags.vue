@@ -127,7 +127,6 @@ export default {
       return flag
     },
     changeTag: function (index, tags) {
-      console.log(tags)
       let _this = this
       if (tags === undefined) {
         return false

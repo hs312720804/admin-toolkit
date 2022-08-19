@@ -344,16 +344,16 @@ const routes = [
           route: 'lazyRemoteSelect'
         }
       },
-      {
-        path: 'region',
-        name: 'region',
-        component: demos.CnRegionPickerDemo,
-        meta: {
-          title: '中国地区选择',
-          icon: 'iconfont el-icon-cc-file-add',
-          route: 'region'
-        }
-      },
+      // {
+      //   path: 'region',
+      //   name: 'region',
+      //   component: demos.CnRegionPickerDemo,
+      //   meta: {
+      //     title: '中国地区选择',
+      //     icon: 'iconfont el-icon-cc-file-add',
+      //     route: 'region'
+      //   }
+      // },
       {
         path: 'colorPicker',
         name: 'CColorPicker',
@@ -374,7 +374,7 @@ const routes = [
     meta: {
       title: '文件',
       icon: 'iconfont el-icon-cc-file-add',
-      route: 'dashboard'
+      route: 'dashboard1'
     },
     children: [
       {

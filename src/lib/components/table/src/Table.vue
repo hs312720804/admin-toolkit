@@ -153,7 +153,9 @@ export default {
         let scopedSlots
         if (item.render) {
           scopedSlots = {
-            default: props => item.render(h, props)
+            default: props => {
+              return item.render(h, props)
+            }
           }
         }
         result.push(h(TableColumn, {

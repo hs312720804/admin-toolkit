@@ -8,7 +8,37 @@
       style="display:none"
       @change="handleUpload"
     />
-    <slot name="preview" :file-list="fileList"></slot>
+    <div class="upload-pic-list">
+      <div class="upload-pic-list__add" @click="handleSelectFile()">
+        <i class="el-icon el-icon-plus"></i>
+      </div>
+      <div
+        class="upload-pic-list__item"
+        v-for="file in fileList"
+        :key="file.id"
+      >
+        <div class="upload-pic-list__error" v-if="file.status === 'error'">
+          上传失败: {{ file.message }}
+        </div>
+        <div
+          v-if="file.status === 'uploading'"
+          class="upload-pic-list__progress"
+        >
+          <el-progress
+            :width="100"
+            type="circle"
+            :percentage="file.percentage"
+          ></el-progress>
+        </div>
+        <img v-else :src="file.dataUrl" />
+        <i
+          v-if="file.status !== 'uploading'"
+          class="upload-pic-list__remove el-icon el-icon-close"
+          title="移除"
+          @click="handleRemove(file)"
+        ></i>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -113,7 +143,6 @@ export default {
         if (minSize !== undefined && fileSize < minSize) {
           return rejectError(this.$t('cMessage.fileNBig'))
         }
-
         if (maxSize !== undefined && fileSize > maxSize) {
           return rejectError(this.$t('cMessage.fileTooBig'))
         }
@@ -171,10 +200,13 @@ export default {
       const STATUS = this.STATUS
       if (files.length > 0) {
         target.value = ''
-        files.forEach((file) => {
+        files.forEach(file => {
           this.getFileInfo(file).then(fileInfo => {
             const fileListItem = {
-              id: Math.random().toString().slice(-15) + Date.now(),
+              id:
+                Math.random()
+                  .toString()
+                  .slice(-15) + Date.now(),
               size: fileInfo.size,
               dataUrl: fileInfo.dataUrl,
               status: STATUS.uploading,
@@ -204,3 +236,46 @@ export default {
   }
 }
 </script>
+<style lang="stylus" scoped>
+$height = 100px
+$width = 100px
+.upload-pic-list__progress
+  position: absolute
+.upload-pic-list__add, .upload-pic-list__item
+  height: $height
+  width: $width
+  margin-right: 10px
+  display: inline-block
+  vertical-align: top
+  border: 1px solid #ccc
+.upload-pic-list__add
+  cursor: pointer
+  i
+    position: relative
+    top: 50%
+    margin: -10px auto
+    display: block
+    font-size: 20px
+    text-align: center
+.upload-pic-list__item
+  position: relative
+  img
+    max-width: 100%
+    max-height: 100%
+.upload-pic-list__error
+  position: absolute
+  background: #000
+  opacity: 0.7
+  color: #fff
+  width: 100%
+  font-size: 12px
+  padding: 5px
+  display: block
+  box-sizing: border-box
+.upload-pic-list__remove
+  position: absolute
+  color: red
+  cursor: pointer
+  top: 0
+  right: 0
+</style>

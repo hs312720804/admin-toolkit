@@ -86,7 +86,6 @@ export default {
     // 取值
     getValue (value) {
       this.valueId = value
-      // console.log(this.valueId)
     }
   }
 }

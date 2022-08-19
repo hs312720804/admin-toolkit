@@ -524,7 +524,6 @@ export default {
           }
         }
       }
-      console.log(this.currentCategory)
       this.filterForm.videoTypes = []
       this.filterForm.gradeList = []
 
@@ -559,7 +558,6 @@ export default {
           ctList.innerHTML = '已选' + len + '项'
         }
       }
-      console.log(this.filterForm.videoTypes)
     },
     handleContentProviders () {
       const len = this.filterForm.contentProviders.length
@@ -571,7 +569,6 @@ export default {
           ctList.innerHTML = '已选' + len + '项'
         }
       }
-      console.log(this.filterForm.contentProviders)
     },
     clickResetFilter () {
       this.clickResetFilterFun()
@@ -679,7 +676,6 @@ export default {
       this.$emit('get-search-name-list', params)
     },
     querySearchFun (data) { // 输入意见查询
-      console.log(data)
       for (let i = 0; i < data.length; i++) {
         data[i].value = data[i].tagCnName
       }
@@ -769,7 +765,6 @@ export default {
           searchValue[item] = searchParams[item]
         }
       }
-      console.log(searchValue)
       return searchValue
     },
     search () {
@@ -851,7 +846,6 @@ export default {
     getTagNodes: function (tagData) {
       if (tagData.length > 0) this.movieTags = [].concat(tagData)
       else this.movieTags = []
-      console.log(tagData)
       this.movieTagsList[this.addTagIndex].tags = this.movieTags
       this.$refs.ccMediaTag.resetTagLoading(true)
       this.dialogTagsLabelVisible = false

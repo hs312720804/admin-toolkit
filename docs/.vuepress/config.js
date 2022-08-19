@@ -19,13 +19,13 @@ module.exports = {
         title: 'VuePress',
         description: 'Vue-powered Static Site Generator',
         sidebar: [
-          // {
-          //   title: '指南',
-          //   collapsable: false,
-          //   children: [
-          //     '/',
-          //   ]
-          // },
+          {
+            title: '指南',
+            collapsable: false,
+            children: [
+              '/',
+            ]
+          },
           {
             title: '组件',
             collapsable: false,

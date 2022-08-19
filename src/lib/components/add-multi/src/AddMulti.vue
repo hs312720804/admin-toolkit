@@ -43,7 +43,9 @@ export default {
           arr.push(index)
         }
       })
-      this.activeName = arr
+      if (arr.length > 0) {
+        this.activeName = arr
+      }
     },
     setInputValue (val) {
       this.inputValue = val

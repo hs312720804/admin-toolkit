@@ -84,7 +84,6 @@ export default {
       // this.search()
     },
     getSearchNameList (params) {
-      console.log(params)
       let list = []
       if (params.tagName === '赵丽颖') {
         list = [{ 'tagId': 576, 'tagCategoryId': 55, 'tagEnName': '', 'tagCnName': '赵丽颖', 'tagSource': '' }]

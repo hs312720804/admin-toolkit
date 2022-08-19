@@ -41,7 +41,6 @@ export default {
   watch: {
     value: {
       handler (newVal) {
-        // console.log(newVal, this.option)
         this.currentIndex = this.option.findIndex(item => item[this.valueKey] === newVal)
       },
       immediate: true

@@ -86,7 +86,6 @@ export default {
       }
     },
     handleRowClick (row, index) {
-      console.log(arguments)
       this.$message(`row-click`)
     }
   }

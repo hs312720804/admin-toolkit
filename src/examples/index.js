@@ -39,7 +39,7 @@ import RegexpDemo from './form/RegexpDemo'
 import EffectiveTimeDemo from './form/EffectiveTimeDemo'
 import EnumListDemo from './form/EnumListDemo.vue'
 import AnyDemo from './form/AnyDemo.vue'
-import CnRegionPickerDemo from './RegionPickerCnDemo'
+// import CnRegionPickerDemo from './RegionPickerCnDemo'
 import FixPageDemo from './FixPageDemo.vue'
 import AddMultiDemo from './AddMultiDemo'
 import ProductListDemo from './ProductListDemo'
@@ -99,7 +99,7 @@ export {
   EffectiveTimeDemo,
   EnumListDemo,
   AnyDemo,
-  CnRegionPickerDemo,
+  // CnRegionPickerDemo,
   FixPageDemo,
   AddMultiDemo,
   ProductListDemo,

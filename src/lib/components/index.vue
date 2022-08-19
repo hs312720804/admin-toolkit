@@ -63,7 +63,6 @@ export default {
         })
         this.items.push(item)
         // eslint-disable-next-line no-debugger
-        debugger
       })
     },
     toggleMenu () {

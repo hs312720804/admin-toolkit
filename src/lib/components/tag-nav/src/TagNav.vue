@@ -232,7 +232,7 @@ export default {
       this.tags = this.initTags
     },
     scrollIntoView () {
-      const activeItem = this.$el.querySelector('.tag-nav__item--active')
+      const activeItem = document.querySelector('.tag-nav__item--active')
       if (activeItem) {
         const viewPort = this.$refs.viewPort
         const tagList = this.$refs.tagList

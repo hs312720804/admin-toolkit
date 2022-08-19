@@ -37,10 +37,8 @@ export default {
   },
   methods: {
     handleChange (color) {
-      console.log('选择的颜色' + color)
     },
     handleActiveChange (color) {
-      console.log('选择的颜色' + color)
     }
   }
 }

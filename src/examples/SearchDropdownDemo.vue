@@ -49,8 +49,7 @@ export default {
 
   methods: {
     confirm (data) {
-      //   console.log('serachKey==' + this.serachKey)
-      //   console.log('121323=====' + JSON.stringify(data))
+
     }
   },
   mounted () {}
