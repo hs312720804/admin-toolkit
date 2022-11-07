@@ -59,6 +59,7 @@ import CBoxGroup from './components/box-group/index'
 import service from './service/index'
 import lang from './lang/index'
 import CColorPicker from './components/color-picker'
+import CExportPdf from './components/export-pdf'
 const components = [
   CAppParams,
   CTable,
@@ -114,7 +115,8 @@ const components = [
   CSelectLimit,
   CLazyRemoteSelect,
   CBoxGroup,
-  CColorPicker
+  CColorPicker,
+  CExportPdf
 ]
 
 const install = function (Vue) {
@@ -187,7 +189,8 @@ export {
   CLazyRemoteSelect,
   CBoxGroup,
   service,
-  CColorPicker
+  CColorPicker,
+  CExportPdf
 }
 export default {
   CTable,
@@ -247,5 +250,6 @@ export default {
   service,
   langMessages: lang.messages,
   CBoxGroup,
-  CColorPicker
+  CColorPicker,
+  CExportPdf
 }

@@ -44,25 +44,17 @@ module.exports = {
               'components/IconSelect.md',
               'components/Upload.md',
               'components/DownloadFile.md',
-              // 'components/TypeList.md',
               'components/FatherSonLink.md',
               'components/ContentEllipsis.md',
-              // 'components/probability.md',
               'components/SelectDialog.md',
               'components/BaseSelector.md',
               'components/CellEdit.md',
               'components/InputOrder.md',
               'components/InputPositiveInt.md',
               'components/InputPosibility.md',
-              // 'components/OrderableTable.md',
               'components/ContextMenu.md',
-
-              // 'components/CnRegionPicker.md',
               'components/FixPage.md',
               'components/AddMultiObj.md',
-              //'components/ProductList.md',
-              // 'components/VideoFilter.md',
-
               'components/CascaderPanel.md',
               'components/FilterTree.md',
               'components/InputThousands.md',
@@ -71,7 +63,8 @@ module.exports = {
               'components/SelectLimit.md',
               'components/LazyRemoteSelect',
               'components/BoxGroup.md',
-              'components/ColorPick.md'
+              'components/ColorPick.md',
+              'components/ExportPdf.md'
             ]
           },
           {

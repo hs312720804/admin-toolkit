@@ -58,6 +58,7 @@ import SelectLimitDemo from './SelectLimitDemo.vue'
 import LazyRemoteSelectDemo from './LazyRemoteSelectDemo.vue'
 import BoxGroupDemo from './BoxGroupDemo.vue'
 import ColorPickerDemo from './ColorPickerDemo'
+import ExportPdfDemo from './ExportPdfDemo'
 export {
   ActionListDemo,
   BreadcrumbDemo,
@@ -117,5 +118,6 @@ export {
   SelectLimitDemo,
   LazyRemoteSelectDemo,
   BoxGroupDemo,
-  ColorPickerDemo
+  ColorPickerDemo,
+  ExportPdfDemo
 }

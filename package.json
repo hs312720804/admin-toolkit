@@ -1,6 +1,6 @@
 {
   "name": "@ccprivate/admin-toolkit",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "./src/lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -30,6 +30,8 @@
     "ci": "^1.0.0",
     "find-up": "^5.0.0",
     "gateschema-form-vue": "^0.2.4",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "moment": "^2.28.0",
     "pinyin-match": "^1.1.1",
     "vue": "^2.6.12",

@@ -143,3 +143,9 @@ c-select-limit、c-lazy-remote-select、c-tree-select、c-search-dropdown、c-se
 
 1、addMulti 多对象组件，优化点击保存时，组件缩起的 BUG
 2、TagNav 组件，修改 BUG --避免重复导航报错 vue-router 在 3.1 版本之后会出现此问题
+
+## 版本号 1.2.7版本
+ TagNav兼容性修改
+
+## 1.2.8版本
+添加exportPdf组件

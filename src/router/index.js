@@ -406,6 +406,16 @@ const routes = [
           icon: 'iconfont el-icon-cc-file-add',
           route: 'cascaderPanelDemo'
         }
+      },
+      {
+        path: 'ExportPdfDemo',
+        name: 'ExportPdfDemo',
+        component: demos.ExportPdfDemo,
+        meta: {
+          title: '导出PDF',
+          icon: 'iconfont el-icon-cc-file-add',
+          route: 'ExportPdfDemo'
+        }
       }
     ]
   },
